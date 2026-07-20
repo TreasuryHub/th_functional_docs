@@ -34,7 +34,7 @@ The grid is split into tabs so you can focus on accounts that need attention:
 | Tab | Shows |
 |---|---|
 | **All** | Every account. |
-| **Error** | Accounts whose sync or data is in an error state. |
+| **Exceptions** | Accounts whose sync or data is in an error/exception state. |
 | **Disconnected** | Accounts whose Open Banking consent has expired and need reconnecting. |
 
 ## Before you start
@@ -46,7 +46,7 @@ The grid is split into tabs so you can focus on accounts that need attention:
 
 ### View and filter accounts
 1. Open **Bank Accounts**.
-2. Pick a tab (**All / Error / Disconnected**).
+2. Pick a tab (**All / Exceptions / Disconnected**).
 3. The grid shows the account details and balances across up to **31 columns**. Use **Columns** to
    show or hide fields, and the filters to narrow by subsidiary, currency, bank, account type, or
    status.
@@ -82,7 +82,7 @@ The grid is split into tabs so you can focus on accounts that need attention:
 1. Click **Export** and choose **Excel** or **CSV** for the current, filtered grid.
 
 ## Tips & good practices
-- Check the **Error** and **Disconnected** tabs regularly — an expired consent silently stops data
+- Check the **Exceptions** and **Disconnected** tabs regularly — an expired consent silently stops data
   flowing until you reconnect.
 - Use **force balance** only to correct or seed a balance; routine balances should come from
   statements or automatic sync.

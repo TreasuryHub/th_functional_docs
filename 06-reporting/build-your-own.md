@@ -1,7 +1,7 @@
 # Build Your Own Report
 
 > **Availability:** `In Preview` 👁️
-> **Where to find it:** Reporting › Build Your Own Report (maps to the platform's "Create Your Own" / "Crea el Tuyo")
+> **Where to find it:** the **Build Your Own** button on the **Reports gallery** (Reporting overview) — there is no standalone "Build Your Own Report" menu item. (A related **"Create Your Own"** builder for data exports lives under Settings › Data Exports.)
 > **Who uses it:** treasurers, FP&A, finance teams, data owners — anyone who needs a report that isn't in the standard library.
 > **Permissions required:** `CashManagement.CashPosition.ExportData` · Read; custom reports will only ever include data you're entitled to see. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
@@ -41,7 +41,7 @@ filtered, grouped, and formatted — not a pile of raw rows you have to assemble
 *The steps below describe the intended experience once this screen is live.*
 
 ### Build a report
-1. Open **Reporting › Build Your Own Report**.
+1. Open **Reporting**, then click **Build Your Own** on the reports gallery.
 2. (Optional) Start from a **template** in the gallery and clone it as your base.
 3. Choose the **data** the report draws on.
 4. Add the **dimensions** to group by (e.g. company, then currency) and the **metrics** to measure.

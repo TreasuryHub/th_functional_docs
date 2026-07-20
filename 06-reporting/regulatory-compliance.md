@@ -1,7 +1,7 @@
 # Regulatory & Compliance Reports
 
 > **Availability:** `In Preview` 👁️
-> **Where to find it:** Reporting › Regulatory & Compliance
+> **Where to find it:** there is **no "Regulatory & Compliance" section** in the Reports menu today. The **Audit** report sits under **Reporting › Summary**; the prudential reports (capital, liquidity, credit quality) are In Preview and will appear in the reports library as they ship.
 > **Who uses it:** compliance officers, risk teams, controllers, auditors, regulators.
 > **Permissions required:** to be confirmed per report; the Audit Trail will typically be available to Auditor/Admin roles. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
@@ -35,7 +35,7 @@ data you already hold rather than assembled by hand.
 *The steps below describe the intended experience once this screen is live.*
 
 ### Use the Audit Trail
-1. Open **Reporting › Regulatory & Compliance › Audit Trail**.
+1. Open the **Audit** report under **Reporting › Summary** (see also [Audit Trail](../11-accounting/audit-trail.md)).
 2. Filter by **user**, **module**, **date range**, and **action** to find the events you need.
 3. Open an entry to see the full detail and drill through to the underlying record.
 4. Click **Export** to produce a **PDF / Excel / CSV** record for auditors.

@@ -57,16 +57,19 @@ spreadsheet you rebuild each morning.
 
 ![The reports gallery with featured cards, the categorized library, and the scheduled reports strip](../assets/screenshots/reporting-gallery.png)
 
-## The five sub-areas
-The Reporting menu is organized into five groups:
+## The report sub-areas
+The Reports menu is organized into four groups:
 
-| Sub-area | What it's for |
+| Sub-area | What's in it |
 |---|---|
-| **Overview & Build-Your-Own** | The reports gallery and the [custom report builder](build-your-own.md). |
+| **Summary** | The reports **Dashboard** (gallery) and the **Audit** report. The **Build Your Own** button also lives on the gallery. |
 | **Cash & Liquidity** | [Cash Position](cash-position.md), [Cash Forecast](cash-forecast.md), [Actual vs Forecast](actual-vs-forecast.md), and [Scenarios (What-If)](scenarios-what-if.md). |
 | **Operations** | The [operations blotters](operations-blotters.md) — Transactions, Bank Accounts, FX/Debt/Investment contracts, Reconciliation Status, and more — plus [G/L Postings](gl-postings-report.md). |
 | **Risk Management** | Mark-to-Market, FX Exposure, Credit Risk, IRRBB, ALM and other risk dashboards. See [Risk Management](risk-management/). |
-| **Regulatory & Compliance** | [Audit Trail, Capital & Liquidity Requirements, and Credit Quality reports](regulatory-compliance.md). |
+
+> **Regulatory & Compliance** is **not** a separate menu section. The **Audit** report is under
+> **Summary**; the prudential reports (capital, liquidity, credit quality) are In Preview and will
+> appear in the reports library as they ship — see [Regulatory & Compliance Reports](regulatory-compliance.md).
 
 ## The full report library (planned)
 When complete, the library will group standard reports by theme. Only the reports marked `Available` ✅

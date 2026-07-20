@@ -443,7 +443,7 @@ live for your organization, or an orange <strong>Upgrade</strong> badge when it'
 <p>Most screens are powerful data grids (blotters). Across the platform you can generally:
 - <strong>Add</strong> a record (e.g. <strong>+ Add Account</strong>), <strong>Upload</strong> a file (e.g. <strong>Upload Statement</strong>),
   <strong>Export</strong>, and <strong>Print</strong> from the action bar.
-- <strong>Filter</strong> with tabs (e.g. All / Error / Disconnected) and an <strong>Active only</strong> toggle.
+- <strong>Filter</strong> with tabs (e.g. All / Exceptions / Disconnected) and an <strong>Active only</strong> toggle.
 - <strong>Expand All / Collapse All</strong> and <strong>Select All</strong> in hierarchical views.
 - <strong>Group</strong> balances and figures by <strong>Currency, Group, Country, Company</strong>, and drill down.
 - <strong>Choose the display currency</strong> so all balances convert to one currency of your choice.
@@ -3899,19 +3899,19 @@ in-preview reports describe how they work.</p>
   weekly, monthly) in PDF, Excel, or CSV.</li>
 </ul>
 <p><img alt="The reports gallery with featured cards, the categorized library, and the scheduled reports strip" src="assets/screenshots/reporting-gallery.png" class="doc-img" /></p>
-<h2 id="the-five-sub-areas">The five sub-areas</h2>
-<p>The Reporting menu is organized into five groups:</p>
+<h2 id="the-report-sub-areas">The report sub-areas</h2>
+<p>The Reports menu is organized into four groups:</p>
 <table>
 <thead>
 <tr>
 <th>Sub-area</th>
-<th>What it's for</th>
+<th>What's in it</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Overview &amp; Build-Your-Own</strong></td>
-<td>The reports gallery and the <a href="#06_reporting_build_your_own">custom report builder</a>.</td>
+<td><strong>Summary</strong></td>
+<td>The reports <strong>Dashboard</strong> (gallery) and the <strong>Audit</strong> report. The <strong>Build Your Own</strong> button also lives on the gallery.</td>
 </tr>
 <tr>
 <td><strong>Cash &amp; Liquidity</strong></td>
@@ -3925,12 +3925,13 @@ in-preview reports describe how they work.</p>
 <td><strong>Risk Management</strong></td>
 <td>Mark-to-Market, FX Exposure, Credit Risk, IRRBB, ALM and other risk dashboards. See <a href="risk-management/">Risk Management</a>.</td>
 </tr>
-<tr>
-<td><strong>Regulatory &amp; Compliance</strong></td>
-<td><a href="#06_reporting_regulatory_compliance">Audit Trail, Capital &amp; Liquidity Requirements, and Credit Quality reports</a>.</td>
-</tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>Regulatory &amp; Compliance</strong> is <strong>not</strong> a separate menu section. The <strong>Audit</strong> report is under
+<strong>Summary</strong>; the prudential reports (capital, liquidity, credit quality) are In Preview and will
+appear in the reports library as they ship — see <a href="#06_reporting_regulatory_compliance">Regulatory &amp; Compliance Reports</a>.</p>
+</blockquote>
 <h2 id="the-full-report-library-planned">The full report library (planned)</h2>
 <p>When complete, the library will group standard reports by theme. Only the reports marked <code>Available</code> ✅
 in the split above can be run today; the rest are in preview. The planned themes include:</p>
@@ -4157,8 +4158,8 @@ your cash position, reconciliation, and reporting.</p>
 <td>Every account.</td>
 </tr>
 <tr>
-<td><strong>Error</strong></td>
-<td>Accounts whose sync or data is in an error state.</td>
+<td><strong>Exceptions</strong></td>
+<td>Accounts whose sync or data is in an error/exception state.</td>
 </tr>
 <tr>
 <td><strong>Disconnected</strong></td>
@@ -4176,7 +4177,7 @@ your cash position, reconciliation, and reporting.</p>
 <h3 id="view-and-filter-accounts">View and filter accounts</h3>
 <ol>
 <li>Open <strong>Bank Accounts</strong>.</li>
-<li>Pick a tab (<strong>All / Error / Disconnected</strong>).</li>
+<li>Pick a tab (<strong>All / Exceptions / Disconnected</strong>).</li>
 <li>The grid shows the account details and balances across up to <strong>31 columns</strong>. Use <strong>Columns</strong> to
    show or hide fields, and the filters to narrow by subsidiary, currency, bank, account type, or
    status.</li>
@@ -4219,7 +4220,7 @@ your cash position, reconciliation, and reporting.</p>
 </ol>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
-<li>Check the <strong>Error</strong> and <strong>Disconnected</strong> tabs regularly — an expired consent silently stops data
+<li>Check the <strong>Exceptions</strong> and <strong>Disconnected</strong> tabs regularly — an expired consent silently stops data
   flowing until you reconnect.</li>
 <li>Use <strong>force balance</strong> only to correct or seed a balance; routine balances should come from
   statements or automatic sync.</li>
@@ -4325,7 +4326,7 @@ deleting statements, plus downloading blank templates for supported formats.</p>
 <article class="page" id="06_reporting_build_your_own" data-title="Build Your Own Report"><div class="crumb">6 · Reporting</div><h1 id="build-your-own-report">Build Your Own Report</h1>
 <blockquote>
 <p><strong>Availability:</strong> <code>In Preview</code> 👁️
-<strong>Where to find it:</strong> Reporting › Build Your Own Report (maps to the platform's "Create Your Own" / "Crea el Tuyo")
+<strong>Where to find it:</strong> the <strong>Build Your Own</strong> button on the <strong>Reports gallery</strong> (Reporting overview) — there is no standalone "Build Your Own Report" menu item. (A related <strong>"Create Your Own"</strong> builder for data exports lives under Settings › Data Exports.)
 <strong>Who uses it:</strong> treasurers, FP&amp;A, finance teams, data owners — anyone who needs a report that isn't in the standard library.
 <strong>Permissions required:</strong> <code>CashManagement.CashPosition.ExportData</code> · Read; custom reports will only ever include data you're entitled to see. See <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</p>
 <p>👁️ <strong>In Preview.</strong> This screen is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.</p>
@@ -4364,7 +4365,7 @@ filtered, grouped, and formatted — not a pile of raw rows you have to assemble
 <p><em>The steps below describe the intended experience once this screen is live.</em></p>
 <h3 id="build-a-report">Build a report</h3>
 <ol>
-<li>Open <strong>Reporting › Build Your Own Report</strong>.</li>
+<li>Open <strong>Reporting</strong>, then click <strong>Build Your Own</strong> on the reports gallery.</li>
 <li>(Optional) Start from a <strong>template</strong> in the gallery and clone it as your base.</li>
 <li>Choose the <strong>data</strong> the report draws on.</li>
 <li>Add the <strong>dimensions</strong> to group by (e.g. company, then currency) and the <strong>metrics</strong> to measure.</li>
@@ -4558,8 +4559,9 @@ account?"</p>
 <li>Open <strong>Reporting › Cash &amp; Liquidity › Cash Position</strong>.</li>
 <li>Confirm the <strong>Actuals</strong> toggle is on (the <strong>Forecast</strong> toggle is off on this report).</li>
 <li>Choose the <strong>display currency</strong> — pick a single currency (e.g. USD) or <strong>Local</strong>.</li>
-<li>Choose the <strong>grouping</strong>: <strong>Days</strong>, <strong>Weeks</strong>, <strong>Months</strong>, or <strong>Smart</strong>, and the horizon
-   (e.g. 3M / 6M / 12M).</li>
+<li>Set the <strong>Period</strong> (<strong>From</strong> / <strong>To</strong>) for the date range you want to see, and choose the
+   <strong>grouping/granularity</strong> — <strong>Days</strong>, <strong>Weeks</strong>, <strong>Months</strong>, or <strong>Smart</strong> — for how those dates are
+   bucketed into columns.</li>
 <li>The report shows each currency's balance across the chosen time columns, consolidated to your
    display currency.</li>
 </ol>
@@ -4589,7 +4591,7 @@ account?"</p>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
 <li>Set your display currency to your reporting currency so group totals are directly comparable.</li>
-<li>Use <strong>Smart</strong> grouping to keep the near term readable (daily) without losing the longer horizon.</li>
+<li>Use <strong>Smart</strong> grouping to keep the near term readable (daily) without losing the longer date range.</li>
 <li>When a closing balance looks off, drill straight to the account's inflows/outflows — the tag
   breakdown usually points to the cause faster than scanning statements.</li>
 <li>The <strong>source</strong> shown on each transaction tells you whether a figure came from a statement, an API,
@@ -4952,7 +4954,7 @@ risk views (Mark-to-Market, FX Exposure, Credit Risk) live under
 <article class="page" id="06_reporting_regulatory_compliance" data-title="Regulatory &amp; Compliance Reports"><div class="crumb">6 · Reporting</div><h1 id="regulatory-compliance-reports">Regulatory &amp; Compliance Reports</h1>
 <blockquote>
 <p><strong>Availability:</strong> <code>In Preview</code> 👁️
-<strong>Where to find it:</strong> Reporting › Regulatory &amp; Compliance
+<strong>Where to find it:</strong> there is <strong>no "Regulatory &amp; Compliance" section</strong> in the Reports menu today. The <strong>Audit</strong> report sits under <strong>Reporting › Summary</strong>; the prudential reports (capital, liquidity, credit quality) are In Preview and will appear in the reports library as they ship.
 <strong>Who uses it:</strong> compliance officers, risk teams, controllers, auditors, regulators.
 <strong>Permissions required:</strong> to be confirmed per report; the Audit Trail will typically be available to Auditor/Admin roles. See <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</p>
 <p>👁️ <strong>In Preview.</strong> This screen is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.</p>
@@ -5008,7 +5010,7 @@ data you already hold rather than assembled by hand.</p>
 <p><em>The steps below describe the intended experience once this screen is live.</em></p>
 <h3 id="use-the-audit-trail">Use the Audit Trail</h3>
 <ol>
-<li>Open <strong>Reporting › Regulatory &amp; Compliance › Audit Trail</strong>.</li>
+<li>Open the <strong>Audit</strong> report under <strong>Reporting › Summary</strong> (see also <a href="#11_accounting_audit_trail">Audit Trail</a>).</li>
 <li>Filter by <strong>user</strong>, <strong>module</strong>, <strong>date range</strong>, and <strong>action</strong> to find the events you need.</li>
 <li>Open an entry to see the full detail and drill through to the underlying record.</li>
 <li>Click <strong>Export</strong> to produce a <strong>PDF / Excel / CSV</strong> record for auditors.</li>

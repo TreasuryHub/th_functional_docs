@@ -45,8 +45,9 @@ account?"
 1. Open **Reporting › Cash & Liquidity › Cash Position**.
 2. Confirm the **Actuals** toggle is on (the **Forecast** toggle is off on this report).
 3. Choose the **display currency** — pick a single currency (e.g. USD) or **Local**.
-4. Choose the **grouping**: **Days**, **Weeks**, **Months**, or **Smart**, and the horizon
-   (e.g. 3M / 6M / 12M).
+4. Set the **Period** (**From** / **To**) for the date range you want to see, and choose the
+   **grouping/granularity** — **Days**, **Weeks**, **Months**, or **Smart** — for how those dates are
+   bucketed into columns.
 5. The report shows each currency's balance across the chosen time columns, consolidated to your
    display currency.
 
@@ -73,7 +74,7 @@ account?"
 
 ## Tips & good practices
 - Set your display currency to your reporting currency so group totals are directly comparable.
-- Use **Smart** grouping to keep the near term readable (daily) without losing the longer horizon.
+- Use **Smart** grouping to keep the near term readable (daily) without losing the longer date range.
 - When a closing balance looks off, drill straight to the account's inflows/outflows — the tag
   breakdown usually points to the cause faster than scanning statements.
 - The **source** shown on each transaction tells you whether a figure came from a statement, an API,

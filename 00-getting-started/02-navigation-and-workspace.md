@@ -50,7 +50,7 @@ The sidebar mirrors how the platform is organized. Sections with a **›** expan
 Most screens are powerful data grids (blotters). Across the platform you can generally:
 - **Add** a record (e.g. **+ Add Account**), **Upload** a file (e.g. **Upload Statement**),
   **Export**, and **Print** from the action bar.
-- **Filter** with tabs (e.g. All / Error / Disconnected) and an **Active only** toggle.
+- **Filter** with tabs (e.g. All / Exceptions / Disconnected) and an **Active only** toggle.
 - **Expand All / Collapse All** and **Select All** in hierarchical views.
 - **Group** balances and figures by **Currency, Group, Country, Company**, and drill down.
 - **Choose the display currency** so all balances convert to one currency of your choice.
