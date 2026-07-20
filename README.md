@@ -54,7 +54,7 @@ a plan/pricing tier only and says nothing about readiness.
 - **Cash & Liquidity:** [Cash Position](06-reporting/cash-position.md) · [Cash Forecast](06-reporting/cash-forecast.md) · [Actual vs Forecast](06-reporting/actual-vs-forecast.md) · [Scenarios (What-If)](06-reporting/scenarios-what-if.md)
 - **Operations:** [Operations Blotters](06-reporting/operations-blotters.md) · [Bank Accounts](06-reporting/bank-accounts.md) · [Bank Statements](06-reporting/bank-statements.md) · [Transactions](06-reporting/transactions.md) · [Exchange Rates](06-reporting/exchange-rates.md) · [G/L Postings](06-reporting/gl-postings-report.md)
 - **Risk Management:** [Overview](06-reporting/risk-management/overview.md) · [Risk Cockpit](06-reporting/risk-management/risk-cockpit.md) · [Mark-to-Market](06-reporting/risk-management/mark-to-market.md) · [FX Risk](06-reporting/risk-management/fx-risk.md) · [Credit Risk](06-reporting/risk-management/credit-risk.md) · [Interest Rate Risk](06-reporting/risk-management/interest-rate-risk.md) · [ALM](06-reporting/risk-management/alm.md)
-- **Regulatory & Compliance:** [Reports](06-reporting/regulatory-compliance.md)
+- **Regulatory & Compliance** *(In Preview — not a menu section; Audit sits under Summary):* [Reports](06-reporting/regulatory-compliance.md)
 
 ### 7. Workflows
 - [Overview](07-workflows/overview.md) · [Workflow Builder](07-workflows/workflow-builder.md) · [Dashboard & Approvals](07-workflows/workflow-dashboard-and-approvals.md)
