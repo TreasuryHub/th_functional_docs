@@ -35,7 +35,8 @@
   .nav-head{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);padding:10px 12px 4px;font-weight:700}
   nav ul{list-style:none;margin:0;padding:0}
   .nav-item a{display:block;padding:5px 12px;border-radius:7px;color:var(--side-fg);font-size:13px}
-  .nav-item.sub a{padding-left:26px;font-size:12.5px;color:#bdbdbd}
+  .nav-subhead{font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);opacity:.8;padding:9px 12px 2px;font-weight:700;list-style:none}
+  .nav-subhead.hide{display:none}
   .nav-item a:hover{background:#2a2a2a;text-decoration:none}
   .nav-item.active a{background:var(--gold);color:#1a1a1a;font-weight:600}
   .nav-item.hide{display:none}
@@ -159,13 +160,14 @@
 <li class="nav-item" data-slug="06_reporting_regulatory_compliance"><a href="#06_reporting_regulatory_compliance">Regulatory &amp; Compliance Reports</a></li>
 <li class="nav-item" data-slug="06_reporting_scenarios_what_if"><a href="#06_reporting_scenarios_what_if">Scenarios (What-If)</a></li>
 <li class="nav-item" data-slug="06_reporting_transactions"><a href="#06_reporting_transactions">Transactions</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_overview"><a href="#06_reporting_risk_management_overview">Risk Management — Overview</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_alm"><a href="#06_reporting_risk_management_alm">Asset &amp; Liability Management (ALM)</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_credit_risk"><a href="#06_reporting_risk_management_credit_risk">Credit Risk</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_fx_risk"><a href="#06_reporting_risk_management_fx_risk">FX Risk</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_interest_rate_risk"><a href="#06_reporting_risk_management_interest_rate_risk">Interest Rate Risk</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_mark_to_market"><a href="#06_reporting_risk_management_mark_to_market">Mark-to-Market Valuations</a></li>
-<li class="nav-item sub" data-slug="06_reporting_risk_management_risk_cockpit"><a href="#06_reporting_risk_management_risk_cockpit">Risk Cockpit</a></li>
+<li class="nav-subhead" data-subhead="risk">Risk Management</li>
+<li class="nav-item" data-slug="06_reporting_risk_management_overview" data-group="risk"><a href="#06_reporting_risk_management_overview">Risk Management — Overview</a></li>
+<li class="nav-item" data-slug="06_reporting_risk_management_alm" data-group="risk"><a href="#06_reporting_risk_management_alm">Asset &amp; Liability Management (ALM)</a></li>
+<li class="nav-item" data-slug="06_reporting_risk_management_credit_risk" data-group="risk"><a href="#06_reporting_risk_management_credit_risk">Credit Risk</a></li>
+<li class="nav-item" data-slug="06_reporting_risk_management_fx_risk" data-group="risk"><a href="#06_reporting_risk_management_fx_risk">FX Risk</a></li>
+<li class="nav-item" data-slug="06_reporting_risk_management_interest_rate_risk" data-group="risk"><a href="#06_reporting_risk_management_interest_rate_risk">Interest Rate Risk</a></li>
+<li class="nav-item" data-slug="06_reporting_risk_management_mark_to_market" data-group="risk"><a href="#06_reporting_risk_management_mark_to_market">Mark-to-Market Valuations</a></li>
+<li class="nav-item" data-slug="06_reporting_risk_management_risk_cockpit" data-group="risk"><a href="#06_reporting_risk_management_risk_cockpit">Risk Cockpit</a></li>
 </ul></div>
 <div class="nav-section"><div class="nav-head">7 · Workflows</div><ul>
 <li class="nav-item" data-slug="07_workflows_overview"><a href="#07_workflows_overview">Workflows — Overview</a></li>
@@ -185,6 +187,7 @@
 <li class="nav-item" data-slug="10_admin_console_overview"><a href="#10_admin_console_overview">Admin Console — Overview</a></li>
 <li class="nav-item" data-slug="10_admin_console_access_tokens"><a href="#10_admin_console_access_tokens">Access Tokens</a></li>
 <li class="nav-item" data-slug="10_admin_console_companies_and_groups"><a href="#10_admin_console_companies_and_groups">Companies &amp; Company Groups</a></li>
+<li class="nav-item" data-slug="10_admin_console_counterparties_and_ssis"><a href="#10_admin_console_counterparties_and_ssis">Counterparties &amp; SSIs</a></li>
 <li class="nav-item" data-slug="10_admin_console_master_data"><a href="#10_admin_console_master_data">Master Data</a></li>
 <li class="nav-item" data-slug="10_admin_console_matching_rules"><a href="#10_admin_console_matching_rules">Matching Rules</a></li>
 <li class="nav-item" data-slug="10_admin_console_roles_and_groups"><a href="#10_admin_console_roles_and_groups">Roles &amp; Groups</a></li>
@@ -204,21 +207,12 @@
 <li class="nav-item" data-slug="12_platform_security_and_compliance"><a href="#12_platform_security_and_compliance">Security &amp; Compliance</a></li>
 <li class="nav-item" data-slug="12_platform_white_label_and_partners"><a href="#12_platform_white_label_and_partners">White-Label &amp; Partner Branding</a></li>
 </ul></div>
-<div class="nav-section"><div class="nav-head">Docs Meta</div><ul>
-<li class="nav-item" data-slug="meta_AGENT_ROSTER"><a href="#meta_AGENT_ROSTER">Canonical AI Agent Roster (source of truth)</a></li>
-<li class="nav-item" data-slug="meta_LIVE_STATUS"><a href="#meta_LIVE_STATUS">Definitive Live Status — from platform menu screenshots</a></li>
-<li class="nav-item" data-slug="meta_OPEN_QUESTIONS"><a href="#meta_OPEN_QUESTIONS">Open Questions — For the Treasury Hub Team to Confirm</a></li>
-<li class="nav-item" data-slug="meta_SCREENSHOT_FINDINGS"><a href="#meta_SCREENSHOT_FINDINGS">Screenshot Accuracy Findings (from live captures)</a></li>
-<li class="nav-item" data-slug="meta_SCREENSHOTS_NEEDED"><a href="#meta_SCREENSHOTS_NEEDED">Screenshots — Capture Checklist</a></li>
-<li class="nav-item" data-slug="meta_TEMPLATE"><a href="#meta_TEMPLATE">&lt;Module / Screen Name&gt;</a></li>
-<li class="nav-item" data-slug="meta_WRITING_BRIEF"><a href="#meta_WRITING_BRIEF">Writing Brief — Treasury Hub Client Functional Documentation</a></li>
-</ul></div>
     </nav>
   </aside>
   <main>
     <div class="topbar">
       <button class="btn menu-toggle" id="menu">☰ Menu</button>
-      <div class="meta">86 pages · working draft — statuses to be confirmed</div>
+      <div class="meta">80 pages · working draft — statuses to be confirmed</div>
       <div class="btns">
         <button class="btn" id="theme">◐ Theme</button>
       </div>
@@ -622,7 +616,7 @@ your permissions.</p>
 </tr>
 <tr>
 <td><code>CashManagement.Transactions</code></td>
-<td>Transactions (flat &amp; hierarchical).</td>
+<td>Transactions (the flat grid).</td>
 </tr>
 <tr>
 <td><code>CashManagement.TransactionsPosting</code></td>
@@ -1134,8 +1128,11 @@ with each message, and matching emails are processed automatically.</p>
 <li><strong>Monitored mailbox</strong> — the email address Treasury Hub watches for incoming messages.</li>
 <li><strong>Attachment</strong> — a file on an email (e.g. a statement or report) that Treasury Hub extracts and
   processes, typically using a <a href="#02_integrations_file_import">file-import template</a>.</li>
-<li><strong>Rule</strong> — conditions that decide how a message is handled — for example, which sender or subject
-  triggers ingestion, and which template to apply to the attachment.</li>
+<li><strong>Reception rule</strong> — how a matching email is handled: the <strong>account</strong> movements land in, the <strong>country</strong>,
+  the <strong>parsing template</strong> applied to the attachment, an optional <strong>fallback currency</strong>, the <strong>match
+  criteria</strong> that identify the email, and what happens <strong>after processing</strong>.</li>
+<li><strong>Match criteria</strong> — tests on <strong>Sender</strong>, <strong>Subject</strong>, or <strong>Attachment</strong> (file name); each is matched by
+  <strong>Any</strong> (ignore), <strong>Exact</strong> (full text), or <strong>Regex</strong>. A message must meet <strong>all</strong> defined criteria.</li>
 <li><strong>Automated sending</strong> — Treasury Hub can also send emails automatically as part of a flow (for
   example, notifications or outputs), not only read them.</li>
 </ul>
@@ -1157,12 +1154,33 @@ with each message, and matching emails are processed automatically.</p>
    ingest, and the <strong>template</strong> to apply to any attachment.</li>
 <li>Save. Matching emails are now processed automatically as they arrive.</li>
 </ol>
+<h3 id="configure-a-reception-rule">Configure a reception rule</h3>
+<p>A rule has three parts:
+1. <strong>Source &amp; routing</strong> — a <strong>name</strong>, the <strong>account</strong> where the ingested movements are added (optional),
+   the <strong>country</strong>, the <strong>parsing template</strong> to apply, and a <strong>fallback currency</strong> (used only when the file
+   or template has no explicit currency).
+2. <strong>Match criteria</strong> — one or more rows of <strong>Field</strong> (Sender / Subject / Attachment) · <strong>Match</strong> (Any /
+   Exact / Regex) · <strong>Value</strong>. The rule fires only when <strong>all</strong> criteria match — for example <em>Sender regex
+   <code>.*@adyen\.com</code></em> and <em>Attachment regex <code>settlement_.*\.csv</code></em>.
+3. <strong>After processing</strong> — what to do with the email once ingested: <strong>Leave</strong>, <strong>Mark as read</strong>, <strong>Move to a
+   folder</strong>, or <strong>Delete</strong>.</p>
+<p>Rules are <strong>active as soon as they're saved</strong> and apply to <strong>incoming</strong> emails (past emails aren't
+reprocessed); any rule can be enabled or disabled later. Run <strong>one rule per provider</strong> so each sender maps
+to the right template.</p>
 <h3 id="review-what-was-ingested">Review what was ingested</h3>
 <ol>
 <li>Incoming emails that match your rules are processed and their data is created in Treasury Hub.</li>
 <li>Check <a href="#02_integrations_ingestion_activity">Ingestion Activity</a> to see each processed email, its status, and any
    errors.</li>
 </ol>
+<h2 id="ai-ingestion-assistant-in-preview">AI Ingestion Assistant (<code>In Preview</code> 👁️)</h2>
+<p>A <strong>✨ Set up with AI</strong> assistant can create reception rules from plain language — "ingest our Adyen, Stripe
+and dLocal settlement files into the Collections USD account". It <strong>asks only for what it can't infer</strong>
+(which template per provider, how to match, what to do after processing), suggests matching by sender domain
+and file pattern, and <strong>flags problems</strong> such as a provider with no parsing template yet. Because providers
+are separate rules, it's <strong>batch-first</strong>: name several providers (or attach a list) and it drafts <strong>one rule
+per provider</strong>, showing a <strong>results review</strong> — ready vs. needs-attention — before anything is created. The
+assistant drafts; you confirm.</p>
 <h2 id="configuration">Configuration</h2>
 <ul>
 <li><strong>Rules</strong> — set as many as you need to route different senders or message types to the right
@@ -1739,13 +1757,20 @@ partners that deliver files by dropping them on a server — no one has to log i
 by hand. Files are read on a schedule, mapped with your <a href="#02_integrations_file_import">import templates</a>, and
 turned into structured data.</p>
 <h2 id="key-concepts">Key concepts</h2>
-<ul>
-<li><strong>SFTP</strong> — SSH File Transfer Protocol, a secure way to exchange files between systems.</li>
-<li><strong>Monitored location / folder</strong> — the SFTP path Treasury Hub watches for new files.</li>
-<li><strong>Template</strong> — the saved <a href="#02_integrations_file_import">file-import mapping</a> applied to each file so its columns
-  land in the right Treasury Hub fields.</li>
-<li><strong>Schedule</strong> — how often Treasury Hub checks the location for new files.</li>
-</ul>
+<p>SFTP ingestion is a <strong>two-step</strong> setup — a <strong>connection</strong>, then <strong>assignment rules</strong> on it.
+- <strong>SFTP</strong> — SSH File Transfer Protocol, a secure way to exchange files between systems.
+- <strong>Connection</strong> — the server Treasury Hub reaches: <strong>host</strong>, <strong>port</strong>, <strong>username</strong>, <strong>authentication</strong>
+  (Password or SSH key), and a <strong>secret</strong> stored in <strong>Key Vault</strong> (the connection keeps only a reference).
+  A connection can be <strong>tested</strong> before you rely on it.
+- <strong>Assignment rule</strong> — for a connection, which files to pick up and how to process them: an optional
+  <strong>account</strong>, a <strong>parsing template</strong>, <strong>match criteria</strong> (folder + file name), and an <strong>after-processing</strong>
+  action.
+- <strong>Match criteria</strong> — tests on <strong>Folder</strong> and <strong>File</strong> name, each matched by <strong>Exact</strong> or <strong>Regex</strong>; a
+  file must meet all of them.
+- <strong>After processing</strong> — what happens to the file on the server once ingested: <strong>Leave</strong>, <strong>Move to a
+  folder</strong>, or <strong>Delete</strong>.
+- <strong>Template</strong> — the saved <a href="#02_integrations_file_import">file-import mapping</a> applied to each file so its columns land in
+  the right Treasury Hub fields.</p>
 <h2 id="before-you-start">Before you start</h2>
 <ul>
 <li>Have the SFTP connection details (host, credentials or key, and folder path) ready.</li>
@@ -1755,12 +1780,21 @@ turned into structured data.</p>
   <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</li>
 </ul>
 <h2 id="how-to-use-it">How to use it</h2>
-<h3 id="set-up-an-sftp-source">Set up an SFTP source</h3>
+<h3 id="step-1-create-a-connection">Step 1 — Create a connection</h3>
 <ol>
-<li>Open <strong>Integrations › SFTP Ingestion</strong>.</li>
-<li>Add a connection with the <strong>host, credentials, and folder</strong> to monitor.</li>
-<li>Choose the <strong>template</strong> to apply to files from that folder and set the <strong>schedule</strong> for checking.</li>
-<li>Save. New files dropped in the folder are imported automatically on schedule.</li>
+<li>Open <strong>Integrations › SFTP Ingestion</strong> and add a connection.</li>
+<li>Enter the <strong>name</strong>, <strong>host</strong>, <strong>port</strong> (22 by default), <strong>username</strong>, and <strong>authentication</strong> (Password or
+   SSH key). The <strong>secret</strong> is stored in <strong>Key Vault</strong> — Treasury Hub keeps only a reference.</li>
+<li><strong>Test</strong> the connection (reachability + auth), then save.</li>
+</ol>
+<h3 id="step-2-add-assignment-rules">Step 2 — Add assignment rules</h3>
+<ol>
+<li>On the connection, add one or more <strong>assignment rules</strong>.</li>
+<li>Set the (optional) <strong>account</strong>, the <strong>parsing template</strong>, and the <strong>match criteria</strong> — a <strong>Folder</strong> and a
+   <strong>File</strong> name matched by <strong>Exact</strong> or <strong>Regex</strong> (e.g. folder <code>/settlements</code>, file regex <code>settle_.*\.csv</code>).</li>
+<li>Choose the <strong>after-processing</strong> action (Leave / Move / Delete) and save. New matching files are imported
+   automatically; already-processed files aren't reprocessed. Use <strong>one rule per file type</strong> so each maps to
+   the right template.</li>
 </ol>
 <h3 id="confirm-files-are-being-picked-up">Confirm files are being picked up</h3>
 <ol>
@@ -1773,6 +1807,14 @@ turned into structured data.</p>
 <li><strong>Templates</strong> — map each folder or feed to the right import template; adjust the template if a
   source changes its format.</li>
 </ul>
+<h2 id="ai-ingestion-assistant-in-preview">AI Ingestion Assistant (<code>In Preview</code> 👁️)</h2>
+<p>A <strong>✨ Set up with AI</strong> assistant configures the <strong>connection and its rules</strong> from plain language ("connect
+to BBVA Peru's SFTP and ingest the daily files into BBVA PEN"). It <strong>asks only what it needs</strong>, <strong>offers
+insights</strong> (banks usually use an SSH key; port 22 is standard; one rule per file type), and <strong>runs
+validations</strong> — including a live <strong>connection test</strong> and a check that each parsing template exists —
+flagging anything that isn't ready. It can draft <strong>one rule per file type</strong> in a batch (from several folders
+or an attached list) and shows a <strong>results review</strong> before creating. Secrets always stay in Key Vault; the
+assistant drafts, you confirm.</p>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
 <li>Use a <strong>separate folder per feed</strong> so each maps to a single template and issues are easy to isolate.</li>
@@ -3035,6 +3077,20 @@ will define the criteria a match must meet — amount, tolerance, reference, dat
 currency — and organise rules into ordered <strong>chains</strong> that the engine applies in sequence. Good rules
 mean most items reconcile with no manual effort, leaving only genuine exceptions for the
 <a href="#04_reconciliation_matching">Matching</a> screen.</p>
+<h2 id="how-workflows-chains-rules-fit-together">How workflows, chains &amp; rules fit together</h2>
+<p>Three levels, from the outside in:
+- <strong>Workflow</strong> — a named container for a body of reconciliation logic (e.g. "HG.Cash Operative Balances").
+  It's created first, then holds chains, rules and run <strong>instances</strong>.
+- <strong>Chain</strong> — inside a workflow, an <strong>ordered set of rules that together form a flow</strong>. Each rule is one
+  <strong>hop</strong> between two movement types; run in order they trace a transaction end-to-end — for example
+  <code>PSP_PAYIN → INTERNAL_PAYIN → BANK_MOVEMENT</code> is <strong>two rules in one chain</strong>. One rule is the <strong>flow start</strong>
+  (entry point), and the chain's <strong>topology</strong> shows <strong>Valid</strong> when its rules connect into a coherent flow
+  (or <strong>degraded</strong> when they don't).
+- <strong>Rule</strong> — one hop: a <strong>from</strong> and <strong>to</strong> movement type, <strong>Single</strong> or <strong>Batch</strong>, optional <strong>filters</strong>,
+  one or more <strong>matches</strong> (what happens on each outcome), and the <strong>match criteria</strong> (field + operator) that
+  pair the two sides.</p>
+<p>So a <strong>single chain can capture an entire flow</strong> across several movement types — you don't need one chain
+per hop. A chain with one rule is just the simplest case.</p>
 <h2 id="key-concepts">Key concepts</h2>
 <ul>
 <li><strong>Reconciliation rule (criteria)</strong> — the conditions two items must satisfy to be matched. A rule
@@ -3044,8 +3100,11 @@ mean most items reconcile with no manual effort, leaving only genuine exceptions
   reference</em>, <em>value date within ± N days</em>, <em>same partner</em>, or <em>same currency</em>.</li>
 <li><strong>Filter</strong> — an optional condition that narrows which movements a rule even considers, before the
   match criteria are applied.</li>
-<li><strong>Rule chain</strong> — an ordered sequence of rules the engine runs top to bottom; the first rule that
-  matches wins. Every rule belongs to one chain.</li>
+<li><strong>Rule chain</strong> — an ordered set of rules that together form a <strong>flow</strong> (typically one rule per hop
+  between movement types); rules run in order and every rule belongs to one chain. Its <strong>topology</strong> is
+  <strong>Valid</strong> when the rules connect end-to-end, <strong>degraded</strong> when they don't.</li>
+<li><strong>Movement type</strong> — the kind of item on each side of a hop, e.g. <code>PSP_PAYIN</code>, <code>INTERNAL_PAYIN</code>,
+  <code>INTERNAL_PAYOUT</code>, <code>BANK_MOVEMENT</code>.</li>
 <li><strong>Flow start</strong> — marks the rule that begins a flow chain (see <a href="#04_reconciliation_movements_and_flows">Movements &amp; Flows</a>).</li>
 </ul>
 <h2 id="before-you-start">Before you start</h2>
@@ -3101,6 +3160,15 @@ Conciliación), which is <code>In Preview</code> 👁️. Basic Matching Rules t
 <li><strong>Conciliation type:</strong> Single (item-to-item) or Batch (group-to-group).</li>
 <li><strong>Rule outcomes:</strong> auto-reconcile, raise an alert, or pass to the next rule in the chain.</li>
 </ul>
+<h2 id="ai-reconciliation-assistant-in-preview">AI Reconciliation Assistant (<code>In Preview</code> 👁️)</h2>
+<p>A <strong>✨ Set up with AI</strong> assistant builds the whole <strong>workflow, chain and rules</strong> from a plain-language
+description ("reconcile PSP payins → internal payins → bank movements, matching on external/related IDs").
+It <strong>asks only what it needs</strong> (match field &amp; operator, Single or Batch, what to do on multiple matches),
+<strong>offers insights</strong> (which rule should be the entry point, put the strictest hop first), and <strong>runs
+validations to raise warnings</strong> — confirming the <strong>topology is valid and connected</strong>, there's a <strong>single
+entry point</strong>, and flagging risks such as matching on IDs alone with no amount/tolerance criterion. It shows
+a <strong>topology diagram</strong> and the drafted rules for review; you then create them Active or save them inactive to
+fine-tune. The assistant drafts; you confirm, and it only ever produces a valid configuration.</p>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
 <li>Start from the <strong>built-in workflows</strong> and their rules, then tighten criteria as real exceptions
@@ -3910,7 +3978,7 @@ in-preview reports describe how they work.</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Summary</strong></td>
+<td><strong>Overview</strong></td>
 <td>The reports <strong>Dashboard</strong> (gallery) and the <strong>Audit</strong> report. The <strong>Build Your Own</strong> button also lives on the gallery.</td>
 </tr>
 <tr>
@@ -3929,7 +3997,7 @@ in-preview reports describe how they work.</p>
 </table>
 <blockquote>
 <p><strong>Regulatory &amp; Compliance</strong> is <strong>not</strong> a separate menu section. The <strong>Audit</strong> report is under
-<strong>Summary</strong>; the prudential reports (capital, liquidity, credit quality) are In Preview and will
+the <strong>Overview</strong> group; the prudential reports (capital, liquidity, credit quality) are In Preview and will
 appear in the reports library as they ship — see <a href="#06_reporting_regulatory_compliance">Regulatory &amp; Compliance Reports</a>.</p>
 </blockquote>
 <h2 id="the-full-report-library-planned">The full report library (planned)</h2>
@@ -4192,10 +4260,16 @@ your cash position, reconciliation, and reporting.</p>
 <h3 id="add-an-account-manually">Add an account manually</h3>
 <ol>
 <li>Click <strong>+ Add Account</strong> and choose <strong>manual creation</strong>.</li>
-<li>Fill in the account name, IBAN, account number, BIC, institution, company, and currency (plus an
-   optional description).</li>
+<li>Fill in the account <strong>name</strong>, <strong>company</strong>, <strong>currency</strong>, <strong>country</strong>, <strong>connection type</strong>,
+   <strong>institution</strong>, <strong>account number</strong>, <strong>IBAN</strong>, <strong>BIC</strong>, an optional <strong>description</strong>, and whether
+   <strong>payments are enabled</strong> from it.</li>
 <li>Save. The account appears in the grid.</li>
 </ol>
+<blockquote>
+<p>You can also create accounts <strong>in bulk</strong> with the <strong>AI Master Data Assistant</strong> (<code>In Preview</code> 👁️) — from
+a pasted list or an uploaded file, attaching each to an existing company. See
+<a href="#10_admin_console_companies_and_groups">Companies &amp; Company Groups</a>.</p>
+</blockquote>
 <h3 id="set-an-accounts-balance-force-balance">Set an account's balance (force balance)</h3>
 <ol>
 <li>Select the account and choose <strong>Set Account Closing Balance</strong>.</li>
@@ -4234,6 +4308,7 @@ your cash position, reconciliation, and reporting.</p>
 <li><a href="#06_reporting_cash_position">Cash Position</a> — accounts consolidated into your position.</li>
 <li><a href="#06_reporting_exchange_rates">Exchange Rates</a> — used to convert balances to your display currency.</li>
 <li><a href="#02_integrations_overview">Integrations</a> — Open Banking and other feeds.</li>
+<li><a href="#10_admin_console_counterparties_and_ssis">Counterparties &amp; SSIs</a> — the <em>payee</em> side of transfers (<code>In Preview</code> 👁️).</li>
 <li><a href="#00_getting_started_03_core_concepts">Core Concepts</a> — company/account hierarchy and master
   data.</li>
 </ul></article>
@@ -4954,7 +5029,7 @@ risk views (Mark-to-Market, FX Exposure, Credit Risk) live under
 <article class="page" id="06_reporting_regulatory_compliance" data-title="Regulatory &amp; Compliance Reports"><div class="crumb">6 · Reporting</div><h1 id="regulatory-compliance-reports">Regulatory &amp; Compliance Reports</h1>
 <blockquote>
 <p><strong>Availability:</strong> <code>In Preview</code> 👁️
-<strong>Where to find it:</strong> there is <strong>no "Regulatory &amp; Compliance" section</strong> in the Reports menu today. The <strong>Audit</strong> report sits under <strong>Reporting › Summary</strong>; the prudential reports (capital, liquidity, credit quality) are In Preview and will appear in the reports library as they ship.
+<strong>Where to find it:</strong> there is <strong>no "Regulatory &amp; Compliance" section</strong> in the Reports menu today. The <strong>Audit</strong> report is in the Reporting menu (breadcrumb <strong>Reporting › Overview › Audit</strong>); the prudential reports (capital, liquidity, credit quality) are In Preview and will appear in the reports library as they ship.
 <strong>Who uses it:</strong> compliance officers, risk teams, controllers, auditors, regulators.
 <strong>Permissions required:</strong> to be confirmed per report; the Audit Trail will typically be available to Auditor/Admin roles. See <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</p>
 <p>👁️ <strong>In Preview.</strong> This screen is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.</p>
@@ -5010,8 +5085,9 @@ data you already hold rather than assembled by hand.</p>
 <p><em>The steps below describe the intended experience once this screen is live.</em></p>
 <h3 id="use-the-audit-trail">Use the Audit Trail</h3>
 <ol>
-<li>Open the <strong>Audit</strong> report under <strong>Reporting › Summary</strong> (see also <a href="#11_accounting_audit_trail">Audit Trail</a>).</li>
-<li>Filter by <strong>user</strong>, <strong>module</strong>, <strong>date range</strong>, and <strong>action</strong> to find the events you need.</li>
+<li>Open the <strong>Audit</strong> report from the Reporting menu (breadcrumb <strong>Reporting › Overview › Audit</strong>; see also <a href="#11_accounting_audit_trail">Audit Trail</a>).</li>
+<li>The log lists <strong>Timestamp, User, Action, Resource, Details,</strong> and <strong>IP Address</strong>. Sort by any
+   column, and use the column filters on <strong>User</strong>, <strong>Action</strong>, and <strong>Resource</strong> to find the events you need.</li>
 <li>Open an entry to see the full detail and drill through to the underlying record.</li>
 <li>Click <strong>Export</strong> to produce a <strong>PDF / Excel / CSV</strong> record for auditors.</li>
 </ol>
@@ -5124,24 +5200,19 @@ there. The AI path is optional — templates and manual drag-and-drop reach the 
 <article class="page" id="06_reporting_transactions" data-title="Transactions"><div class="crumb">6 · Reporting</div><h1 id="transactions">Transactions</h1>
 <blockquote>
 <p><strong>Availability:</strong> <code>Available</code> ✅
-<strong>Where to find it:</strong> Reporting › Operations › Transactions (flat and hierarchical views)
+<strong>Where to find it:</strong> Reporting › Operations › Transactions
 <strong>Who uses it:</strong> treasury operations, finance teams, accountants, auditors.
 <strong>Permissions required:</strong> <code>CashManagement.Transactions</code> · Read. See <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</p>
 </blockquote>
 <h2 id="overview">Overview</h2>
-<p>Transactions is the complete record of every bank movement across your accounts. You can work with it
-two ways: a <strong>flat grid</strong> of all movements with a rich detail panel, or a <strong>hierarchical drill-down</strong>
-that groups movements by your company structure so you can navigate from the whole group down to a
-single transaction. Both views share the same filtering, detail, and export.</p>
+<p>Transactions is the complete record of every bank movement across your accounts — a <strong>flat grid</strong> of
+all movements that you filter, sort, and export. For balances grouped by your company structure
+(Company Group › Company › Account), use the <a href="#01_home_home_dashboard">Home dashboard</a> or the
+<a href="#06_reporting_cash_position">Cash Position</a> report, which drill down to these same transactions.</p>
 <h2 id="key-concepts">Key concepts</h2>
 <ul>
-<li><strong>Flat view</strong> — one row per transaction across all accounts, filterable and sortable, with a detail
-  panel for the full record.</li>
-<li><strong>Hierarchical view</strong> — the same transactions grouped as <strong>Company Group › Company › Account ›
-  Transaction</strong>, expanding one level at a time.</li>
-<li><strong>Detail panel</strong> — the full record for a selected transaction, including <strong>remittance
-  information</strong>, agents (debtor/creditor and their banks), bank transaction codes, purpose code, and
-  the <strong>balance after</strong> the transaction.</li>
+<li><strong>Flat grid</strong> — one row per transaction across all accounts, which you filter and sort. Use the
+  <strong>Columns</strong> control to show or hide the fields you want.</li>
 <li><strong>Tag</strong> — the cash-flow category on a transaction (AR Collection, AP Payment, FX Settlement,
   Payroll, Tax, etc.) that drives how it appears in <a href="#06_reporting_cash_position">Cash Position</a> and reports.</li>
 <li><strong>Value date vs booking date</strong> — when a movement is effective for interest/settlement vs when it
@@ -5156,25 +5227,11 @@ single transaction. Both views share the same filtering, detail, and export.</p>
 <h2 id="how-to-use-it">How to use it</h2>
 <h3 id="browse-the-flat-grid">Browse the flat grid</h3>
 <ol>
-<li>Open <strong>Transactions</strong> (the flat view).</li>
-<li>The grid shows columns including <strong>Currency, Description, Institution, Amount, Booking Date, Value
-   Date, D/C</strong> (debit/credit), and <strong>debtor/creditor</strong> name.</li>
+<li>Open <strong>Transactions</strong>.</li>
+<li>The grid shows columns such as <strong>Currency, Description, Institution, Amount, Booking Date, Value
+   Date, D/C</strong> (debit/credit), and <strong>counterparty</strong>; use the <strong>Columns</strong> control to show or hide fields.</li>
 <li>Filter by <strong>date range, account, currency,</strong> and <strong>company</strong>, and sort by any column. Your view is
    remembered between visits.</li>
-</ol>
-<h3 id="open-a-transactions-full-detail">Open a transaction's full detail</h3>
-<ol>
-<li>Click a transaction row.</li>
-<li>The <strong>detail panel</strong> opens with every field — including <strong>remittance information</strong>, the agents
-   (debtor/creditor and their banks), bank transaction codes, purpose code, and the <strong>balance
-   after</strong> the transaction.</li>
-</ol>
-<h3 id="drill-down-hierarchically">Drill down hierarchically</h3>
-<ol>
-<li>Switch to the <strong>hierarchical</strong> view.</li>
-<li>Expand from <strong>Company Group → Company → Account → Transaction</strong>; each level loads its children
-   when you open it.</li>
-<li>At the transaction level you get the same detail panel as the flat view.</li>
 </ol>
 <h3 id="export">Export</h3>
 <ol>
@@ -5182,10 +5239,9 @@ single transaction. Both views share the same filtering, detail, and export.</p>
 </ol>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
-<li>Use the <strong>flat view</strong> when you're searching for specific movements (by counterparty or reference),
-  and the <strong>hierarchical view</strong> when you're reviewing activity by entity or account.</li>
-<li>Open the <strong>detail panel's remittance information</strong> to identify what a payment was for when the
-  description is terse — it often carries the invoice or reference the description omits.</li>
+<li>Use <strong>filters</strong> (date range, account, currency, company) to narrow to the movements you're after,
+  then sort by any column. For a view grouped by entity/account, use <a href="#06_reporting_cash_position">Cash Position</a>
+  instead.</li>
 <li>Accurate <strong>tags</strong> make everything downstream better; a well-tagged transaction slots straight into
   the right cash-flow line in <a href="#06_reporting_cash_position">Cash Position</a> and the forecast.</li>
 </ul>
@@ -7269,14 +7325,15 @@ reconciliation, reporting, payments — rolls up correctly.</p>
 <ol>
 <li>Go to <strong>Admin Console › Master Data › Company Groups</strong>.</li>
 <li>Click <strong>+ Add Company Group</strong>.</li>
-<li>Enter a <strong>name</strong> for the group.</li>
+<li>Enter a <strong>name</strong> and the group's <strong>view (consolidation) currency</strong>.</li>
 <li>Click <strong>Save</strong>. You can now assign companies to it.</li>
 </ol>
 <h3 id="create-a-company">Create a company</h3>
 <ol>
 <li>Go to <strong>Admin Console › Master Data › Companies</strong>.</li>
 <li>Click <strong>+ Add Company</strong>.</li>
-<li>Enter the company <strong>name</strong> and choose its <strong>company group</strong>.</li>
+<li>Enter the company <strong>name</strong> and <strong>official currency</strong> (both required). Optionally set its <strong>group</strong>,
+   <strong>country</strong>, <strong>description</strong>, <strong>address</strong>, and whether it's the <strong>default company</strong> (see below).</li>
 <li>Click <strong>Save</strong>.</li>
 </ol>
 <blockquote>
@@ -7309,10 +7366,20 @@ reconciliation, reporting, payments — rolls up correctly.</p>
 <ul>
 <li>Use <strong>Export</strong> on either grid to download the current list to Excel/CSV.</li>
 </ul>
+<h2 id="ai-master-data-assistant-in-preview">AI Master Data Assistant (<code>In Preview</code> 👁️)</h2>
+<p>A <strong>✨ Set up with AI</strong> assistant can build <strong>groups, companies and accounts — and their associations — from
+a single prompt</strong> ("a group <em>test</em> in USD, companies <em>abc</em> and <em>xyz</em> in MXN and EUR, and an account for
+each"). It <strong>asks clarifications</strong> (which company is the default, the account details it can't infer),
+<strong>raises validation problems</strong> (the required default company, invalid currency codes, duplicate names,
+unknown companies, invalid IBANs), and can create <strong>many records at once</strong> from a pasted list or an uploaded
+file — for example a batch of accounts across countries and currencies attached to existing companies. It
+shows the hierarchy as a <strong>tree to review</strong> before creating; the assistant drafts, you confirm.</p>
 <h2 id="configuration">Configuration</h2>
 <ul>
 <li><strong>Bank accounts</strong> attach to companies — manage them under Master Data › Bank Accounts (see
   <a href="#06_reporting_bank_accounts">Bank Accounts</a>).</li>
+<li><strong>Counterparties &amp; SSIs</strong> (<code>In Preview</code> 👁️) are the <em>payee</em> side of transfers — see
+  <a href="#10_admin_console_counterparties_and_ssis">Counterparties &amp; SSIs</a>.</li>
 <li>Company and company-group assignments feed <strong>user access scoping</strong> — the companies you create here
   are what you grant users access to in <a href="#10_admin_console_user_and_agent_management::configure-a-users-roles-access-and-approval-level">User Management</a>.</li>
 </ul>
@@ -7328,6 +7395,89 @@ reconciliation, reporting, payments — rolls up correctly.</p>
 <li><a href="#00_getting_started_03_core_concepts::company-structure">Core Concepts — Company structure</a>.</li>
 <li><a href="#10_admin_console_user_and_agent_management">User &amp; Agent Management</a> — scope users to these companies.</li>
 <li><a href="#06_reporting_bank_accounts">Bank Accounts</a> — accounts belong to companies.</li>
+</ul></article>
+<article class="page" id="10_admin_console_counterparties_and_ssis" data-title="Counterparties &amp; SSIs"><div class="crumb">10 · Admin Console</div><h1 id="counterparties-ssis">Counterparties &amp; SSIs</h1>
+<blockquote>
+<p><strong>Availability:</strong> <code>In Preview</code> 👁️
+<strong>Where to find it:</strong> Admin Console › Master Data › Counterparties &amp; SSIs
+<strong>Who uses it:</strong> treasury operations, accounts payable, administrators.
+<strong>Permissions required:</strong> <code>CoreData.Counterparties</code> and <code>CoreData.SSIs</code> — Read to view; Create/Edit to add; <strong>Approve</strong> to authorize banking changes (maker-checker). See <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</p>
+<p>👁️ <strong>In Preview.</strong> Counterparties &amp; SSIs is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>To pay someone by transfer you need two things: <strong>who</strong> you're paying and <strong>where/how</strong> the money settles.
+Counterparties &amp; SSIs manages both, so payments are raised against known, validated payees instead of
+free-typed account numbers.</p>
+<ul>
+<li><strong>Counterparty</strong> — the company you pay (supplier, customer, intragroup entity, or bank).</li>
+<li><strong>SSI (Standard Settlement Instruction)</strong> — a counterparty's banking coordinates for settlement, held
+  <strong>one set per currency</strong>.</li>
+</ul>
+<p>When you create a payment, you pick your payer company and account, then the payee <strong>counterparty</strong> and one
+of <strong>its</strong> SSIs — and the list only ever shows that counterparty's instructions, so you can't pay one party
+into another's account.</p>
+<h2 id="key-concepts">Key concepts</h2>
+<ul>
+<li><strong>One-to-many</strong> — a counterparty has <strong>many SSIs</strong>; each SSI belongs to <strong>exactly one</strong> counterparty. An
+  SSI (a beneficiary account) is never shared across counterparties, which makes misrouting impossible.</li>
+<li><strong>By currency</strong> — an SSI is defined per currency; one SSI per currency can be the <strong>default</strong>, which the
+  payment form pre-selects.</li>
+<li><strong>Maker-checker</strong> — a new or edited counterparty/SSI is created <strong>Pending approval</strong> and can't be used in
+  payments until a <strong>different</strong> user with <strong>Approve</strong> reviews it (you can't approve your own change).</li>
+<li><strong>Bank reference data</strong> — beneficiary and intermediary banks (BIC) are shared reference data that SSIs
+  point to.</li>
+</ul>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>Set up your <a href="#10_admin_console_companies_and_groups">Companies and Bank Accounts</a> first — the payer side of a transfer.</li>
+<li>Decide who <strong>creates</strong> counterparties/SSIs and who <strong>approves</strong> them (segregation of duties).</li>
+</ul>
+<h2 id="how-to-use-it">How to use it</h2>
+<h3 id="add-a-counterparty">Add a counterparty</h3>
+<ol>
+<li>Go to <strong>Admin Console › Master Data › Counterparties &amp; SSIs</strong> and choose <strong>+ New counterparty</strong>.</li>
+<li>Enter the <strong>name</strong>, <strong>type</strong> (Supplier / Customer / Intragroup / Bank), <strong>country</strong>, tax id and reference.</li>
+<li>Save. The counterparty is created <strong>Pending approval</strong> until a checker activates it.</li>
+</ol>
+<h3 id="add-a-settlement-instruction-ssi">Add a settlement instruction (SSI)</h3>
+<ol>
+<li>Open a counterparty and its <strong>Settlement Instructions</strong> tab, then <strong>+ Add SSI</strong>.</li>
+<li>Choose the <strong>currency</strong>, enter the <strong>beneficiary account</strong> (IBAN or account number), the <strong>beneficiary
+   bank</strong> (BIC), and an optional <strong>intermediary bank</strong>.</li>
+<li>Optionally set it as the <strong>default for that currency</strong>. Save — it goes <strong>Pending approval</strong>.</li>
+</ol>
+<h3 id="approve-a-change-maker-checker">Approve a change (maker-checker)</h3>
+<ol>
+<li>A user with <strong>Approve</strong> on SSIs opens the <strong>Approvals</strong> queue (or the pending record).</li>
+<li>For an edit, review the <strong>before/after</strong> of the banking fields, then <strong>Approve</strong> or <strong>Reject</strong> with a
+   reason. Only <strong>Active</strong> counterparties/SSIs can be selected in payments.</li>
+</ol>
+<h3 id="use-them-in-a-payment">Use them in a payment</h3>
+<ol>
+<li>In <strong>New payment</strong>, pick the <strong>payer company</strong> and <strong>account</strong> (your own accounts).</li>
+<li>Pick the <strong>payee counterparty</strong>, then its <strong>settlement instruction</strong> — the list is filtered to that
+   counterparty and to Active SSIs, with the default for the payment currency pre-selected.</li>
+</ol>
+<h2 id="ai-configuration-assistant-in-preview">AI Configuration Assistant (<code>In Preview</code> 👁️)</h2>
+<p>A <strong>✨ Create with AI</strong> assistant can set up counterparties and SSIs from a plain-language description
+("add Acme as a UK supplier with a GBP NatWest account, IBAN …"). It asks only for what's missing (e.g. the
+BIC), <strong>validates</strong> format and duplicates, and shows a <strong>draft</strong> to confirm before anything is created —
+after which the record enters the normal maker-checker flow. It can also create <strong>many at once</strong> from a
+pasted list or an uploaded file, flagging rows that need attention (missing account, duplicate, invalid
+BIC). The assistant drafts; a person always confirms, and it can't approve its own records.</p>
+<h2 id="tips-good-practices">Tips &amp; good practices</h2>
+<ul>
+<li>Keep one <strong>default SSI per currency</strong> so payment preparers rarely have to choose.</li>
+<li>Treat SSI edits as sensitive — the maker-checker review of the before/after is your safeguard against
+  redirected funds.</li>
+<li>Onboard payees in bulk with the assistant, then let a checker approve the batch.</li>
+</ul>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="#10_admin_console_companies_and_groups">Companies &amp; Company Groups</a> — the payer side of a transfer.</li>
+<li><a href="#06_reporting_bank_accounts">Bank Accounts</a> — your own accounts.</li>
+<li><a href="#05_payments_overview">Payments</a> — where counterparties and SSIs are consumed.</li>
+<li><a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a> — the Approve permission behind maker-checker.</li>
 </ul></article>
 <article class="page" id="10_admin_console_master_data" data-title="Master Data"><div class="crumb">10 · Admin Console</div><h1 id="master-data">Master Data</h1>
 <blockquote>
@@ -7375,6 +7525,11 @@ and how access to it is controlled.</p>
 <td><strong>Bank Accounts</strong></td>
 <td>Accounts held at institutions, in currencies, under a company.</td>
 <td><a href="#06_reporting_bank_accounts">Bank Accounts</a></td>
+</tr>
+<tr>
+<td><strong>Counterparties &amp; SSIs</strong> (<code>In Preview</code> 👁️)</td>
+<td>The parties you pay and their settlement instructions (by currency), for transfers.</td>
+<td><a href="#10_admin_console_counterparties_and_ssis">Counterparties &amp; SSIs</a></td>
 </tr>
 <tr>
 <td><strong>Currencies &amp; Exchange Rates</strong></td>
@@ -7443,6 +7598,12 @@ and can open its page only under the same check. <strong>Super Admin</strong> us
 <td><code>CoreData.BankAccounts</code></td>
 <td>Read</td>
 <td>Admin, Cash Manager</td>
+</tr>
+<tr>
+<td>Counterparties &amp; SSIs (<code>In Preview</code> 👁️)</td>
+<td><code>CoreData.Counterparties</code> · <code>CoreData.SSIs</code></td>
+<td>Read (Approve to authorize)</td>
+<td>Admin, AP, Treasury Controller</td>
 </tr>
 <tr>
 <td>Tags</td>
@@ -7674,7 +7835,11 @@ by any role.</p>
 <li><strong>Organization level (L1/L2/L3)</strong> — in the In-Preview console, the Country / Hub / Group hierarchy a
   role or user can be scoped to.</li>
 <li><strong>Group</strong> — a grouping of users for organization; it doesn't grant permissions itself.</li>
-<li><strong>Super Admin</strong> — a user who bypasses all permission checks.</li>
+<li><strong>Super Admin</strong> — a <strong>platform-tier</strong> superuser granted only from Treasury Hub's internal admin platform;
+  it's never shown or assignable inside a tenant, and bypasses all permission checks.</li>
+<li><strong>Payment segregation of duties</strong> — no single role may hold both <strong>payment creation</strong> and <strong>payment
+  approval</strong> (the same applies to postings and SSIs); the builder blocks the combination. Only Admin is
+  exempt.</li>
 </ul>
 <h2 id="the-role-catalog-in-preview">The role catalog (In Preview)</h2>
 <p>The In-Preview console ships a catalog of <strong>27 predefined roles</strong> you can use as-is, each shown with a
@@ -7692,6 +7857,11 @@ by any role.</p>
 <td><strong>Admin</strong></td>
 <td>Full access, including user management and configuration.</td>
 <td>Yes</td>
+</tr>
+<tr>
+<td><strong>Configurator</strong></td>
+<td>Create/edit structural configuration (companies, accounts, counterparties, integrations, workflows); no operational, approval or user-management access.</td>
+<td>No</td>
 </tr>
 <tr>
 <td><strong>User Manager</strong></td>
@@ -7753,6 +7923,13 @@ screen — open a user, add the role, and save. This part is <code>Available</co
 find and manage. A group is a label plus its membership; it doesn't grant permissions on its own —
 permissions always come from roles. In the console you add or edit a group, name it, and choose its
 members.</p>
+<h2 id="ai-role-assistant-in-preview">AI Role Assistant (<code>In Preview</code> 👁️)</h2>
+<p>Instead of ticking the matrix by hand, you can <strong>describe a role in plain language</strong> and an assistant drafts
+it — "a role called <em>Operator</em> that can only read transactions and balances" becomes a named custom role with
+exactly those boxes ticked, ready to review and save. It understands the permission model and the platform's
+<strong>segregation-of-duties</strong> rules: ask for a role that both <strong>creates and approves payments</strong> and it <strong>refuses,
+explains why</strong>, and offers to split it into a Preparer and an Approver role. The assistant drafts; you
+confirm, and it only ever produces a role the builder would accept.</p>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
 <li>Build roles around <strong>jobs to be done</strong>, not individuals — that keeps the matrix small and reusable.</li>
@@ -7773,6 +7950,7 @@ members.</p>
 <li>👁️ <strong>Role/permission-matrix editor</strong> — author custom roles across the module matrix.</li>
 <li>👁️ <strong>27-role catalog with "Can Approve?"</strong> and organization levels (L1/L2/L3 = Country/Hub/Group).</li>
 <li>👁️ <strong>Group management</strong> — organize users into teams in the console.</li>
+<li>👁️ <strong>AI Role Assistant</strong> — draft roles from plain language, with segregation-of-duties validation.</li>
 </ul></article>
 <article class="page" id="10_admin_console_tags" data-title="Tags"><div class="crumb">10 · Admin Console</div><h1 id="tags">Tags</h1>
 <blockquote>
@@ -8081,10 +8259,11 @@ in preview — see In Preview below.</p>
 </ol>
 <h3 id="filter-and-search-the-trail">Filter and search the trail</h3>
 <ol>
-<li>Use the timeline filters to narrow by <strong>phase</strong> (ingestion, reconciliation, journal entry,
-   approval, export).</li>
-<li>Filter by <strong>actor</strong> to see only a specific user's or AI agent's actions.</li>
-<li>Search for a specific reference or ID to jump straight to it.</li>
+<li>Use the column filters on <strong>User</strong>, <strong>Action</strong>, and <strong>Resource</strong> to narrow the log to the events
+   you need.</li>
+<li>Sort by <strong>Timestamp</strong> to work in chronological (or reverse-chronological) order.</li>
+<li>(Roadmap) Once the end-to-end ID chain lands, you'll also be able to trace by <strong>phase</strong> (ingestion,
+   reconciliation, journal entry, approval, export) — see <em>Trace a transaction across systems</em> above.</li>
 </ol>
 <h3 id="export-the-trail-for-an-external-audit">Export the trail for an external audit</h3>
 <ol>
@@ -9172,653 +9351,6 @@ confirm scope with your account manager.</p>
 <li>👁️ <strong>Sub-client branding</strong> — a further level of brand inheritance so a partner's own clients can be
   branded beneath the partner. In preview; confirm availability with Treasury Hub.</li>
 </ul></article>
-<article class="page" id="meta_AGENT_ROSTER" data-title="Canonical AI Agent Roster (source of truth)"><div class="crumb">Docs Meta</div><h1 id="canonical-ai-agent-roster-source-of-truth">Canonical AI Agent Roster (source of truth)</h1>
-<p>Confirmed from the platform's <strong>Switch Agent</strong> panel. Use these exact names and specialties in all
-docs. Do not invent agents or reassign specialties.</p>
-<table>
-<thead>
-<tr>
-<th>Agent</th>
-<th>Specialty</th>
-<th>Primary module(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Alex</strong></td>
-<td>Customer Success Agent</td>
-<td>Onboarding, Roadmap, orchestration (top-level)</td>
-</tr>
-<tr>
-<td><strong>Sophia</strong></td>
-<td>Reconciliation</td>
-<td>Reconciliation (matching suggestions)</td>
-</tr>
-<tr>
-<td><strong>Mateo</strong></td>
-<td>Confirmation Matcher</td>
-<td>Reconciliation (confirmations)</td>
-</tr>
-<tr>
-<td><strong>Lucas</strong></td>
-<td>Journal Entry Generator</td>
-<td>Accounting (journal entries / GL)</td>
-</tr>
-<tr>
-<td><strong>Olivia</strong></td>
-<td>Market Data &amp; Reporting</td>
-<td>Reporting, Mark-to-Market / market data</td>
-</tr>
-<tr>
-<td><strong>Nadia</strong></td>
-<td>FX Risk &amp; Hedging</td>
-<td>Risk Management › FX Risk</td>
-</tr>
-<tr>
-<td><strong>Isabella</strong></td>
-<td>Credit Risk Monitor</td>
-<td>Risk Management › Credit Risk</td>
-</tr>
-<tr>
-<td><strong>Noah</strong></td>
-<td>Cash Management</td>
-<td>Cash &amp; Liquidity (position/forecast)</td>
-</tr>
-<tr>
-<td><strong>Carter</strong></td>
-<td>Workflow Designer</td>
-<td>Workflows (builder)</td>
-</tr>
-<tr>
-<td><strong>Elena</strong></td>
-<td>Reporting Agent</td>
-<td>Reporting (reports &amp; scenarios)</td>
-</tr>
-<tr>
-<td><strong>Ethan</strong></td>
-<td>Payment Processor</td>
-<td>Payments</td>
-</tr>
-<tr>
-<td><strong>Ava</strong></td>
-<td>AML &amp; Compliance</td>
-<td>Payments / compliance screening</td>
-</tr>
-<tr>
-<td><strong>Liam</strong></td>
-<td>Interest Rate Risk</td>
-<td>Risk Management › Interest Rate Risk</td>
-</tr>
-<tr>
-<td><strong>Mia</strong></td>
-<td>ALM &amp; Liquidity</td>
-<td>Risk Management › ALM</td>
-</tr>
-<tr>
-<td><strong>Ona</strong></td>
-<td>Admin &amp; Personal Coach</td>
-<td>Admin Console, personal coaching</td>
-</tr>
-<tr>
-<td><strong>Oliver</strong></td>
-<td>Data Governance &amp; Lineage</td>
-<td>Data (Hub / Repository)</td>
-</tr>
-</tbody>
-</table>
-<p>Notes:
-- Users switch between agents from the <strong>Switch Agent</strong> panel; Alex is the default/orchestrator.
-- Availability: per <code>_drafts/feature-availability.md</code>, the conversational agents are
-  largely <strong>In Preview 👁️</strong>, except Sophia's AI-assisted <em>matching</em>, which is live in Reconciliation.</p></article>
-<article class="page" id="meta_LIVE_STATUS" data-title="Definitive Live Status — from platform menu screenshots"><div class="crumb">Docs Meta</div><h1 id="definitive-live-status-from-platform-menu-screenshots">Definitive Live Status — from platform menu screenshots</h1>
-<p><strong>Rule (confirmed by the team):</strong> menu items tagged <strong>Active</strong> are <strong>live</strong> (<code>Available</code>); items tagged
-<strong>Upgrade</strong> are <strong>In Preview</strong> (not yet GA — available on request). Top-level items with no tag (Home,
-Roadmap) are live.</p>
-<blockquote>
-<p><strong>Update:</strong> the Reconciliation (Conciliación) module is <strong>In Preview</strong> — the whole module, per the
-team. (An earlier note treated it as a live exception; that no longer applies.) The separate
-<strong>Reconciliation Status report</strong> under <em>Reporting › Operations</em> is a different item and remains
-<strong>Active/Available</strong>.</p>
-</blockquote>
-<p>Badges to use: <code>Available</code> ✅ (live) / <code>In Preview</code> 👁️ (not live). "Upgrade" is a plan label, noted
-separately as <strong>Plan: Premium (Upgrade)</strong> only where useful — it does NOT by itself mean live.</p>
-<h2 id="home-roadmap">Home / Roadmap</h2>
-<ul>
-<li>Home (Inicio) — <strong>LIVE</strong> ✅</li>
-<li>Roadmap — <strong>LIVE</strong> ✅ (interactive Alex agent still In Preview)</li>
-</ul>
-<h2 id="integrations-integraciones">Integrations (Integraciones)</h2>
-<ul>
-<li>Services (Servicios) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Status (Estado) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Webhooks — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>API Agent Integrator (Integrador de Agentes API) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Email Ingestion (Ingesta de Email) — Active → <strong>LIVE</strong> ✅</li>
-<li>SFTP Ingestion (Ingesta de SFTP) — Active → <strong>LIVE</strong> ✅</li>
-<li>Ingestion Activity (Actividad de ingesta) — Active → <strong>LIVE</strong> ✅</li>
-<li>(SWIFT, Open Banking, NetSuite are not their own menu items — they live under Services = Upgrade → In Preview. Open Banking account <em>linking</em> appears via Bank Accounts, which is Active.)</li>
-</ul>
-<h2 id="reconciliation-conciliacion-all-in-preview-per-the-team">Reconciliation (Conciliación) — ALL IN PREVIEW 👁️ (per the team)</h2>
-<ul>
-<li>Dashboard — 👁️ In Preview</li>
-<li>Reconciliation Status (Estado de Conciliación) — 👁️ In Preview</li>
-<li>1-to-1 Matching (Coincidencia 1-a-1) — 👁️ In Preview</li>
-<li>Reconciliation Approvals (Aprobaciones de Conciliación) — 👁️ In Preview <em>(menu item; the screen it opens is titled "Reconciliation Requests")</em></li>
-<li>Batch Matching (Coincidencia por Lotes) — 👁️ In Preview</li>
-<li>Publishing / ERP Posting (Publicación (Servicios)) — 👁️ In Preview</li>
-</ul>
-<h2 id="reports-reportes">Reports (Reportes)</h2>
-<p>Summary (Resumen):
-- Dashboard — Upgrade → <strong>In Preview</strong> 👁️
-- Audit (Auditoría) — Upgrade → <strong>In Preview</strong> 👁️
-Cash &amp; Liquidity (Caja y Liquidez):
-- Cash Position (Posición de Caja) — Upgrade → <strong>In Preview</strong> 👁️
-- Cash Forecast (Pronóstico de Caja) — Upgrade → <strong>In Preview</strong> 👁️
-- Actual vs Forecast (Real vs Pronóstico) — Upgrade → <strong>In Preview</strong> 👁️
-- Scenarios What-If (Escenarios Qué-Si) — Upgrade → <strong>In Preview</strong> 👁️
-Operations (Operaciones):
-- FX Contracts Blotter (Blotter de Contratos FX) — Upgrade → <strong>In Preview</strong> 👁️
-- Loans/Debt Blotter (Blotter de Préstamos) — Upgrade → <strong>In Preview</strong> 👁️
-- Investments Blotter (Blotter de Inversiones) — Upgrade → <strong>In Preview</strong> 👁️
-- Transactions (Transacciones) — Active → <strong>LIVE</strong> ✅
-- Bank Statements (Extractos Bancarios) — Active → <strong>LIVE</strong> ✅
-- Invoices (Facturas) — Active → <strong>LIVE</strong> ✅
-- Reconciliation Status (Estado de Conciliación) — Active → <strong>LIVE</strong> ✅
-- Amortization Schedule / Debt Repayment (Calendario de Amortización) — Upgrade → <strong>In Preview</strong> 👁️
-- Customer Aging (Antigüedad de Clientes) — Upgrade → <strong>In Preview</strong> 👁️
-- G/L Postings (Asientos G/L) — Active → <strong>LIVE</strong> ✅
-- G/L Entry Lifecycle (Ciclo de Vida Asientos G/L) — Upgrade → <strong>In Preview</strong> 👁️
-- Exchange Rates (Tipos de Cambio) — Active → <strong>LIVE</strong> ✅
-Risk Management (Gestión de Riesgos) — ALL Upgrade → <strong>In Preview</strong> 👁️:
-- Risk Cockpit, MtM Portfolio, FX Exposure, Credit Risk by Stage, IRRBB, ALM Gap</p>
-<h2 id="payments-pagos">Payments (Pagos)</h2>
-<ul>
-<li>Payment Blotter (Blotter de Pagos) — Active → <strong>LIVE</strong> ✅ (creating a payment is part of the blotter)</li>
-<li>Payment Lifecycle Blotter (Blotter Ciclo de Vida del Pago) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Payment Approvals (Aprobaciones de Pagos) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Net Settlements (Liquidaciones Netas) — Upgrade → <strong>In Preview</strong> 👁️</li>
-</ul>
-<h2 id="data-datos">Data (Datos)</h2>
-<ul>
-<li>Data Hub (Hub de Datos) — Active → <strong>LIVE</strong> ✅</li>
-<li>Data Repository (Repositorio de Datos) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Data Export (Exportación de Datos) — Active → <strong>LIVE</strong> ✅  ← (was wrongly flipped; it IS live)</li>
-<li>Financial Events (Eventos Financieros) — Active → <strong>LIVE</strong> ✅  ← (needs a new page)</li>
-</ul>
-<h2 id="workflows-all-upgrade-in-preview">Workflows — ALL Upgrade → In Preview 👁️</h2>
-<ul>
-<li>Workflow Dashboard (Tablero de Flujos) — <strong>In Preview</strong> 👁️</li>
-<li>Workflow Approvals (Aprobaciones de Workflows) — <strong>In Preview</strong> 👁️</li>
-<li>Workflow Builder (Configuración › Constructor de Workflows) — <strong>In Preview</strong> 👁️</li>
-</ul>
-<h2 id="alerts-alertas-all-upgrade-in-preview">Alerts (Alertas) — ALL Upgrade → In Preview 👁️</h2>
-<p>Alerts Dashboard + Integration/Data/Reconciliation/GL Posting/Payment/Reports/Prefunding/Workflow/Agent/Admin alerts — all <strong>In Preview</strong> 👁️.</p>
-<h2 id="agents-agentes-all-upgrade-in-preview">Agents (Agentes) — ALL Upgrade → In Preview 👁️</h2>
-<p>Agent Dashboard, Agent Builder, Agent Approvals, Agent Chats, Agent Logs, plus the in-app Assistant — all <strong>In Preview</strong> 👁️.</p>
-<h2 id="admin-console-consola-de-administracion">Admin Console (Consola de Administración)</h2>
-<p>Admin Console:
-- User &amp; Agent Management (Gestión de Usuarios y Agentes) — Upgrade → <strong>In Preview</strong> 👁️ (the <em>combined</em> screen)
-- Access Tokens (Tokens de Acceso) — Active → <strong>LIVE</strong> ✅
-Master Data (Datos Maestros):
-- Company Groups (Grupos de Empresas) — Active → <strong>LIVE</strong> ✅
-- Companies (Empresas) — Active → <strong>LIVE</strong> ✅
-- Bank Accounts (Cuentas Bancarias) — Active → <strong>LIVE</strong> ✅
-- Tags (Etiquetas) — Active → <strong>LIVE</strong> ✅
-- Custom Entities (Entidades Personalizadas) — Active → <strong>LIVE</strong> ✅  ← (not yet documented)
-- Matching Rules (Reglas de Coincidencia) — Active → <strong>LIVE</strong> ✅
-- User Management (Gestión de Usuarios) — Active → <strong>LIVE</strong> ✅
-- Static Data (Datos Estáticos) — Upgrade → <strong>In Preview</strong> 👁️</p>
-<h2 id="configuration-configuracion">Configuration (Configuración)</h2>
-<ul>
-<li>Parsing Templates (Plantillas de Parseo) — Active → <strong>LIVE</strong> ✅  (= file-import templating)</li>
-<li>Workflow Builder (Constructor de Workflows) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Reconciliation Flows (Flujos de Conciliación) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Reconciliation Criteria (Criterios de Conciliación) — Upgrade → <strong>In Preview</strong> 👁️</li>
-<li>Data Exports "Create Your Own" (Crea el Tuyo) — Upgrade → <strong>In Preview</strong> 👁️</li>
-</ul>
-<h2 id="notes-on-doc-mapping-reconciliation-nuance">Notes on doc mapping (reconciliation nuance)</h2>
-<ul>
-<li>The Reconciliation menu = Dashboard, Status, 1-to-1 Matching, Batch Matching, Approvals (screen
-  titled "Reconciliation Requests"), ERP Posting — <strong>all In Preview</strong>.</li>
-<li><strong>Not part of the (In-Preview) module:</strong> the <strong>Reconciliation Status report</strong> under <em>Reporting ›
-  Operations</em> is Active/Available, and basic <strong>Matching Rules</strong> under <em>Admin › Master Data › Matching
-  Rules</em> (Reglas de Coincidencia) are Active/Available.</li>
-<li><code>04-reconciliation/rules-and-criteria.md</code> — the advanced Reconciliation <strong>Criteria</strong> builder
-  (Configuración) is In Preview; it points to the live Admin Matching Rules for basic rules.</li>
-</ul></article>
-<article class="page" id="meta_OPEN_QUESTIONS" data-title="Open Questions — For the Treasury Hub Team to Confirm"><div class="crumb">Docs Meta</div><h1 id="open-questions-for-the-treasury-hub-team-to-confirm">Open Questions — For the Treasury Hub Team to Confirm</h1>
-<p>This documentation was drafted from the product-thinking slides (the intended product) and the
-webapp <code>docs/</code> (what's actually built). Where those disagreed, or where commercial packaging isn't
-derivable from the code, we made a best-effort call and flagged it here. <strong>Please review these
-before publishing the help center to clients.</strong> Items are grouped by theme; each notes the affected
-pages.</p>
-<h2 id="1-live-vs-roadmap-status-resolved-definitive-menu-map-applied">1. Live vs. roadmap status  ✅ RESOLVED (definitive menu map applied)</h2>
-<p>The team provided screenshots of <strong>every menu</strong>, giving the exact <strong>Active</strong> (live) / <strong>Upgrade</strong>
-(Active = live; Upgrade = In Preview) status of each item. This is captured in
-<a href="#meta_LIVE_STATUS"><code>_meta/LIVE-STATUS.md</code></a> and applied throughout; the client-facing summary is
-<a href="../_drafts/feature-availability.md"><code>_drafts/feature-availability.md</code></a>.</p>
-<p>Key outcomes / corrections made:
-- <strong>"Upgrade" = plan/tier label, not lifecycle.</strong> The Reconciliation module is Upgrade <strong>and</strong> In Preview (per the team).
-- <strong>Data Export is LIVE</strong> (Active) — corrected from an earlier wrong "In Preview".
-- <strong>Data Repository → In Preview</strong>; <strong>Financial Events → new live page added</strong>; <strong>Data Hub → live</strong>.
-- <strong>Reports:</strong> only Transactions, Bank Statements, Invoices, Reconciliation Status, G/L Postings,
-  Exchange Rates are live; all others (Cash Position, Cash Forecast, Actual vs Forecast, Scenarios,
-  FX/Debt/Investment blotters, Amortization, Customer Aging, G/L Lifecycle, all Risk) → In Preview.
-- <strong>Payments:</strong> Blotter + creating payments + Invoices live; <strong>Approvals, Lifecycle, Net Settlements → In Preview.</strong>
-- <strong>Workflows &amp; Alerts:</strong> entirely In Preview. <strong>Agents (incl. Assistant):</strong> entirely In Preview.
-- <strong>Admin:</strong> all Master Data live (incl. new <strong>Custom Entities</strong>); <strong>combined User &amp; Agent
-  Management</strong> and <strong>Static Data</strong> → In Preview.
-- <strong>Configuration:</strong> Parsing Templates live; Workflow Builder, Reconciliation Flows/Criteria, custom
-  export builder → In Preview.</p>
-<p>Confirmed since:
-- <strong>File import</strong> — CSV, Excel, and PDF (with OCR) are <strong>all live</strong> (via Parsing Templates). ✅
-- <strong>Open Banking</strong> account linking — left as documented for now, per the team. ✅</p>
-<p>Terminology note: not-live items are labeled <strong><code>In Preview</code> 👁️</strong> throughout (they're visible in the
-platform as previews, shown "Upgrade"), replacing the earlier "Coming soon".</p>
-<h2 id="2-ai-agents-naming-availability-resolved-roster-confirmed">2. AI agents — naming &amp; availability  ✅ RESOLVED (roster confirmed)</h2>
-<p>The canonical 16-agent roster was confirmed from the platform's <strong>Switch Agent</strong> panel and applied
-throughout the docs (see <a href="#meta_AGENT_ROSTER"><code>_meta/AGENT-ROSTER.md</code></a> and
-<a href="#09_agents_overview"><code>09-agents/overview.md</code></a>): <strong>Alex</strong> (Customer Success), <strong>Sophia</strong>
-(Reconciliation), <strong>Mateo</strong> (Confirmation Matcher), <strong>Lucas</strong> (Journal Entry Generator), <strong>Olivia</strong>
-(Market Data &amp; Reporting), <strong>Nadia</strong> (FX Risk &amp; Hedging), <strong>Isabella</strong> (Credit Risk Monitor),
-<strong>Noah</strong> (Cash Management), <strong>Carter</strong> (Workflow Designer), <strong>Elena</strong> (Reporting Agent), <strong>Ethan</strong>
-(Payment Processor), <strong>Ava</strong> (AML &amp; Compliance), <strong>Liam</strong> (Interest Rate Risk), <strong>Mia</strong> (ALM &amp;
-Liquidity), <strong>Ona</strong> (Admin &amp; Personal Coach), <strong>Oliver</strong> (Data Governance &amp; Lineage). The risk pages
-were corrected (they had wrongly used Sophia as the risk advisor).</p>
-<p>Remaining to confirm:
-- <strong>Availability per agent</strong> — we mark all conversational agents <code>In Preview</code> 👁️ except Sophia's
-  AI-assisted <em>matching</em> (part of the In-Preview Reconciliation module) and the in-app Assistant. Confirm
-  which, if any, other agents are already live.
-- Should <strong>Agent Approvals</strong> be its own page? (currently a section in <code>09-agents/agent-builder.md</code>)</p>
-<h2 id="3-alerts">3. Alerts</h2>
-<ul>
-<li>The webapp shows <strong>only reconciliation alerts</strong> wired to a real (read-only) backend — no
-  Resolve/Dismiss/bulk actions, no RACI routing, no cross-module coverage yet. We wrote those as
-  "In Preview." Confirm current state and whether any write actions have shipped. (<code>08-alerts/alerts.md</code>)</li>
-</ul>
-<h2 id="4-payments-corridors">4. Payments &amp; corridors</h2>
-<ul>
-<li>Which payment <strong>rails/corridors</strong> are actually live? Slides mention SWIFT, SEPA, PIX, SPEI,
-  NIBSS, etc.; we named only SWIFT/SEPA concretely. (<code>05-payments/overview.md</code>)</li>
-<li><strong>Packaging</strong> of SWIFT/SEPA dispatch, sanctions/AML screening, and NetSuite AP integration
-  (marked <code>Add-on</code>). Confirm.</li>
-</ul>
-<h2 id="5-integrations">5. Integrations</h2>
-<ul>
-<li><strong>File import:</strong> CSV confirmed live; Excel/PDF+OCR marked confirm-scope. (<code>02-integrations/file-import.md</code>)</li>
-<li><strong>Open Banking:</strong> grounded on <strong>Nordigen</strong> (per the build); other aggregators from the slides
-  (Plaid/Yapily/Belvo/Salt Edge) were dropped. Confirm. (<code>02-integrations/open-banking.md</code>)</li>
-<li><strong>SWIFT:</strong> marked enterprise add-on; broader message types noted as enterprise scope. Confirm.</li>
-<li><strong>ERP adapters</strong> beyond NetSuite (SAP/Oracle/Dynamics/Sage) — described as "varies by plan." (<code>11-accounting/erp-integration.md</code>)</li>
-</ul>
-<h2 id="6-menu-paths-navigation">6. Menu paths / navigation</h2>
-<p>Several screens have no dedicated sidebar item in the source; confirm where they actually live:
-- SWIFT / Open Banking / NetSuite → placed under <strong>Integrations › Services</strong>.
-- <strong>G/L Postings</strong> → documented under Reporting/Transactions (route <code>/transactions-posting</code>).
-- <strong>Journal Entries</strong> (roadmap) → placed under Reporting › Accounting.
-- <strong>Admin Console</strong> grouping — nav doc vs. UC-031 differ on whether Users/Roles sit under
-  "User &amp; Agent Management" or under "Master Data." We followed the nav doc.</p>
-<h2 id="7-permissions">7. Permissions</h2>
-<p>The permission model documents these modules: <code>CashManagement.*</code>, <code>CoreData.*</code>,
-<code>AdminAndSettings.UserManagement</code>. Several areas have <strong>no documented permission module</strong> yet — we
-used soft phrasing ("… access — see Roles &amp; Permissions"). Please assign/confirm modules + minimum
-levels for: <strong>Integrations, Data, Workflows, Alerts, Reporting/Risk Management</strong>, and clarify
-whether <strong>Roles</strong> has its own module (<code>AdminAndSettings.Roles</code> appears in UC-031 vs.
-<code>AdminAndSettings.UserManagement</code> elsewhere). Also confirm the client-facing labels for the
-<code>Reconciliation.*</code> namespace. (all sections)</p>
-<h2 id="8-roadmap-target-quarters">8. Roadmap target quarters</h2>
-<p>Used from the roadmap: <strong>Workflow Builder ~Q2 2026</strong>, <strong>Scenarios/What-If ~Q4 2026</strong>, <strong>Risk
-Management ~Q3 2026</strong> (applied to all five risk dimensions — confirm per-dimension dates). (<code>07-workflows/*</code>, <code>06-reporting/scenarios-what-if.md</code>, <code>06-reporting/risk-management/*</code>)</p>
-<h2 id="9-platform-security">9. Platform / security</h2>
-<ul>
-<li><strong>Compliance certifications</strong> (ISO 27001, SOC 2 Type II, GDPR, Ghana DPA): which are formally
-  <em>certified</em> vs <em>aligned</em>, with current validity? (<code>12-platform/security-and-compliance.md</code>)</li>
-<li><strong>SSO/MFA</strong> (Azure AD / Okta / Google) — stated as supported per the roles source but not in the
-  availability matrix. Confirm. (<code>10-admin-console/user-and-agent-management.md</code>, <code>12-platform/security-and-compliance.md</code>)</li>
-<li><strong>Supported languages</strong> — brief/nav say EN/ES, but webapp UC-028 lists EN/FR/DE/ES. We
-  documented <strong>EN/ES</strong>. Confirm the shipped set. (<code>12-platform/preferences.md</code>, <code>00-getting-started/02-navigation-and-workspace.md</code>)</li>
-<li><strong>Deployment models</strong> (SaaS/on-prem/hybrid), SLAs, RPO/RTO — presented as illustrative/"defined
-  in contract." Confirm. (<code>12-platform/deployment-availability-and-continuity.md</code>)</li>
-</ul>
-<h2 id="10-reconciliation-specifics">10. Reconciliation specifics</h2>
-<ul>
-<li>Are the <strong>treasury-specific workflows</strong> (FX / Loan / Investment) actually seeded, or only the 3
-  base workflows (PSP &amp; Bank, Invoice, Bank-to-Bank) + cross-border? We described the former as
-  "supported patterns." (<code>04-reconciliation/workflows.md</code>)</li>
-<li>Final <strong>menu naming</strong> for the recon sub-nav (internal names like "Recon Request" map to both AI
-  suggestions and approval requests). (<code>04-reconciliation/*</code>)</li>
-</ul>
-<h2 id="11-white-label-data-exports">11. White-label &amp; data exports</h2>
-<ul>
-<li><strong>White-label self-service portal &amp; Brand Kit API</strong> — enabled per engagement? (<code>12-platform/white-label-and-partners.md</code>)</li>
-<li><strong>Data Exports</strong> commercial model (tiers, rate limits, External-ID/Internal-ID, ~7-day trial) —
-  slides note pricing is "pending"; presented as indicative. (<code>03-data/data-exports.md</code>)</li>
-</ul>
-<hr />
-<h3 id="notes-on-how-illustrative-data-was-handled">Notes on how illustrative data was handled</h3>
-<p>All demo figures (KPIs, run counts, balances) and demo entities (Global Banking Group, BBVA,
-Stripe, etc.) were treated as <strong>examples</strong>, not documented as the client's own data.</p></article>
-<article class="page" id="meta_SCREENSHOT_FINDINGS" data-title="Screenshot Accuracy Findings (from live captures)"><div class="crumb">Docs Meta</div><h1 id="screenshot-accuracy-findings-from-live-captures">Screenshot Accuracy Findings (from live captures)</h1>
-<p>Verified each live screenshot against its doc. The <strong>"Demo Tenant data" banner appears on most
-screens because captures were taken in the TH Demo tenant — it is NOT a live/preview signal.</strong> Live
-vs preview is the menu's Active/Upgrade tag.</p>
-<p>Below: exact UI facts per screen and the doc change required.</p>
-<h2 id="accurate-no-change-trivial">✅ Accurate (no change / trivial)</h2>
-<ul>
-<li><strong>home-cash-position-dashboard</strong> — Tabs: Cash Position (active), Cockpit/Performance/Setup (Upgrade → In Preview). Controls: From/To dates, <strong>Convert To</strong> (display currency), Currencies, Companies, Banks, Expand/Collapse/Select All, + Add Account, Upload Statement, Export, Print. Grid = balances by date columns, grouped Currency→Group→Country→Company→Bank→Account. (Doc is fine; ensure "Convert To" is named.)</li>
-<li><strong>reconciliation-dashboard</strong> — Matches: Time Saved / Cost Savings / Auto Reconciliations / Avg Speed tiles; Fully/Partially/Unreconciled + Payins/Payouts Approved/Rejected tiles; Daily Reconciliation Volume area chart; Reconciliation by Type donut; Today/This Week/This Month.</li>
-<li><strong>reconciliation-movements-flows</strong> — The <strong>Flows</strong> view at <em>Reporting › Operations › Reconciliation Status</em>. Columns: Flow ID, Workflow, Type, Partner, Amount, Tx Status, Recon Status, Progress (x/y), Date. Tabs All/Completed/Partial/Pending; filters All Types/Partners/Workflows; expandable flow chain.</li>
-</ul>
-<h2 id="corrections-required">✳️ Corrections required</h2>
-<h3 id="04-reconciliationmatchingmd-1-to-1-is-manual">04-reconciliation/matching.md — 1-to-1 is MANUAL</h3>
-<p>Real screen "Matching 1-to-1": tabs <strong>Payin PSP / Payout PSP / Payin Bank / Payout Bank</strong>; two panels (Internal vs PSP) each with search, checkbox rows (ID, Partner, Amount, Status, Date); center <strong>Match</strong> + <strong>Clear selection</strong>; <strong>Matched Pairs (History)</strong> with <strong>Undo</strong>. No AI/confidence here. → Rewrite as manual select-both-sides-and-Match; move AI-suggestion content to approvals.md.</p>
-<h3 id="04-reconciliationapprovalsmd-this-is-where-ai-lives-reconciliation-requests">04-reconciliation/approvals.md — this is where AI lives ("Reconciliation Requests")</h3>
-<p>Real screen "Reconciliation Requests": tiles High/Medium/Low <strong>Confidence</strong> + Total Suggestions; tabs All/High/Medium/Low; <strong>Execute All</strong>; <strong>Columns</strong>. Grid: select checkbox, <strong>Confidence (High 98…)</strong>, Left ID, Left Partner, Amount, →, Right ID, Right Partner, Amount, <strong>Reasons</strong> (chips: ID match, Exact amount, Same partner, Same currency, Date proximity), per-row <strong>Approve/Reject</strong>. → Enrich to match; this is the suggested-match approval queue (single + batch via Execute All / checkboxes).</p>
-<h3 id="04-reconciliationerp-postingmd-preparing-is-live-erp-push-is-add-on">04-reconciliation/erp-posting.md — preparing is live; ERP push is add-on</h3>
-<p>Real screen "ERP Posting": tiles Pending Batches / Pending Amount / Posted; tabs All/Pending/Posted; grouped by match type &amp; date (e.g. "PSP Payin vs Internal"), rows erp-001 … with target ERP (e.g. FLEXCUBE), amount, Pending/Posted; <strong>Select all/Deselect all</strong>; <strong>Confirm &amp; Post (n) · amount</strong>. Toast: <em>"ERP posting is available in the full version."</em> → Keep Available for preparing/reviewing/confirming batches, but note the actual push to the ERP requires the ERP-integration add-on (In Preview).</p>
-<h3 id="10-admin-consolematching-rulesmd-single-dialog-not-a-3-step-wizard">10-admin-console/matching-rules.md — single dialog, not a 3-step wizard</h3>
-<p>Live screen <em>Admin Console › Master Data › Matching Rules</em>: tabs <strong>Active / Inactive / All</strong>; <strong>+ New Rule</strong>, <strong>Print</strong>, <strong>Columns</strong>; grid cols Description, <strong>Implementation</strong> (PostingRule / TagAssignmentRule), …, Credit, Debit, <strong>O.(rder)</strong>, Active; row actions <strong>edit / duplicate / delete</strong>. <strong>New Matching Rule</strong> dialog fields: <strong>Implementation</strong><em> (PostingRule / TagAssignmentRule), </em><em>Description</em><strong>, </strong>Company Group<strong>, </strong>Company<strong>, </strong>Institution<strong>, </strong>Account<strong>, </strong>Currency<strong>, </strong>Order<strong>, </strong>From Date<strong>, </strong>To Date<strong> → </strong>Create / Cancel**. → Rewrite: it's a single dialog; rule types are PostingRule (creates G/L postings) and TagAssignmentRule (auto-assigns tags), scoped by company/account/currency/date. Remove "scope→details→assignments wizard" and any "bulk upload" claim (not shown).</p>
-<h3 id="10-admin-consoleuser-and-agent-managementmd-and-roles-and-groupsmd-the-rich-console-is-in-preview">10-admin-console/user-and-agent-management.md AND roles-and-groups.md — the rich console is IN PREVIEW</h3>
-<p>The captured <code>admin-users-grid</code> and <code>admin-role-permission-matrix</code> are BOTH the <strong>User &amp; Agent Management</strong> console = <strong>Upgrade / In Preview</strong> (body: "Contact Customer Support to roll out for your Organization"). Its tabs: <strong>Users &amp; Levels, Roles &amp; Permissions, Agent Permissions, Integrations, Audit Trail &amp; Compliance, Data Management, Rules &amp; Thresholds, Security (SSO/MFA)</strong>. It shows <strong>Organization Levels L1/L2/L3 (Country/Hub/Group)</strong>, a <strong>27-role</strong> list with a <strong>"Can Approve?"</strong> column (Admin, User Manager, Cash Manager, View Only, Book Keeper, Payment Preparer, Payment Approver, +20), and a user grid with <strong>+ Invite User / Export</strong>.
-→ Reframe both pages: the <strong>basic User Management is live</strong> under <em>Admin Console › Master Data › User Management</em>; the <strong>rich User &amp; Agent Management console</strong> (org levels, 27 roles, permission matrix, agent permissions, SSO/MFA, rules &amp; thresholds) is <strong>In Preview</strong>. Mark the advanced console content <code>In Preview</code> 👁️; keep the two screenshots illustrating that In-Preview console. Do NOT present the L1/L2/L3 + 27-role model as the live per-module RBAC (the live model is the 5-level one in Getting Started › Roles &amp; Permissions).</p>
-<h3 id="05-paymentspayment-blottermd-tabs-columns">05-payments/payment-blotter.md — tabs &amp; columns</h3>
-<p>Real "Payments" blotter: tabs <strong>All / Pending / Approved / Sent / Rejected / Error</strong> + <strong>Failed Imports</strong>; <strong>+ New Payment</strong>, <strong>Print</strong>, <strong>Columns</strong>. Columns: <strong>Batch Reference, Account, Company, Institution, Amount, # (count), Status (PendingApproval/Error/Sent…), Origin (e.g. NetSuite), Approval (x/y), Created</strong>; row <strong>⋯</strong>. → Fix tabs (remove Sending/Exceptions) and columns (no "corridor"; use the real columns). Note Approve/Reject is not on the blotter (Approvals screen is In Preview).</p>
-<h3 id="05-paymentscreating-a-paymentmd-single-dialog-not-multi-step">05-payments/creating-a-payment.md — single dialog, not multi-step</h3>
-<p>Real <strong>New Payment</strong> dialog fields: <strong>Debtor Company<em>, Debtor Account<em>, Creditor Company</em>, Creditor Account<em>, Amount</em>, Currency*, Reference</em></strong> (no spaces), <strong>Remittance Information</strong> (optional), <strong>Execution Date</strong> → <strong>Create / Cancel</strong>. → Rewrite as a single dialog; remove "multi-step form / step progress indicator". Fix screenshot alt text too.</p>
-<h3 id="11-accountinggl-postingsmd-and-06-reportinggl-postings-reportmd-columns">11-accounting/gl-postings.md AND 06-reporting/gl-postings-report.md — columns</h3>
-<p>Live <em>Reporting › Operations › G/L Posting</em> grid columns: <strong>Booking Date, Company, Account, Debit Acct, Credit Acct, Amount, Matching Rule, Remittance Info, Status</strong>; <strong>Print</strong>, <strong>Columns</strong>; read-only, sortable. → Align columns; note postings are generated by a <strong>PostingRule</strong> (the "Matching Rule" column links to it). No add/edit here.</p>
-<h3 id="03-datadata-hubmd-upload-repository-cards-no-oliver-panel-shown">03-data/data-hub.md — upload + repository cards; no Oliver panel shown</h3>
-<p>Live "Data Hub" (subtitle "Upload, explore and query your treasury data"): a <strong>drop-files</strong> zone (CSV / XLSX / PDF / TXT, <strong>Browse files</strong>) + a <strong>DATA REPOSITORY</strong> section of category cards (Bank Statements, FX Confirmations, Loan Agreements, Invoices, …, each with file count + last date); <strong>Print</strong>. No visible Oliver chat panel. → Adjust: file upload lives here (drag-drop CSV/XLSX/PDF/TXT); repository category cards; soften/remove the "Oliver panel on the right" (treat Oliver as roadmap/In Preview). Fix screenshot alt.</p>
-<h3 id="02-integrationsingestion-activitymd-tiles-tabs-columns">02-integrations/ingestion-activity.md — tiles, tabs, columns</h3>
-<p>Live "Ingestion Activity": <strong>Last 30 days</strong> tiles <strong>Processed / Duplicates / Failed / Rows with errors</strong>; tabs <strong>Uploads / Activity</strong>; filters All sources, All statuses, Search by file name, date range; grid cols <strong>File, Source, Rule → Template, Rows, Status, Date</strong>; <strong>Print, Columns</strong>. → Align.</p></article>
-<article class="page" id="meta_SCREENSHOTS_NEEDED" data-title="Screenshots — Capture Checklist"><div class="crumb">Docs Meta</div><h1 id="screenshots-capture-checklist">Screenshots — Capture Checklist</h1>
-<p>✅ <strong>All 26 referenced screenshots are captured and in <code>assets/screenshots/</code></strong> (15 live + 9 in-preview
-+ 2 nav-chrome). <code>python _meta/check_screenshots.py</code> reports 26/26, no missing/orphans. Kept below as
-a reference for what each shows / for recapturing later.</p>
-<h2 id="how-to-capture-please-read-once">How to capture (please read once)</h2>
-<ul>
-<li><strong>Use the demo tenant</strong> (e.g. "TH Demo" / GBG) so no real client data is shown.</li>
-<li><strong>Switch the platform to English</strong> (top-bar language toggle) so screenshots match these English docs.</li>
-<li><strong>Pick one theme and stay consistent</strong> — light theme is recommended for legibility in the docs.</li>
-<li><strong>Consistent width</strong> — capture the browser around ~1400px wide; crop to the relevant panel/screen,
-  not the whole OS window.</li>
-<li><strong>Format &amp; name</strong> — save as <strong>PNG</strong> with the exact filename shown. Lowercase, hyphenated.</li>
-<li><strong>In-Preview screens</strong> are visible in the platform as previews (shown "Upgrade") — you can still
-  capture them; they'll show preview/sample data. Prioritize the <strong>Live</strong> ones if you want a
-  truthful current-state help center first.</li>
-</ul>
-<p>After adding files, run <code>python _meta/build_preview.py</code> and refresh <code>preview.html</code>. Check progress
-any time with <code>python _meta/check_screenshots.py</code>.</p>
-<h2 id="live-screens-capture-these-first-15">Live screens (capture these first — 15)</h2>
-<table>
-<thead>
-<tr>
-<th>Filename (<code>assets/screenshots/…</code>)</th>
-<th>Page</th>
-<th>What to capture</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>home-cash-position-dashboard.png</code></td>
-<td>Home</td>
-<td>Cash position dashboard: balance widgets, grouping tabs (currency/company/country), timeline chart.</td>
-</tr>
-<tr>
-<td><code>ingestion-activity-monitor.png</code></td>
-<td>Integrations › Ingestion Activity</td>
-<td>The activity list: source, time, and status for recent ingestion events.</td>
-</tr>
-<tr>
-<td><code>data-hub-overview.png</code></td>
-<td>Data › Data Hub</td>
-<td>The drop-files upload zone (CSV/XLSX/PDF/TXT) and the Data Repository category cards (Bank Statements, FX Confirmations, Loan Agreements, Invoices…).</td>
-</tr>
-<tr>
-<td><code>reconciliation-dashboard.png</code></td>
-<td>Reconciliation › Dashboard</td>
-<td>KPI tiles, savings band, daily volume chart, and the by-type donut.</td>
-</tr>
-<tr>
-<td><code>reconciliation-movements-flows.png</code></td>
-<td>Reconciliation › Status</td>
-<td>Movements list beside the Flows view, with one flow chain expanded.</td>
-</tr>
-<tr>
-<td><code>reconciliation-matching.png</code></td>
-<td>Reconciliation › 1-to-1 Matching</td>
-<td>Manual 1-to-1 matching: Internal and PSP/Bank panels with checkbox rows (ID, Partner, Amount, Status, Date), the center Match / Clear selection controls, and the Matched Pairs (History) list. No AI suggestions on this screen.</td>
-</tr>
-<tr>
-<td><code>reconciliation-approvals.png</code></td>
-<td>Reconciliation › Reconciliation Approvals (screen titled "Reconciliation Requests")</td>
-<td>Confidence tiles (High/Medium/Low) + Total; All/High/Medium/Low tabs and Execute All; grid of suggested matches with confidence scores, left/right items, Reasons chips, and per-row Approve/Reject.</td>
-</tr>
-<tr>
-<td><code>reconciliation-erp-posting.png</code></td>
-<td>Reconciliation › ERP Posting</td>
-<td>The posting screen: Pending Batches / Pending Amount / Posted tiles, batches grouped by match type &amp; date, Select all, and the Confirm &amp; Post footer.</td>
-</tr>
-<tr>
-<td><code>payment-blotter.png</code></td>
-<td>Payments › Payment Blotter</td>
-<td>Status tabs, the payment list, and a payment's detail panel.</td>
-</tr>
-<tr>
-<td><code>create-payment-form.png</code></td>
-<td>Payments › Payment Blotter → <strong>+ New Payment</strong></td>
-<td>The single <strong>New Payment</strong> dialog (Debtor/Creditor Company+Account, Amount, Currency, Reference, Remittance, Execution Date). Open it from the blotter.</td>
-</tr>
-<tr>
-<td><code>invoices-grid.png</code></td>
-<td><strong>Reporting › Operations › Invoices</strong></td>
-<td>The invoices blotter: columns (Invoice #, Payee, Status, Amount, Uploaded, Invoice/Due Date) and the New Invoice / Print / Columns actions.</td>
-</tr>
-<tr>
-<td><code>gl-postings-grid.png</code></td>
-<td>Reporting › Operations › G/L Posting</td>
-<td>Postings grid: Booking Date, Company, Account, Debit Acct, Credit Acct, Amount, Matching Rule, Remittance Info, Status.</td>
-</tr>
-<tr>
-<td><code>admin-users-grid.png</code></td>
-<td>Admin › User &amp; Agent Management console (<strong>In Preview</strong>)</td>
-<td>The In-Preview console user grid: roles, status columns, <strong>+ Invite User</strong> and <strong>Export</strong>. Capture as a preview (shown "Upgrade").</td>
-</tr>
-<tr>
-<td><code>admin-role-permission-matrix.png</code></td>
-<td>Admin › User &amp; Agent Management console › Roles &amp; Permissions (<strong>In Preview</strong>)</td>
-<td>The In-Preview console's Roles &amp; Permissions view (org levels L1/L2/L3, the 27-role catalog with the "Can Approve?" column). Capture as a preview.</td>
-</tr>
-<tr>
-<td><code>admin-matching-rules.png</code></td>
-<td>Admin › Master Data › Matching Rules</td>
-<td>The Matching Rules grid (Active/Inactive/All tabs; Description, Implementation, Credit, Debit, Order, Active columns) with the <strong>New Matching Rule</strong> dialog open.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="in-preview-screens-optional-capture-as-previews-9">In-Preview screens (optional / capture as previews — 9)</h2>
-<table>
-<thead>
-<tr>
-<th>Filename (<code>assets/screenshots/…</code>)</th>
-<th>Page</th>
-<th>What to capture</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>integrations-services-catalog.png</code></td>
-<td>Integrations › Services</td>
-<td>Connector catalog grouped by category with Active/Upgrade badges.</td>
-</tr>
-<tr>
-<td><code>integration-status-board.png</code></td>
-<td>Integrations › Status</td>
-<td>Status board: each connection with status, last sync, uptime, Logs link.</td>
-</tr>
-<tr>
-<td><code>data-repository-grid.png</code></td>
-<td>Data › Data Repository</td>
-<td>The repository grid with category tabs and per-row download.</td>
-</tr>
-<tr>
-<td><code>reconciliation-rules-criteria.png</code></td>
-<td>Configuration › Reconciliation Criteria</td>
-<td>Rules table with a rule's match criteria expanded.</td>
-</tr>
-<tr>
-<td><code>reconciliation-workflows.png</code></td>
-<td>Configuration › Reconciliation Flows</td>
-<td>Workflows list with a workflow's step chain shown.</td>
-</tr>
-<tr>
-<td><code>payment-approvals.png</code></td>
-<td>Payments › Approvals</td>
-<td>Pending inbox on the left, payment detail + approval chain on the right.</td>
-</tr>
-<tr>
-<td><code>cash-position-drilldown.png</code></td>
-<td>Reports › Cash Position</td>
-<td>Currency hierarchy expanded down to account inflows/outflows by tag.</td>
-</tr>
-<tr>
-<td><code>reporting-gallery.png</code></td>
-<td>Reports (overview)</td>
-<td>Reports gallery: featured cards, categorized library, scheduled-reports strip.</td>
-</tr>
-<tr>
-<td><code>audit-trail-timeline.png</code></td>
-<td>Reporting › Overview › Audit Trail</td>
-<td>The audit log grid: Timestamp, User, Action, Resource, Details, IP Address (with column filters).</td>
-</tr>
-</tbody>
-</table>
-<h2 id="optional-navigation-chrome-nice-to-have">Optional — navigation chrome (nice to have)</h2>
-<table>
-<thead>
-<tr>
-<th>Filename</th>
-<th>Page</th>
-<th>What to capture</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>sidebar-main-menu.png</code></td>
-<td>Getting Started › Navigation</td>
-<td>Full left sidebar expanded (you already shared a partial).</td>
-</tr>
-<tr>
-<td><code>top-bar.png</code></td>
-<td>Getting Started › Navigation</td>
-<td>Top bar: search, Open Assistant, language, theme, tenant, avatar.</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>✅ The two nav-chrome shots are now placed in <code>00-getting-started/02-navigation-and-workspace.md</code>.</p>
-</blockquote></article>
-<article class="page" id="meta_TEMPLATE" data-title="&lt;Module / Screen Name&gt;"><div class="crumb">Docs Meta</div><!--
-  DOC TEMPLATE — every module/screen page in this help center follows this shape.
-  Delete this comment block and the guidance in (parentheses) when writing a real page.
-  Writing rules:
-   - Audience = platform users (treasurers, finance teams, admins). NOT developers.
-   - Plain, second-person English ("You can…", "To do X…"). No marketing fluff, no jargon without defining it.
-   - Every "how to" is numbered, action-first, and matches the real UI menu path.
-   - Mark availability honestly with the badges from ../_drafts/feature-availability.md.
-   - Cross-link with relative links to other docs. Reference screenshots as ![alt](../assets/screenshots/<name>.png) and add the name to _meta/SCREENSHOTS-NEEDED.md.
--->
-
-<h1 id="_1"><Module / Screen Name></h1>
-<blockquote>
-<p><strong>Availability:</strong> <code>Available</code> ✅ | <code>In Preview</code> 👁️ (Qx 20XX)
-<strong>Plan:</strong> (only if premium) Premium (Upgrade)
-<strong>Where to find it:</strong> <Menu › Sub-menu › Screen>
-<strong>Who uses it:</strong> <personas / roles>
-<strong>Permissions required:</strong> <permission module + level, e.g. CashManagement.Payments · CreateEdit></p>
-</blockquote>
-<h2 id="overview">Overview</h2>
-<p>(2–4 sentences in plain language: what this does and the problem it solves for the user.)</p>
-<h2 id="key-concepts">Key concepts</h2>
-<p>(Bullet definitions of any terms a user must understand to use this screen. Skip if none.)
-- <strong>Term</strong> — definition.</p>
-<h2 id="before-you-start">Before you start</h2>
-<p>(Prerequisites: data that must exist, integrations/config required, permission level needed. Skip if none.)</p>
-<h2 id="how-to-use-it">How to use it</h2>
-<h3 id="_2"><Task the user wants to accomplish></h3>
-<ol>
-<li>Step (start with the verb; name the exact button/field/menu).</li>
-<li>Step.</li>
-<li>Result the user should see.</li>
-</ol>
-<p>(Repeat one <code>###</code> block per distinct task.)</p>
-<h2 id="configuration">Configuration</h2>
-<p>(Settings, options, rules the user or admin sets up here. Skip if the screen is view-only.)</p>
-<h2 id="tips-good-practices">Tips &amp; good practices</h2>
-<ul>
-<li>Short, practical guidance.</li>
-</ul>
-<h2 id="related">Related</h2>
-<ul>
-<li><a href="../section/other-doc.md">Other doc</a> — why it's related.</li>
-</ul>
-<h2 id="in-preview">In Preview</h2>
-<p>(Roadmap items specific to this module, with quarter if known. Omit the section if nothing is planned.)
-- 👁️ <strong>Feature</strong> (Qx 20XX) — one line.</p></article>
-<article class="page" id="meta_WRITING_BRIEF" data-title="Writing Brief — Treasury Hub Client Functional Documentation"><div class="crumb">Docs Meta</div><h1 id="writing-brief-treasury-hub-client-functional-documentation">Writing Brief — Treasury Hub Client Functional Documentation</h1>
-<p>You are writing <strong>client-facing functional documentation</strong> for Treasury Hub, a multi-tenant
-Treasury Management System (TMS). Readers are <strong>platform users</strong> — treasurers, finance teams, and
-administrators — NOT developers. The goal is to help them <strong>understand, use, and configure</strong> the
-platform.</p>
-<h2 id="non-negotiable-rules">Non-negotiable rules</h2>
-<ol>
-<li><strong>Audience = users.</strong> Plain, second-person English ("You can…", "To do X…, click…"). No code,
-   no API/internals, no architecture. No marketing fluff or hype. Define any term before using it.</li>
-<li><strong>Follow the template</strong> in <code>_meta/TEMPLATE.md</code> exactly (Overview, Key concepts, Before you start,
-   How to use it, Configuration, Tips &amp; good practices, Related, In Preview). Omit a section only
-   if it genuinely doesn't apply.</li>
-<li><strong>Every page starts with the badge block:</strong>
-   <code>&gt; **Availability:** &lt;badge&gt;</code> · <code>&gt; **Where to find it:** &lt;menu path&gt;</code> · <code>&gt; **Who uses it:** …</code>
-   · <code>&gt; **Permissions required:** …</code> (see below).</li>
-<li><strong>Availability badges</strong> — use only <code>Available</code> ✅ or <code>In Preview</code> 👁️ (Qx 20XX). Definitions:
-   <code>Available</code> = live and generally available; <code>In Preview</code> = <strong>being tested, available on request</strong>
-   (users contact Treasury Hub to enable it). Get the correct status from
-   <code>_drafts/feature-availability.md</code>. For an <code>In Preview</code> page, add a short banner right
-   after the badge block: <code>&gt; 👁️ **In Preview.** This &lt;screen/module&gt; is in testing and available on
-   request — contact Treasury Hub to enable it. This page describes how it works.</code> <strong>Plan/tier is a
-   separate dimension:</strong> if a module is premium, add a <code>&gt; **Plan:** Premium (Upgrade)</code> line — "Upgrade"
-   means a premium plan and says nothing about readiness (e.g. Reconciliation is Premium <em>and</em>
-   Available). Do NOT use the old <code>Add-on 🔓</code> badge, and do NOT tie "Upgrade" to whether something is live.</li>
-<li><strong>"How to use it" must be concrete, numbered steps</strong> that name real UI elements (buttons, tabs,
-   menu paths). The live navigation menu and screen names are in
-   <code>00-getting-started/02-navigation-and-workspace.md</code> and the source slides.</li>
-<li><strong>Cross-link</strong> with relative Markdown links to related docs (see the exemplar). Link to Getting
-   Started pages for shared concepts rather than re-explaining them.</li>
-<li><strong>Screenshots:</strong> where a screenshot would help, insert <code>![descriptive alt](../assets/screenshots/&lt;kebab-name&gt;.png)</code>
-   and append a line to <code>_meta/SCREENSHOTS-NEEDED.md</code> describing exactly what screen to capture. Do
-   not invent image files.</li>
-<li><strong>Ground everything in the provided source files.</strong> The product-thinking slides describe the
-   intended UI and demo screens; the webapp <code>docs/</code> describe what's actually built. Where the demo
-   slides show illustrative numbers (KPIs, counterparties like BBVA/Stripe), treat them as
-   <em>examples</em> — describe the capability, don't hard-code demo figures as if they're the user's data.</li>
-<li><strong>Tone &amp; length:</strong> clear and complete but not padded. A screen page is typically 60–150 lines.</li>
-<li><strong>Do not edit files outside your assigned output folder.</strong> Only create the files you're told to.</li>
-</ol>
-<h2 id="reference-examples-read-these-first">Reference examples (read these first)</h2>
-<ul>
-<li><code>_meta/TEMPLATE.md</code> — the required structure.</li>
-<li><code>04-reconciliation/overview.md</code> — the exemplar page: tone, badge block, cross-links, depth.</li>
-<li><code>00-getting-started/03-core-concepts.md</code> — shared concepts to link to, not repeat.</li>
-<li><code>_drafts/feature-availability.md</code> — authoritative live/roadmap status.</li>
-</ul>
-<h2 id="permissions-reference-for-the-badge-block">Permissions reference (for the badge block)</h2>
-<p>Permission modules &amp; 5 levels (NoAccess/Read/CreateEdit/Delete/Admin) are documented in
-<code>00-getting-started/04-roles-and-permissions.md</code>. Cite the relevant permission module + a sensible
-minimum level. If unknown, write "See Roles &amp; Permissions."</p>
-<h2 id="when-you-finish">When you finish</h2>
-<p>Return a short summary: the files you created (paths), any screenshots you flagged, and any place
-where the source material was ambiguous or where live-vs-roadmap status needs the Treasury Hub
-team to confirm.</p></article>
     </div>
   </main>
 </div>
@@ -9886,6 +9418,14 @@ team to confirm.</p></article>
         if(match){secHas=true;anyVisible=true;}
       });
       sec.querySelector(".nav-head").classList.toggle("hide",!secHas);
+    });
+    // hide a sub-heading when none of its group's items are visible
+    document.querySelectorAll(".nav-subhead").forEach(function(sh){
+      var g=sh.getAttribute("data-subhead"), any=false;
+      document.querySelectorAll('.nav-item[data-group="'+g+'"]').forEach(function(it){
+        if(!it.classList.contains("hide")) any=true;
+      });
+      sh.classList.toggle("hide",!any);
     });
     nores.style.display=anyVisible?"none":"block";
   });

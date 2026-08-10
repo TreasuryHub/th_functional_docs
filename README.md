@@ -54,7 +54,7 @@ a plan/pricing tier only and says nothing about readiness.
 - **Cash & Liquidity:** [Cash Position](06-reporting/cash-position.md) · [Cash Forecast](06-reporting/cash-forecast.md) · [Actual vs Forecast](06-reporting/actual-vs-forecast.md) · [Scenarios (What-If)](06-reporting/scenarios-what-if.md)
 - **Operations:** [Operations Blotters](06-reporting/operations-blotters.md) · [Bank Accounts](06-reporting/bank-accounts.md) · [Bank Statements](06-reporting/bank-statements.md) · [Transactions](06-reporting/transactions.md) · [Exchange Rates](06-reporting/exchange-rates.md) · [G/L Postings](06-reporting/gl-postings-report.md)
 - **Risk Management:** [Overview](06-reporting/risk-management/overview.md) · [Risk Cockpit](06-reporting/risk-management/risk-cockpit.md) · [Mark-to-Market](06-reporting/risk-management/mark-to-market.md) · [FX Risk](06-reporting/risk-management/fx-risk.md) · [Credit Risk](06-reporting/risk-management/credit-risk.md) · [Interest Rate Risk](06-reporting/risk-management/interest-rate-risk.md) · [ALM](06-reporting/risk-management/alm.md)
-- **Regulatory & Compliance** *(In Preview — not a menu section; Audit sits under Summary):* [Reports](06-reporting/regulatory-compliance.md)
+- **Regulatory & Compliance** *(In Preview — not a menu section; Audit is under the Reporting › Overview group):* [Reports](06-reporting/regulatory-compliance.md)
 
 ### 7. Workflows
 - [Overview](07-workflows/overview.md) · [Workflow Builder](07-workflows/workflow-builder.md) · [Dashboard & Approvals](07-workflows/workflow-dashboard-and-approvals.md)
@@ -68,7 +68,7 @@ a plan/pricing tier only and says nothing about readiness.
 ### 10. Admin Console
 - [Overview](10-admin-console/overview.md) · [User & Agent Management](10-admin-console/user-and-agent-management.md) · [Roles & Groups](10-admin-console/roles-and-groups.md)
 - [Companies & Groups](10-admin-console/companies-and-groups.md) · [Tags](10-admin-console/tags.md) · [Matching Rules](10-admin-console/matching-rules.md)
-- [Access Tokens](10-admin-console/access-tokens.md) · [Master Data](10-admin-console/master-data.md)
+- [Access Tokens](10-admin-console/access-tokens.md) · [Master Data](10-admin-console/master-data.md) · [Counterparties & SSIs](10-admin-console/counterparties-and-ssis.md)
 
 ### 11. Accounting (G/L & ERP)
 - [G/L Postings](11-accounting/gl-postings.md) · [CoA & Rules Engine](11-accounting/coa-rules-engine.md) · [Journal Entries](11-accounting/journal-entries.md)
@@ -77,15 +77,3 @@ a plan/pricing tier only and says nothing about readiness.
 ### 12. Platform
 - [Security & Compliance](12-platform/security-and-compliance.md) · [Preferences (theme & language)](12-platform/preferences.md)
 - [White-label & Partners](12-platform/white-label-and-partners.md) · [Deployment, Availability & Continuity](12-platform/deployment-availability-and-continuity.md)
-
----
-
-## For documentation editors
-- `_meta/TEMPLATE.md` — the page template every doc follows.
-- `_meta/WRITING-BRIEF.md` — the style/authoring rules.
-- `_meta/SCREENSHOTS-NEEDED.md` — list of screenshots to capture from the live platform.
-- `_meta/OPEN-QUESTIONS.md` — **consolidated list of items for the Treasury Hub team to confirm**
-  (live-vs-in-preview statuses, agent naming, menu paths, permissions, packaging). Review this first.
-- Availability statuses across the docs are marked **to be confirmed** by the Treasury Hub team —
-  review before publishing to clients. *(The consolidated Feature Availability page is parked in
-  `_drafts/feature-availability.md` for now.)*

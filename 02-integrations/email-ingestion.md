@@ -15,8 +15,11 @@ with each message, and matching emails are processed automatically.
 - **Monitored mailbox** — the email address Treasury Hub watches for incoming messages.
 - **Attachment** — a file on an email (e.g. a statement or report) that Treasury Hub extracts and
   processes, typically using a [file-import template](file-import.md).
-- **Rule** — conditions that decide how a message is handled — for example, which sender or subject
-  triggers ingestion, and which template to apply to the attachment.
+- **Reception rule** — how a matching email is handled: the **account** movements land in, the **country**,
+  the **parsing template** applied to the attachment, an optional **fallback currency**, the **match
+  criteria** that identify the email, and what happens **after processing**.
+- **Match criteria** — tests on **Sender**, **Subject**, or **Attachment** (file name); each is matched by
+  **Any** (ignore), **Exact** (full text), or **Regex**. A message must meet **all** defined criteria.
 - **Automated sending** — Treasury Hub can also send emails automatically as part of a flow (for
   example, notifications or outputs), not only read them.
 
@@ -36,10 +39,34 @@ with each message, and matching emails are processed automatically.
    ingest, and the **template** to apply to any attachment.
 4. Save. Matching emails are now processed automatically as they arrive.
 
+### Configure a reception rule
+A rule has three parts:
+1. **Source & routing** — a **name**, the **account** where the ingested movements are added (optional),
+   the **country**, the **parsing template** to apply, and a **fallback currency** (used only when the file
+   or template has no explicit currency).
+2. **Match criteria** — one or more rows of **Field** (Sender / Subject / Attachment) · **Match** (Any /
+   Exact / Regex) · **Value**. The rule fires only when **all** criteria match — for example *Sender regex
+   `.*@adyen\.com`* and *Attachment regex `settlement_.*\.csv`*.
+3. **After processing** — what to do with the email once ingested: **Leave**, **Mark as read**, **Move to a
+   folder**, or **Delete**.
+
+Rules are **active as soon as they're saved** and apply to **incoming** emails (past emails aren't
+reprocessed); any rule can be enabled or disabled later. Run **one rule per provider** so each sender maps
+to the right template.
+
 ### Review what was ingested
 1. Incoming emails that match your rules are processed and their data is created in Treasury Hub.
 2. Check [Ingestion Activity](ingestion-activity.md) to see each processed email, its status, and any
    errors.
+
+## AI Ingestion Assistant (`In Preview` 👁️)
+A **✨ Set up with AI** assistant can create reception rules from plain language — "ingest our Adyen, Stripe
+and dLocal settlement files into the Collections USD account". It **asks only for what it can't infer**
+(which template per provider, how to match, what to do after processing), suggests matching by sender domain
+and file pattern, and **flags problems** such as a provider with no parsing template yet. Because providers
+are separate rules, it's **batch-first**: name several providers (or attach a list) and it drafts **one rule
+per provider**, showing a **results review** — ready vs. needs-attention — before anything is created. The
+assistant drafts; you confirm.
 
 ## Configuration
 - **Rules** — set as many as you need to route different senders or message types to the right

@@ -31,7 +31,7 @@ Levels are set **per module**. The main permission modules are:
 | Permission module | Governs |
 |---|---|
 | `CashManagement.CashPosition` | Dashboard, bank statements, data export. |
-| `CashManagement.Transactions` | Transactions (flat & hierarchical). |
+| `CashManagement.Transactions` | Transactions (the flat grid). |
 | `CashManagement.TransactionsPosting` | G/L postings. |
 | `CashManagement.Payments` | Payment management. |
 | `CashManagement.Invoices` | Invoice management. |

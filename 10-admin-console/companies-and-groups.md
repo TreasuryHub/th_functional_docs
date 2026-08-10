@@ -30,13 +30,14 @@ reconciliation, reporting, payments — rolls up correctly.
 ### Create a company group
 1. Go to **Admin Console › Master Data › Company Groups**.
 2. Click **+ Add Company Group**.
-3. Enter a **name** for the group.
+3. Enter a **name** and the group's **view (consolidation) currency**.
 4. Click **Save**. You can now assign companies to it.
 
 ### Create a company
 1. Go to **Admin Console › Master Data › Companies**.
 2. Click **+ Add Company**.
-3. Enter the company **name** and choose its **company group**.
+3. Enter the company **name** and **official currency** (both required). Optionally set its **group**,
+   **country**, **description**, **address**, and whether it's the **default company** (see below).
 4. Click **Save**.
 
 > **First company must be the default.** If no default company exists yet, Treasury Hub prompts
@@ -63,9 +64,20 @@ reconciliation, reporting, payments — rolls up correctly.
 ### Export
 - Use **Export** on either grid to download the current list to Excel/CSV.
 
+## AI Master Data Assistant (`In Preview` 👁️)
+A **✨ Set up with AI** assistant can build **groups, companies and accounts — and their associations — from
+a single prompt** ("a group *test* in USD, companies *abc* and *xyz* in MXN and EUR, and an account for
+each"). It **asks clarifications** (which company is the default, the account details it can't infer),
+**raises validation problems** (the required default company, invalid currency codes, duplicate names,
+unknown companies, invalid IBANs), and can create **many records at once** from a pasted list or an uploaded
+file — for example a batch of accounts across countries and currencies attached to existing companies. It
+shows the hierarchy as a **tree to review** before creating; the assistant drafts, you confirm.
+
 ## Configuration
 - **Bank accounts** attach to companies — manage them under Master Data › Bank Accounts (see
   [Bank Accounts](../06-reporting/bank-accounts.md)).
+- **Counterparties & SSIs** (`In Preview` 👁️) are the *payee* side of transfers — see
+  [Counterparties & SSIs](counterparties-and-ssis.md).
 - Company and company-group assignments feed **user access scoping** — the companies you create here
   are what you grant users access to in [User Management](user-and-agent-management.md#configure-a-users-roles-access-and-approval-level).
 

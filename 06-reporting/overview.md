@@ -62,13 +62,13 @@ The Reports menu is organized into four groups:
 
 | Sub-area | What's in it |
 |---|---|
-| **Summary** | The reports **Dashboard** (gallery) and the **Audit** report. The **Build Your Own** button also lives on the gallery. |
+| **Overview** | The reports **Dashboard** (gallery) and the **Audit** report. The **Build Your Own** button also lives on the gallery. |
 | **Cash & Liquidity** | [Cash Position](cash-position.md), [Cash Forecast](cash-forecast.md), [Actual vs Forecast](actual-vs-forecast.md), and [Scenarios (What-If)](scenarios-what-if.md). |
 | **Operations** | The [operations blotters](operations-blotters.md) — Transactions, Bank Accounts, FX/Debt/Investment contracts, Reconciliation Status, and more — plus [G/L Postings](gl-postings-report.md). |
 | **Risk Management** | Mark-to-Market, FX Exposure, Credit Risk, IRRBB, ALM and other risk dashboards. See [Risk Management](risk-management/). |
 
 > **Regulatory & Compliance** is **not** a separate menu section. The **Audit** report is under
-> **Summary**; the prudential reports (capital, liquidity, credit quality) are In Preview and will
+> the **Overview** group; the prudential reports (capital, liquidity, credit quality) are In Preview and will
 > appear in the reports library as they ship — see [Regulatory & Compliance Reports](regulatory-compliance.md).
 
 ## The full report library (planned)

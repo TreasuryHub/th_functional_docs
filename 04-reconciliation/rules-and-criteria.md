@@ -20,6 +20,22 @@ currency — and organise rules into ordered **chains** that the engine applies 
 mean most items reconcile with no manual effort, leaving only genuine exceptions for the
 [Matching](matching.md) screen.
 
+## How workflows, chains & rules fit together
+Three levels, from the outside in:
+- **Workflow** — a named container for a body of reconciliation logic (e.g. "HG.Cash Operative Balances").
+  It's created first, then holds chains, rules and run **instances**.
+- **Chain** — inside a workflow, an **ordered set of rules that together form a flow**. Each rule is one
+  **hop** between two movement types; run in order they trace a transaction end-to-end — for example
+  `PSP_PAYIN → INTERNAL_PAYIN → BANK_MOVEMENT` is **two rules in one chain**. One rule is the **flow start**
+  (entry point), and the chain's **topology** shows **Valid** when its rules connect into a coherent flow
+  (or **degraded** when they don't).
+- **Rule** — one hop: a **from** and **to** movement type, **Single** or **Batch**, optional **filters**,
+  one or more **matches** (what happens on each outcome), and the **match criteria** (field + operator) that
+  pair the two sides.
+
+So a **single chain can capture an entire flow** across several movement types — you don't need one chain
+per hop. A chain with one rule is just the simplest case.
+
 ## Key concepts
 - **Reconciliation rule (criteria)** — the conditions two items must satisfy to be matched. A rule
   states which item types it links (a **From** type and a **To** type), whether it matches items one
@@ -28,8 +44,11 @@ mean most items reconcile with no manual effort, leaving only genuine exceptions
   reference*, *value date within ± N days*, *same partner*, or *same currency*.
 - **Filter** — an optional condition that narrows which movements a rule even considers, before the
   match criteria are applied.
-- **Rule chain** — an ordered sequence of rules the engine runs top to bottom; the first rule that
-  matches wins. Every rule belongs to one chain.
+- **Rule chain** — an ordered set of rules that together form a **flow** (typically one rule per hop
+  between movement types); rules run in order and every rule belongs to one chain. Its **topology** is
+  **Valid** when the rules connect end-to-end, **degraded** when they don't.
+- **Movement type** — the kind of item on each side of a hop, e.g. `PSP_PAYIN`, `INTERNAL_PAYIN`,
+  `INTERNAL_PAYOUT`, `BANK_MOVEMENT`.
 - **Flow start** — marks the rule that begins a flow chain (see [Movements & Flows](movements-and-flows.md)).
 
 ## Before you start
@@ -81,6 +100,16 @@ Conciliación), which is `In Preview` 👁️. Basic Matching Rules that are liv
 - **Common criteria fields:** amount, reference, value date, partner, currency, personal/tax ID.
 - **Conciliation type:** Single (item-to-item) or Batch (group-to-group).
 - **Rule outcomes:** auto-reconcile, raise an alert, or pass to the next rule in the chain.
+
+## AI Reconciliation Assistant (`In Preview` 👁️)
+A **✨ Set up with AI** assistant builds the whole **workflow, chain and rules** from a plain-language
+description ("reconcile PSP payins → internal payins → bank movements, matching on external/related IDs").
+It **asks only what it needs** (match field & operator, Single or Batch, what to do on multiple matches),
+**offers insights** (which rule should be the entry point, put the strictest hop first), and **runs
+validations to raise warnings** — confirming the **topology is valid and connected**, there's a **single
+entry point**, and flagging risks such as matching on IDs alone with no amount/tolerance criterion. It shows
+a **topology diagram** and the drafted rules for review; you then create them Active or save them inactive to
+fine-tune. The assistant drafts; you confirm, and it only ever produces a valid configuration.
 
 ## Tips & good practices
 - Start from the **built-in workflows** and their rules, then tighten criteria as real exceptions
