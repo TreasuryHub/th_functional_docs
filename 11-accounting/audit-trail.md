@@ -82,10 +82,11 @@ Every event will capture a consistent set of fields:
    movement or the final ERP entry.
 
 ### Filter and search the trail
-1. Use the timeline filters to narrow by **phase** (ingestion, reconciliation, journal entry,
-   approval, export).
-2. Filter by **actor** to see only a specific user's or AI agent's actions.
-3. Search for a specific reference or ID to jump straight to it.
+1. Use the column filters on **User**, **Action**, and **Resource** to narrow the log to the events
+   you need.
+2. Sort by **Timestamp** to work in chronological (or reverse-chronological) order.
+3. (Roadmap) Once the end-to-end ID chain lands, you'll also be able to trace by **phase** (ingestion,
+   reconciliation, journal entry, approval, export) — see *Trace a transaction across systems* above.
 
 ### Export the trail for an external audit
 1. Open the trail for the record or period you need.

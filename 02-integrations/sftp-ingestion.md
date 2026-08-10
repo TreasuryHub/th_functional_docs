@@ -13,11 +13,20 @@ by hand. Files are read on a schedule, mapped with your [import templates](file-
 turned into structured data.
 
 ## Key concepts
+SFTP ingestion is a **two-step** setup — a **connection**, then **assignment rules** on it.
 - **SFTP** — SSH File Transfer Protocol, a secure way to exchange files between systems.
-- **Monitored location / folder** — the SFTP path Treasury Hub watches for new files.
-- **Template** — the saved [file-import mapping](file-import.md) applied to each file so its columns
-  land in the right Treasury Hub fields.
-- **Schedule** — how often Treasury Hub checks the location for new files.
+- **Connection** — the server Treasury Hub reaches: **host**, **port**, **username**, **authentication**
+  (Password or SSH key), and a **secret** stored in **Key Vault** (the connection keeps only a reference).
+  A connection can be **tested** before you rely on it.
+- **Assignment rule** — for a connection, which files to pick up and how to process them: an optional
+  **account**, a **parsing template**, **match criteria** (folder + file name), and an **after-processing**
+  action.
+- **Match criteria** — tests on **Folder** and **File** name, each matched by **Exact** or **Regex**; a
+  file must meet all of them.
+- **After processing** — what happens to the file on the server once ingested: **Leave**, **Move to a
+  folder**, or **Delete**.
+- **Template** — the saved [file-import mapping](file-import.md) applied to each file so its columns land in
+  the right Treasury Hub fields.
 
 ## Before you start
 - Have the SFTP connection details (host, credentials or key, and folder path) ready.
@@ -27,11 +36,19 @@ turned into structured data.
   [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## How to use it
-### Set up an SFTP source
-1. Open **Integrations › SFTP Ingestion**.
-2. Add a connection with the **host, credentials, and folder** to monitor.
-3. Choose the **template** to apply to files from that folder and set the **schedule** for checking.
-4. Save. New files dropped in the folder are imported automatically on schedule.
+### Step 1 — Create a connection
+1. Open **Integrations › SFTP Ingestion** and add a connection.
+2. Enter the **name**, **host**, **port** (22 by default), **username**, and **authentication** (Password or
+   SSH key). The **secret** is stored in **Key Vault** — Treasury Hub keeps only a reference.
+3. **Test** the connection (reachability + auth), then save.
+
+### Step 2 — Add assignment rules
+1. On the connection, add one or more **assignment rules**.
+2. Set the (optional) **account**, the **parsing template**, and the **match criteria** — a **Folder** and a
+   **File** name matched by **Exact** or **Regex** (e.g. folder `/settlements`, file regex `settle_.*\.csv`).
+3. Choose the **after-processing** action (Leave / Move / Delete) and save. New matching files are imported
+   automatically; already-processed files aren't reprocessed. Use **one rule per file type** so each maps to
+   the right template.
 
 ### Confirm files are being picked up
 1. Once configured, Treasury Hub collects and processes new files without manual steps.
@@ -41,6 +58,15 @@ turned into structured data.
 - **Schedule** — set the polling frequency to match how often your source delivers files.
 - **Templates** — map each folder or feed to the right import template; adjust the template if a
   source changes its format.
+
+## AI Ingestion Assistant (`In Preview` 👁️)
+A **✨ Set up with AI** assistant configures the **connection and its rules** from plain language ("connect
+to BBVA Peru's SFTP and ingest the daily files into BBVA PEN"). It **asks only what it needs**, **offers
+insights** (banks usually use an SSH key; port 22 is standard; one rule per file type), and **runs
+validations** — including a live **connection test** and a check that each parsing template exists —
+flagging anything that isn't ready. It can draft **one rule per file type** in a batch (from several folders
+or an attached list) and shows a **results review** before creating. Secrets always stay in Key Vault; the
+assistant drafts, you confirm.
 
 ## Tips & good practices
 - Use a **separate folder per feed** so each maps to a single template and issues are easy to isolate.

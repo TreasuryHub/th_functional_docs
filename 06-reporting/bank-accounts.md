@@ -59,9 +59,14 @@ The grid is split into tabs so you can focus on accounts that need attention:
 
 ### Add an account manually
 1. Click **+ Add Account** and choose **manual creation**.
-2. Fill in the account name, IBAN, account number, BIC, institution, company, and currency (plus an
-   optional description).
+2. Fill in the account **name**, **company**, **currency**, **country**, **connection type**,
+   **institution**, **account number**, **IBAN**, **BIC**, an optional **description**, and whether
+   **payments are enabled** from it.
 3. Save. The account appears in the grid.
+
+> You can also create accounts **in bulk** with the **AI Master Data Assistant** (`In Preview` 👁️) — from
+> a pasted list or an uploaded file, attaching each to an existing company. See
+> [Companies & Company Groups](../10-admin-console/companies-and-groups.md).
 
 ### Set an account's balance (force balance)
 1. Select the account and choose **Set Account Closing Balance**.
@@ -95,5 +100,6 @@ The grid is split into tabs so you can focus on accounts that need attention:
 - [Cash Position](cash-position.md) — accounts consolidated into your position.
 - [Exchange Rates](exchange-rates.md) — used to convert balances to your display currency.
 - [Integrations](../02-integrations/overview.md) — Open Banking and other feeds.
+- [Counterparties & SSIs](../10-admin-console/counterparties-and-ssis.md) — the *payee* side of transfers (`In Preview` 👁️).
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — company/account hierarchy and master
   data.

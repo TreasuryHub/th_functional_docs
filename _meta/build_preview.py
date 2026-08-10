@@ -41,7 +41,7 @@ def collect_files():
     for dirpath, _, filenames in os.walk(ROOT):
         # skip the generated site + node stuff
         rel_dir = os.path.relpath(dirpath, ROOT).replace("\\", "/")
-        if rel_dir.startswith(("site", "_drafts")) or "/." in ("/" + rel_dir):
+        if rel_dir.startswith(("site", "_drafts", "design", "_meta")) or "/." in ("/" + rel_dir):
             continue
         for fn in filenames:
             if fn.endswith(".md"):
@@ -134,13 +134,17 @@ def main():
             continue
         label = names.get(sec, sec)
         nav_parts.append('<div class="nav-section"><div class="nav-head">%s</div><ul>' % html.escape(label))
-        # nest risk-management under reporting visually
+        emitted_risk_head = False
         for rel in items:
             m = meta[rel]
-            depth = " sub" if "/risk-management/" in rel else ""
+            is_risk = "/risk-management/" in rel.replace("\\", "/")
+            if is_risk and not emitted_risk_head:
+                nav_parts.append('<li class="nav-subhead" data-subhead="risk">Risk Management</li>')
+                emitted_risk_head = True
+            grp = ' data-group="risk"' if is_risk else ''
             nav_parts.append(
-                '<li class="nav-item%s" data-slug="%s"><a href="#%s">%s</a></li>'
-                % (depth, m["slug"], m["slug"], html.escape(m["title"]))
+                '<li class="nav-item" data-slug="%s"%s><a href="#%s">%s</a></li>'
+                % (m["slug"], grp, m["slug"], html.escape(m["title"]))
             )
         nav_parts.append("</ul></div>")
         for rel in items:
@@ -202,7 +206,8 @@ TEMPLATE = r"""<!DOCTYPE html>
   .nav-head{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--gold);padding:10px 12px 4px;font-weight:700}
   nav ul{list-style:none;margin:0;padding:0}
   .nav-item a{display:block;padding:5px 12px;border-radius:7px;color:var(--side-fg);font-size:13px}
-  .nav-item.sub a{padding-left:26px;font-size:12.5px;color:#bdbdbd}
+  .nav-subhead{font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);opacity:.8;padding:9px 12px 2px;font-weight:700;list-style:none}
+  .nav-subhead.hide{display:none}
   .nav-item a:hover{background:#2a2a2a;text-decoration:none}
   .nav-item.active a{background:var(--gold);color:#1a1a1a;font-weight:600}
   .nav-item.hide{display:none}
@@ -346,6 +351,14 @@ TEMPLATE = r"""<!DOCTYPE html>
         if(match){secHas=true;anyVisible=true;}
       });
       sec.querySelector(".nav-head").classList.toggle("hide",!secHas);
+    });
+    // hide a sub-heading when none of its group's items are visible
+    document.querySelectorAll(".nav-subhead").forEach(function(sh){
+      var g=sh.getAttribute("data-subhead"), any=false;
+      document.querySelectorAll('.nav-item[data-group="'+g+'"]').forEach(function(it){
+        if(!it.classList.contains("hide")) any=true;
+      });
+      sh.classList.toggle("hide",!any);
     });
     nores.style.display=anyVisible?"none":"block";
   });

@@ -44,7 +44,11 @@ by any role.
 - **Organization level (L1/L2/L3)** — in the In-Preview console, the Country / Hub / Group hierarchy a
   role or user can be scoped to.
 - **Group** — a grouping of users for organization; it doesn't grant permissions itself.
-- **Super Admin** — a user who bypasses all permission checks.
+- **Super Admin** — a **platform-tier** superuser granted only from Treasury Hub's internal admin platform;
+  it's never shown or assignable inside a tenant, and bypasses all permission checks.
+- **Payment segregation of duties** — no single role may hold both **payment creation** and **payment
+  approval** (the same applies to postings and SSIs); the builder blocks the combination. Only Admin is
+  exempt.
 
 ## The role catalog (In Preview)
 The In-Preview console ships a catalog of **27 predefined roles** you can use as-is, each shown with a
@@ -53,6 +57,7 @@ The In-Preview console ships a catalog of **27 predefined roles** you can use as
 | Role | Typical access | Can approve? |
 |---|---|---|
 | **Admin** | Full access, including user management and configuration. | Yes |
+| **Configurator** | Create/edit structural configuration (companies, accounts, counterparties, integrations, workflows); no operational, approval or user-management access. | No |
 | **User Manager** | Invite and manage users at the same level or below. | No |
 | **Cash Manager** | Access to assigned accounts and cash operations. | Depends on setup |
 | **Payment Preparer** | Enter and prepare payments (cannot approve). | No |
@@ -90,6 +95,14 @@ find and manage. A group is a label plus its membership; it doesn't grant permis
 permissions always come from roles. In the console you add or edit a group, name it, and choose its
 members.
 
+## AI Role Assistant (`In Preview` 👁️)
+Instead of ticking the matrix by hand, you can **describe a role in plain language** and an assistant drafts
+it — "a role called *Operator* that can only read transactions and balances" becomes a named custom role with
+exactly those boxes ticked, ready to review and save. It understands the permission model and the platform's
+**segregation-of-duties** rules: ask for a role that both **creates and approves payments** and it **refuses,
+explains why**, and offers to split it into a Preparer and an Approver role. The assistant drafts; you
+confirm, and it only ever produces a role the builder would accept.
+
 ## Tips & good practices
 - Build roles around **jobs to be done**, not individuals — that keeps the matrix small and reusable.
 - Keep **Admin** on `AdminAndSettings.UserManagement` limited to a small, trusted group.
@@ -107,3 +120,4 @@ members.
 - 👁️ **Role/permission-matrix editor** — author custom roles across the module matrix.
 - 👁️ **27-role catalog with "Can Approve?"** and organization levels (L1/L2/L3 = Country/Hub/Group).
 - 👁️ **Group management** — organize users into teams in the console.
+- 👁️ **AI Role Assistant** — draft roles from plain language, with segregation-of-duties validation.

@@ -26,6 +26,7 @@ and how access to it is controlled.
 | **Company Groups** | Groupings of companies for consolidation. | [Companies & Company Groups](companies-and-groups.md) |
 | **Companies** | Your legal entities (one is the default). | [Companies & Company Groups](companies-and-groups.md) |
 | **Bank Accounts** | Accounts held at institutions, in currencies, under a company. | [Bank Accounts](../06-reporting/bank-accounts.md) |
+| **Counterparties & SSIs** (`In Preview` 👁️) | The parties you pay and their settlement instructions (by currency), for transfers. | [Counterparties & SSIs](counterparties-and-ssis.md) |
 | **Currencies & Exchange Rates** | Currency pairs and rates used for conversion. | [Exchange Rates](../06-reporting/exchange-rates.md) |
 | **Tags** | Reusable labels for categorizing transactions. | [Tags](tags.md) |
 | **Custom Entities** (Entidades Personalizadas) | User-defined master-data entity types you create for reference data specific to your organization. `Available` ✅ | Admin Console › Master Data › Custom Entities |
@@ -46,6 +47,7 @@ and can open its page only under the same check. **Super Admin** users bypass al
 | Company Groups | `CoreData.CompanyGroups` | Read | Admin |
 | Companies | `CoreData.Companies` | Read | Admin |
 | Bank Accounts | `CoreData.BankAccounts` | Read | Admin, Cash Manager |
+| Counterparties & SSIs (`In Preview` 👁️) | `CoreData.Counterparties` · `CoreData.SSIs` | Read (Approve to authorize) | Admin, AP, Treasury Controller |
 | Tags | `CoreData.Tags` | Read | Admin, Cash Manager |
 | Matching Rules | `CoreData.MatchingRules` | Read | Admin, Bookkeeper |
 | Exchange Rates | `CoreData.ExchangeRates` | Read | Admin |
