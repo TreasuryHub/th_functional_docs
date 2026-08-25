@@ -257,73 +257,91 @@ screens you use, and AI assistance is available across every layer.</p>
 <p>A transversal <strong>AI layer</strong> and a set of <strong>platform services</strong> (integrations, workflows, agents,
 admin/UI) are shared across every module — there are no per-module silos.</p>
 <h2 id="what-you-can-do-with-it">What you can do with it</h2>
+<p>One platform to run treasury <strong>end to end</strong> — from the moment bank and ERP data lands to the
+reconciliation, reporting, payments, and decisions you make on it.</p>
 <ul>
-<li><strong>See your cash</strong> in real time, grouped by currency, company, country, and bank.</li>
-<li><strong>Bring in data automatically</strong> from banks (SWIFT / Open Banking), ERPs (NetSuite), files, and
-  email/SFTP.</li>
-<li><strong>Reconcile</strong> bank statements, flows, and ERP data with rule-based and AI-assisted matching.</li>
-<li><strong>Make payments</strong> with multi-level approvals and full status tracking.</li>
-<li><strong>Report and forecast</strong> cash and build your own reports (what-if scenario modeling is <em>in preview</em>).</li>
-<li><strong>Manage risk</strong> (in preview): FX, credit, interest-rate, mark-to-market, and ALM.</li>
-<li><strong>Post to your G/L / ERP</strong> with a rules engine and approval workflow.</li>
-<li><strong>Administer</strong> users, roles, companies, tags, and access tokens.</li>
+<li><strong>See every account in real time</strong> — one live, consolidated cash position across banks, currencies,
+  countries, and companies, instead of logging into portals and stitching spreadsheets together.</li>
+<li><strong>Connect to everything, automatically</strong> — SWIFT, Open Banking (PSD2), NetSuite ERP, inbound APIs, and
+  file feeds by <strong>Email</strong> or <strong>SFTP</strong> bring balances and movements in with no manual downloads.</li>
+<li><strong>Normalize any format</strong> — MT940, CAMT.053, BAI2, CSV, PDF, and more are parsed into consistent
+  accounts, movements, invoices, deals, loans, and investments.</li>
+<li><strong>Reconcile automatically</strong> — rule-based and AI-assisted matching across <strong>bank ↔ ERP ↔ internal</strong>
+  records, with configurable reconciliation workflows and an exceptions queue for the rest.</li>
+<li><strong>Pay with control</strong> — initiate single or batch payments against known payees and their settlement
+  instructions, with <strong>multi-level approvals</strong>, threshold rules, and full status tracking.</li>
+<li><strong>Report, forecast, and model</strong> — standard reports and <strong>build-your-own</strong>, cash position, cash forecast,
+  actual-vs-forecast, and operations blotters for FX, loans, and investments (what-if scenario modeling is
+  <em>in preview</em>).</li>
+<li><strong>Close the books</strong> — post to your <strong>G/L / ERP</strong> with a chart-of-accounts rules engine, approval
+  workflow, journal entries, and a full <strong>audit trail</strong>.</li>
+<li><strong>Manage risk</strong> <em>(in preview)</em> — FX, credit, interest-rate, mark-to-market, and ALM, with exposures, VaR,
+  and stress testing.</li>
+<li><strong>Let AI do the setup and the busywork</strong> <em>(in preview)</em> — specialized AI agents and an in-app assistant
+  across the platform, plus <strong>configuration assistants</strong> that stand up counterparties, roles, ingestion
+  rules, reconciliation, and master data from a plain-language request.</li>
+<li><strong>Administer with confidence</strong> — users, roles, and granular permissions with <strong>segregation of duties</strong>,
+  companies and groups, bank accounts, tags, counterparties &amp; settlement instructions, and access tokens —
+  all audited.</li>
+<li><strong>Run it your way</strong> — multi-tenant and <strong>white-label</strong>, English/Spanish, light/dark, with
+  enterprise-grade security and availability.</li>
 </ul>
 <h2 id="the-modules-at-a-glance">The modules at a glance</h2>
 <table>
 <thead>
 <tr>
 <th>Module</th>
-<th>What it gives you</th>
+<th>In plain language</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>🏦 Bank Connectivity</td>
-<td>Multi-bank aggregation, statements, real-time balances, consolidated position.</td>
+<td>Brings every bank account into one place and keeps balances up to date.</td>
 </tr>
 <tr>
 <td>⚖️ Reconciliations</td>
-<td>Auto-matching (rules + AI), exceptions queue, bank ↔ ERP ↔ internal matching.</td>
+<td>Matches your records against the bank so you can trust the numbers.</td>
 </tr>
 <tr>
 <td>💸 Payment Hub</td>
-<td>Payment initiation (single/batch), approvals, tracking, ERP integration.</td>
+<td>Lets you pay suppliers and move money, with approvals.</td>
 </tr>
 <tr>
 <td>📒 G/L Postings</td>
-<td>Chart-of-accounts mapping, posting rules, approvals, ERP export.</td>
+<td>Turns treasury activity into accounting entries for your ERP.</td>
 </tr>
 <tr>
 <td>📊 Treasury Reporting</td>
-<td>Standard reports + build-your-own, cash position, actual vs forecast.</td>
+<td>Shows where your cash is and lets you build the reports you need.</td>
 </tr>
 <tr>
 <td>💧 Cash &amp; Liquidity</td>
-<td>Forecasting, liquidity planning, concentration analysis.</td>
+<td>Forecasts the cash you'll have and helps you plan ahead.</td>
 </tr>
 <tr>
 <td>💱 FX Risk <em>(in preview)</em></td>
-<td>Exposure, VaR, stress testing, hedging.</td>
+<td>Shows your currency exposure and how to hedge it.</td>
 </tr>
 <tr>
 <td>📉 Interest Rate Risk <em>(in preview)</em></td>
-<td>Duration, repricing gap, scenario impact.</td>
+<td>Shows how rate changes would affect your positions.</td>
 </tr>
 <tr>
 <td>🛡️ Credit Risk <em>(in preview)</em></td>
-<td>Counterparty exposure, funding policy, limits.</td>
+<td>Tracks how much you're exposed to each counterparty.</td>
 </tr>
 <tr>
 <td>⚖️ ALM <em>(in preview)</em></td>
-<td>Gap analysis, LCR/NSFR monitoring, stress scenarios.</td>
+<td>Keeps your assets and liabilities in balance over time.</td>
 </tr>
 <tr>
 <td>🎯 MtM Valuations <em>(in preview)</em></td>
-<td>Mark-to-market valuation, pricing curves, daily revaluation.</td>
+<td>Values your positions at today's market prices.</td>
 </tr>
 <tr>
 <td>🤝 Professional Services</td>
-<td>Onboarding, white-label, custom integrations, training.</td>
+<td>Our team helps you onboard, customize, and go live.</td>
 </tr>
 </tbody>
 </table>
@@ -469,55 +487,62 @@ currently in.</p>
 <h2 id="company-structure">Company structure</h2>
 <p>Within a tenant, your legal and reporting structure is modeled as a hierarchy:
 - <strong>Company Group</strong> — a grouping of companies (e.g. a region or division).
-- <strong>Company</strong> — a legal entity. One company can be marked the <strong>default</strong>.
-- <strong>Bank Account</strong> — belongs to a company, held at an institution, in a currency.</p>
+- <strong>Company</strong> — a legal entity. One company can be marked the <strong>default</strong>; new bank accounts are assigned
+  to the default company unless the user assigns them to another company.
+- <strong>Bank Account</strong> — belongs to a company, held at an institution, in <strong>one currency — or multiple
+  currencies</strong> if it is a multi-currency account.</p>
 <p>This hierarchy is what lets you consolidate and drill down: <strong>Company Group › Company › Account ›
 Transaction</strong>. You set it up in the <a href="#10_admin_console_companies_and_groups">Admin Console</a>.</p>
 <h2 id="master-data">Master data</h2>
-<p><strong>Master data</strong> is the reference data everything else depends on — companies, bank accounts,
-currencies and exchange rates, counterparties, tags, and matching rules. Keeping master data clean
-and complete is the foundation for accurate reconciliation, reporting, and payments. It's managed
-in the <a href="#10_admin_console_master_data">Admin Console</a>.</p>
-<h2 id="financial-entities-treasury-hub-understands">Financial entities Treasury Hub understands</h2>
-<p>Treasury Hub isn't limited to bank balances. It ingests, classifies, and documents the full range
-of financial entities your team handles, including:</p>
+<p><strong>Master data</strong> is the reference data everything else depends on — <strong>company groups, companies, and bank
+accounts</strong>; <strong>currencies and exchange rates</strong>; <strong>counterparties and their settlement instructions (SSIs)</strong>;
+and <strong>tags, custom entities, and matching rules</strong>. Keeping it clean and complete is the foundation for
+accurate reconciliation, reporting, and payments. It's managed in the
+<a href="#10_admin_console_master_data">Admin Console</a>.</p>
+<p>An <strong>AI Master Data Assistant</strong> (<code>In Preview</code> 👁️) can build a whole hierarchy — <strong>groups, companies and
+accounts, and their associations</strong> — from a single plain-language request, ask for what's missing, flag
+validation issues, and create records in bulk from a pasted list or an uploaded file.
+<strong>Counterparties &amp; SSIs</strong> (<code>In Preview</code> 👁️) add the <em>payee</em> side used by transfers, with maker-checker
+approval on banking changes.</p>
+<h2 id="financial-entities">Financial entities</h2>
+<p>Treasury Hub isn't limited to bank balances. Its <strong>cash-forecast model</strong> classifies the full range of
+financial entities your team handles — organized as <strong>contracts</strong> (which emit cashflows), the <strong>cashflows</strong>
+themselves, standalone <strong>operatives</strong>, and <strong>plans</strong> that project future flows:</p>
 <table>
 <thead>
 <tr>
-<th>Area</th>
+<th>Group</th>
 <th>Entities</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Banking &amp; cash</td>
-<td>Bank accounts, bank movements, statements (MT940, CAMT.053, BAI2), cash pooling.</td>
+<td><strong>Contracts</strong></td>
+<td>Loans &amp; term loans, revolving lines (RCF), leases (IFRS 16), term deposits &amp; investments, bonds, FX (spot / forward / swap), and commercial sales &amp; purchase contracts.</td>
 </tr>
 <tr>
-<td>Collections &amp; payments</td>
-<td>Pay-ins/pay-outs, PSP/merchant settlements, direct debits &amp; standing orders, payroll.</td>
+<td><strong>Cashflows they emit</strong></td>
+<td>Principal (drawdown / repayment), interest paid &amp; received, installments (cuota), placements, maturities &amp; redemptions, coupons, FX settlements, customer receipts (AR), supplier payments (AP), dividends, and equity movements.</td>
 </tr>
 <tr>
-<td>Invoicing &amp; trade</td>
-<td>Purchase &amp; sales invoices, credit/debit notes, purchase orders.</td>
+<td><strong>Standalone operatives</strong></td>
+<td>Payroll, taxes &amp; VAT, bank &amp; merchant fees, internal transfers, ad-hoc flows, and recurring flows — no contract needed.</td>
 </tr>
 <tr>
-<td>Debt &amp; financing</td>
-<td>Loans, credit lines, leasing, factoring/confirming, letters of credit, promissory notes.</td>
+<td><strong>Balances &amp; the "actual"</strong></td>
+<td>Opening &amp; closing balances per account, and the bank movements/statements (MT940, CAMT.053, BAI2, CSV, PDF) that reconcile against the forecast.</td>
 </tr>
 <tr>
-<td>Investments &amp; markets</td>
-<td>Term deposits, money-market funds, bonds, equities, FX (spot/forward/NDF/swap), derivatives.</td>
-</tr>
-<tr>
-<td>Other</td>
-<td>Taxes &amp; withholdings, insurance, intercompany, guarantees, crypto/digital assets, real estate, commodities.</td>
+<td><strong>Plans (scenario input)</strong></td>
+<td>Sales, hiring/headcount, OpEx/budget, Capex, dividend, and financing plans that generate projected cashflows.</td>
 </tr>
 </tbody>
 </table>
-<p>Not every entity is exposed as its own screen yet —
-but this is the data model the platform is built around.</p>
-<h2 id="data-flows-in-one-direction-source-insight">Data flows in one direction: source → insight</h2>
+<p>Every cashflow carries a <strong>tag</strong> — grouped as <strong>financing (<code>fin_</code>)</strong>, <strong>investment (<code>inv_</code>)</strong>, or
+<strong>operational (<code>op_</code>)</strong> — so the same taxonomy classifies both the <strong>forecast</strong> and the <strong>Transactions</strong>
+historicals. Any cashflow can be created manually; a contract is optional. Not every entity has its own
+screen yet, but this is the data model the platform is built around.</p>
+<h2 id="data-flows-from-source-to-insight">Data flows from source to insight</h2>
 <p>Everything follows the same path:
 <strong>Sources → Integrations (ingestion) → Data layer (normalize/unify/enrich) → Workflows → Modules.</strong>
 Raw data from banks, ERPs, files, and email comes in through <strong>Integrations</strong>, becomes clean
@@ -534,16 +559,80 @@ Every workflow is:
 reporting are all modeled this way. See <a href="#07_workflows_overview">Workflows</a>.</p>
 <h2 id="the-ai-layer-agents">The AI layer &amp; agents</h2>
 <p>AI is not a single feature bolted on — it's a <strong>transversal layer</strong> available across the platform.
-Specialized <strong>agents</strong> can guide setup, answer questions, and act on your behalf (with your
-permissions), for example:
+Specialized <strong>agents</strong> can guide setup, answer questions, and act on your behalf (with your permissions).</p>
+<p><strong>Assistants &amp; coaches</strong>
 - <strong>Onboarding / in-app Assistant</strong> — guided setup and help (open it from the top bar).
 - <strong>Alex</strong> — Customer Success (in preview).
 - <strong>Ona</strong> — personal coach with role-based variants (in preview).</p>
+<p><strong>Configuration assistants</strong> (<code>In Preview</code> 👁️) — describe what you want in plain language and the assistant
+drafts it for you to confirm. It never creates without confirmation, only produces valid configurations, and
+every result is audited:
+- <strong>Roles</strong> — draft a role from a description ("read-only on transactions and balances"), with
+  segregation-of-duties checks.
+- <strong>Counterparties &amp; SSIs</strong> — set up payees and settlement instructions, with validation and maker-checker.
+- <strong>Email &amp; SFTP ingestion</strong> — build reception/assignment rules (one per provider or file type), test the
+  connection, and flag missing templates.
+- <strong>Reconciliation</strong> — assemble workflows, chains and rules from a description, with topology validation and
+  warnings.
+- <strong>Master data</strong> — build groups, companies and accounts and their links from one prompt.
+- <strong>Forecast &amp; document ingestion</strong> — turn invoices, payments, contracts or statements into the right
+  entities for you to review.</p>
 <p>See <a href="#09_agents_overview">Agents</a>.</p>
 <h2 id="alerts">Alerts</h2>
-<p>Notable events across every module (integration failures, reconciliation breaks, payment
-exceptions, etc.) surface as <strong>alerts</strong>, gathered into one <a href="#08_alerts_alerts">Alerts</a> area so
-nothing is missed.</p>
+<p>Notable events across every module surface as <strong>alerts</strong>, gathered into one
+<a href="#08_alerts_alerts">Alerts</a> area — with an <strong>Alerts Dashboard</strong> — so nothing is missed. Alerts are
+organized by source:</p>
+<table>
+<thead>
+<tr>
+<th>Alert type</th>
+<th>Raised when…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Integration</strong></td>
+<td>A feed or connection fails — a bank / Open Banking / SFTP / email source stops delivering, or a connection test breaks.</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>Ingested data is missing, malformed, or fails validation.</td>
+</tr>
+<tr>
+<td><strong>Reconciliation</strong></td>
+<td>A break appears — an expected item with no actual, or an actual with no match.</td>
+</tr>
+<tr>
+<td><strong>G/L Posting</strong></td>
+<td>A posting fails, is rejected by the ERP, or needs review.</td>
+</tr>
+<tr>
+<td><strong>Payment</strong></td>
+<td>A payment is held, rejected, awaiting approval, or breaches a threshold.</td>
+</tr>
+<tr>
+<td><strong>Prefunding</strong></td>
+<td>An account is projected to run short of the funds a payment run needs.</td>
+</tr>
+<tr>
+<td><strong>Reports</strong></td>
+<td>A scheduled report fails or a monitored metric crosses a limit.</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>A workflow step stalls, errors, or waits too long for an approval.</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>An AI agent needs input, proposes an action, or finishes a run.</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Security/administration events — access changes, expiring consents or tokens, configuration issues.</td>
+</tr>
+</tbody>
+</table>
+<p>The Alerts module — the dashboard and the alert types above — is <code>In Preview</code> 👁️.</p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a></li>

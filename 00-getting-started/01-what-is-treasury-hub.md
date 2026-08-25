@@ -42,31 +42,50 @@ A transversal **AI layer** and a set of **platform services** (integrations, wor
 admin/UI) are shared across every module — there are no per-module silos.
 
 ## What you can do with it
-- **See your cash** in real time, grouped by currency, company, country, and bank.
-- **Bring in data automatically** from banks (SWIFT / Open Banking), ERPs (NetSuite), files, and
-  email/SFTP.
-- **Reconcile** bank statements, flows, and ERP data with rule-based and AI-assisted matching.
-- **Make payments** with multi-level approvals and full status tracking.
-- **Report and forecast** cash and build your own reports (what-if scenario modeling is *in preview*).
-- **Manage risk** (in preview): FX, credit, interest-rate, mark-to-market, and ALM.
-- **Post to your G/L / ERP** with a rules engine and approval workflow.
-- **Administer** users, roles, companies, tags, and access tokens.
+One platform to run treasury **end to end** — from the moment bank and ERP data lands to the
+reconciliation, reporting, payments, and decisions you make on it.
+
+- **See every account in real time** — one live, consolidated cash position across banks, currencies,
+  countries, and companies, instead of logging into portals and stitching spreadsheets together.
+- **Connect to everything, automatically** — SWIFT, Open Banking (PSD2), NetSuite ERP, inbound APIs, and
+  file feeds by **Email** or **SFTP** bring balances and movements in with no manual downloads.
+- **Normalize any format** — MT940, CAMT.053, BAI2, CSV, PDF, and more are parsed into consistent
+  accounts, movements, invoices, deals, loans, and investments.
+- **Reconcile automatically** — rule-based and AI-assisted matching across **bank ↔ ERP ↔ internal**
+  records, with configurable reconciliation workflows and an exceptions queue for the rest.
+- **Pay with control** — initiate single or batch payments against known payees and their settlement
+  instructions, with **multi-level approvals**, threshold rules, and full status tracking.
+- **Report, forecast, and model** — standard reports and **build-your-own**, cash position, cash forecast,
+  actual-vs-forecast, and operations blotters for FX, loans, and investments (what-if scenario modeling is
+  *in preview*).
+- **Close the books** — post to your **G/L / ERP** with a chart-of-accounts rules engine, approval
+  workflow, journal entries, and a full **audit trail**.
+- **Manage risk** *(in preview)* — FX, credit, interest-rate, mark-to-market, and ALM, with exposures, VaR,
+  and stress testing.
+- **Let AI do the setup and the busywork** *(in preview)* — specialized AI agents and an in-app assistant
+  across the platform, plus **configuration assistants** that stand up counterparties, roles, ingestion
+  rules, reconciliation, and master data from a plain-language request.
+- **Administer with confidence** — users, roles, and granular permissions with **segregation of duties**,
+  companies and groups, bank accounts, tags, counterparties & settlement instructions, and access tokens —
+  all audited.
+- **Run it your way** — multi-tenant and **white-label**, English/Spanish, light/dark, with
+  enterprise-grade security and availability.
 
 ## The modules at a glance
-| Module | What it gives you |
+| Module | In plain language |
 |---|---|
-| 🏦 Bank Connectivity | Multi-bank aggregation, statements, real-time balances, consolidated position. |
-| ⚖️ Reconciliations | Auto-matching (rules + AI), exceptions queue, bank ↔ ERP ↔ internal matching. |
-| 💸 Payment Hub | Payment initiation (single/batch), approvals, tracking, ERP integration. |
-| 📒 G/L Postings | Chart-of-accounts mapping, posting rules, approvals, ERP export. |
-| 📊 Treasury Reporting | Standard reports + build-your-own, cash position, actual vs forecast. |
-| 💧 Cash & Liquidity | Forecasting, liquidity planning, concentration analysis. |
-| 💱 FX Risk *(in preview)* | Exposure, VaR, stress testing, hedging. |
-| 📉 Interest Rate Risk *(in preview)* | Duration, repricing gap, scenario impact. |
-| 🛡️ Credit Risk *(in preview)* | Counterparty exposure, funding policy, limits. |
-| ⚖️ ALM *(in preview)* | Gap analysis, LCR/NSFR monitoring, stress scenarios. |
-| 🎯 MtM Valuations *(in preview)* | Mark-to-market valuation, pricing curves, daily revaluation. |
-| 🤝 Professional Services | Onboarding, white-label, custom integrations, training. |
+| 🏦 Bank Connectivity | Brings every bank account into one place and keeps balances up to date. |
+| ⚖️ Reconciliations | Matches your records against the bank so you can trust the numbers. |
+| 💸 Payment Hub | Lets you pay suppliers and move money, with approvals. |
+| 📒 G/L Postings | Turns treasury activity into accounting entries for your ERP. |
+| 📊 Treasury Reporting | Shows where your cash is and lets you build the reports you need. |
+| 💧 Cash & Liquidity | Forecasts the cash you'll have and helps you plan ahead. |
+| 💱 FX Risk *(in preview)* | Shows your currency exposure and how to hedge it. |
+| 📉 Interest Rate Risk *(in preview)* | Shows how rate changes would affect your positions. |
+| 🛡️ Credit Risk *(in preview)* | Tracks how much you're exposed to each counterparty. |
+| ⚖️ ALM *(in preview)* | Keeps your assets and liabilities in balance over time. |
+| 🎯 MtM Valuations *(in preview)* | Values your positions at today's market prices. |
+| 🤝 Professional Services | Our team helps you onboard, customize, and go live. |
 
 Ask your administrator which modules are enabled for your organization.
 
