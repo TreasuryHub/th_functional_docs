@@ -1,88 +1,84 @@
 # Payment Approvals
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** Payments › Payment Approvals
+> **Where to find it:** Payments › Payment Blotter › **Awaiting approval**
 > **Who uses it:** approvers — treasurers, finance managers, and anyone with payment approval authority.
 > **Permissions required:** `CashManagement.Payments` · CreateEdit **and** a sufficient payment approval level. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This screen is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-Payment Approvals will be where authorized users review payments awaiting sign-off and **approve** or
-**reject** them. Treasury Hub will enforce governance automatically: the person who creates a payment
-cannot approve it (four-eyes), and larger or riskier payments can require **several approvers** in
-sequence. Every decision will be recorded with the user, timestamp, and — for rejections — a mandatory
-note, giving you a complete audit trail.
+Approving payments is part of the [Payment Blotter](payment-blotter.md), not a separate screen. The
+**Awaiting approval** tab holds every payment that has been created but not yet signed, and you
+approve or reject them from there.
 
-![The Payment Approvals workspace: pending inbox on the left, payment detail and approval chain on the right](../assets/screenshots/payment-approvals.png)
+Treasury Hub enforces governance automatically: the person who creates a payment cannot approve it,
+and larger or riskier payments can require **several signatures** in sequence. Every decision is
+recorded with the approver, the timestamp and — for rejections — a mandatory reason.
 
 ## Key concepts
-- **Four-eyes (maker-checker)** — the creator of a payment cannot be its approver; a second person
-  must review it.
-- **Payment approval level** — the authority assigned to each user. Every payment will carry the
-  **approval level it requires** (its *necessary* level), and only users at or above that level can
-  approve it. Your approval level is set on your user profile by an administrator — see
-  [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md#access-can-be-scoped-further).
-- **Multi-level approval** — a payment may need **more than one** approver. Its approval progress
-  will be shown as, for example, 1 of 2 or 2 of 3, and it will only be released once all required
-  approvals are in.
-- **Threshold rules** — the rules (typically by amount, and configurable by type, beneficiary, or
-  entity) that decide how many approvers a payment needs. These are set up with your administrator.
-- **Rejection note** — a mandatory explanation captured when a payment is rejected.
+- **Signature** — one approval on a payment. A payment in this state reads **Awaiting signature
+  *n* of *m***, so you can see how far through its chain it is.
+- **Payment approval level** — the authority assigned to each user. Every payment carries the level
+  it requires, and only users at or above that level can sign it. Your level is set on your user
+  record by an administrator — see
+  [Users & Roles](../10-admin-console/users-and-roles.md#set-a-payment-approval-level).
+- **Four-eyes** — the creator of a payment cannot also be its approver.
+- **Approval rule** — what decides how many signatures a payment needs, by ordering account, amount,
+  currency and payment type. See [Payment Approval Rules](../10-admin-console/payment-approval-rules.md).
+- **Reason** — the explanation captured when you reject. It is required, and it is what tells the
+  creator what to fix.
 
 ## Before you start
-- You will need `CashManagement.Payments` at **CreateEdit**.
-- Your **payment approval level** must meet or exceed the payment's necessary level. If it doesn't,
-  the Approve and Reject actions will be disabled for that payment.
-- There must be payments in a **pending approval** state.
+- You need `CashManagement.Payments` at **CreateEdit**, and an approval level that meets the
+  payment's requirement.
+- There must be payments in the **Awaiting approval** tab. A payment is born there — creating one
+  does not send it.
+- Your browser may ask for your location. Treasury Hub records where an approval was given when the
+  browser provides it; approval still works if you decline.
 
 ## How to use it
 
-*The steps below describe the intended experience once this screen is live.*
-
-### Review and approve payments
-1. Open **Payments › Payment Approvals** (or select pending payments on the
-   [Payment Blotter](payment-blotter.md)).
-2. Select a pending payment to open its detail — beneficiary, amount, currency, corridor, value
-   date, and the **approval chain** showing who has approved so far and who is still required.
-3. Check the payment and any attached [invoice/document](invoices.md).
-4. Click **Approve**.
-5. The payment's approval progress will advance. Once all required approvals are in, it will move on
-   to be sent; the [status history](payment-blotter.md) will record your approval with your name and
-   the time.
-
-To approve several at once, you will select multiple payments via their **checkboxes** in the grid and
-click **Approve**. Only payments you're entitled to approve will be actioned.
+### Approve a payment
+1. Open **Payments › Payment Blotter** and select the **Awaiting approval** tab.
+2. Find the payment and read it — ordering account, beneficiary, amount, currency and value date.
+   Expand the row for its traceability panel, which shows the signatures collected so far.
+3. Choose **Approve** on the row.
+4. Add a note if it is useful; it is optional on an approval.
+5. Confirm. The signature count advances. Once the last required signature is in, the payment moves
+   to **On its way**.
 
 ### Reject a payment
-1. Select the payment (or payments) you want to decline.
-2. Click **Reject**.
-3. In the dialog, enter the **rejection note** — this will be **required**; you'll see *"A note is
-   required for rejected payments"* if it's empty.
-4. Confirm. The payment will move to **Rejected**, and your note and identity will be saved to its
-   history.
+1. Choose **Reject** on the row.
+2. Enter the **reason**. This is required — the confirm button stays disabled until you write one.
+3. Confirm. The payment moves to the **Rejected** tab with your reason and identity on its history.
 
-### When you can't approve
-- If your approval level is **below** the payment's necessary level, the Approve/Reject buttons will
-  be **disabled** for that payment — it must go to someone with sufficient authority.
-- You will not be able to approve a payment **you created** — this is the four-eyes control working
-  as intended.
+### When an approval is refused
+A payment can be refused by the platform rather than by you, and the message says why — for example
+that a line's counterparty has no linked settlement instruction and so cannot be paid. Fix what the
+message names, then approve again. The refusal is not a rejection: the payment stays in **Awaiting
+approval**.
+
+### When you cannot approve
+- If your approval level is **below** what the payment requires, you cannot sign it; it has to go to
+  someone with sufficient authority.
+- You cannot approve a payment **you created**.
 
 ## Configuration
-- **Approval levels per user** and **threshold rules** (how many approvers, at what amounts/types)
-  are configured by administrators. Assigning a user's payment approval level is done in the
-  [Admin Console](../10-admin-console/roles-and-groups.md); see also
-  [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+- **How many signatures a payment needs** is set by the rules under **Admin Console › Master Data ›
+  Payment Approval Rules** — see [Payment Approval Rules](../10-admin-console/payment-approval-rules.md).
+- **Each user's approval level** is set on their user record — see
+  [Users & Roles](../10-admin-console/users-and-roles.md#set-a-payment-approval-level).
 
 ## Tips & good practices
-- Write **clear, specific rejection notes** — the creator relies on them to correct and resubmit.
-- Approve in **batches** where appropriate to clear routine, low-value payments quickly, but review
-  high-value items individually.
-- Keep approval levels aligned to real authority so payments route to the right people and don't
-  stall.
+- Write **specific rejection reasons**. The creator works from your text alone to correct and
+  resubmit.
+- Read the **traceability panel** before signing a payment that already carries signatures — it
+  tells you who has seen it and what they saw.
+- Keep approval levels aligned to real authority, so payments route to the right people instead of
+  stalling in the tab.
 
 ## Related
-- [Payment Blotter](payment-blotter.md) — see approval progress and status across all payments.
+- [Payment Blotter](payment-blotter.md) — the screen this tab belongs to, and the other statuses.
+- [Payment Approval Rules](../10-admin-console/payment-approval-rules.md) — where the number of
+  signatures is configured.
 - [Creating a payment](creating-a-payment.md) — what happens before approval.
-- [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — approval levels and how effective access is calculated.
+- [Users & Roles](../10-admin-console/users-and-roles.md) — where an approver's level is set.
 - [Payments — Overview](overview.md) — the module end to end.

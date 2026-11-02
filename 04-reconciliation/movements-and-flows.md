@@ -1,65 +1,105 @@
-# Reconciliation — Flows
+# Reconciliation — Movements & Flows
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** Reconciliation › **Reconciliation Status** (also reachable as the **Reconciliation Status** report under **Reporting › Operations**). The screen lists your **flows**.
+> **Where to find it:** Reconciliation › Administration › **Reconciliation Status** (also reachable
+> under **Reporting › Operations**). Movements and Movement Graph sit in the same group.
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
-> 👁️ **In Preview.** The Reconciliation module is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-The **Reconciliation Status** screen lists your reconciliation **flows** — each row is a flow,
-identified by a **Flow ID**. A flow is a chain of related **movements** (the individual financial
-items) that belong to one real-world transaction, so you can follow money from end to end and see
-exactly where a break is. The individual movements aren't a separate top-level list here — they are
-the **steps inside a flow**, which you see by expanding it.
-
-> Looking for a flat list of individual items rather than flows? Use
-> [Transactions](../06-reporting/transactions.md) under Reporting › Operations.
+Three screens let you follow money through reconciliation from three angles.
+**Reconciliation Status** lists **chain instances** — each one an attempt at a flow, showing how far
+it got and where it is stuck. **Movements** is the flat list of every individual item the module
+holds. **Movement Graph** starts from one movement and fans out across every workflow to show each
+reconciliation it takes part in.
 
 ## Key concepts
-- **Flow** — a chain of related movements that belong together, for example **Payout Internal →
-  Payout PSP → Bank Movement**. A flow is *fully reconciled* only when every step in the chain is
-  matched. Each flow has a **Flow ID**.
-- **Movement** — a single financial item (a bank movement, a payin/payout, a PSP settlement, a fee).
-  Movements are the **steps** that make up a flow.
-- **Progress** — how many steps of a flow are matched (for example 2/3). See
+- **Movement** — a single financial item: a bank movement, a payin or payout, a PSP settlement, an
+  invoice, a fee.
+- **Chain** — the configured route a transaction should take between movement types, for example
+  **Payout Internal → Payout PSP → Bank Movement**. Chains are defined in
+  [Rules & Criteria](rules-and-criteria.md).
+- **Chain instance** — one live run of a chain: a movement arrived, the chain started, and its steps
+  are either fulfilled or still waiting. A chain instance is what **Reconciliation Status** lists.
+- **Step** — one hop of the chain. A step can hold **OR alternatives** — several rules at the same
+  position, any one of which fulfils it.
+- **Reconciliation status** — **Unreconciled**, **Partial** or **Reconciled**. See
   [Reconciliation statuses](overview.md#reconciliation-statuses).
-- **Source** — where a movement came from: Bank, PSP, internal records, and so on. See
-  [Integrations](../02-integrations/overview.md).
+- **Waiting movement** — a movement attached to the instance that hasn't found its counterpart yet.
 
 ## How to use it
 
-### Browse flows
+### Browse chain instances
 1. Open **Reconciliation › Reconciliation Status**.
-2. Use the tabs to filter by flow state — for example **All**, **Completed**, **Incomplete**, and
-   **Pending**.
-3. Use the filters (Type, Partner, Workflow) to narrow the list.
-4. Each row shows the **Flow ID**, type, partner, amount, transaction status, reconciliation status, a
-   **progress** bar (matched steps out of total), and the date.
+2. Choose the **Workflow**. Each tab — **All**, **Unreconciled**, **Partial**, **Reconciled** —
+   carries its own count, and the counts respect every filter except the status itself, so you can
+   see the shape of the whole workload at once.
+3. Narrow with **Chain**, a **From / To** date range that defaults to today, and a value filter on
+   any catalog field such as currency, partner or payment method.
+4. Each row shows the instance **id**, its **chain**, its **status**, the entry movement's **amount**
+   and currency, the **partners** involved, the **date**, and a **progress** indicator of completed
+   steps out of total.
 
-### See the movements inside a flow
-1. Click a flow row to **expand** it.
-2. The flow chain renders horizontally — **one card per movement/step** (for example **Payout Internal
-   → Payout PSP → Bank Movement**), with a **Matched** link between connected steps.
-3. Each card shows that movement's amount, partner, and status, so you can see exactly which step is
-   complete and which is still open.
+### See inside a chain instance
+1. Click a row to **expand** it.
+2. The chain is drawn as a horizontal flow of movement-type cards joined by arrows, with each part
+   annotated with its runtime state:
+   - a card is **solid** once it holds a movement and **dashed** while it is still an empty slot;
+   - an arrow is labelled **Matched** when that step reconciled, or **Pending** when it hasn't;
+   - **OR alternatives** hang below the main line, so you can see both the path that was taken and
+     the one that wasn't;
+   - **movements are grouped by side**, so each card lists the movements of its own type with their
+     origin, external id, amount and currency;
+   - movements still **waiting for a counterpart** are shown on the step they're attached to.
+3. Click a **Matched** arrow to open that reconciliation, or a movement chip to open that movement's
+   detail — either opens in the right-hand panel.
+4. If the chain's configuration is broken — a rule unreachable from the flow start, or a loop — the
+   expanded row says so in a warning and **still draws what it can**: the connected part of the
+   chain plus the orphan branches, detached. Fix the chain itself in
+   [Rules & Criteria](rules-and-criteria.md).
 
-![The Reconciliation Status screen showing flows, with one flow chain expanded into its movements](../assets/screenshots/reconciliation-movements-flows.png)
+### Find an individual movement
+1. Open **Reconciliation › Movements**.
+2. Search by **External ID**, or narrow with the date range (today by default) and the catalog field
+   filters.
+3. The list shows each movement's **Id**, **Created**, **Type**, **Origin**, **Status**, its
+   **workflow status** in each workflow it belongs to, its **currencies**, **External Id** and when
+   it was last **updated**. Sort by any of those columns.
+4. Click a row to open the detail panel: its fields, its currencies and amounts, its external and
+   related ids, which workflows it is attached to, and its full status history.
 
-> Counterparties, amounts, and currencies shown in the platform are your own data; any figures in this
-> help center are illustrative examples.
+### Trace a movement across every workflow
+1. Open **Reconciliation › Movement Graph**.
+2. Search for a movement by **External ID** and select it. It becomes the centre of the canvas.
+3. The graph draws every reconciliation that movement takes part in — across all workflows, not just
+   one — with an edge per reconciliation and a node per counterpart movement.
+4. Click a counterpart to **expand** it in turn, and keep going: the graph grows outward as far as
+   the relationships do. Click an edge to open that reconciliation's detail.
+5. Pan, zoom and use the minimap to navigate a large web of relationships.
+
+![Reconciliation Status with a chain instance expanded into its steps, OR alternatives and waiting movements](../assets/screenshots/reconciliation-movements-flows.png)
+
+> Counterparties, amounts and currencies shown in the platform are your own data; any figures in
+> this help center are illustrative examples.
 
 ## Tips & good practices
-- Use the **progress bar** to spot the exact step that failed, rather than scanning individual items.
-- An **incomplete** flow with a predicted-but-missing step usually means expected money hasn't landed
-  yet — cross-check the exception tiles on the [Dashboard](dashboard.md).
-- For a specific individual item (by reference or amount), find it in
-  [Transactions](../06-reporting/transactions.md), then trace it into its flow here.
+- Work from the **Unreconciled** and **Partial** tabs. The counts on the tabs tell you how big the
+  job is before you open anything.
+- Expand the row rather than guessing from the progress figure — the dashed card and the **Pending**
+  arrow show you the exact step that never completed.
+- A step that is waiting with a movement already attached means the counterpart hasn't arrived;
+  a step waiting with nothing attached usually means the movement never got in. Check the workflow's
+  filter gate in [Workflows](workflows.md).
+- A **degraded** chain warning is a configuration problem, not a data problem. No amount of
+  re-running will fix it — repair the chain.
+- All date filters work on **UTC** days, and all three screens default to today. Widen the range
+  before concluding something is missing.
+- Use **Movement Graph** when the same item appears in several workflows and you need to see the
+  whole picture; use **Reconciliation Status** when you care about one flow completing.
 
 ## Related
-- [Reconciliation Overview](overview.md) — flows, movements, statuses, and how matching works.
-- [Matching](matching.md) — pair up unmatched items.
-- [Dashboard](dashboard.md) — status and exception summary.
-- [Transactions](../06-reporting/transactions.md) — the flat list of individual items.
-- [Workflows](workflows.md) — how flow chains are defined.
+- [Reconciliation Overview](overview.md) — movements, chains, statuses, and how matching works.
+- [Rules & Criteria](rules-and-criteria.md) — where chains and their steps are defined.
+- [Workflows](workflows.md) — which movements get into a workflow in the first place.
+- [Matching](matching.md) — pair up movements that are still waiting.
+- [Dashboard](dashboard.md) — the daily summary of these same chain instances.
+- [Transactions](../06-reporting/transactions.md) — the wider reporting view of individual items.

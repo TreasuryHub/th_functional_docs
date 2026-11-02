@@ -1,6 +1,5 @@
 # Deployment, Availability & Continuity
 
-> **Availability:** `Available` ✅ (SaaS is the default; on-premises available; specifics vary by contract)
 > **Where to find it:** platform-wide assurances — arranged with the Treasury Hub team and your contract.
 > **Who uses it:** IT, security, risk, and procurement teams evaluating or operating Treasury Hub;
 > useful assurance for treasurers and administrators.
@@ -32,8 +31,8 @@ that fits your infrastructure and regulatory needs.
 | Model | Summary | Managed by |
 |---|---|---|
 | **SaaS (default)** | Multi-tenant cloud with logical isolation per organization; updates, patching, monitoring, and backups handled for you; onboarding in minutes. Multi-region for data residency. | Treasury Hub |
-| **On-premises** | Runs inside your infrastructure and network. In the initial release there are no public-facing interfaces; vendor support is via secure VPN; external data access flows through your API gateway. Treasury Hub ships signed release packages that you deploy. | You (Treasury Hub provides releases, runbooks, and support) |
-| **Hybrid** 👁️ | Sensitive data kept on-premises while selected AI/analytics services run in a secured cloud, with only authorized data replicated. In preview. | Shared |
+| **On-premises** | Runs inside your infrastructure and network. There are no public-facing interfaces; vendor support is via secure VPN; external data access flows through your API gateway. Treasury Hub ships signed release packages that you deploy. | You (Treasury Hub provides releases, runbooks, and support) |
+| **Hybrid** | Sensitive data kept on-premises while selected AI/analytics services run in a secured cloud, with only authorized data replicated. | Shared |
 
 ### Environments
 A typical delivery uses separate environments so changes are validated before reaching production:
@@ -138,11 +137,11 @@ legal retention) — to control cost while keeping archived data accessible for 
 - Participate in **DR drills** and review the post-incident report so your team knows the recovery
   playbook.
 
+## Hybrid deployment
+- **Hybrid deployment** — sensitive data on-premises with selected AI/analytics services in a
+  secured cloud.
+
 ## Related
 - [Security & Compliance](security-and-compliance.md) — encryption, access control, and compliance posture.
 - [Integrations](../02-integrations/overview.md) — where data enters the platform.
 - [Reconciliation](../04-reconciliation/overview.md) — where much data validation and matching happens.
-
-## In Preview
-- 👁️ **Hybrid deployment** — sensitive data on-premises with selected AI/analytics services in a
-  secured cloud. In preview; confirm availability with Treasury Hub.

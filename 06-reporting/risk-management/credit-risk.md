@@ -1,14 +1,13 @@
 # Credit Risk
 
-> **Availability:** `In Preview` 👁️ (part of Risk Management, ~Q3 2026)
 > **Where to find it:** Reporting › Risk Management › Credit Risk
 > **Who uses it:** risk managers, treasurers, credit officers; for the Funding tab, partner/settlement operations teams.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Credit Risk will continuously monitor the risk that a **counterparty or funding partner** fails to
+Credit Risk continuously monitors the risk that a **counterparty or funding partner** fails to
 meet its obligations — from current exposure through to expected loss — with early warning of
-deterioration. The screen will have two tabs:
+deterioration. The screen has two tabs:
 
 - **By Stage** — counterparty credit quality under IFRS 9 (staging, expected credit loss, limits, and
   a watch list).
@@ -18,9 +17,6 @@ deterioration. The screen will have two tabs:
 Within [Risk Management](overview.md), aggregations (exposure, limit utilization, concentration) can
 run in-house, while calibrated PD/LGD models and potential-future-exposure simulation can be executed
 by a specialist partner. See the [hybrid model](overview.md#the-hybrid-model-in-house-engine--specialist-partners).
-
-> 👁️ **In Preview.** This screen is in testing and available on request. All names and figures below are
-> **illustrative examples**, not your data.
 
 ## Key concepts
 - **Counterparty exposure** — how much you stand to lose if a counterparty defaults. **Current
@@ -39,7 +35,7 @@ by a specialist partner. See the [hybrid model](overview.md#the-hybrid-model-in-
 - **Watch list** — a prioritised list of counterparties showing signs of deterioration (rating
   downgrade, rising days-sales-outstanding, missed payment, widening CDS spread).
 - **Active credit-risk policy** — your thresholds (NPL target, SICR/NPL triggers, concentration
-  limits, coverage ratio). Isabella's insights cite the specific policy section they enforce.
+  limits, coverage ratio), shown in the policy banner at the top of the screen.
 
 ### Funding-tab concepts
 - **Funding model** — how a partner settles: **Prefund** (partner pre-loads a balance you draw down),
@@ -55,14 +51,13 @@ by a specialist partner. See the [hybrid model](overview.md#the-hybrid-model-in-
   or a compliance flag).
 
 ## Before you start
-When live, Credit Risk will depend on: counterparty positions and mark-to-market from
+Credit Risk depends on: counterparty positions and mark-to-market from
 [Integrations](../../02-integrations/overview.md) and [Mark-to-Market](mark-to-market.md); financials
 and payment history for scoring; approved credit limits; and — for the Funding tab — real-time balance
 sync with your core banking. Your **credit-risk policy** and **funding policy** define the thresholds
 that monitoring enforces.
 
 ## How to use it
-> The steps describe the **intended** experience once released.
 
 ### Review counterparty credit quality (By Stage tab)
 1. Go to **Reporting › Risk Management › Credit Risk** and stay on the **By Stage** tab.
@@ -77,13 +72,6 @@ that monitoring enforces.
 2. Select a counterparty card to expand its detail: stage, outstanding, **PD / LGD / EAD**, ECL, and
    the **policy reference** that triggered the flag.
 3. Use the actions offered (e.g. **restructure proposal, write-off request, committee review**).
-   **Isabella**, the Credit Risk Monitor agent, tracks these names daily.
-
-### Understand and stress the expected loss
-1. Read the **Isabella (AI) commentary**, which cites the policy sections it enforces and names the
-   drivers (for example, one counterparty pushing the NPL ratio above target).
-2. Ask Isabella a "what-if" (for example, *the ECL impact if a Stage 2 name migrates to Stage 3*) to
-   see the effect on total ECL, NPL ratio, and the P&L provision charge.
 
 ### Monitor partner funding risk (Funding tab)
 1. Select the **Funding** tab.
@@ -96,18 +84,17 @@ that monitoring enforces.
    utilization, low-balance flag, days-to-due, auto-queue count, settlement cycle,** and status.
 
 ### Manage a partner's funding (Funding tab)
-1. Select a partner to expand its detail across three areas:
+1. Select a partner to expand its detail across two areas:
    - **Prefunding controls** — per-corridor thresholds and current balances, low-balance alert status
      and delivery channels, auto-queue logic, and core-banking sync status.
    - **Credit-line details** — request/approval workflow, available vs utilized limit, days-to-due,
      interest rate, and auto-suspension triggers; plus a downloadable **partner statement**.
-   - **Isabella insight** — the driver, time-to-depletion estimate, and recommended action.
 2. Use the footer actions as needed (e.g. **send low-balance alert, release queued transactions,
    review credit-line request, generate partner statement**).
 
 ## Configuration
 - **Credit-risk policy** — upload/maintain thresholds (NPL target, SICR/NPL PD triggers, single-name
-  and sector concentration limits, ECL coverage ratio). Isabella enforces these in every insight.
+  and sector concentration limits, ECL coverage ratio).
 - **Funding policy** — minimum prefund per corridor, low-balance alert level, auto-queue vs reject,
   credit-line max utilization, max exposure per partner, and settlement cycle.
 - **Credit limits** — approved limits per counterparty and instrument type.
@@ -120,19 +107,18 @@ that monitoring enforces.
   problem.
 - On the Funding tab, treat **low-balance and auto-queue** signals as operational priorities — a
   depleted corridor can stall settlements.
-- Keep both policies current; the value of the alerts and Isabella's recommendations depends on them.
+- Keep both policies current; the value of the alerts depends on the thresholds you set.
+
+## Capabilities at a glance
+- **By Stage tab** — IFRS 9 staging, ECL, credit limits, and counterparty watch list.
+- **Funding tab** — prefund, credit-line, and net-settlement monitoring across the Partner ›
+  Corridor › Account hierarchy.
+- **Policy-driven monitoring** — status flags and alerts checked against your active credit-risk and
+  funding policies.
+- **Partner PD/LGD and PFE** via specialist partner integration.
 
 ## Related
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
 - [Mark-to-Market](mark-to-market.md) — fair values feed current-exposure calculations.
 - [Risk Cockpit](risk-cockpit.md) — credit KPIs (ECL, NPL) summarised alongside other dimensions.
-- [Agents](../../09-agents/overview.md) — Isabella, the Credit Risk Monitor agent.
 - [Alerts](../../08-alerts/alerts.md) — where limit and low-balance breaches surface.
-
-## In Preview
-- 👁️ **By Stage tab** — IFRS 9 staging, ECL, credit limits, and counterparty watch list.
-- 👁️ **Funding tab** — prefund, credit-line, and net-settlement monitoring across the Partner ›
-  Corridor › Account hierarchy.
-- 👁️ **Policy-driven insights** — Isabella recommendations that cite your active credit-risk and funding
-  policy sections.
-- 👁️ **Partner PD/LGD and PFE** via specialist partner integration.

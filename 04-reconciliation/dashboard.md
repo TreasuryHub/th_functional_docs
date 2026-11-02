@@ -1,82 +1,94 @@
 # Reconciliation — Dashboard
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** Reconciliation › Dashboard
+> **Where to find it:** Reconciliation › Administration › Dashboard
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
-
-> 👁️ **In Preview.** The Reconciliation module is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-The Dashboard is the command view of the Reconciliation module. It shows, for a period you
-choose, how much of your financial data is matched, what still needs attention, and how much time
-and cost auto-matching has saved you. Use it to monitor the health of reconciliation at a glance
-before drilling into the detail screens.
+The Dashboard is the daily health check of the Reconciliation module. It answers, for one day, how
+much reconciled by itself, how much is still open, and how many proposals are waiting for a person.
+Scope it to a single workflow and it adds a lifetime view of where that workflow stands and which
+match criteria are actually doing the work.
 
 ## Key concepts
-- **Reconciliation status** — every item and flow is **Fully Reconciled**, **Partially
-  Reconciled**, or **Unreconciled**. See [Core Concepts](../00-getting-started/03-core-concepts.md)
-  and the [Reconciliation Overview](overview.md).
-- **Payin / payout exception** — an approved payin or payout that hasn't appeared in the PSP or bank
-  yet (or the reverse: rejected internally but paid at the PSP/bank). These are the items most
-  likely to need manual follow-up.
-- **Savings** — the estimated time and cost avoided by letting the engine and Sophia (AI) match
-  items automatically instead of doing it by hand.
+- **Reconciliation status** — every chain instance is **Reconciled**, **Partial** or
+  **Unreconciled**. See [Core Concepts](../00-getting-started/03-core-concepts.md) and the
+  [Reconciliation Overview](overview.md).
+- **Chain instance** — one attempt at a flow: a movement arrived, a chain started, and its steps are
+  either fulfilled or still waiting. The dashboard counts instances, not individual movements. See
+  [Movements & Flows](movements-and-flows.md).
+- **Auto reconciliations** — reconciliations the engine created on its own, with no approval step.
+- **Net / Gross / Fees and adjustments** — the three ways a workflow's reconciled money adds up.
+  Gross plus fees and adjustments equals Net.
 
 ## How to use it
 
-### Choose the reporting period
+### Choose what the day covers
 1. Open **Reconciliation › Dashboard**.
-2. In the top-right **period selector**, choose **Today**, **This Week**, or **This Month**.
-3. The **range hint** below the title (for example, "Showing data for: Feb 9 – Feb 15") confirms the
-   dates. All tiles and charts update to that window.
+2. Pick the **Date**. It defaults to today and covers the full UTC day.
+3. Optionally pick a **Workflow**, and then a **Chain** within it. Changing the workflow clears the
+   chain.
+4. Optionally narrow further with the **field filters** — currency, account, merchant, channel,
+   partner, payment method or original status. Each is a dropdown of the values that actually appear
+   in your own data, and selections across different fields combine with AND.
+5. **Clear** resets the filters and puts the date back to today.
 
-### Read the status KPIs
-The top row shows one tile per status, each with a count, a percentage of the total, and the total
-amount:
-- **Fully Reconciled** (green) — matched end to end.
-- **Partially Reconciled** (amber) — some, but not all, steps matched.
-- **Unreconciled** (red) — nothing matched yet.
-
-Four exception tiles sit alongside them:
-- **Payins Approved, Not in PSP/Bank** and **Payouts Approved, Not in PSP/Bank** — expected money
-  that hasn't landed.
-- **Payins Rejected, Paid in PSP/Bank** and **Payouts Rejected, Paid in PSP/Bank** — money that
-  moved despite an internal rejection.
-
-Each tile is colour-coded by severity. Use them as your daily worklist: high exception counts point
-you to the [Matching](matching.md), [Approvals](approvals.md), and [Alerts](../08-alerts/alerts.md)
-screens.
-
-### Read the savings tiles
-The dark band shows the impact of automation for the selected period:
-- **Time Saved** — hours saved this period.
-- **Cost Savings** — estimated cost avoided.
-- **Auto Reconciliations** — manual steps the engine handled for you.
-- **Avg Speed** — average time to reconcile an item versus doing it manually.
+### Read the overview
+- **Auto Reconciliations** sits on its own: how many reconciliations the engine made without a
+  person.
+- Five tiles follow, each with a count and a percentage:
+  - **Fully Reconciled** — every step of the chain is matched.
+  - **Partially Reconciled** — some steps matched, some still open.
+  - **Unreconciled** — nothing matched yet.
+  - **Requests Approved** and **Requests Rejected** — what the
+    [Approvals](approvals.md) queue produced that day.
 
 ### Read the charts
-- **Daily Reconciliation Volume** — an area chart of the last 14 days, split into bank movements,
-  PSP items, and errors, so you can spot spikes or a rising error trend.
-- **Reconciliation by Type** — a donut breaking volume down by item type (for example Payin PSP,
-  Payin Bank, Payout PSP, Payout Bank, Fee PSP), with a legend underneath.
+- **Daily Reconciliation Volume** — an area chart of the selected day, one point per hour (UTC),
+  stacked into **Reconciled**, **Partial** and **Unreconciled**. Use it to spot the hour a feed
+  stopped landing or a rule stopped firing.
+- **Reconciliation by Type** — a breakdown of how that day's reconciliations came about:
+  **Automatic** (the engine matched and reconciled), **Manual** (someone paired the items on the
+  [Matching](matching.md) screen) and **Request** (someone approved a proposal). A manual share that
+  keeps growing is a prompt to revisit your [rules](rules-and-criteria.md).
 
-![Reconciliation dashboard with KPI tiles, savings band, volume chart and type donut](../assets/screenshots/reconciliation-dashboard.png)
+### Read the workflow totals
+Select a single **Workflow** and a **Workflow totals** panel appears underneath:
+- **Entity type** — for each movement type in the workflow, how many are reconciled and how many are
+  not.
+- **Money reconciled** — split into **Net reconciled**, **Gross reconciled**, and **Fees and
+  adjustments** (gross plus this equals net).
+- **How these reconciliations happened** — the workflow's reconciliations grouped by the rule and
+  match criteria that produced them, with a count and a share of the total. Rows with no rule are
+  the manual ones. This is the quickest way to see whether one over-permissive criterion is doing
+  most of the matching.
 
-> The numbers, counterparties, and currencies shown in the platform are your own live data. Any
+> **Two things to know about this panel.** It is **lifetime**, not daily — it deliberately ignores
+> the date you picked and answers "where does this workflow stand overall". And it labels history
+> using **today's** configuration, so editing a rule's criteria re-labels the past rows that rule
+> produced.
+
+![Reconciliation dashboard with the date and workflow filters, status tiles, hourly volume chart and workflow totals panel](../assets/screenshots/reconciliation-dashboard.png)
+
+> The numbers, counterparties and currencies shown in the platform are your own live data. Any
 > figures used in this help center are illustrative examples.
 
 ## Tips & good practices
-- Check the **exception tiles** first thing each day — they surface the items most at risk of a
-  break.
-- Watch the **error series** in the volume chart; a rising trend usually signals a data or
-  integration issue upstream (see [Integrations](../02-integrations/overview.md)).
-- Compare the **auto-match rate** (Fully Reconciled % plus Auto Reconciliations) across periods to
-  see whether your rules and Sophia's suggestions are improving.
+- Check **Unreconciled** first thing each day, then jump to
+  [Reconciliation Status](movements-and-flows.md) filtered to the same day to see which step is
+  stuck.
+- A flat stretch in the hourly volume chart usually means an upstream feed stopped rather than a
+  reconciliation problem — check [Integrations](../02-integrations/overview.md).
+- Compare **Auto Reconciliations** against **Requests Approved** over time: the ratio tells you how
+  much of the work your rules are taking off people's hands.
+- Use **How these reconciliations happened** before you loosen a tolerance. If one criteria set
+  already accounts for most matches, loosening it widens an exposure you can't see from the counts.
+- Remember the date filter is a **single UTC day**. For a longer view, read the lifetime workflow
+  totals rather than stepping through dates.
 
 ## Related
 - [Reconciliation Overview](overview.md) — how the whole module fits together.
-- [Movements & Flows](movements-and-flows.md) — drill into the underlying items.
-- [Matching](matching.md) and [Approvals](approvals.md) — clear the exceptions the KPIs surface.
-- [Alerts](../08-alerts/alerts.md) — reconciliation anomalies and rule alerts.
+- [Movements & Flows](movements-and-flows.md) — drill into the chain instances behind the counts.
+- [Matching](matching.md) and [Approvals](approvals.md) — clear what the tiles surface.
+- [Rules & Criteria](rules-and-criteria.md) — the criteria named in the workflow totals panel.
+- [Alerts](../08-alerts/alerts.md) — reconciliation alerts raised by your match blocks.

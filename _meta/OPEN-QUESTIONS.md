@@ -9,8 +9,8 @@ pages.
 ## 1. Live vs. roadmap status  ✅ RESOLVED (definitive menu map applied)
 The team provided screenshots of **every menu**, giving the exact **Active** (live) / **Upgrade**
 (Active = live; Upgrade = In Preview) status of each item. This is captured in
-[`_meta/LIVE-STATUS.md`](LIVE-STATUS.md) and applied throughout; the client-facing summary is
-[`_drafts/feature-availability.md`](../_drafts/feature-availability.md).
+[`_meta/LIVE-STATUS.md`](LIVE-STATUS.md). (Historical: availability/tier badges have since been
+removed from the published docs — every capability is now documented as part of the platform.)
 
 Key outcomes / corrections made:
 - **"Upgrade" = plan/tier label, not lifecycle.** The Reconciliation module is Upgrade **and** In Preview (per the team).
@@ -33,22 +33,11 @@ Confirmed since:
 Terminology note: not-live items are labeled **`In Preview` 👁️** throughout (they're visible in the
 platform as previews, shown "Upgrade"), replacing the earlier "Coming soon".
 
-## 2. AI agents — naming & availability  ✅ RESOLVED (roster confirmed)
-The canonical 16-agent roster was confirmed from the platform's **Switch Agent** panel and applied
-throughout the docs (see [`_meta/AGENT-ROSTER.md`](AGENT-ROSTER.md) and
-[`09-agents/overview.md`](../09-agents/overview.md)): **Alex** (Customer Success), **Sophia**
-(Reconciliation), **Mateo** (Confirmation Matcher), **Lucas** (Journal Entry Generator), **Olivia**
-(Market Data & Reporting), **Nadia** (FX Risk & Hedging), **Isabella** (Credit Risk Monitor),
-**Noah** (Cash Management), **Carter** (Workflow Designer), **Elena** (Reporting Agent), **Ethan**
-(Payment Processor), **Ava** (AML & Compliance), **Liam** (Interest Rate Risk), **Mia** (ALM &
-Liquidity), **Ona** (Admin & Personal Coach), **Oliver** (Data Governance & Lineage). The risk pages
-were corrected (they had wrongly used Sophia as the risk advisor).
-
-Remaining to confirm:
-- **Availability per agent** — we mark all conversational agents `In Preview` 👁️ except Sophia's
-  AI-assisted *matching* (part of the In-Preview Reconciliation module) and the in-app Assistant. Confirm
-  which, if any, other agents are already live.
-- Should **Agent Approvals** be its own page? (currently a section in `09-agents/agent-builder.md`)
+## 2. AI agents — naming  ✅ RESOLVED (single name)
+Every module has its own agent, but they all present under one name, **Alex**, so a reader meets a
+single assistant rather than a cast. The earlier 16-agent roster is withdrawn: no page lists
+agents, assigns per-module names or specialties, or describes switching between them. See rule 10
+in [`_meta/WRITING-BRIEF.md`](WRITING-BRIEF.md) and [`09-agents/overview.md`](../09-agents/overview.md).
 
 ## 3. Alerts
 - The webapp shows **only reconciliation alerts** wired to a real (read-only) backend — no
@@ -93,7 +82,7 @@ Management ~Q3 2026** (applied to all five risk dimensions — confirm per-dimen
 - **Compliance certifications** (ISO 27001, SOC 2 Type II, GDPR, Ghana DPA): which are formally
   *certified* vs *aligned*, with current validity? (`12-platform/security-and-compliance.md`)
 - **SSO/MFA** (Azure AD / Okta / Google) — stated as supported per the roles source but not in the
-  availability matrix. Confirm. (`10-admin-console/user-and-agent-management.md`, `12-platform/security-and-compliance.md`)
+  availability matrix. Confirm. (`10-admin-console/users-and-roles.md`, `12-platform/security-and-compliance.md`)
 - **Supported languages** — brief/nav say EN/ES, but webapp UC-028 lists EN/FR/DE/ES. We
   documented **EN/ES**. Confirm the shipped set. (`12-platform/preferences.md`, `00-getting-started/02-navigation-and-workspace.md`)
 - **Deployment models** (SaaS/on-prem/hybrid), SLAs, RPO/RTO — presented as illustrative/"defined

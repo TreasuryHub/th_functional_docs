@@ -1,12 +1,11 @@
 # Interest Rate Risk
 
-> **Availability:** `In Preview` 👁️ (part of Risk Management, ~Q3 2026)
 > **Where to find it:** Reporting › Risk Management › Interest Rate Risk
 > **Who uses it:** treasurers, ALM and risk teams, and (in banks) IRRBB regulatory-reporting teams.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Interest Rate Risk will measure and help you manage how movements in interest rates affect your
+Interest Rate Risk measures and helps you manage how movements in interest rates affect your
 portfolio — from the **repricing gap** through **duration/DV01** to the sensitivity of both your
 **earnings (net interest income)** and the **economic value of your balance sheet**. For banks it
 covers the standard **IRRBB** (Interest Rate Risk in the Banking Book) framework.
@@ -14,9 +13,6 @@ covers the standard **IRRBB** (Interest Rate Risk in the Banking Book) framework
 Within [Risk Management](overview.md), the gap and vanilla sensitivities can run in-house, while
 option-adjusted and dynamic-balance simulations can be executed by a specialist partner. See the
 [hybrid model](overview.md#the-hybrid-model-in-house-engine--specialist-partners).
-
-> 👁️ **In Preview.** This screen is in testing and available on request. All figures below are
-> **illustrative**, not your data.
 
 ## Key concepts
 - **Repricing gap** — the difference between assets and liabilities that reprice in each time band
@@ -35,17 +31,16 @@ option-adjusted and dynamic-balance simulations can be executed by a specialist 
 - **Repricing profile** — a calendar of when each instrument next reprices, by type and currency.
 - **Fixed-rate ratio** — the share of your book on fixed rates; often subject to a policy minimum.
 - **Active IRRBB policy** — your limits (DV01 limit, duration-gap limit, NII/EVE tolerances, minimum
-  fixed-rate ratio). Liam's insights cite the policy section they enforce.
+  fixed-rate ratio). Status flags and alerts cite the policy section they check against.
 
 ## Before you start
-When live, Interest Rate Risk will depend on: rate-sensitive instruments ingested via
+Interest Rate Risk depends on: rate-sensitive instruments ingested via
 [Integrations](../../02-integrations/overview.md) with their terms (notional, fixed/floating, next
 repricing date, maturity, coupon frequency); discount curves per currency; and, for banks, behavioral
 assumptions for non-maturity deposits and prepayments. Your **IRRBB policy** defines the limits that
 monitoring enforces.
 
 ## How to use it
-> The steps describe the **intended** experience once released.
 
 ### Check your rate-sensitivity position
 1. Go to **Reporting › Risk Management › Interest Rate Risk**.
@@ -69,11 +64,6 @@ monitoring enforces.
    relevant.
 3. Read the resulting **NII sensitivity** and **EVE sensitivity** against your policy tolerances.
 
-### Get recommendations
-1. Read the **Liam (AI) commentary** — it states whether you are asset- or liability-sensitive,
-   confirms which figures are within policy, explains the driver (e.g. an inverted short end benefiting
-   floating-rate loans), and recommends positioning (e.g. reduce duration with swaps).
-
 ## Configuration
 - **IRRBB policy** — upload/maintain limits: DV01 limit, duration-gap limit, NII and EVE tolerances,
   minimum fixed-rate ratio.
@@ -90,14 +80,14 @@ monitoring enforces.
 - For banks, keep an eye on the **EVE outlier test** (a large ΔEVE relative to Tier 1 capital draws
   supervisory attention).
 
+## Capabilities at a glance
+- **Repricing gap & profile** by time band and currency.
+- **Duration / DV01 / convexity**, including effective duration for instruments with optionality.
+- **NII and EVE sensitivity** under parallel and non-parallel shocks (six IRRBB scenarios).
+- **Scenario Builder** for building and comparing custom rate scenarios.
+
 ## Related
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
 - [ALM](alm.md) — IRRBB regulatory reporting sits alongside structural liquidity there.
 - [Risk Cockpit](risk-cockpit.md) — IRRBB KPIs (DV01, duration gap) summarised with other dimensions.
 - [Alerts](../../08-alerts/alerts.md) — where limit breaches surface.
-
-## In Preview
-- 👁️ **Repricing gap & profile** by time band and currency.
-- 👁️ **Duration / DV01 / convexity**, including effective duration for instruments with optionality.
-- 👁️ **NII and EVE sensitivity** under parallel and non-parallel shocks (six IRRBB scenarios).
-- 👁️ **Scenario Builder** and Liam positioning recommendations.

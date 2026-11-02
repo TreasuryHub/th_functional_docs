@@ -1,6 +1,5 @@
 # Home — Cash Position Dashboard
 
-> **Availability:** `Available` ✅ (core cash position is live; the Ona-powered Setup, Performance and Cockpit tabs are `In Preview` 👁️ — see below)
 > **Where to find it:** Home
 > **Who uses it:** treasurers, cash managers, finance teams, CFOs — anyone who needs to see where the money is.
 > **Permissions required:** `CashManagement.CashPosition` · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
@@ -13,8 +12,7 @@ range you choose, so you can read balances day by day.
 
 Instead of logging into each bank portal and stitching balances together in a spreadsheet, you get
 one consolidated, always-current picture the moment you open the platform. From here you can drill
-into the full [Cash Position report](../06-reporting/overview.md) when you need transaction-level
-detail.
+into [Transactions](../06-reporting/transactions.md) when you need transaction-level detail.
 
 ![The Cash Position dashboard: module tabs, the date/currency/filter control row, and the grouped balance table with a column per date](../assets/screenshots/home-cash-position-dashboard.png)
 
@@ -75,11 +73,9 @@ detail.
   **Export** or **Print** to take the current view with you.
 
 ### Drill into the detail
-For transaction-level analysis — opening balance, inflows, outflows, net flow and closing balance,
-drilled all the way down through **Currency › Group › Country › Company › Bank › Account › Tag ›
-Transaction** — open the full **Cash Position** report under
-[Reporting](../06-reporting/overview.md). That report also lets you toggle **Actuals vs Forecast**
-and group columns by **Days, Weeks or Months**.
+For the movements behind a balance, open [Transactions](../06-reporting/transactions.md). To compare
+two dates account by account, use [Balance Differential](../06-reporting/balance-differential.md); to
+see what moved by category, use [Category Positions](../06-reporting/category-positions.md).
 
 ## Configuration
 Home is view-only — you don't set data up here, you set it up upstream:
@@ -99,24 +95,25 @@ Home is view-only — you don't set data up here, you set it up upstream:
 - If a currency total looks off, check for an **"FX unavailable"** marker — it usually means a
   missing exchange rate rather than a real cash movement.
 
+## Personalized cockpit
+Beyond the cash dashboard, Home is also a **personalized cockpit** organized around your roles,
+across three further tabs:
+- **Cockpit tab** — a personalized grid of KPIs, approval queue, featured reports and alerts,
+  each tagged with the role that makes it relevant to you.
+- **Performance tab** — a daily briefing, meeting prep, and progress against daily/weekly/
+  monthly objectives.
+- **Setup tab** — your work routines, built from the roles and workflows set up in the Admin
+  Console.
+
+The demo KPI figures and personas you may see are illustrative examples, not your data.
+
 ## Related
-- [Reporting — Cash Position](../06-reporting/overview.md) — the full drill-down report with
-  actuals/forecast and transaction detail.
+- [Balance Differential](../06-reporting/balance-differential.md) — the same balances as a flat
+  two-date comparison.
+- [Category Positions](../06-reporting/category-positions.md) — what moved, by category.
 - [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — the sidebar,
   top bar, and shared grid behaviors.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — company hierarchy and master data
   behind the totals.
-- [Roadmap](roadmap.md) — what's shipped and what's coming.
-
-## In Preview
-The demo shows Home evolving from a cash dashboard into a **personalized cockpit** curated for your
-roles by **Ona**, your personal coach agent. These tabs are in testing (available on request):
-- 👁️ **Cockpit tab** — a personalized grid of KPIs, approval queue, featured reports and alerts,
-  each tagged with the role that makes it relevant to you.
-- 👁️ **Performance tab** — Ona's daily briefing, meeting prep, and progress against daily/weekly/
-  monthly objectives.
-- 👁️ **Setup tab** — Ona configures your work routines from the roles and workflows she manages in
-  the Admin Console.
-
-Ona and the other named agents are tracked on the [Agents](../09-agents/overview.md) page. The
-demo KPI figures and personas you may see in previews are illustrative examples, not your data.
+- [Status board](status-board.md) — how your Treasury Hub implementation is progressing: the
+  platform roadmap, your onboarding programme, and your open support tickets.

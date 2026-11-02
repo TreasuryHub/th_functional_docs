@@ -1,6 +1,5 @@
 # Bank Accounts
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Admin Console › Master Data › Bank Accounts (the management grid); also shown as a report under Reporting › Operations › Bank Accounts. Add accounts with **+ Add Account** on Home (top-right) or on the Bank Accounts screen. This is **core data** used across the platform.
 > **Who uses it:** treasury operations, cash managers, finance teams, administrators.
 > **Permissions required:** `CoreData.BankAccounts` · Read to view; CreateEdit to add/edit accounts and set balances; Delete to remove. Uploading a statement per account needs `CashManagement.CashPosition.BankStatements` · CreateEdit. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
@@ -22,6 +21,9 @@ your cash position, reconciliation, and reporting.
   **reconnecting** periodically.
 - **Manual account** — an account you create by hand (name, IBAN, account number, BIC, institution,
   company, currency) when an automatic link isn't used.
+- **Connection** — the channel an account's data arrives on: **Open Banking**, **Manual Upload**,
+  **Swift**, **API**, **SFTP** or **Email**. One is chosen when the account is created, and most
+  accounts can be moved to another one later.
 - **Account type** — what the account is for (Current, Nostro, Reserve, Settlement, Escrow,
   Investment, Disbursement).
 - **Force balance** — manually setting an account's closing balance as of a date, with the position
@@ -64,9 +66,27 @@ The grid is split into tabs so you can focus on accounts that need attention:
    **payments are enabled** from it.
 3. Save. The account appears in the grid.
 
-> You can also create accounts **in bulk** with the **AI Master Data Assistant** (`In Preview` 👁️) — from
-> a pasted list or an uploaded file, attaching each to an existing company. See
-> [Companies & Company Groups](../10-admin-console/companies-and-groups.md).
+### Change how an account's data arrives
+1. Select the account and choose **Edit**.
+2. On the **Configure account** step, look at the **Connection** options — **Open Banking**,
+   **Manual Upload**, **Swift**, **API**, **SFTP** and **Email**.
+3. Click the one you want and save. A short **Account updated** confirmation appears and the grid
+   shows the new connection.
+4. Choosing **Swift** also sets the account up to receive MT940 statements, so nothing further is
+   needed to start taking them.
+
+Three rules decide whether the options can be clicked at all, and an option you cannot pick is
+dimmed rather than hidden:
+
+- **Open Banking is never a destination.** It is reached only by connecting the bank through the
+  consent flow, so its option is always dimmed while you are editing.
+- **An account created on Open Banking keeps its connection.** All of its options stay dimmed.
+- **An account whose integration was set up for you keeps its connection** as well, because the
+  integration and the account have to agree.
+
+If a change is refused when you save, the message says so: *This account's connection cannot be
+changed. Open Banking accounts and accounts with an operator-configured integration keep their
+connection.*
 
 ### Set an account's balance (force balance)
 1. Select the account and choose **Set Account Closing Balance**.
@@ -91,15 +111,18 @@ The grid is split into tabs so you can focus on accounts that need attention:
   flowing until you reconnect.
 - Use **force balance** only to correct or seed a balance; routine balances should come from
   statements or automatic sync.
+- Change an account's **connection** before you change anything feeding it. Switching to SFTP or
+  Email with no ingestion rule in place leaves the account with no data arriving — see
+  [Integrations](../02-integrations/overview.md).
 - Keep account **type** and **company** accurate — they drive how balances consolidate in
-  [Cash Position](cash-position.md).
+  [Cash Position](../01-home/home-dashboard.md).
 
 ## Related
 - [Bank Statements](bank-statements.md) — the statement pipeline that feeds account balances.
 - [Transactions](transactions.md) — the movements on each account.
-- [Cash Position](cash-position.md) — accounts consolidated into your position.
+- [Cash Position](../01-home/home-dashboard.md) — accounts consolidated into your position.
 - [Exchange Rates](exchange-rates.md) — used to convert balances to your display currency.
 - [Integrations](../02-integrations/overview.md) — Open Banking and other feeds.
-- [Counterparties & SSIs](../10-admin-console/counterparties-and-ssis.md) — the *payee* side of transfers (`In Preview` 👁️).
+- [Counterparties & SSIs](../10-admin-console/counterparties-and-ssis.md) — the *payee* side of transfers.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — company/account hierarchy and master
   data.

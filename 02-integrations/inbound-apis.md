@@ -1,7 +1,5 @@
 # Inbound APIs (Push)
 
-> **Availability:** `Available` ✅
-> **Plan:** Premium (Upgrade)
 > **Where to find it:** credentials are issued in the **TreasuryHub Portal** (and managed in Admin Console › Access Tokens); the business rules that act on incoming data live in **Admin › Master Data › Matching Rules** and **Settings › Reconciliation**.
 > **Who uses it:** your IT / development teams, finance systems owners, administrators.
 > **Permissions required:** administrator to obtain credentials and manage access tokens; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
@@ -22,7 +20,7 @@ This page covers **inbound** (data coming in). For sending data **out**, see
 - **H2H (machine-to-machine)** — no OAuth, no Bearer token, no end-user login. Each request carries
   two header credentials.
 - **Financial event** — the record you push: a pay-in, a pay-out, or a bank movement. This is the
-  entity the current API ingests.
+  entity the API ingests.
 - **`externalId`** — your own unique identifier for each record (unique per tenant). It's how
   Treasury Hub deduplicates and how you match records back to your system.
 - **Client / Tenant** — the same thing; your `X-Client-Id` identifies your organization.
@@ -31,7 +29,7 @@ This page covers **inbound** (data coming in). For sending data **out**, see
   [Configuration](#configuration).
 
 ## The endpoint
-The current H2H resource is **Financial Events**:
+The H2H resource is **Financial Events**:
 
 | Method | Path | Purpose |
 |---|---|---|
@@ -62,14 +60,12 @@ Content-Type: application/json
   create the credentials. Both environments enforce an **IP allowlist**.
 
 ## Before you start
-1. Confirm the inbound API is enabled for your organization (it's available on request — contact
-   Treasury Hub).
-2. Get credentials:
+1. Get credentials:
    - **Sandbox** — request manual provisioning and give Treasury Hub a fixed IP to allowlist.
    - **Production** — in the **TreasuryHub Portal**, create your client (tenant), generate credentials,
      and set token expiration + allowed IP ranges. Tokens are also visible/manageable in
      [Admin Console › Access Tokens](../10-admin-console/access-tokens.md).
-3. Share the credentials securely with your technical team (environment variables / a secrets vault —
+2. Share the credentials securely with your technical team (environment variables / a secrets vault —
    never in client-side code or a public repo).
 
 ## How to use it
@@ -138,9 +134,9 @@ rejects based on the error response.
 rules engine, which you configure:
 - **[Matching Rules](../10-admin-console/matching-rules.md)** (Admin › Master Data › Matching Rules) —
   scoped by company, account, currency, and date, these decide the **G/L posting** an event produces
-  (a *PostingRule*) or the **tags** it gets (a *TagAssignmentRule*). `Available` ✅.
+  (a *PostingRule*) or the **tags** it gets (a *TagAssignmentRule*).
 - **[Reconciliation Criteria & Flows](../04-reconciliation/rules-and-criteria.md)** (Settings ›
-  Reconciliation) — how pushed events are matched against bank movements and other sources. `In Preview` 👁️.
+  Reconciliation) — how pushed events are matched against bank movements and other sources.
 
 **Volume.** The default rate limit is **1,000 requests per minute per tenant** (a `429` is returned
 when exceeded); a higher limit can be requested via the Portal.

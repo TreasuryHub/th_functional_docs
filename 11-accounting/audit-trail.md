@@ -1,21 +1,22 @@
 # End-to-End Audit Trail
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** Reporting › Overview › Audit Trail (a filterable audit log). A per-record timeline inside each record's detail panel is planned (see In Preview).
+> **Where to find it:** Reporting › Overview › Audit Trail (a filterable audit log).
 > **Who uses it:** auditors, financial controllers, compliance, treasury operations.
 > **Permissions required:** Read on the relevant module; auditors will typically have read access across modules plus the audit trail. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-The **audit trail** will be the immutable record of everything that happened to a transaction — every
-step, every change, who or what did it, and when. It will let you follow a single item from the moment
+The **audit trail** is the immutable record of everything that happened to a transaction — every
+step, every change, who or what did it, and when. It lets you follow a single item from the moment
 it arrived in the platform all the way to its record in your ERP, and back again, which is exactly
 what auditors and compliance teams need.
 
 Auditability is built into the platform's [workflow model](../00-getting-started/03-core-concepts.md#everything-is-a-workflow):
 every workflow step records who did what, when, and the outcome. This page explains how the trail
-*will* work for accounting and posting activity once the module is live.
+works for accounting and posting activity.
+
+The trail itself is unaffected by the switch-off of [G/L posting](gl-postings.md), but it no longer
+gains posting events: no entry is generated, approved or exported any more, so the accounting end of
+the chain below is history. Everything recorded in the past is kept and stays readable.
 
 ## Key concepts
 - **Event** — one immutable record of a single action (for example *created*, *approved*,
@@ -31,14 +32,16 @@ every workflow step records who did what, when, and the outcome. This page expla
 - **Retention policy** — how long the trail is kept, configurable to your regulatory needs.
 
 ## The ID chain — following a transaction end to end
-Each transaction will keep a chain of identifiers that links every stage together:
+Each transaction keeps a chain of identifiers that links every stage together:
 
 ```
 Transaction → Reconciliation → Journal Entry → Approval → ERP Export → ERP Entry
  (ingestion)    (matching)       (generated)    (workflow)  (sent)       (recorded in ERP)
 ```
 
-Because these are linked, you will be able to navigate in both directions:
+The chain stops at reconciliation for anything recent: the journal entry, approval and ERP export
+stages exist only on records created before G/L posting was switched off. Where those stages are
+present, they are linked, so you can navigate in both directions:
 
 - **Drill down (backwards):** from an entry recorded in the ERP → back to its journal entry → back
   to the reconciliation → back to the original bank movement.
@@ -48,7 +51,7 @@ Because these are linked, you will be able to navigate in both directions:
   trail connects the entries across all the entities involved.
 
 ## What each event records
-Every event will capture a consistent set of fields:
+Every event captures a consistent set of fields:
 
 | Field | What it records |
 |---|---|
@@ -60,7 +63,6 @@ Every event will capture a consistent set of fields:
 | **Context** | For an AI action: its reasoning and confidence score. For a user: session details such as IP. |
 
 ## How to use it
-*The steps below describe the intended experience once this is live.*
 
 ### Browse the audit log
 1. Open **Reporting › Overview › Audit Trail**.
@@ -72,8 +74,7 @@ Every event will capture a consistent set of fields:
 
 ![The Audit Trail log grid: Timestamp, User, Action, Resource, Details, and IP Address, with column filters](../assets/screenshots/audit-trail-timeline.png)
 
-> A per-record **timeline in the detail panel** (following one item end to end across modules) is
-> in preview — see In Preview below.
+> A per-record **timeline in the detail panel** follows one item end to end across modules.
 
 ### Trace a transaction across systems
 1. From any event, use the **linked reference** to jump to the connected record in another phase
@@ -85,8 +86,8 @@ Every event will capture a consistent set of fields:
 1. Use the column filters on **User**, **Action**, and **Resource** to narrow the log to the events
    you need.
 2. Sort by **Timestamp** to work in chronological (or reverse-chronological) order.
-3. (Roadmap) Once the end-to-end ID chain lands, you'll also be able to trace by **phase** (ingestion,
-   reconciliation, journal entry, approval, export) — see *Trace a transaction across systems* above.
+3. Trace by **phase** (ingestion, reconciliation, and, on older records, journal entry, approval and
+   export) using the end-to-end ID chain — see *Trace a transaction across systems* above.
 
 ### Export the trail for an external audit
 1. Open the trail for the record or period you need.
@@ -104,14 +105,14 @@ Every event will capture a consistent set of fields:
 - Use **cross-entity** tracing for intercompany items so both sides of a transaction are reviewed
   together.
 
+## Also in the audit trail
+- **Consolidated Transaction Timeline** — a single unified view of every event for any transaction,
+  with phase and actor filters in one place.
+- **Compliance query API** — programmatic access to the audit trail for external GRC tools.
+
 ## Related
-- [G/L Postings](gl-postings.md) — postings whose history the trail records.
-- [Journal Entries](journal-entries.md) — entry generation and approvals recorded in the trail.
-- [Posting to your ERP](erp-integration.md) — export and matching events.
+- [G/L Postings](gl-postings.md) — the postings whose history the trail records.
+- [Journal Entries](journal-entries.md) — the entry generation and approvals recorded in the trail,
+  which no longer run.
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — who can view the trail.
 - [Reconciliation](../04-reconciliation/overview.md) — matching events feed the same trail.
-
-## In Preview
-- 👁️ **Consolidated Transaction Timeline** — a single unified view of every event for any transaction,
-  with phase and actor filters in one place.
-- 👁️ **Compliance query API** — programmatic access to the audit trail for external GRC tools.

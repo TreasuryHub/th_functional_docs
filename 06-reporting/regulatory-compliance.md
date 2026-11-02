@@ -1,27 +1,26 @@
 # Regulatory & Compliance Reports
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** there is **no "Regulatory & Compliance" section** in the Reports menu today. The **Audit** report is in the Reporting menu (breadcrumb **Reporting › Overview › Audit**); the prudential reports (capital, liquidity, credit quality) are In Preview and will appear in the reports library as they ship.
+> **Where to find it:** the **Audit** report sits in the Reporting menu (breadcrumb **Reporting ›
+> Overview › Audit**); the prudential reports (capital, liquidity, credit quality) are listed in the
+> reports library.
 > **Who uses it:** compliance officers, risk teams, controllers, auditors, regulators.
 > **Permissions required:** to be confirmed per report; the Audit Trail will typically be available to Auditor/Admin roles. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This screen is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-The Regulatory & Compliance area will bring together the reports auditors and regulators ask for: a
+The Regulatory & Compliance area brings together the reports auditors and regulators ask for: a
 complete, searchable record of who did what in the platform, plus the prudential views a regulated
 institution needs — capital, liquidity, and credit-quality reporting. Because every action and every
-ingested item is already tracked and traceable to its source, these reports will be generated from
+ingested item is already tracked and traceable to its source, these reports are generated from
 data you already hold rather than assembled by hand.
 
 ## The reports
 
-| Report | What it covers | Status |
-|---|---|---|
-| **Audit Trail** | A time-stamped record of actions across the platform — who did what, when, and the outcome — with drill-down to the underlying record. | `In Preview` 👁️ |
-| **Capital Requirements** | Regulatory capital views (e.g. capital adequacy / RWA reporting). | `In Preview` 👁️ |
-| **Liquidity Requirements** | Regulatory liquidity metrics (e.g. LCR/NSFR-style liquidity coverage). | `In Preview` 👁️ |
-| **Credit Quality & Asset Classification** | Credit-quality and asset-classification reporting (e.g. IFRS 9 staging, provisioning, NPL). | `In Preview` 👁️ |
+| Report | What it covers |
+|---|---|
+| **Audit Trail** | A time-stamped record of actions across the platform — who did what, when, and the outcome — with drill-down to the underlying record. |
+| **Capital Requirements** | Regulatory capital views (e.g. capital adequacy / RWA reporting). |
+| **Liquidity Requirements** | Regulatory liquidity metrics (e.g. LCR/NSFR-style liquidity coverage). |
+| **Credit Quality & Asset Classification** | Credit-quality and asset-classification reporting (e.g. IFRS 9 staging, provisioning, NPL). |
 
 ## Key concepts
 - **Audit trail** — the immutable, chronological log of actions and events; every reconciliation
@@ -32,7 +31,6 @@ data you already hold rather than assembled by hand.
   must report.
 
 ## How to use it
-*The steps below describe the intended experience once this screen is live.*
 
 ### Use the Audit Trail
 1. Open the **Audit** report from the Reporting menu (breadcrumb **Reporting › Overview › Audit**; see also [Audit Trail](../11-accounting/audit-trail.md)).
@@ -42,13 +40,13 @@ data you already hold rather than assembled by hand.
 4. Click **Export** to produce a **PDF / Excel / CSV** record for auditors.
 
 ### Regulatory reports
-The Capital, Liquidity, and Credit-Quality reports will work like the other standard reports: choose
+The Capital, Liquidity, and Credit-Quality reports work like the other standard reports: choose
 the reporting period and entity scope, review on screen, then export or schedule the output for your
 compliance calendar.
 
 ## Tips & good practices
-- When it is live, export the **Audit Trail** for the exact period and scope an auditor requests
-  rather than granting them broad platform access.
+- Export the **Audit Trail** for the exact period and scope an auditor requests rather than
+  granting them broad platform access.
 - Use audit-trail filters to reconstruct a specific event end to end (from ingestion through
   approval and posting) when investigating a query.
 
@@ -58,9 +56,3 @@ compliance calendar.
 - [Operations blotters](operations-blotters.md) — the underlying debt, investment, and reconciliation
   records.
 - [Platform — Audit](../12-platform/) — platform-wide audit and governance.
-
-## In Preview
-- 👁️ **Audit Trail** — the searchable, time-stamped record of platform actions.
-- 👁️ **Capital Requirements** report — regulatory capital / RWA reporting.
-- 👁️ **Liquidity Requirements** report — regulatory liquidity coverage reporting.
-- 👁️ **Credit Quality & Asset Classification** report — staging, provisioning, and NPL reporting.

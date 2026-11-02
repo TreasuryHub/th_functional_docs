@@ -1,83 +1,130 @@
-# The Assistant
+# Working with an Agent
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** **Open Assistant** — top bar (button present on every screen)
-> **Who uses it:** everyone — new users during onboarding, and all users day to day.
-> **Permissions required:** none beyond your normal access — the Assistant will work within your own [permissions](../00-getting-started/04-roles-and-permissions.md).
-
-> 👁️ **In Preview.** The **Open Assistant** button is present in the top bar, but the Assistant
-> itself is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
+> **Where to find it:** Wherever a screen offers it — today, the Workflow Studio under
+> **Reconciliation › Workflows**, and the ingestion format proposals under **Settings › Ingestion**
+> **Who uses it:** Treasurers, finance teams, operations staff, and administrators
+> **Permissions required:** None of its own — it acts with the permissions you already have. See
+> [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The **Assistant** will be Treasury Hub's built-in AI helper. You open it from the **Open Assistant**
-button in the top bar, and it will be available on every screen. It is designed to help you in two
-ways: to **guide new organizations and users through onboarding and setup**, and to **answer
-questions in plain language** — from "How does reconciliation work?" to "Where do I upload a bank
-statement?" — so you don't have to hunt through menus.
+A module's **agent** turns a sentence into a reviewable change. You say what you want; it finds the
+records you named, works out exactly which fields would have to change, has that change checked
+against the platform's own validation rules, and gives it back to you as a **proposal**.
 
-Think of it as a knowledgeable colleague you can ask anything, at any time, without leaving the
-screen you're on.
-
-> \* The in-app Assistant is present in the platform today. The named, specialized agents it will
-> eventually orchestrate — Alex, Sophia, Mateo, Lucas, Olivia, Nadia, Isabella, Noah, Carter, Elena,
-> Ethan, Ava, Liam, Mia, Ona, and Oliver — are in preview. See the full
-> [AI Agents Overview](overview.md).
+What it hands you is not a description of a change — it is the change itself, prepared and ready to
+submit. What it never does is submit it. Reviewing and confirming is always yours, and the platform
+rejects a save that originates from the agent rather than from a person, independently of
+anything the agent does. See
+[the promise](overview.md#the-promise-the-agent-proposes-a-person-submits).
 
 ## Key concepts
-- **Conversational interface** — you type what you need in natural language; the Assistant replies
-  and can take the initiative with **guided prompts** that walk you step by step.
-- **Guided onboarding** — a conversational setup flow for a new organization, instead of a long form.
-- **Context** — the Assistant knows which [organization (tenant)](../00-getting-started/03-core-concepts.md#organizations--tenants)
-  you're in and works within your role and permissions.
+- **Turn** — one message from you and the agent's reply. A turn can be an answer to a question,
+  a change to what you are building, or an honest "that is not something this does".
+- **Proposal** — the prepared change: summary, resolution trace, changed fields, validation. Nothing
+  else is required to submit it.
+- **Resolution trace** — which record each name in your sentence matched, named rather than
+  numbered.
+- **Changed fields** — the exact list of fields that differ from what is stored or from the draft you
+  had before this turn.
+- **Validation** — the result of having the owning area check the change without storing it, down to
+  the individual field.
 
 ## Before you start
-- Nothing to set up — the Assistant is available to every user from the top bar.
-- If you don't see **Open Assistant**, it may not be enabled for your organization yet — ask your
-  administrator. See your administrator.
+- Nothing to install or switch on. The agent appears inside the screens that use it.
+- The records you will name need to exist. The agent resolves "Acme" or "Ana Torres" by
+  searching — it cannot create a record that is not there, and it will not guess.
+- Your organization needs allowance left on its monthly token budget. See
+  [Token budgets](overview.md#token-budgets-are-a-hard-stop).
 
 ## How to use it
 
-### Open the Assistant
-1. Click **Open Assistant** in the top bar (see [the top bar](../00-getting-started/02-navigation-and-workspace.md#the-top-bar)).
-2. The Assistant panel opens over your current screen.
-3. Type your question or request, or pick one of the suggested prompts.
+### Ask for a change
+1. Open the screen that offers the agent — for example a reconciliation workflow in the
+   **Workflow Studio**.
+2. Type what you want in plain language: *"match pay-ins against bank movements, same amount, up to
+   two days apart"*.
+3. Wait for the reply. The agent searches for the records your sentence named, builds the change,
+   and has it validated.
+4. Read what comes back — see [What you see in a proposal](#what-you-see-in-a-proposal).
+5. If it is right, **submit it** from the screen. If not, say what to change and go again.
 
-### Ask a question or get help
-1. Open the Assistant.
-2. Describe what you want in plain language, for example "How do I add a bank account?" or "What
-   does a partially reconciled item mean?"
-3. Read the answer. Where relevant, the Assistant points you to the exact screen or explains the
-   next step.
+### Refine what you are building
+1. Stay in the same conversation. The agent keeps the work so far.
+2. Say only what differs: *"the tolerance is too wide, make it 0.50"*, or *"do the same for
+   pay-outs"*.
+3. Check the **changed fields** on the reply — only what you asked for should be in that list. If
+   something else moved, it is visible there before anything is saved.
 
-### Set up a new organization (guided onboarding)
-1. When your organization is first onboarded, open the Assistant.
-2. Answer its questions as it walks you through setup — for example your legal entities, the
-   processes you run, the users and their roles, and the systems you want to connect.
-3. The Assistant proposes sensible defaults; confirm or adjust each step.
-4. Finish the flow — your organization is configured and ready to use.
+### Ask a question instead of making a change
+1. Ask it as a question: *"which fields can I match on?"*, *"why does this not validate?"*
+2. The agent answers and **changes nothing** — the draft comes back exactly as it was.
+3. Suggested follow-ups appear as buttons where the screen offers them; choosing one sends it as your
+   next message.
 
-> Onboarding covers your **organization structure**, the **processes and workflows** you use, your
-> **users and roles**, and the **data sources / systems** to integrate. See
-> [Core Concepts](../00-getting-started/03-core-concepts.md) for these building blocks.
+### Answer a question it asks you
+1. When something was not in your sentence, the agent stops and asks for it by name — *"a value
+   the request did not give is needed: start date of 'Reconciliation workflow setup'"*.
+2. Answer with just that value: *"start on 1 October"*.
+3. The agent keeps everything that had already resolved and completes the change. You do not
+   repeat the original request.
+
+## What you see in a proposal
+Every proposal has the same four parts, and they are worth reading in this order:
+
+| Part | What it tells you |
+|---|---|
+| **Summary** | One or two sentences in plain language describing what was prepared and whether it validated. Written for readability — if it ever disagrees with the fields below, the fields are what would be saved. |
+| **Resolution trace** | How each name you used became a record: what was searched for, and which record matched, **by that record's name**. "Acme" → *Acme Corp S.A.* is checkable at a glance; an internal identifier is not. |
+| **Changed fields** | The exact list of fields that would change, down to the individual entry in a list. A batch names the row, not just the list. |
+| **Validation** | The result of the owning area's own checks, field by field: errors that block, and warnings that do not. |
+
+Where a change still does not validate, you get it anyway, with the problems attached and clearly
+marked as not valid, so you can finish it by hand rather than starting over.
+
+## When it asks instead of guessing
+The agent stops and asks you in three situations. In all of them nothing is invented and nothing
+is saved:
+
+- **Your sentence did not supply a value.** A required date, a required code — it asks for exactly
+  that field, names the item it belongs to, and keeps everything else it had already worked out. In a
+  batch it groups the question: *"items 3 and 5 have no end date"*, naming the items by name rather
+  than by position.
+- **A date conflicts with one already stored.** If you ask to complete something before the stored
+  start date, it does not quietly move the other date to make yours fit. It tells you both dates and
+  asks which one should give way. Your value stays untouched while you decide.
+- **Two records share a display name.** It returns the candidates and asks which one you meant. It
+  never picks one silently.
+
+Answering is a normal next message in the same conversation.
+
+## When it declines
+- **Out of scope.** If nothing in the area you are working in does what you asked, the agent says
+  so and returns nothing. It does not hand you the nearest available operation instead.
+- **Beyond your permissions.** If the change would grant more than you are entitled to grant, you get
+  a refusal with no proposal at all — the change is not shown, because a proposal on screen is
+  something people confirm.
+- **Budget exhausted.** When a token ceiling is reached the turn stops rather than degrading. Your
+  draft is not lost.
+- **Model provider unreachable.** AI assistance switches off; every screen and every manual flow
+  continues to work exactly as before.
 
 ## Tips & good practices
-- Be specific about your goal ("reconcile last week's card settlements") rather than searching for
-  a screen name — the Assistant is better at intent than keywords.
-- Use it as your **first stop when you're stuck**: it's faster than paging through the help centre.
-- The Assistant answers within your permissions, so what it can show or do depends on your role.
+- **One intent per message.** "Add the rule and rename the chain and change the tolerance" is harder
+  to review than three turns, and the changed-fields list is longer than it needs to be.
+- **Correct it with a fact, not a question.** *"0.50, not 1"* is applied; *"is 1 too much?"* is
+  answered. Both are useful — just know which one you are sending.
+- **Trust the trace over the summary.** If the resolution trace matched the wrong company, nothing
+  further in the proposal is worth reading.
+- **An incomplete draft is normal.** The agent builds only what you have actually stated and asks
+  about the rest, rather than filling the gaps with defaults you did not choose.
+- **Start a new conversation for unrelated work.** A conversation carries its own context and its own
+  ceiling; mixing two pieces of work in one makes both harder to follow.
 
 ## Related
-- [AI Agents Overview](overview.md) — the bigger picture and the in-preview agents.
-- [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — where the
-  **Open Assistant** button lives.
-- [Core Concepts](../00-getting-started/03-core-concepts.md) — the concepts the Assistant helps you set up.
-
-## In Preview
-- 👁️ **Contextual, screen-aware help** — help tailored to the exact screen you're on, with a library
-  of common prompts per module.
-- 👁️ **Role-based onboarding tours** — different guided walkthroughs for treasurers, analysts, and
-  auditors.
-- 👁️ **Q&A over your live data** — natural-language answers with real figures (e.g. "What's my cash
-  position today?"), routed to the right specialized agent, with suggested next actions.
-- 👁️ **Escalation to a human** — hand a conversation to a Customer Success manager with full context
-  if the Assistant can't resolve it.
+- [AI Assistance — Overview](overview.md) — the safety promise, guardrails, budgets and audit.
+- [Reconciliation workflows](../04-reconciliation/workflows.md) — the Workflow Studio, where you use
+  the agent most.
+- [File Import](../02-integrations/file-import.md) — parsing templates and the proposals the
+  agent prepares for unrecognised formats.
+- [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — what the agent can
+  and cannot reach on your behalf.

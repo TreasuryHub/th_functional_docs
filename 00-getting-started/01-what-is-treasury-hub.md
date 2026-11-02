@@ -1,6 +1,5 @@
 # What is Treasury Hub?
 
-> **Availability:** `Available` ✅
 > **Who this is for:** everyone using the platform.
 
 ## Overview
@@ -56,15 +55,15 @@ reconciliation, reporting, payments, and decisions you make on it.
 - **Pay with control** — initiate single or batch payments against known payees and their settlement
   instructions, with **multi-level approvals**, threshold rules, and full status tracking.
 - **Report, forecast, and model** — standard reports and **build-your-own**, cash position, cash forecast,
-  actual-vs-forecast, and operations blotters for FX, loans, and investments (what-if scenario modeling is
-  *in preview*).
+  actual-vs-forecast, operations blotters for FX, loans, and investments, and what-if scenario
+  modeling.
 - **Close the books** — post to your **G/L / ERP** with a chart-of-accounts rules engine, approval
   workflow, journal entries, and a full **audit trail**.
-- **Manage risk** *(in preview)* — FX, credit, interest-rate, mark-to-market, and ALM, with exposures, VaR,
+- **Manage risk** — FX, credit, interest-rate, mark-to-market, and ALM, with exposures, VaR,
   and stress testing.
-- **Let AI do the setup and the busywork** *(in preview)* — specialized AI agents and an in-app assistant
-  across the platform, plus **configuration assistants** that stand up counterparties, roles, ingestion
-  rules, reconciliation, and master data from a plain-language request.
+- **Let AI do the setup and the busywork** — each module has its own agent, so you can describe a
+  change in plain language on the screen you are already on and get back a prepared change to review
+  and submit.
 - **Administer with confidence** — users, roles, and granular permissions with **segregation of duties**,
   companies and groups, bank accounts, tags, counterparties & settlement instructions, and access tokens —
   all audited.
@@ -80,14 +79,12 @@ reconciliation, reporting, payments, and decisions you make on it.
 | 📒 G/L Postings | Turns treasury activity into accounting entries for your ERP. |
 | 📊 Treasury Reporting | Shows where your cash is and lets you build the reports you need. |
 | 💧 Cash & Liquidity | Forecasts the cash you'll have and helps you plan ahead. |
-| 💱 FX Risk *(in preview)* | Shows your currency exposure and how to hedge it. |
-| 📉 Interest Rate Risk *(in preview)* | Shows how rate changes would affect your positions. |
-| 🛡️ Credit Risk *(in preview)* | Tracks how much you're exposed to each counterparty. |
-| ⚖️ ALM *(in preview)* | Keeps your assets and liabilities in balance over time. |
-| 🎯 MtM Valuations *(in preview)* | Values your positions at today's market prices. |
+| 💱 FX Risk | Shows your currency exposure and how to hedge it. |
+| 📉 Interest Rate Risk | Shows how rate changes would affect your positions. |
+| 🛡️ Credit Risk | Tracks how much you're exposed to each counterparty. |
+| ⚖️ ALM | Keeps your assets and liabilities in balance over time. |
+| 🎯 MtM Valuations | Values your positions at today's market prices. |
 | 🤝 Professional Services | Our team helps you onboard, customize, and go live. |
-
-Ask your administrator which modules are enabled for your organization.
 
 ## Related
 - [Navigation & Your Workspace](02-navigation-and-workspace.md)

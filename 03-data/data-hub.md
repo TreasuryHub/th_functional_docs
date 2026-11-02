@@ -1,12 +1,11 @@
 # Data Hub
 
-> **Availability:** `Available` ✅ (shown **Active** in the platform)
 > **Where to find it:** Data › Data Hub
 > **Who uses it:** treasury operations, finance teams, data/IT owners.
 > **Permissions required:** Data access (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-The Data Hub is the landing screen for the **Data** module — the place to **upload, explore and query
+The Data Hub is the landing screen for the **Data** module — the place to **upload, explore and search
 your treasury data**. It brings together two things: a **file upload** zone for data that doesn't
 come through an automatic feed, and a browsable **Data Repository** of everything that's been
 ingested, grouped by category.
@@ -68,10 +67,3 @@ feed, and to look across everything the platform has stored — regardless of ho
 - [Data Exports](data-exports.md) — send Treasury Hub data out to your own systems via API.
 - [Integrations](../02-integrations/overview.md) — where most of your data comes from automatically.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — normalized data and how it flows.
-
-## In Preview
-- 👁️ **Oliver — Data Governance & Lineage agent.** A plain-language assistant that would query your
-  data, check data quality, trace where a record came from (**lineage**), and help you find and
-  download files. Oliver is in preview and is **not** a visible chat panel in the Data Hub today.
-  Its rollout and exact scope should be confirmed with the Treasury Hub team — see
-  your administrator.

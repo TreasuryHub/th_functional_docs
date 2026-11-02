@@ -1,81 +1,99 @@
 # Reconciliation — Reconciliation Approvals
 
-> **Availability:** `In Preview` 👁️
-> **Where to find it:** Reconciliation › Reconciliation Approvals (the screen it opens is titled **Reconciliation Requests**)
+> **Where to find it:** Reconciliation › Administration › Reconciliation Approvals (the screen it
+> opens is titled **Reconciliation Requests**)
 > **Who uses it:** finance team, reconciliation reviewers and approvers.
 > **Permissions required:** reconciliation access · CreateEdit to approve or reject; Read to view (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
-
-> 👁️ **In Preview.** The Reconciliation module is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-**Reconciliation Requests** is the queue of machine-suggested matches waiting for a human decision.
-The platform proposes each pairing with a **confidence** score and the **reasons** it matched, and
-you approve or reject — one at a time, a selected group, or all at once with **Execute All**.
-Approving a request creates the reconciliation; rejecting it clears the suggestion. This is where the
-AI-assisted matching surfaces for review; hand-picked matches are made on the
-[Matching](matching.md) screen instead.
+**Reconciliation Approvals** is the queue of proposed reconciliations waiting for a human decision.
+A request lands here whenever a rule's match block is set to **send for approval** instead of
+auto-reconciling, and whenever a match is ambiguous enough that the rule asks for a second pair of
+eyes. You approve a request to create the reconciliation, or reject it to discard the proposal.
+Hand-picked matches are made on the [Matching](matching.md) screen instead.
+
+The engine does not guess. Every request on this screen was produced by a rule you configured, and
+the rule that produced it is shown on the row — so when a request looks wrong, the fix is in the
+[rule](rules-and-criteria.md), not in the queue.
 
 ## Key concepts
-- **Suggested match (request)** — a candidate pairing the engine proposes, with a confidence score
-  and reasons, awaiting your decision.
-- **Confidence** — how sure the engine is about a suggestion, banded **High**, **Medium**, or
-  **Low** (and shown as a score, e.g. High 98). High suggestions are safe to accept quickly; Low ones
-  deserve a careful look.
-- **Reasons** — the plain-language chips explaining why the two items were paired: **ID match**,
-  **Exact amount**, **Same partner**, **Same currency**, **Date proximity**. More reasons generally
-  means a stronger match.
-- **Approve** — accept the suggestion; the platform creates the corresponding reconciliation.
-- **Reject** — decline the suggestion; it's removed from the queue.
-- **Execute All** — approve every suggestion currently in view in one action.
+- **Request** — a proposed reconciliation: the movements on each side, the rule that paired them,
+  and a status.
+- **Pending** — waiting for a decision.
+- **Approved** — accepted; the platform created the corresponding reconciliation.
+- **Rejected** — declined with a reason, which is recorded for the audit trail.
+- **Annulled** — a pending request that was cancelled rather than judged. Annulling is distinct from
+  rejecting: it withdraws the proposal instead of ruling against it.
+- **Total** — the sum of one side of the request.
+- **Difference** — the signed left-minus-right difference between the two sides, available before
+  you approve. Zero means the two sides balance.
 
 ## Before you start
-- You need reconciliation access at **CreateEdit** level to approve or reject.
-- Your matching [rules & criteria](rules-and-criteria.md) drive how many suggestions — and at what
-  confidence — reach this queue.
+- You need reconciliation access at **CreateEdit** level to approve or reject — see
+  [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+- Your [rules & criteria](rules-and-criteria.md) decide how many requests reach this queue. A rule
+  set to auto-reconcile never appears here.
 
 ## How to use it
 
 ### Read the queue
-1. Open **Reconciliation › Reconciliation Approvals** (the screen is titled **Reconciliation Requests**).
-2. The tiles at the top count suggestions by confidence — **High**, **Medium**, **Low** — plus
-   **Total Suggestions**. Use the tabs (**All**, **High**, **Medium**, **Low**) to focus on one band.
-3. Each row shows a **select** checkbox, the **Confidence** score, the **Left** item (ID, Partner,
-   Amount), an arrow, the **Right** item (ID, Partner, Amount), and the **Reasons** chips.
-4. Use **Columns** to choose which columns are visible in the grid.
+1. Open **Reconciliation › Reconciliation Approvals**.
+2. Pick a tab: **All**, **Pending**, **Approved**, **Rejected** or **Annulled**. The screen opens on
+   **Pending**.
+3. Narrow the list with the filters: **Workflow**, **Chain** and **Rule** (each one narrows the
+   next), a **date range** that defaults to today, and a value filter on any catalog field such as
+   currency, partner or payment method.
+4. Each row shows the request **Id**, when it was **created**, its **type** and **status**, the
+   **workflow** and **rule** behind it, the **conciliation type**, the movement type and item count
+   on each side, the **Total**, the signed **Difference**, and who approved or rejected it.
+5. Click a row to open its detail panel, where the movements are listed grouped by side.
 
-### Approve or reject a single suggestion
-1. Find the suggestion in the grid (filter by confidence tab if it helps).
-2. Read the **Reasons** chips and check the amounts on both sides.
-3. Click **Approve** to create the reconciliation, or **Reject** to discard the suggestion. The row
-   leaves the queue either way.
+### Approve or reject one request
+1. Find the request and open it to check the movements on both sides and the **Difference**.
+2. Choose **Approve**, then confirm. The platform creates the reconciliation.
+3. Or choose **Reject** and enter a **reason**. The reason is required and kept for the audit trail.
 
-### Act on many at once
-1. Tick the **select** checkbox on each suggestion you want to act on, or use the header checkbox to
-   select every suggestion in the current view.
-2. Approve or reject the selected rows together, or — to approve the whole current view without
-   selecting rows individually — click **Execute All**.
-3. Confirm. The queue refreshes and the tiles recount.
+### Approve or reject many at once
+1. Tick the checkbox on each request you want to act on, or use **Select all on page**.
+2. Choose **Approve selected** or **Reject selected**. A batch rejection asks once for a reason and
+   applies it to every request in the selection.
+3. You can act on **up to 100 requests in one batch**. Above that the button is disabled and tells
+   you to deselect some rows.
+4. Each request is processed on its own, so a batch can partly succeed. If any item fails, a result
+   panel opens listing which requests went through and which didn't, with the reason for each — most
+   often that someone else already processed it. Your selection stays in the grid until you close
+   the panel, so you can compare the failures against the rows.
 
-> **Tip:** switch to the **High** tab and use **Execute All** to clear high-confidence suggestions in
-> one pass, then work **Medium** and **Low** row by row.
+![Reconciliation Approvals: tabs, workflow/chain/rule filters, and a grid of requests with totals and differences](../assets/screenshots/reconciliation-approvals.png)
 
-![Reconciliation Requests: confidence tiles, All/High/Medium/Low tabs, and a grid of suggested matches with confidence scores, left/right items, reasons chips, and per-row Approve/Reject](../assets/screenshots/reconciliation-approvals.png)
+> The partners, amounts and differences shown in the platform are your own live data; any figures in
+> this help center are illustrative examples.
 
-> The confidence scores, partners, and amounts shown in the platform are your own live data; any
-> figures in this help center are illustrative examples.
+### What approving actually moves
+Approving a request settles only the movements that belong to **the flow of the rule that proposed
+it**. A movement of yours that sits in another flow is left alone, so approving here cannot quietly
+change something in a flow you were not looking at.
+
+A request you created by hand has to resolve to exactly one flow. If its movements span more than
+one flow, or belong to none, the request is refused rather than guessed at — pick movements from a
+single flow and try again.
 
 ## Tips & good practices
-- Work **High-confidence** suggestions first — they clear the backlog quickly and safely.
-- Read the **Reasons** chips on **Low**-confidence rows before approving; an ID or exact-amount match
-  is stronger evidence than date proximity alone.
-- Use **Execute All** only when you've filtered to a band you trust; otherwise select rows
-  deliberately.
-- Every approval trains the engine, so the queue tends to shrink as your rules and history mature.
+- Filter by **rule** before you work a batch. Everything a single rule produced was paired on the
+  same criteria, so you can judge the whole group with one decision.
+- Check the **Difference** column first — a non-zero difference on a rule that should balance is the
+  clearest sign the rule's tolerance is too loose.
+- Always write a meaningful **rejection reason**. It is the only record of why a proposal was turned
+  down, and it is what tells you which rule to tighten.
+- If the same wrong pairing keeps appearing, don't keep rejecting it — fix the criteria in
+  [Rules & Criteria](rules-and-criteria.md) so it stops being proposed.
+- The date range defaults to today. Widen it when you're clearing a backlog, or you'll only see what
+  arrived since midnight UTC.
 
 ## Related
-- [Reconciliation Overview](overview.md) — where suggested matches sit in the end-to-end flow.
-- [Matching](matching.md) — make hand-picked 1-to-1 or batch matches instead of working suggestions.
-- [Rules & Criteria](rules-and-criteria.md) — tune what reaches this queue and at what confidence.
-- [ERP Posting](erp-posting.md) — reconciled items can then be prepared for posting.
-- [Alerts](../08-alerts/alerts.md) — requests flagged by rules or anomalies surface here too.
+- [Reconciliation Overview](overview.md) — where approvals sit in the end-to-end flow.
+- [Rules & Criteria](rules-and-criteria.md) — tune what reaches this queue and what auto-reconciles.
+- [Matching](matching.md) — make hand-picked matches instead of working proposed ones.
+- [Movements & Flows](movements-and-flows.md) — see the chain each approved reconciliation completes.
+- [ERP Posting](erp-posting.md) — what happens, and does not happen, after a reconciliation.
+- [Alerts](../08-alerts/alerts.md) — the alerts a match block raises alongside its outcome.

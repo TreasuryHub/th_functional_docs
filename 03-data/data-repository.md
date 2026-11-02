@@ -1,14 +1,8 @@
 # Data Repository
 
-> **Availability:** `In Preview` 👁️
-> **Plan:** Premium (Upgrade) — shown **Upgrade** in the platform.
 > **Where to find it:** Data › Data Repository
 > **Who uses it:** treasury operations, finance teams, auditors, data/IT owners.
 > **Permissions required:** Data access (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
-
-> 👁️ **In Preview.** The Data Repository is in testing and available on request. To browse
-> and download stored data today, use the [Data Hub](data-hub.md). This page describes what the
-> Repository *will* add.
 
 ## Overview
 The Data Repository is where you browse, search, and download every file Treasury Hub has stored —
@@ -60,13 +54,6 @@ queryable, and traceable back to its source.
 2. Click the **download** icon (⬇) at the end of the row.
 3. The original file is downloaded to your computer, exactly as it was received.
 
-### Ask Oliver about the repository
-1. Open the **Oliver** panel on the right of the screen.
-2. Oliver is aware of the category you're viewing, so you can ask context-specific questions — for
-   example, "Show me all statements with an opening balance over *[amount]*," or ask it to summarize
-   balances across accounts or trace a file's **lineage** back to source.
-3. Oliver can also filter the current view and help you **bulk download** the filtered results.
-
 ![Data Repository grid with category tabs and per-row download](../assets/screenshots/data-repository-grid.png)
 
 ## Tips & good practices
@@ -76,8 +63,8 @@ queryable, and traceable back to its source.
   **Created By** when tracking down who uploaded what).
 - Keep the original files as your audit source of truth — the download icon always gives you the
   document as received, unchanged.
-- For questions that span many files, let **Oliver** filter and summarize rather than paging through
-  the grid manually.
+- For questions that span many files, use the **column filters** and sorting to narrow the grid
+  rather than paging through it manually.
 
 ## Related
 - [Data Hub](data-hub.md) — the Data module landing page, manual upload, and category overview.
@@ -86,7 +73,3 @@ queryable, and traceable back to its source.
 - [Reconciliation](../04-reconciliation/overview.md) — where the normalized data is matched.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — the financial entities Treasury Hub
   stores.
-
-## In Preview
-- The rollout and exact scope of the **Oliver** data agent should be confirmed with the Treasury Hub
-  team — see your administrator.

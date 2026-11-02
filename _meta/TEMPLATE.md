@@ -5,14 +5,11 @@
    - Audience = platform users (treasurers, finance teams, admins). NOT developers.
    - Plain, second-person English ("You can…", "To do X…"). No marketing fluff, no jargon without defining it.
    - Every "how to" is numbered, action-first, and matches the real UI menu path.
-   - Mark availability honestly with the badges from ../_drafts/feature-availability.md.
    - Cross-link with relative links to other docs. Reference screenshots as ![alt](../assets/screenshots/<name>.png) and add the name to _meta/SCREENSHOTS-NEEDED.md.
 -->
 
 # <Module / Screen Name>
 
-> **Availability:** `Available` ✅ | `In Preview` 👁️ (Qx 20XX)
-> **Plan:** (only if premium) Premium (Upgrade)
 > **Where to find it:** <Menu › Sub-menu › Screen>
 > **Who uses it:** <personas / roles>
 > **Permissions required:** <permission module + level, e.g. CashManagement.Payments · CreateEdit>

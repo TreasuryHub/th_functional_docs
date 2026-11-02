@@ -1,6 +1,5 @@
 # Companies & Company Groups
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Admin Console › Master Data › Company Groups (and › Companies)
 > **Who uses it:** administrators and treasury operations.
 > **Permissions required:** `CoreData.CompanyGroups` · Read+ and `CoreData.Companies` · Read+ (Create/Edit to add or change; Delete to remove).
@@ -64,22 +63,13 @@ reconciliation, reporting, payments — rolls up correctly.
 ### Export
 - Use **Export** on either grid to download the current list to Excel/CSV.
 
-## AI Master Data Assistant (`In Preview` 👁️)
-A **✨ Set up with AI** assistant can build **groups, companies and accounts — and their associations — from
-a single prompt** ("a group *test* in USD, companies *abc* and *xyz* in MXN and EUR, and an account for
-each"). It **asks clarifications** (which company is the default, the account details it can't infer),
-**raises validation problems** (the required default company, invalid currency codes, duplicate names,
-unknown companies, invalid IBANs), and can create **many records at once** from a pasted list or an uploaded
-file — for example a batch of accounts across countries and currencies attached to existing companies. It
-shows the hierarchy as a **tree to review** before creating; the assistant drafts, you confirm.
-
 ## Configuration
 - **Bank accounts** attach to companies — manage them under Master Data › Bank Accounts (see
   [Bank Accounts](../06-reporting/bank-accounts.md)).
-- **Counterparties & SSIs** (`In Preview` 👁️) are the *payee* side of transfers — see
+- **Counterparties & SSIs** are the *payee* side of transfers — see
   [Counterparties & SSIs](counterparties-and-ssis.md).
 - Company and company-group assignments feed **user access scoping** — the companies you create here
-  are what you grant users access to in [User Management](user-and-agent-management.md#configure-a-users-roles-access-and-approval-level).
+  are what you grant users access to in [Users & Roles](users-and-roles.md#change-what-data-someone-sees).
 
 ## Tips & good practices
 - Mirror your **legal entity structure** exactly — reporting and reconciliation rely on it.
@@ -89,5 +79,5 @@ shows the hierarchy as a **tree to review** before creating; the assistant draft
 ## Related
 - [Master Data](master-data.md) — the wider reference-data picture and who can see what.
 - [Core Concepts — Company structure](../00-getting-started/03-core-concepts.md#company-structure).
-- [User & Agent Management](user-and-agent-management.md) — scope users to these companies.
+- [Users & Roles](users-and-roles.md) — scope users to these companies.
 - [Bank Accounts](../06-reporting/bank-accounts.md) — accounts belong to companies.

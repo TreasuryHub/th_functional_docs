@@ -1,6 +1,5 @@
 # Bank Statements
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Reporting › Operations › Bank Statements (admin-level statement management; per-account upload also lives on [Bank Accounts](bank-accounts.md)).
 > **Who uses it:** treasury operations, finance teams, administrators.
 > **Permissions required:** `CashManagement.CashPosition.BankStatements` · Read to view and download; CreateEdit to upload and process; Delete to remove statements (and their transactions). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
@@ -73,7 +72,5 @@ Before a statement is processed, common issues are flagged, including:
 ## Related
 - [Bank Accounts](bank-accounts.md) — where balances land and per-account upload lives.
 - [Transactions](transactions.md) — the movements created from statements.
-- [Data Repository](../03-data/data-repository.md) — every stored statement file, searchable and
-  downloadable.
 - [Reconciliation](../04-reconciliation/overview.md) — matching statement movements to your records.
 - [Integrations](../02-integrations/overview.md) — automatic statement feeds (SWIFT, Open Banking).

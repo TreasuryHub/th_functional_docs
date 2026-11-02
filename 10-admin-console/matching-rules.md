@@ -1,88 +1,71 @@
 # Matching Rules
 
-> **Availability:** `Available` ✅
-> **Where to find it:** Admin Console › Master Data › Matching Rules
-> **Who uses it:** administrators, treasury operations, and bookkeepers (typically Admin or Book Keeper).
-> **Permissions required:** `CoreData.MatchingRules` · Read to view · Create/Edit to add, edit, or duplicate · Delete to remove.
+> **Where to find it:** the **Matching Rules** entry has been removed from the menu. Its old link now
+> opens **Settings › Ingestion › Transaction Tagging › Classification rules**, the screen that replaces it.
+> **Who uses it:** administrators, treasury operations, and bookkeepers looking at how transactions were
+> classified or posted in the past.
+> **Permissions required:** `CoreData.MatchingRules` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-**Matching rules** tell Treasury Hub what to do when a transaction meets a set of conditions: either
-**create G/L postings** for it or **auto-assign tags** to it. Each rule is scoped to a slice of your
-data (company, account, currency, and a date range) and applies in an **order** you control. Rules
-are the configurable half of [Reconciliation](../04-reconciliation/overview.md) and
-[Accounting](../11-accounting/gl-postings.md) — the more precisely you scope them, the more happens
-with no manual effort.
+A **matching rule** was a tenant-wide rule that, when a transaction met its conditions, either
+assigned a [tag](tags.md) to it or created a G/L posting for it.
 
-This admin screen is where you author and organize the rules. For how rules drive the reconciliation
-engine day to day, see [Rules & Criteria](../04-reconciliation/rules-and-criteria.md).
+**Matching rules are no longer applied to transactions.** The process that evaluated them no longer
+runs, so no rule tags a transaction or produces a posting any more — including a rule you create or
+edit today, which has no effect.
+
+**Nothing has been deleted.** The rule definitions, the tags those rules assigned, and the postings
+they produced are all kept, and the transactions that carry them read exactly as before.
+
+Automatic classification of transactions is now done by the **tagging module**, under **Settings ›
+Ingestion › Transaction Tagging** — **Tags**, **Classification rules**, and **Classification
+conflicts**. G/L posting is being rebuilt from scratch, together with reconciliation, as its own
+project; see [G/L Postings](../11-accounting/gl-postings.md).
 
 ## Key concepts
-- **Matching rule** — a scoped definition of what to do with the transactions it covers.
-- **Implementation** — the rule's type, which decides what it produces:
-  - **PostingRule** — creates the G/L postings (ledger entries) for matching transactions.
-  - **TagAssignmentRule** — automatically assigns [tags](tags.md) to matching transactions.
-- **Scope** — the filters that decide which transactions a rule covers: **Company Group, Company,
+You still meet these terms when you look at historical records:
+
+- **Matching rule** — a scoped definition of what was done with the transactions it covered.
+- **Implementation** — the rule's type, which decided what it produced:
+  - **PostingRule** — created the G/L postings (ledger entries) for matching transactions.
+  - **TagAssignmentRule** — assigned [tags](tags.md) to matching transactions.
+- **Scope** — the filters that decided which transactions a rule covered: **Company Group, Company,
   Institution, Account, Currency**, and the **From Date / To Date** validity window.
-- **Order** — the sequence number that decides which rule is evaluated first when more than one could
-  apply.
-- **Active / Inactive** — a rule can be switched off without deleting it; the grid separates the two.
+- **Order** — the sequence number that decided which rule was evaluated first when more than one
+  could apply.
+- **Active / Inactive** — a flag on the rule. It no longer changes anything: neither state runs.
 
-## Before you start
-- You need `CoreData.MatchingRules` at **Read** to view, **Create/Edit** to author, and **Delete** to
-  remove.
-- Create the [Tags](tags.md) you'll assign (for a TagAssignmentRule) and confirm your
-  [Companies and accounts](companies-and-groups.md) exist first — the rule dialog references them.
+## What this means for you
+- **New transactions are not tagged by these rules.** If you still need a transaction classified
+  automatically, recreate the rule as a **classification rule** in the tagging module.
+- **No new G/L postings are generated.** Postings that already exist stay readable; see [G/L
+  Postings](../11-accounting/gl-postings.md).
+- **Changing a legacy rule changes nothing.** Creating, editing, re-ordering, activating, or
+  deactivating a matching rule has no effect on any transaction.
+- **Your history is intact.** Tags assigned by these rules in the past remain on the transactions,
+  and the Transactions list shows them alongside tags from the tagging module.
 
-## How to use it
+## Where to read the history
+1. Open **Reporting › Operations › Transactions**.
+2. Add the **Tags** column, or open a transaction's detail panel, to see the tags it carries — both
+   the ones assigned by legacy matching rules and the ones assigned by the tagging module.
+3. Filter or group by tag as usual, and use **Export** to take the list away for analysis.
 
-### Browse rules (Active / Inactive / All)
-1. Go to **Admin Console › Master Data › Matching Rules**.
-2. Use the **Active**, **Inactive**, and **All** tabs above the grid to switch between rules in force,
-   rules switched off, and everything.
-3. The grid columns are **Description**, **Implementation** (PostingRule / TagAssignmentRule),
-   **Credit**, **Debit**, **Order**, and **Active**. Sort or filter to find a specific rule.
-4. Use **Print** to print the current list and **Columns** to choose which columns are shown.
-
-### Create a rule (the New Matching Rule dialog)
-
-![Admin Console Matching Rules grid with the New Matching Rule dialog open, showing the Implementation, Description, and scope fields](../assets/screenshots/admin-matching-rules.png)
-
-1. Click **+ New Rule** to open the **New Matching Rule** dialog.
-2. Choose the **Implementation** (required): **PostingRule** to create G/L postings, or
-   **TagAssignmentRule** to auto-assign tags.
-3. Enter a **Description** (required) — a clear name so the team knows what the rule does.
-4. Set the **scope** by choosing any of **Company Group**, **Company**, **Institution**, **Account**,
-   and **Currency**. Leave a field blank to make the rule broader.
-5. Set the **Order** (its evaluation priority) and the **From Date** / **To Date** validity window.
-6. Click **Create** to save the rule, or **Cancel** to discard. The new rule appears under **Active**.
-
-### Edit, duplicate, or delete a rule
-1. **Edit** — use the edit action on a rule's row to reopen the dialog, change any field, and save.
-2. **Duplicate** — use the duplicate action to create a copy you can rename and adjust; useful for a
-   variant without starting over.
-3. **Delete** — use the delete action on the row and confirm to remove the rule.
-
-## Configuration
-- **PostingRule vs TagAssignmentRule** — pick the implementation that matches your goal: ledger
-  postings for accounting, tag assignment for classification and reporting.
-- **Order** matters when several rules could apply to the same transaction — the lower-order rule is
-  evaluated first, so put the most specific rules ahead of broad catch-alls.
-- **From Date / To Date** let you schedule a rule to apply only within a date range (for example a
-  temporary mapping or a period-specific posting rule).
+The matching-rule definitions themselves are retained, but they no longer have a screen of their
+own.
 
 ## Tips & good practices
-- Start **narrow** (specific company/account/currency) and broaden the scope as you gain confidence.
-- Give rules **clear, descriptive names** so the reconciliation and accounting teams know what each
-  one does.
-- Deactivate rather than delete when experimenting — you keep the definition and can switch it back on
-  from the **Inactive** tab.
-- Duplicate a proven rule as the basis for a similar one instead of rebuilding it.
+- Go through the matching rules your organization relied on and recreate the ones you still need as
+  classification rules in the tagging module — do not assume an existing rule is still doing its
+  job.
+- Treat the historical tags as reference data: they describe how a transaction *was* classified,
+  which may differ from how the tagging module would classify it today.
+- When an old report or hand-off refers to a rule name, look for the same name among your
+  classification rules rather than assuming it is still running.
 
 ## Related
-- [Reconciliation — Rules & Criteria](../04-reconciliation/rules-and-criteria.md) — how the engine
-  applies these rules.
-- [Reconciliation Overview](../04-reconciliation/overview.md) — the end-to-end matching process.
-- [Accounting / G/L Postings](../11-accounting/gl-postings.md) — the ledger entries a PostingRule
-  creates.
-- [Tags](tags.md) — the labels a TagAssignmentRule applies.
-- [Companies & Company Groups](companies-and-groups.md) — the scope entities rules reference.
+- [Tags](tags.md) — the legacy labels these rules applied, and where the tag history is now read.
+- [Reconciliation — Rules & Criteria](../04-reconciliation/rules-and-criteria.md) — the separate
+  reconciliation rules that decide how two movements are matched; these are unaffected.
+- [G/L Postings](../11-accounting/gl-postings.md) — the postings a PostingRule used to create.
+- [Companies & Company Groups](companies-and-groups.md) — the scope entities rules referenced.

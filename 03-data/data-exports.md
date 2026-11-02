@@ -1,6 +1,5 @@
 # Data Exports
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Data › Data Export
 > **Who uses it:** data/IT owners, treasury operations, teams feeding external systems (BI, data lakes, compliance).
 > **Permissions required:** `AdminAndSettings.UserManagement` · Admin (to create and manage access tokens — see [Access Tokens](../10-admin-console/access-tokens.md)).
@@ -58,10 +57,10 @@ The API covers the main treasury data domains:
 Exports are available in common formats (such as JSON and CSV) so the data works with everything
 from spreadsheets to data-warehouse pipelines.
 
-> **Today's published API** covers the **Financial Events** resource (the endpoint is below). The
-> other domains in this table are available through the in-app **Data › Data Export** screen or on
-> request; the public API reference will add per-domain endpoints over time. Some domains also depend
-> on the corresponding module being enabled for your organization — confirm with your administrator.
+> **The published API** covers the **Financial Events** resource (the endpoint is below). The other
+> domains in this table are exported from the in-app **Data › Data Export** screen. Some domains also
+> depend on the corresponding module being enabled for your organization — confirm with your
+> administrator.
 
 ## How to use it
 ### Set up an outbound connection
@@ -74,7 +73,7 @@ from spreadsheets to data-warehouse pipelines.
 4. Your IT/integration team uses that credential to pull data from **Data › Data Export**.
 
 ### Pull data via the API (where to call)
-The published API resource today is **Financial Events**, called with the same H2H credentials as the
+The published API resource is **Financial Events**, called with the same H2H credentials as the
 [inbound API](../02-integrations/inbound-apis.md).
 
 **Base URL:** `https://api.gateway.treasuryhub.ai` (Sandbox: `https://sandbox.api.gateway.treasuryhub.ai`)
@@ -95,8 +94,7 @@ The response is a paginated list (items plus totals); page through it with `page
 complete schema, all query parameters, and every field are in the
 [API reference](https://docs.treasuryhub.ai/api-reference/).
 
-For data domains that aren't yet exposed as API endpoints, use the in-app **Data › Data Export**
-screen, or contact Treasury Hub.
+For data domains that aren't exposed as API endpoints, use the in-app **Data › Data Export** screen.
 
 ### Match exported records to your own systems
 - Use the **External ID** on each record as the stable key when loading data into your systems. It
@@ -116,12 +114,11 @@ screen, or contact Treasury Hub.
 - Export raw data for other systems, but keep analysis in Treasury Hub's [Reporting](../06-reporting/overview.md)
   where the full context is preserved.
 
+## "Create Your Own" export builder
+In **Configuración › Data Exports** you define your own export packages, schedules, and delivery
+destinations (SFTP, cloud storage, email), as well as event **webhooks**.
+
 ## Related
 - [Access Tokens](../10-admin-console/access-tokens.md) — create the credentials.
-- [Data Hub](data-hub.md) · [Financial Events](financial-events.md)
+- [Financial Events](financial-events.md)
 - [Inbound APIs](../02-integrations/inbound-apis.md) — the opposite direction (sending data *in*).
-
-## In Preview
-- 👁️ **"Create Your Own" export builder** (Configuración › Data Exports) — define custom export
-  packages, schedules, and delivery destinations (SFTP, cloud storage, email) and event **webhooks**
-  yourself. Shown **Upgrade** in the platform; in testing (available on request).

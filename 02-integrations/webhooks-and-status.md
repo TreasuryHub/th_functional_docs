@@ -1,21 +1,17 @@
 # Webhooks & Integration Status
 
-> **Availability:** `In Preview` 👁️
-> **Plan:** Premium (Upgrade) — shown **Upgrade** in the platform.
 > **Where to find it:** Integrations › Webhooks · Integrations › Status
 > **Who uses it:** finance systems owners, IT, administrators, treasury operations.
 > **Permissions required:** administrator to configure; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This module is in testing and available on request — contact Treasury Hub to enable it for your organization. This page describes how it works.
-
 ## Overview
-Two add-on tools will help you run integrations in real time and keep them healthy:
-- **Webhooks** will deliver events the moment they happen — so external systems can react to activity
+Two tools help you run integrations in real time and keep them healthy:
+- **Webhooks** deliver events the moment they happen — so external systems can react to activity
   in Treasury Hub, and Treasury Hub can receive real-time pushes from other systems.
-- **The Integration Status board** will show the operational health of every connection at a glance:
+- **The Integration Status board** shows the operational health of every connection at a glance:
   what's connected, when it last synced, its uptime, and a link to its logs.
 
-Together they will answer two questions: "did that happen yet?" and "is everything still working?"
+Together they answer two questions: "did that happen yet?" and "is everything still working?"
 
 ## Key concepts
 - **Webhook** — an automatic notification sent between systems when an event occurs, instead of one
@@ -28,12 +24,10 @@ Together they will answer two questions: "did that happen yet?" and "is everythi
 - **Logs** — the detailed record of a connection's activity, for troubleshooting.
 
 ## Before you start
-- Confirm these add-ons are enabled (contact your account manager if they show **Upgrade**).
 - For webhooks, know which events you want to send or receive and, for outbound webhooks, the
   destination your system exposes.
 
 ## How to use it
-*The steps below describe the intended experience once this module is live.*
 
 ### Set up a webhook
 1. Open **Integrations › Webhooks**.

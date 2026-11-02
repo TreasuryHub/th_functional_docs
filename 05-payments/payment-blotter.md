@@ -1,6 +1,5 @@
 # Payment Blotter
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Payments › Payment Blotter
 > **Who uses it:** treasury operations, accounts payable, finance managers, approvers.
 > **Permissions required:** `CashManagement.Payments` · Read to view, CreateEdit to act. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
@@ -8,9 +7,9 @@
 ## Overview
 The Payment Blotter is the main screen of the Payments module: a single list of every outbound
 payment batch across your group. From here you see each payment's account, company, institution,
-amount, count of items, origin, approval progress, and status — and you can open any payment to view
-its full detail. It's where your team tracks the daily outflow: supplier payments, intercompany
-transfers, FX settlements, loan disbursements, payroll, and taxes.
+amount, count of items, origin, approval progress, and status — and you can expand any row to see
+exactly what happened to it, line by line. It's where your team tracks the daily outflow: supplier
+payments, intercompany transfers, FX settlements, loan disbursements, payroll, and taxes.
 
 ![The Payment Blotter with status tabs, the toolbar, and the payments grid](../assets/screenshots/payment-blotter.png)
 
@@ -18,11 +17,11 @@ transfers, FX settlements, loan disbursements, payroll, and taxes.
 - **Status tab** — a filter across the top that groups payments by where they are in their
   lifecycle (see below).
 - **Batch reference** — the reference that identifies a payment (or payment batch) on the grid.
-- **Origin** — where the payment came from (for example an ERP feed such as **NetSuite**, or created
-  manually in Treasury Hub).
+- **Origin** — where the payment came from (for example an ERP feed such as **NetSuite**, an
+  imported file, or created manually in Treasury Hub).
 - **Approval progress** — how many of the required approvals a payment has (for example, 1 of 2).
-- **Failed import** — a payment that could not be created from an inbound file or ERP feed and
-  needs attention.
+- **Traceability** — the three separate answers to "did this payment happen?": what Treasury Hub did
+  with the order, what the payment provider says, and whether the bank statement backs it up.
 
 ## The status tabs
 Payments are organized into tabs so you can focus on what needs action:
@@ -30,33 +29,36 @@ Payments are organized into tabs so you can focus on what needs action:
 | Tab | Shows |
 |---|---|
 | **All** | Every payment, regardless of status. |
-| **Pending** | Payments awaiting approval (status `PendingApproval`) or otherwise not yet released. |
-| **Approved** | Payments that have cleared approval and are ready to send. |
-| **Sent** | Payments that have been dispatched to the bank. |
+| **Awaiting approval** | Payments that have been created and still need one or more signatures. |
+| **On its way** | Payments that are signed and have not landed yet — approved and waiting for the send run, or going out right now. |
+| **Awaiting confirmation** | Payments that have been sent to the provider, with no verdict back yet. |
+| **Confirmed** | Payments the provider has confirmed as executed. |
 | **Rejected** | Payments a reviewer declined. |
-| **Error** | Payments that hit a problem and need attention (status `Error`). |
-| **Failed Imports** | Payments that could not be created from an inbound file or ERP feed. |
+| **Needs attention** | Payments that hit a problem and need a person to look at them. |
 
 > Numbers, counterparties, and amounts shown in demos (for example, headline "payments today" or
 > "total outflow" figures) are illustrative — your blotter reflects your own data.
 
 ## The payment grid
-Each row is a payment (or payment batch), with these columns:
+Each row is a payment batch, with these columns:
 
 | Column | Shows |
 |---|---|
 | **Batch Reference** | The reference identifying the payment or batch. |
-| **Account** | The debtor account the money leaves from. |
+| **Account** | The ordering account the money leaves from. |
 | **Company** | The paying legal entity. |
 | **Institution** | The bank / financial institution. |
 | **Amount** | The total amount. |
-| **#** | The number of items (detail lines) in the batch. |
-| **Status** | The lifecycle status (for example `PendingApproval`, `Sent`, `Error`). |
-| **Origin** | Where the payment came from (for example `NetSuite`, or manual). |
+| **# Txns** | The number of payment lines in the batch. |
+| **Status** | Where the batch stands — including what the provider did with the money, not only how far the send got. |
+| **Origin** | Where the payment came from (for example `NetSuite`, an imported file, or manual). |
 | **Approval** | Approval progress as *x / y* (approvals collected / required). |
 | **Created** | When the payment was created. |
+| **Account Number** | The ordering account's number. Hidden by default; switch it on with **Columns**. |
+| **Account Owner** | Who holds the ordering account. Hidden by default; switch it on with **Columns**. |
 
-Each row also has a **⋯** menu for row-level actions.
+Each row also has a **⋯** menu with **View Details**, **Approve** / **Reject** (when you may),
+**Add Note**, **View Notes** and **Status History**.
 
 ## Before you start
 - You need `CashManagement.Payments` at **Read** to view the blotter. Creating payments and
@@ -67,44 +69,92 @@ Each row also has a **⋯** menu for row-level actions.
 
 ### Find and filter payments
 1. Open **Payments › Payment Blotter**.
-2. Click a **status tab** (All, Pending, Approved, Sent, Rejected, Error) — or **Failed Imports** —
-   to narrow the list.
-3. Use the **Columns** button to choose which columns are shown.
-4. Sort a column to group, for example, all `PendingApproval` payments together.
+2. Click a **status tab** — All, Awaiting approval, On its way, Awaiting confirmation, Confirmed,
+   Rejected, Needs attention — to narrow the list.
+3. Use the column filters to narrow further by account, company, institution, status or origin.
+4. Use the **Columns** button to choose which columns are shown, including the ones hidden by
+   default.
+5. Sort a column to group, for example, everything created today.
 
-### View a payment's details
-1. Click a payment row (or use its **⋯** menu) in the blotter.
-2. The **detail view** opens, showing the payment header (batch reference, status, total amount,
-   account, company, and institution) and its detail lines — each with its amount, remittance
-   information, and execution date.
+### Track what happened to a payment
+1. Click a row (or its chevron) to expand it. The **traceability panel** opens underneath, without
+   leaving the list.
+2. On the left, **Payment lifecycle** lists the stages of the batch in order: **Received**,
+   **Approved**, **Beneficiary**, **Dispatch**, **Taken by the provider**, **Confirmed by the
+   provider**, and **Reconciled with the statement**. Each stage shows when it happened and who did
+   it when a person did, and the stages that nothing feeds yet stay on the page saying so, rather
+   than disappearing.
+   - **Beneficiary** is a stage of its own because a first payment to a new beneficiary registers it
+     with the provider before it transfers anything. It reads *registered*, *already registered*,
+     *updated*, *refused by the provider*, or *registered when the payment is dispatched*.
+   - When a batch's lines did **not** all end the same way at a stage, the stage says so with a
+     count — for example *"3 of 5 lines were ordered — the rest never left"* — and the connector
+     splits visually, so you can see exactly where the batch divided.
+3. On the right, each **payment line** is shown with its beneficiary, reference, bank, amount and its
+   own status. Under each line, three cards keep three different questions apart on purpose:
+   - **The order — us** — what Treasury Hub did: whether it was ever attempted, and when it last was.
+   - **The provider** — the provider's own verdict and its tracking key for the transfer.
+   - **The statement** — whether the bank statement backs it up.
+   They are separate because they can disagree, and the disagreement is the information.
+4. A line that failed shows the reason, the failure code, when it happened, how many send attempts
+   there were, and the provider's message word for word.
+5. Act on a line where the panel offers it:
+   - **Retry the send** on a line that did not go out. When a retry is not allowed, the reason
+     replaces the button — for example because the order already reached the provider and retrying
+     could pay twice, or because only an approver may retry.
+   - **Link beneficiary** on a line that arrived without one (typically from a file or ERP feed).
+     Choose the settlement instruction the line will be paid into; only approved instructions in the
+     line's own currency are offered.
+6. Use **Full history** for the batch's complete status history, or **Open the whole batch** for the
+   full detail screen.
 
 ### Create a new payment
 1. Click **+ New Payment** on the blotter's toolbar.
-2. Complete the [New Payment dialog](creating-a-payment.md).
-3. On **Create**, the payment appears in the blotter with a status based on your approval configuration.
+2. Compose the batch in the [New Payment dialog](creating-a-payment.md).
+3. On **Create payment**, the batch appears in the blotter under **Awaiting approval**.
 
-### Print the blotter
-1. Click **Print** on the toolbar.
-2. The current, filtered view is prepared for printing.
+### Import payment files
+1. Click **Import payment files** on the toolbar.
+2. Choose the **Ordering account**. The picker works exactly like the one in New Payment: searchable,
+   split into **Can order payments** and **No payment integration**, with the reason on each account
+   that cannot be used. The account sets the approval level and the provider the batch is dispersed
+   through — the file only says who is being paid.
+3. Check **Country** and **Fallback currency**. Both are taken from the ordering account; fill the
+   country in yourself if it could not be worked out, and note that the currency is used only for
+   rows that carry none of their own.
+4. Drag the files onto the dropzone, or browse for them. You can send several at once: `.pdf`,
+   `.xlsx`, `.xls`, `.csv` and `.txt`, up to 20 files of 10 MB each. Anything rejected says why, and
+   the rest of the batch is still queued.
+5. Click the send button — it counts what you picked, for example **Send 3 files**. The dialog
+   confirms only that the files were **received**, and closes.
+
+> **This dialog tells you nothing about parsing, on purpose.** It returns before a single file has
+> been read, so "received" is the only honest thing it can say. What each file actually became — the
+> rows read, the payments created, the errors — is shown on
+> [Ingestion Activity](../02-integrations/ingestion-activity.md), and that is where to go after you
+> send. The dialog's footer points you there too.
 
 ### Approve or reject a payment
-Reviewing and approving/rejecting payments is handled on the dedicated **Payment Approvals**
-screen, which is **👁️ In Preview**. See [Payment Approvals](approvals.md) for how the
-approval workflow will work. Until it ships, the blotter is used to **create and track** payments and
-follow their status.
-
-### Manage failed imports
-1. Open the **Failed Imports** tab.
-2. Review each failed payment and the reason it could not be created.
-3. Correct the source data and re-import, or handle the item as your process requires.
+You can approve or reject straight from a row's **⋯** menu when you have the rights. The dedicated
+workspace for reviewing is the **Payment Approvals** screen — see
+[Payment Approvals](approvals.md) for how the approval workflow works.
 
 ## Tips & good practices
-- Work the tabs in order of urgency — clear **Error** and **Pending** first.
+- Work the tabs in order of urgency — clear **Needs attention** and **Awaiting approval** first.
+- Don't read **On its way** as "paid". A payment is only confirmed once the provider says so, which
+  is what **Confirmed** means and what the traceability panel's provider card shows per line.
 - Use the **Approval** column to see at a glance how many sign-offs a payment still needs.
-- Check the **Failed Imports** tab regularly so nothing silently drops out of an ERP or file feed.
+- When a line failed, copy the provider's message verbatim into any support request — it is the
+  string support searches for.
+- After importing files, go straight to **Ingestion Activity**: nothing about the parse is reported
+  on the blotter.
 
 ## Related
-- [Creating a payment](creating-a-payment.md) — raise a single or batch payment.
+- [Creating a payment](creating-a-payment.md) — compose a payment batch by hand.
 - [Payment Approvals](approvals.md) — the dedicated approvals workspace.
 - [Payments — Overview](overview.md) — how the module fits together.
+- [Ingestion Activity](../02-integrations/ingestion-activity.md) — what happened to the files you
+  imported.
+- [Counterparties & SSIs](../10-admin-console/counterparties-and-ssis.md) — the beneficiaries lines
+  are paid into.
 - [Reconciliation](../04-reconciliation/overview.md) — matching sent payments to bank movements.

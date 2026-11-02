@@ -1,24 +1,21 @@
 # Cash Forecast
 
-> **Availability:** `In Preview` 👁️
 > **Where to find it:** Reporting › Cash & Liquidity › Cash Forecast
 > **Who uses it:** treasurers, cash managers, FP&A, finance teams.
 > **Permissions required:** `CashManagement.CashPosition` · Read (and `…ExportData` · Read to export). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This screen is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
-Cash Forecast will project your liquidity forward using the same hierarchy and drill-down as your
-actuals. It will bring together scheduled and contractual cash flows already in the system, cash
+Cash Forecast projects your liquidity forward using the same hierarchy and drill-down as your
+actuals. It brings together scheduled and contractual cash flows already in the system, cash
 flows you add manually, and cash flows fed from other systems, so you can see your expected position
 from tomorrow's settlements out to next year's budget.
 
-It is designed to help you spot funding gaps early, plan investments of surplus cash, and give the
+It helps you spot funding gaps early, plan investments of surplus cash, and gives the
 business a forward view of where balances are heading — by entity, bank, and account, in the currency
 of your choice.
 
 ## Key concepts
-- **Forecast** — projected balances and movements for future dates. This report will show the
+- **Forecast** — projected balances and movements for future dates. This report shows the
   forecast only (the **Actuals** toggle is off); to compare the two, use
   [Actual vs Forecast](actual-vs-forecast.md).
 - **Scheduled** cash flow — a future flow already known to the system (a loan repayment on its
@@ -32,15 +29,14 @@ of your choice.
 - **Horizon** — how far ahead the forecast runs (e.g. up to a 12-month horizon).
 
 ## Before you start
-- The richer your source data, the better the forecast will be: keep
+- The richer your source data, the better the forecast: keep
   [FX contracts](operations-blotters.md), [debt](operations-blotters.md), and
   [investments](operations-blotters.md) current, and make sure scheduled payments and collections are
   captured.
 - Keep [Exchange Rates](exchange-rates.md) up to date for cross-currency projections.
-- To add your own projections you will need write access to cash-flow data (Create/Edit).
+- To add your own projections you need write access to cash-flow data (Create/Edit).
 
 ## How to use it
-*The steps below describe the intended experience once this screen is live.*
 
 ### View your forecast
 1. Open **Reporting › Cash & Liquidity › Cash Forecast**.
@@ -73,17 +69,16 @@ of your choice.
 - To sanity-check the forecast, switch to [Actual vs Forecast](actual-vs-forecast.md) periodically
   and review where actuals diverged.
 
+## Predictive forecasting and alerts
+- **Predictive / ML-assisted forecasting** — a probabilistic layer over the deterministic
+  baseline (e.g. modeling how many days late a customer typically pays), continuous
+  **recalibration** as real data arrives, and **accuracy tracking**.
+- **Automatic transaction categorization** — hybrid rules + AI tagging of incoming movements
+  (including your own prompt-defined categories) so actuals line up with the forecast by category.
+- **Liquidity alerts** — proactive warnings when a projected balance breaches a threshold.
+
 ## Related
-- [Cash Position](cash-position.md) — the actuals this forecast projects forward from.
+- [Cash Position](../01-home/home-dashboard.md) — the actuals this forecast projects forward from.
 - [Actual vs Forecast](actual-vs-forecast.md) — measure forecast accuracy and variance.
 - [Scenarios (What-If)](scenarios-what-if.md) — stress the forecast under different assumptions.
 - [Operations blotters](operations-blotters.md) — the contracts and schedules that feed the forecast.
-
-## In Preview
-- 👁️ **Predictive / ML-assisted forecasting** — a probabilistic layer over the deterministic
-  baseline (e.g. modeling how many days late a customer typically pays), continuous
-  **recalibration** as real data arrives, and **accuracy tracking**. Present in the product vision;
-  confirm current scope with the Treasury Hub team.
-- 👁️ **Automatic transaction categorization** — hybrid rules + AI tagging of incoming movements
-  (including your own prompt-defined categories) so actuals line up with the forecast by category.
-- 👁️ **Liquidity alerts** — proactive warnings when a projected balance will breach a threshold.
