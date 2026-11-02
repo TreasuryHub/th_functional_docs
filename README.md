@@ -26,28 +26,31 @@ screen you're on.
 
 ### 2. Integrations
 - [Overview](02-integrations/overview.md)
-- [SWIFT](02-integrations/swift.md) · [Open Banking](02-integrations/open-banking.md)
-- [File Import (CSV/Excel/PDF)](02-integrations/file-import.md)
-- [Parse Templates](02-integrations/parsing-templates.md) · [PDF Statements](02-integrations/pdf-statements.md)
+- [File Import (CSV/Excel/PDF)](02-integrations/file-import.md) — what a file has to do to get in.
+- [Parse Templates](02-integrations/parsing-templates.md) — how a format is taught, with the AI assistant.
+- [PDF Statements](02-integrations/pdf-statements.md) — how a PDF is read, and its balance checks.
+- [Ingestion](02-integrations/ingestion-activity.md) — upload a file and follow everything that arrives.
 - [AI Extraction](02-integrations/ai-extraction.md) — the fallback when no template reads a file.
+- **Channels:** [Email Ingestion](02-integrations/email-ingestion.md) · [SFTP Ingestion](02-integrations/sftp-ingestion.md) · [Open Banking](02-integrations/open-banking.md) · [SWIFT](02-integrations/swift.md)
+- **APIs:** [Inbound APIs](02-integrations/inbound-apis.md) · [Third-party APIs](02-integrations/third-party-apis.md) · [NetSuite / ERP](02-integrations/netsuite-erp.md) · [Webhooks & Status](02-integrations/webhooks-and-status.md)
 - [Transaction Tagging](02-integrations/transaction-tagging.md) — categories, tags, classification rules and conflicts.
-- [Email Ingestion](02-integrations/email-ingestion.md) · [SFTP Ingestion](02-integrations/sftp-ingestion.md) · [Ingestion Activity](02-integrations/ingestion-activity.md)
-- [Third-party APIs](02-integrations/third-party-apis.md) · [Inbound APIs](02-integrations/inbound-apis.md)
-- [NetSuite / ERP](02-integrations/netsuite-erp.md) · [Webhooks & Status](02-integrations/webhooks-and-status.md)
 
 ### 3. Data
 - [Data Export (API)](03-data/data-exports.md) · [Financial Events](03-data/financial-events.md)
 
 ### 4. Reconciliation
 - [Overview](04-reconciliation/overview.md)
-- [Dashboard](04-reconciliation/dashboard.md) · [Flows (Reconciliation Status)](04-reconciliation/movements-and-flows.md)
-- [Matching (1-to-1 & Batch)](04-reconciliation/matching.md) · [Rules & Criteria](04-reconciliation/rules-and-criteria.md)
-- [Approvals](04-reconciliation/approvals.md) · [Conciliations](04-reconciliation/conciliations.md) · [Workflows/Flows (Settings)](04-reconciliation/workflows.md) · [ERP Posting](04-reconciliation/erp-posting.md)
+- [Workflows/Flows (Settings)](04-reconciliation/workflows.md) — the container, built in the Workflow Studio.
+- [Rules & Criteria](04-reconciliation/rules-and-criteria.md) — the chains and rules inside one.
+- [Flows (Reconciliation Status)](04-reconciliation/movements-and-flows.md) · [Matching (1-to-1 & Batch)](04-reconciliation/matching.md) · [Approvals](04-reconciliation/approvals.md)
+- [Conciliations](04-reconciliation/conciliations.md) · [Dashboard](04-reconciliation/dashboard.md)
 - **Reporting:** [Conciliation Reporting](04-reconciliation/conciliation-reporting.md) — what was reconciled and what is still open, week by week. · [Fee Report](04-reconciliation/fee-report.md) — what each payment provider should charge per contract.
+- [ERP Posting](04-reconciliation/erp-posting.md)
 
 ### 5. Payments
-- [Overview (Payment Hub)](05-payments/overview.md) · [Payment Blotter](05-payments/payment-blotter.md)
-- [Creating a Payment](05-payments/creating-a-payment.md) · [Approvals](05-payments/approvals.md) · [Invoices](05-payments/invoices.md)
+- [Overview (Payment Hub)](05-payments/overview.md)
+- [Creating a Payment](05-payments/creating-a-payment.md) · [Payment Blotter](05-payments/payment-blotter.md)
+- [Approvals](05-payments/approvals.md) · [Invoices](05-payments/invoices.md)
 
 ### 6. Reporting
 - [Overview](06-reporting/overview.md) · [Build Your Own](06-reporting/build-your-own.md)

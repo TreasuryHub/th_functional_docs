@@ -5,10 +5,11 @@
 > **Permissions required:** create/edit on the data being loaded; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Templates are how files normally load, and they work until the day they do not. A bank redesigns
-its statement, adds a column, moves the balance; the template that read it yesterday now matches
-only in part, so nothing recognises the file and it stops at the door. Meanwhile the statement is
-still due, and the month still has to close.
+[Parse templates](parsing-templates.md) are how files normally load, and they work until the day
+they do not. A bank redesigns its statement, adds a column, moves the balance; the template that
+read it yesterday now matches only in part, so nothing recognises the file and it stops at the
+door on [Ingestion](ingestion-activity.md). Meanwhile the statement is still due, and the month
+still has to close.
 
 **AI extraction is the way through.** The AI reads that one file directly, pulls out its
 movements, checks them against the balances the statement itself prints, and shows you the result

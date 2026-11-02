@@ -31,6 +31,47 @@ SECTION_ORDER = [
     ("_meta",            "Docs Meta"),
 ]
 
+# Reading order within a directory. A page not listed here falls in after the listed ones,
+# alphabetically. The order is dependency-driven: nothing should rely on a concept a reader
+# has not met yet.
+PAGE_ORDER = {
+    "02-integrations": [
+        "overview.md", "file-import.md", "parsing-templates.md", "pdf-statements.md",
+        "ingestion-activity.md", "ai-extraction.md", "email-ingestion.md", "sftp-ingestion.md",
+        "open-banking.md", "swift.md", "inbound-apis.md", "third-party-apis.md",
+        "netsuite-erp.md", "webhooks-and-status.md", "transaction-tagging.md",
+    ],
+    "03-data": ["financial-events.md", "data-exports.md"],
+    "04-reconciliation": [
+        "overview.md", "workflows.md", "rules-and-criteria.md", "movements-and-flows.md",
+        "matching.md", "approvals.md", "conciliations.md", "dashboard.md",
+        "conciliation-reporting.md", "fee-report.md", "erp-posting.md",
+    ],
+    "05-payments": [
+        "overview.md", "creating-a-payment.md", "payment-blotter.md", "approvals.md",
+        "invoices.md",
+    ],
+    "06-reporting": [
+        "overview.md", "transactions.md", "bank-accounts.md", "bank-statements.md",
+        "exchange-rates.md", "balance-differential.md", "category-positions.md",
+        "datalake-reports.md", "build-your-own.md", "cash-forecast.md",
+        "actual-vs-forecast.md", "scenarios-what-if.md", "operations-blotters.md",
+        "gl-postings-report.md", "regulatory-compliance.md",
+    ],
+    "10-admin-console": [
+        "overview.md", "users-and-roles.md", "companies-and-groups.md",
+        "counterparties-and-ssis.md", "master-data.md", "tags.md",
+        "payment-approval-rules.md", "access-tokens.md", "ai-usage.md", "matching-rules.md",
+    ],
+    "11-accounting": [
+        "gl-postings.md", "journal-entries.md", "coa-rules-engine.md", "audit-trail.md",
+    ],
+    "12-platform": [
+        "security-and-compliance.md", "deployment-availability-and-continuity.md",
+        "preferences.md", "white-label-and-partners.md",
+    ],
+}
+
 def slug_for(relpath):
     p = relpath.replace("\\", "/")
     p = p[:-3] if p.endswith(".md") else p
@@ -121,10 +162,15 @@ def main():
         body = rewrite_images(body, rel)
         meta[rel] = {"slug": slug_for(rel), "title": title, "body": body, "section": sec}
 
-    # order files within a section: overview.md first in each directory, then alphabetical
+    # order files within a section: PAGE_ORDER if the directory has one, else overview.md
+    # first and the rest alphabetical
     def order_key(rel):
-        d = os.path.dirname(rel)
+        d = os.path.dirname(rel).replace("\\", "/")
         base = os.path.basename(rel)
+        wanted = PAGE_ORDER.get(d)
+        if wanted:
+            rank = wanted.index(base) if base in wanted else len(wanted)
+            return (d, rank, base)
         return (d, 0 if base == "overview.md" else 1, base)
     for sec in by_section:
         by_section[sec] = sorted([r for r in rels if top_section(r) == sec], key=order_key)
