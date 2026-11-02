@@ -1,6 +1,5 @@
 # Preferences — Theme & Language
 
-> **Availability:** `Available` ✅
 > **Where to find it:** the **top bar** (theme toggle and language selector), also on the **Login** page.
 > **Who uses it:** everyone.
 > **Permissions required:** none — available to all users.
@@ -58,8 +57,3 @@ language.
 ## Related
 - [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — the top bar and remembered view state.
 - [Security & Compliance](security-and-compliance.md) — signing in and out.
-
-## In Preview
-> ⚠️ **Confirm with Treasury Hub.** The interface may list additional languages as translations are
-> rolled out. English and Spanish are the currently supported set; treat any others shown as
-> in-progress and confirm coverage with the Treasury Hub team.

@@ -1,6 +1,5 @@
 # Security & Compliance
 
-> **Availability:** `Available` ✅ (authentication, RBAC, multi-tenant isolation)
 > **Where to find it:** applies platform-wide · access management in **Admin Console › User & Agent Management**
 > **Who uses it:** everyone signs in; administrators manage access and review the audit trail; security, risk, and compliance teams review the platform's posture.
 > **Permissions required:** signing in requires no permission; managing users, roles, and access requires `AdminAndSettings.UserManagement` · Admin (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
@@ -27,7 +26,7 @@ how access is controlled, and the security and compliance assurances the platfor
 - **Audit trail** — the record of who did what, when, and the outcome, kept across the platform.
 
 ## Before you start
-- Your administrator sets up your account and roles in the [Admin Console](../10-admin-console/roles-and-groups.md)
+- Your administrator sets up your account and roles in the [Users & Roles](../10-admin-console/users-and-roles.md)
   before you can sign in.
 - If your organization uses SSO with its own identity provider, that connection must be configured
   first — ask your administrator.
@@ -55,7 +54,7 @@ how access is controlled, and the security and compliance assurances the platfor
 
 ### Understand what you can access
 - Your menu and available actions adapt to your **roles and permissions** — if you don't see a
-  module or button, it's likely hidden by your permission level or not enabled for your plan.
+  module or button, it's likely hidden by your permission level.
 - Access can be narrowed further by **legal entity / company**, **bank account**, and
   **payment approval level**. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md#access-can-be-scoped-further).
 
@@ -63,7 +62,7 @@ how access is controlled, and the security and compliance assurances the platfor
 These are managed by administrators (and, for SSO/MFA, in coordination with the Treasury Hub team):
 
 - **Users, roles, and groups** — invite users, assign roles, and set entity/account scope in the
-  [Admin Console](../10-admin-console/roles-and-groups.md).
+  [Users & Roles](../10-admin-console/users-and-roles.md).
 - **SSO connection** — link your corporate identity provider (Azure AD, Active Directory / LDAP,
   Okta, Google Workspace) so access follows your directory.
 - **MFA policy** — require multi-factor authentication for users per your security policy.
@@ -109,9 +108,6 @@ standards, including:
   decision.
 - Administrators can review the history of permission and user-lifecycle changes.
 
-> ⚠️ **Confirm audit coverage depth** with the Treasury Hub team — audit is available across the
-> platform, but the exact breadth of events captured per module should be validated for your needs.
-
 ## Tips & good practices
 - Keep MFA enabled even when it's optional for internal users — it's the single biggest protection
   against account compromise.
@@ -124,6 +120,6 @@ standards, including:
 ## Related
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — the RBAC model and permission levels.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — tenants, workflows, and auditability.
-- [Admin Console — Users, Roles & Groups](../10-admin-console/roles-and-groups.md) — where access is managed.
+- [Users & Roles](../10-admin-console/users-and-roles.md) — where access is managed.
 - [Deployment, Availability & Continuity](deployment-availability-and-continuity.md) — data residency, backup, and recovery.
 - [Preferences](preferences.md) — theme and language on the login screen and in-app.

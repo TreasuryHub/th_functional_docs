@@ -36,17 +36,25 @@ def slug_for(relpath):
     p = p[:-3] if p.endswith(".md") else p
     return re.sub(r"[^A-Za-z0-9]+", "_", p).strip("_")
 
+# Pages kept in the repo as history but not published in the docs.
+HIDDEN = {
+    "11-accounting/erp-integration.md",
+    "03-data/data-hub.md",
+    "03-data/data-repository.md",
+}
+
 def collect_files():
     files = []
     for dirpath, _, filenames in os.walk(ROOT):
         # skip the generated site + node stuff
         rel_dir = os.path.relpath(dirpath, ROOT).replace("\\", "/")
-        if rel_dir.startswith(("site", "_drafts", "design", "_meta")) or "/." in ("/" + rel_dir):
+        if rel_dir.startswith(("site", "_drafts", "design", "_meta", "assets")) or "/." in ("/" + rel_dir):
             continue
         for fn in filenames:
             if fn.endswith(".md"):
                 rel = os.path.relpath(os.path.join(dirpath, fn), ROOT).replace("\\", "/")
-                files.append(rel)
+                if rel not in HIDDEN:
+                    files.append(rel)
     return files
 
 def top_section(rel):
@@ -243,14 +251,6 @@ TEMPLATE = r"""<!DOCTYPE html>
   .doc-img{max-width:100%;border:1px solid var(--line);border-radius:10px;margin:12px 0}
   .img-ph{display:flex;align-items:center;gap:10px;max-width:100%;padding:18px;border:1px dashed var(--gold);border-radius:10px;background:var(--card);color:var(--muted);font-size:13px;margin:12px 0}
   .img-ph b{color:var(--gold-d)}
-  /* availability badges */
-  .badge{display:inline-block;padding:1px 8px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid transparent}
-  .b-avail{background:#e6f6ec;color:#1c7a3f;border-color:#bfe6cd}
-  .b-addon{background:#fff3e0;color:#a15c00;border-color:#f2d19a}
-  .b-soon{background:#eef1f6;color:#5b6472;border-color:#d5dbe6}
-  html[data-theme="dark"] .b-avail{background:#12331f;color:#5fd08a;border-color:#1e5233}
-  html[data-theme="dark"] .b-addon{background:#3a2a10;color:#e2a44b;border-color:#5a4018}
-  html[data-theme="dark"] .b-soon{background:#20242c;color:#9aa4b4;border-color:#333b47}
   .menu-toggle{display:none}
   @media(max-width:880px){
     .side{position:fixed;left:-320px;transition:left .2s;z-index:20}
@@ -292,13 +292,6 @@ TEMPLATE = r"""<!DOCTYPE html>
   var HOME="__HOME__";
   var pages=document.querySelectorAll(".page");
   var navItems=document.querySelectorAll(".nav-item");
-
-  // colorize availability badges
-  document.querySelectorAll("blockquote code, td code, li code, p code").forEach(function(c){
-    var t=c.textContent.trim();
-    if(t==="Available"){c.className="badge b-avail";}
-    else if(t==="In Preview"){c.className="badge b-addon";}
-  });
 
   // screenshot placeholders for images that don't exist yet
   document.querySelectorAll("img.doc-img").forEach(function(img){

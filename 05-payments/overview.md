@@ -1,6 +1,5 @@
 # Payments — Overview
 
-> **Availability:** `Available` ✅ (core payment management — blotter, creating payments, invoices) · `In Preview` 👁️ (Payment Approvals, Payment Lifecycle Blotter, Net Settlements, SWIFT/SEPA network dispatch, sanctions screening, ERP/NetSuite AP integration — premium/Upgrade)
 > **Where to find it:** Payments
 > **Who uses it:** treasury operations, accounts payable, finance managers, approvers.
 > **Permissions required:** `CashManagement.Payments` — Read to view, CreateEdit to create and approve. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
@@ -38,47 +37,40 @@ The Payments menu contains these screens:
 
 | Screen | What it's for |
 |---|---|
-| [Payment Blotter](payment-blotter.md) | The main list of payments, with status tabs, details, status history, and failed imports. ✅ Available |
-| [Creating a payment](creating-a-payment.md) | The multi-step form for raising a new single or batch payment (opened from the blotter via **+ New Payment**). ✅ Available |
-| [Payment Approvals](approvals.md) | Review payments awaiting sign-off and approve or reject them. 👁️ In Preview |
+| [Payment Blotter](payment-blotter.md) | The main list of payments, with status tabs, details, status history, and failed imports. |
+| [Creating a payment](creating-a-payment.md) | The multi-step form for raising a new single or batch payment (opened from the blotter via **+ New Payment**). |
+| [Payment Approvals](approvals.md) | Review payments awaiting sign-off and approve or reject them. |
 
 > **Related:** [Invoices](invoices.md) — the invoice documents that back your payables — live under
-> **Reports › Operations › Invoices (Facturas)**, not the Payments menu. ✅ Available
+> **Reports › Operations › Invoices (Facturas)**, not the Payments menu.
 
 ## How payments flow, end to end
 1. **A payment is created** — either directly in Treasury Hub via the
-   [multi-step form](creating-a-payment.md), or generated from your ERP's accounts-payable data
-   (add-on).
+   [multi-step form](creating-a-payment.md), or generated from your ERP's accounts-payable data.
 2. **It is validated** — the form checks the essentials (for example, the debtor and creditor
-   accounts must differ and the amount must be positive). Enhanced pre-send validation, including
-   sanctions screening, is available as an add-on.
-3. **It routes for approval** — based on your rules, the payment will require one or more approvers,
-   and the creator cannot approve their own payment (four-eyes). The dedicated
-   [Payment Approvals](approvals.md) workspace is **in preview** (premium plan).
-4. **It is dispatched** — approved payments are sent to the bank. SWIFT/SEPA message dispatch and
-   real-time tracking are provided by the connectivity add-on.
+   accounts must differ and the amount must be positive), and enhanced pre-send validation,
+   including sanctions screening, runs before dispatch.
+3. **It routes for approval** — based on your rules, the payment requires one or more approvers,
+   and the creator cannot approve their own payment (four-eyes). Sign-off happens in the dedicated
+   [Payment Approvals](approvals.md) workspace.
+4. **It is dispatched** — approved payments are sent to the bank, with SWIFT/SEPA message dispatch
+   and real-time tracking.
 5. **Its status is tracked** — you follow progress on the [Blotter](payment-blotter.md), with a
    full status history and notes on every payment.
 
-## What's available vs. add-on
-Treasury Hub is modular. For payments:
+## Payment capabilities
+The Payments module covers:
 
-| Capability | Status |
-|---|---|
-| Payment Blotter, status tabs, detail & status history | ✅ Available |
-| Multi-step single & batch payment creation | ✅ Available |
-| Notes and failed-imports management | ✅ Available |
-| [Invoices](invoices.md) (upload, download, metadata) | ✅ Available |
-| [Payment Approvals](approvals.md) — multi-level approvals with mandatory rejection notes | 👁️ In Preview · Premium (Upgrade) |
-| Payment Lifecycle Blotter | 👁️ In Preview · Premium (Upgrade) |
-| Net Settlements | 👁️ In Preview · Premium (Upgrade) |
-| SWIFT / SEPA message dispatch & real-time tracking | 👁️ In Preview · Premium (Upgrade) |
-| Sanctions / AML pre-send screening | 👁️ In Preview · Premium (Upgrade) |
-| ERP / NetSuite accounts-payable integration | 👁️ In Preview · Premium (Upgrade) |
-
-Core payment management — the blotter, creating payments, and invoices — is live today;
-Payment Approvals, the Payment Lifecycle Blotter, Net Settlements, and the network-dispatch,
-screening, and ERP capabilities above are premium modules still in development.
+- Payment Blotter, status tabs, detail & status history
+- Multi-step single & batch payment creation
+- Notes and failed-imports management
+- [Invoices](invoices.md) (upload, download, metadata)
+- [Payment Approvals](approvals.md) — multi-level approvals with mandatory rejection notes
+- Payment Lifecycle Blotter
+- Net Settlements
+- SWIFT / SEPA message dispatch & real-time tracking
+- Sanctions / AML pre-send screening
+- ERP / NetSuite accounts-payable integration
 
 ## Before you start
 - Make sure the **bank accounts** you'll pay from exist and you have access to them — see
@@ -93,17 +85,13 @@ screening, and ERP capabilities above are premium modules still in development.
   BIC/IBAN data.
 - Attach the backing document in [Invoices](invoices.md) so approvers have full context.
 
+## Validation & tracking
+**Enhanced pre-send validation & tracking** — multi-layer message validation and real-time
+payment status across the network connections your payments travel on.
+
 ## Related
 - [Payment Blotter](payment-blotter.md) · [Creating a payment](creating-a-payment.md) ·
   [Payment Approvals](approvals.md) · [Invoices](invoices.md)
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — approval levels and access.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — company structure and workflows.
 - [Reconciliation](../04-reconciliation/overview.md) — where dispatched payments are matched back to bank movements.
-
-## In Preview
-- 👁️ **Enhanced pre-send validation & tracking** — multi-layer message validation and real-time
-  payment status (via the connectivity add-on) continue to expand. Confirm current scope with the
-  Treasury Hub team.
-- 👁️ **Payment AI agents** — **Ethan** (Payment Processor) to assist with creating, batching, and
-  routing payments, and **Ava** (AML & Compliance) to screen payments and counterparties for
-  sanctions/AML. See [Agents](../09-agents/overview.md).

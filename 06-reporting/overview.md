@@ -1,146 +1,73 @@
 # Reporting — Overview
 
-> **Availability:** `Available` ✅ (a set of operational reports is live) · many reports and the Reports Dashboard are `In Preview` 👁️ — see the split below
 > **Where to find it:** Reporting
 > **Who uses it:** treasurers, finance teams, FP&A, controllers, auditors, executives.
-> **Permissions required:** `CashManagement.CashPosition.ExportData` · Read to view and generate reports. Individual reports also respect the permissions of the data they show. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+> **Permissions required:** each report respects the permissions of the data it shows; most cash
+> reports need `CashManagement.CashPosition` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The Reporting module is your place to see the numbers that run treasury. Today it delivers a set of
-**live operational reports** — the transaction, bank, invoice, reconciliation, G/L, and exchange-rate
-views your team relies on every day. A wider library (cash position and forecasting, operations
-blotters, risk, and regulatory reporting), the **Reports Dashboard**, and the **Build Your Own**
-engine are in preview and marked `In Preview` 👁️ below.
+Reporting is where you read the numbers that run treasury. The data is already ingested,
+normalized and reconciled, so a report is a live view of your position rather than a spreadsheet
+you rebuild each morning.
 
-The goal is that you spend your time reading the answer, not assembling it: the data is already
-ingested, normalized, and reconciled, so a live report is a real view of your position rather than a
-spreadsheet you rebuild each morning.
+Each report is its own screen in the **Reporting** menu, with its own controls. You open the one
+you need, set its dates and filters, read it on screen, and export it if you want to take it with
+you.
 
-> 👁️ **Note on availability.** The Reports Dashboard and Audit are in testing (available on request).
-> The live-vs-in-preview split below shows exactly which reports you can run today; pages for
-> in-preview reports describe how they work.
+## How the menu is organized
+The Reporting menu has an **Overview** column, which carries the **Cash & Liquidity** and
+**Datalake (POC)** sub-headings, then **Operations** and **Risk Management**.
 
-## What's live today vs in preview
-| Report | Status |
+| Group | What's in it |
 |---|---|
-| [Transactions](transactions.md) | `Available` ✅ |
-| [Bank Statements](bank-statements.md) | `Available` ✅ |
-| Invoices | `Available` ✅ |
-| Reconciliation Status | `Available` ✅ (see [Reconciliation](../04-reconciliation/overview.md)) |
-| [G/L Postings](gl-postings-report.md) | `Available` ✅ |
-| [Exchange Rates](exchange-rates.md) | `Available` ✅ |
-| Reports Dashboard | `In Preview` 👁️ |
-| [Audit / Regulatory & Compliance](regulatory-compliance.md) | `In Preview` 👁️ |
-| [Cash Position](cash-position.md) | `In Preview` 👁️ |
-| [Cash Forecast](cash-forecast.md) | `In Preview` 👁️ |
-| [Actual vs Forecast](actual-vs-forecast.md) | `In Preview` 👁️ |
-| [Scenarios (What-If)](scenarios-what-if.md) | `In Preview` 👁️ |
-| FX / Debt / Investment blotters | `In Preview` 👁️ (see [Operations blotters](operations-blotters.md)) |
-| Amortization Schedule (Debt Repayment) | `In Preview` 👁️ |
-| Customer Aging | `In Preview` 👁️ |
-| G/L Entry Lifecycle | `In Preview` 👁️ |
-| [Risk Management](risk-management/) (all dashboards) | `In Preview` 👁️ |
-| [Build Your Own Report](build-your-own.md) | `In Preview` 👁️ |
+| **Cash & Liquidity** | [Balance Differential](balance-differential.md), [Category Positions](category-positions.md), [Cash Forecast](cash-forecast.md), [Actual vs Forecast](actual-vs-forecast.md) and [Scenarios (What-If)](scenarios-what-if.md). Your consolidated position itself is on [Home](../01-home/home-dashboard.md). |
+| **Datalake (POC)** | [Cash position, Opening vs closing balance, Account statement and Cash flow](datalake-reports.md), plus its own report builder. Refreshed nightly, each account in its own currency. |
+| **Operations** | [Transactions](transactions.md), [Bank Statements](bank-statements.md), [Invoices](../05-payments/invoices.md), [Reconciliation Status](../04-reconciliation/movements-and-flows.md), [Exchange Rates](exchange-rates.md), [Conciliation Reporting](../04-reconciliation/conciliation-reporting.md), [Fee Report](../04-reconciliation/fee-report.md), and the [operations blotters](operations-blotters.md). |
+| **Risk Management** | Risk Cockpit, Mark-to-Market, FX Exposure, Credit Risk, IRRBB and ALM — see [Risk Management](risk-management/). |
 
 ## Key concepts
-- **Reports gallery** — the Reporting landing page. It shows **featured** reports, a categorized
-  **library** of standard reports, and your **scheduled** reports.
-- **Standard report** — a pre-built report (Cash Position, FX Exposure, Customer Aging, etc.) you can
-  run as-is, with drill-down and export.
-- **Build Your Own** — a custom report you define yourself: choose the data, dimensions, filters, and
-  layout, then save and schedule it. See [Build Your Own Report](build-your-own.md).
-- **Display currency** — the single currency all figures convert to on screen (e.g. show everything
-  in USD, or in each entity's local currency).
+- **Display currency** — the single currency figures convert to on screen, so a group total is
+  comparable across entities. Conversion uses your loaded [exchange rates](exchange-rates.md);
+  the Datalake reports do not convert, and report each account in its own currency.
 - **Drill-down** — expanding a total to see what makes it up, down to the individual transaction.
-- **Scheduled report** — a saved report set to generate and be delivered automatically (daily,
-  weekly, monthly) in PDF, Excel, or CSV.
-
-![The reports gallery with featured cards, the categorized library, and the scheduled reports strip](../assets/screenshots/reporting-gallery.png)
-
-## The report sub-areas
-The Reports menu is organized into four groups:
-
-| Sub-area | What's in it |
-|---|---|
-| **Overview** | The reports **Dashboard** (gallery) and the **Audit** report. The **Build Your Own** button also lives on the gallery. |
-| **Cash & Liquidity** | [Cash Position](cash-position.md), [Cash Forecast](cash-forecast.md), [Actual vs Forecast](actual-vs-forecast.md), and [Scenarios (What-If)](scenarios-what-if.md). |
-| **Operations** | The [operations blotters](operations-blotters.md) — Transactions, Bank Accounts, FX/Debt/Investment contracts, Reconciliation Status, and more — plus [G/L Postings](gl-postings-report.md). |
-| **Risk Management** | Mark-to-Market, FX Exposure, Credit Risk, IRRBB, ALM and other risk dashboards. See [Risk Management](risk-management/). |
-
-> **Regulatory & Compliance** is **not** a separate menu section. The **Audit** report is under
-> the **Overview** group; the prudential reports (capital, liquidity, credit quality) are In Preview and will
-> appear in the reports library as they ship — see [Regulatory & Compliance Reports](regulatory-compliance.md).
-
-## The full report library (planned)
-When complete, the library will group standard reports by theme. Only the reports marked `Available` ✅
-in the split above can be run today; the rest are in preview. The planned themes include:
-
-- **Cash & Liquidity** — Cash Position + Forecast, Scenarios (what-if).
-- **Operations** — FX Contracts, Loans, Investments, Transactions, Bank Accounts, Reconciliation
-  Status, Failed Payments, Pending Approvals, Audit Trail.
-- **Risk** — Mark-to-Market portfolio, FX Exposure, Credit Risk by stage, IRRBB, ALM gap, VaR,
-  Stress Test, Concentration.
-- **Debt** — Covenants, Repayment Schedule.
-- **AR** — Customer Aging.
-- **Financial statements** — Profit & Loss, Balance Sheet, Cash Flow Statement (direct & indirect),
-  each on an Actual vs Forecast vs Budget basis.
-
-> The report counts, KPIs, and counterparties shown in demos are illustrative examples. Which reports
-> you see depends on your permissions, your enabled modules, and your data — see
-> your administrator.
+- **Entitlement** — a report only ever shows the companies and accounts you are entitled to see,
+  so two people can run the same report and read different totals.
 
 ## Before you start
-- Your data must already be flowing in through [Integrations](../02-integrations/overview.md) and, for
-  the cleanest results, be [reconciled](../04-reconciliation/overview.md).
-- You need `CashManagement.CashPosition.ExportData` at **Read** to view and generate reports.
-  Reports only ever show data you're entitled to see (by company and account).
+- Your data must already be flowing in through [Integrations](../02-integrations/overview.md) and,
+  for the cleanest results, be [reconciled](../04-reconciliation/overview.md).
+- Exchange rates must be loaded for any currency pair you want converted — see
+  [Exchange Rates](exchange-rates.md).
 
 ## How to use it
 
-### Run a standard report
-1. Open **Reporting** to land on the reports gallery.
-2. Find your report in the **featured** cards or the categorized **library** (use the category
-   labels to scan).
-3. Click **Open report** (or the report tile).
-4. Set the report's controls — date range, display currency, grouping, and any filters.
-5. Read the result on screen and **drill down** into any total to see its detail.
+### Run a report
+1. Open **Reporting** and choose the report from its group in the menu.
+2. Set the report's controls — typically a date or date range, a display currency, a grouping,
+   and any company, account or currency filters.
+3. Read the result on screen, expanding a total where the report supports drill-down.
 
-### Export a report
-1. Open the report you want.
-2. Click **Export** in the report header.
-3. Choose a format — **PDF**, **Excel (XLSX)**, or **CSV**.
-4. The current, filtered view is generated and downloaded. (If generation takes a moment, you'll see
-   a progress indicator, then the file downloads.)
-
-### Schedule a report for automatic delivery
-1. Open the report (or a saved custom report).
-2. Click **Schedule**.
-3. Choose the **frequency** (e.g. daily 06:00, weekly Monday, monthly on the 1st), the **format**,
-   and the **recipients**.
-4. Save. The report now runs on that cadence and is delivered automatically; scheduled reports are
-   listed on the gallery's **Scheduled** strip.
+### Export what you are looking at
+1. Use the report's **Export** control.
+2. The **current, filtered view** is what gets exported — set your filters before exporting, not
+   after.
 
 ## Tips & good practices
-- Pin the reports you run most often as **featured** cards so they're one click away.
-- Set the **display currency** once — every figure converts consistently, which makes group
-  consolidation and comparison straightforward.
-- Schedule the recurring pack (daily cash position, weekly P&L, monthly close) so it lands in
-  inboxes without anyone having to remember.
-- Reconcile first: a report is only as good as its data, so clear reconciliation exceptions before
-  you rely on a report for decisions.
+- Set the **display currency** once so every figure converts consistently; it is what makes a group
+  total meaningful to management.
+- Reconcile first. A report is only as good as the data behind it, so clear reconciliation
+  exceptions before relying on one for a decision.
+- Know which cut you are quoting. The **Cash & Liquidity** reports are live and converted; the
+  **Datalake** reports are refreshed nightly and never converted. They will not agree, and both are
+  right — see [Datalake Reports](datalake-reports.md).
 
 ## Related
-- [Build Your Own Report](build-your-own.md) — define, save, and schedule custom reports.
-- [Cash Position](cash-position.md) · [Cash Forecast](cash-forecast.md) · [Actual vs Forecast](actual-vs-forecast.md) · [Scenarios (What-If)](scenarios-what-if.md).
-- [Operations blotters](operations-blotters.md) and [G/L Postings](gl-postings-report.md).
-- [Risk Management](risk-management/) and [Regulatory & Compliance](regulatory-compliance.md).
-- [Data Repository](../03-data/data-repository.md) — the source files behind the numbers.
-
-## In Preview
-- 👁️ **Predictive insights** — proactive pattern, anomaly, and recommendation detection layered over
-  your reports (seasonality, forecast-accuracy drift, concentration, liquidity optimization).
-- 👁️ **Scenarios (What-If)** (Q4 2026) — model liquidity under different assumptions; see
-  [Scenarios (What-If)](scenarios-what-if.md).
-- 👁️ **Report-as-API & embedding** — consume any saved report as a ready-made API endpoint or embed
-  it in your own dashboards; scope to be confirmed with the Treasury Hub team.
-- 👁️ **Risk Management dashboards** (from Q3 2026) — see your administrator.
+- [Home](../01-home/home-dashboard.md) — your consolidated cash position, day by day.
+- [Balance Differential](balance-differential.md) · [Category Positions](category-positions.md) —
+  the live cash reports.
+- [Build Your Own Report](build-your-own.md) — define a report yourself: source, groupings,
+  measures, filters, output and schedule.
+- [Datalake Reports](datalake-reports.md) — the nightly cut, each account in its own currency.
+- [Operations blotters](operations-blotters.md) — the operational grids.
+- [Risk Management](risk-management/) — the risk dashboards.
+- [Transactions](transactions.md) — the movement-level detail behind every total.

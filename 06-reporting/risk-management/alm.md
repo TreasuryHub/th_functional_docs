@@ -1,19 +1,14 @@
 # Asset & Liability Management (ALM)
 
-> **Availability:** `In Preview` 👁️ (part of Risk Management, ~Q3 2026)
 > **Where to find it:** Reporting › Risk Management › ALM
 > **Who uses it:** ALM committees, treasurers, and liquidity/regulatory-reporting teams (primarily banks and regulated financial institutions).
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Asset & Liability Management (ALM) will give you an integrated view of the balance sheet —
+Asset & Liability Management (ALM) gives you an integrated view of the balance sheet —
 **structural liquidity, funding, maturity mismatch, and regulatory compliance** — from a single
 platform. It covers the liquidity **gap by maturity bucket**, the Basel III/IV liquidity ratios
 (**LCR** and **NSFR**), **HQLA** tracking, **stress scenarios**, and **funding concentration**.
-
-> 👁️ **In Preview.** This is the most regulation-intensive screen in
-> [Risk Management](overview.md); it is in testing and available on request. ALM is aimed primarily at
-> **banks and regulated institutions**. All figures below are **illustrative**, not your data.
 
 Within Risk Management, contractual gaps and standard ratio calculations can run in-house, while
 **behavioral models** (deposit stability, prepayments, drawdowns) and jurisdiction-specific
@@ -39,16 +34,15 @@ regulatory treatments can be executed by a specialist partner. See the
 - **Behavioral models** — models of how demand deposits, prepayments, and committed-line drawdowns
   actually behave versus their contractual terms.
 - **Active ALM policy** — your thresholds (LCR/NSFR minimums and internal targets, maximum gaps, HQLA
-  minimum, stress LCR floor). Mia's insights cite the policy section they enforce.
+  minimum, stress LCR floor). Status flags and alerts cite the policy section they check against.
 
 ## Before you start
-When live, ALM will depend on: the full balance sheet ingested via
+ALM depends on: the full balance sheet ingested via
 [Integrations](../../02-integrations/overview.md) with contractual terms; a classification of assets
 into HQLA levels and of liabilities by stability; historical balance series for behavioral models; and
 rate curves per currency. Your **ALM policy** defines the limits that monitoring enforces.
 
 ## How to use it
-> The steps describe the **intended** experience once released.
 
 ### Review liquidity position and ratios
 1. Go to **Reporting › Risk Management › ALM**.
@@ -67,19 +61,13 @@ rate curves per currency. Your **ALM policy** defines the limits that monitoring
 1. Open the **stress scenarios** panel (e.g. **Baseline**, **Moderate stress**, **Severe stress**).
 2. For each scenario, review the resulting **LCR and NSFR** and its assumptions (e.g. deposit runoff
    %, HQLA haircut, loss of wholesale funding).
-3. Read the per-scenario **Mia insight**, which flags how close you are to the policy floor and
-   recommends contingency actions (e.g. activating a sweep or contingency-funding facility).
+3. Compare each scenario's resulting ratios against the **policy floor** to see how much headroom
+   remains.
 
 ### Track HQLA and funding concentration
 1. Review **HQLA** by level against the policy minimum.
 2. Open **funding concentration** to see the share of funding by source, tenor, currency, and
    counterparty, with alerts against your limits.
-
-### Read Mia's analysis
-1. The **Mia (AI) commentary** confirms which ratios are within policy and names the drivers.
-2. Mia may also raise **proactive sector insights** — for example, an upcoming central-bank policy
-   change or a scheduled sovereign credit review that could reclassify HQLA — and offer to monitor the
-   event and pre-calculate the impact. These end with an actionable question you can accept.
 
 ## Configuration
 - **ALM policy** — upload/maintain LCR/NSFR minimums and internal targets, maximum cumulative and
@@ -98,8 +86,15 @@ rate curves per currency. Your **ALM policy** defines the limits that monitoring
   understate deposit stability.
 - Keep **funding sources diversified** — concentration in short-term wholesale funding is a recurring
   supervisory concern.
-- Maintain your **ALM policy** carefully; LCR/NSFR statuses, stress flags, and Mia's recommendations
-  all reference it.
+- Maintain your **ALM policy** carefully; LCR/NSFR statuses, stress flags, and alerts all reference
+  it.
+
+## Capabilities at a glance
+- **Liquidity gap** by maturity bucket (contractual and behavioral).
+- **LCR / NSFR monitoring** with HQLA classification and haircuts.
+- **Stress scenarios** with per-scenario LCR/NSFR measured against the policy floor.
+- **Funding concentration** analysis and **behavioral models** (partner-calibrated).
+- **IRRBB regulatory reporting** for the banking book.
 
 ## Related
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
@@ -107,11 +102,3 @@ rate curves per currency. Your **ALM policy** defines the limits that monitoring
 - [Credit Risk](credit-risk.md) — funding partners and settlement exposure.
 - [Risk Cockpit](risk-cockpit.md) — LCR/NSFR summarised with the other dimensions.
 - [Alerts](../../08-alerts/alerts.md) — where ratio and gap breaches surface.
-
-## In Preview
-- 👁️ **Liquidity gap** by maturity bucket (contractual and behavioral).
-- 👁️ **LCR / NSFR monitoring** with HQLA classification and haircuts.
-- 👁️ **Stress scenarios** with per-scenario LCR/NSFR and contingency guidance.
-- 👁️ **Funding concentration** analysis and **behavioral models** (partner-calibrated).
-- 👁️ **IRRBB regulatory reporting** for the banking book.
-- 👁️ **Mia proactive sector insights** tied to central-bank and rating events.

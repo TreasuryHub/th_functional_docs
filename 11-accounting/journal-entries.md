@@ -1,59 +1,56 @@
 # Journal Entries
 
-> **Availability:** `In Preview` 👁️ (viewing generated postings is `Available` ✅ today — see [G/L Postings](gl-postings.md))
-> **Where to find it:** planned as **Reporting › Accounting** (the Accounting Hub blotter). Today, generated postings appear on the [G/L Postings](gl-postings.md) grid.
+> **Where to find it:** there is no Journal Entries screen, and the **G/L Posting** entry has been removed from Reporting › Operations. The entries generated in the past are described in [G/L Postings](gl-postings.md) and stay readable.
 > **Who uses it:** accountants, financial controllers, treasury operations, approvers.
 > **Permissions required:** `CashManagement.TransactionsPosting` · Read to view; approval rights follow your role. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
-
-> 👁️ **In Preview.** This is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
 
 ## Overview
 A **journal entry (JE)** is a complete, balanced accounting entry — its debit and credit lines
 together — created for a treasury event. Where a [posting](gl-postings.md) is the accounting output
-you can view today, the **Journal Entries** module is the planned workspace where entries are
-generated automatically from every workflow, routed through an approval flow, and then exported to
-your ERP.
+you view, the **Journal Entries** module is the workspace that generated entries from a workflow,
+routed them through an approval flow, and exported them to your ERP.
 
-Most of what this page describes is **in preview** and is written in future tense. What exists
-today is the ability to **view the postings** that transactions generate, on the
-[G/L Postings](gl-postings.md) screen. Do not expect the review-and-approve workflow below to be live
-until your administrator confirms it is enabled — check
-your administrator.
+**Treasury Hub no longer generates accounting entries, no longer approves them, and no longer sends
+them to an ERP.** The processes behind each of those steps have been switched off; approving or
+deleting an entry answers an error.
+
+**Nothing has been deleted.** Every entry generated in the past, its status history, and its link to
+the originating transactions are kept and remain readable — see [G/L Postings](gl-postings.md).
+
+G/L posting is being rebuilt from scratch, together with reconciliation, as its own project. The
+rest of this page describes how entries were produced and approved, so you can read the history you
+have.
 
 ## Key concepts
 - **Journal entry (JE)** — a balanced set of debit and credit lines for one accounting event, with a
   reference, a date, the entity, and a source module.
-- **Journal entry generation** — creating the entry automatically from a completed workflow (a
-  payment, an FX deal, a loan disbursement, a reconciled item, and so on).
-- **Approval workflow** — the configurable path an entry follows before it can be exported: who
-  reviews it, at how many levels, and under what thresholds.
-- **Lucas (AI) — Journal Entry Generator** — the accounting agent that can generate entries and act as a first-level approver,
-  always subject to your rules and confirmation (**human-in-the-loop**: the agent proposes, a person
-  can confirm or revoke).
-- **Confidence score** — a 0–100% score the agent assigns to an entry, based on how well it matches
-  your rules, its consistency with history, and how complete its data is.
+- **Journal entry generation** — creating the entry from a completed workflow (a payment, an FX
+  deal, a loan disbursement, a reconciled item, and so on). This no longer happens.
+- **Approval workflow** — the path an entry followed before it could be exported: who reviewed it,
+  at how many levels, and under what thresholds.
 - **Segregation of duties (SoD)** — approval rules that prevent the same person from both creating
   and approving an entry, a common regulatory requirement.
 
-## How journal entries are generated (planned)
-Journal entries are the accounting step of the platform's standard workflow model — see
+## How journal entries were generated
+Journal entries were the accounting step of the platform's standard workflow model — see
 [Core Concepts › Everything is a workflow](../00-getting-started/03-core-concepts.md#everything-is-a-workflow).
-The intended lifecycle is:
+No part of this lifecycle runs today; it explains the entries you already have:
 
 ```
 Ingestion → Reconciliation → Journal Entry generated → Approval → ERP export → ERP matched
 ```
 
-1. **A workflow completes** in a module (for example a payment settles or an item is reconciled).
-2. **An entry is generated** automatically, using your [posting rules](coa-rules-engine.md) to pick
-   the debit and credit accounts.
-3. **The entry is validated** — checked that it balances and that its accounts map correctly.
-4. **The entry is routed for approval** (see below).
-5. **The approved entry is exported** to your ERP and, where possible, matched to any existing ERP
-   record. See [Posting to your ERP](erp-integration.md).
+1. **A workflow completed** in a module (for example a payment settled or an item was reconciled).
+2. **An entry was generated**, using your [posting rules](coa-rules-engine.md) to pick the debit and
+   credit accounts. Posting rules are frozen: nothing runs them any more.
+3. **The entry was validated** — checked that it balanced and that its accounts mapped correctly.
+4. **The entry was routed for approval** (see below).
+5. **The approved entry was exported** to your ERP and, where possible, matched to an existing ERP
+   record. Nothing is exported today.
 
-## Journal entry statuses (planned)
-An entry is planned to move through these states:
+## Journal entry statuses
+An entry moved through these states. An existing entry stays in the state it reached, because
+nothing advances it any more:
 
 ```
 Draft → Pending Approval → Approved → Exported → Matched
@@ -62,37 +59,22 @@ Draft → Pending Approval → Approved → Exported → Matched
               └─ Escalated → Manual Review → Approved / Rejected
 ```
 
-## The approval workflow (planned)
+## The approval workflow
+Entries are no longer approved: there is no Accounting blotter to work them in, and approving or
+deleting an entry answers an error. The flow entries went through was:
 
-### Review and approve an entry (planned)
-*The steps below describe the intended experience once this is live.*
+1. Filter to entries **Pending Approval**.
+2. Select an entry to see its debit/credit breakdown, the accounts it maps to, and its source
+   transaction.
+3. Choose **Approve** or **Reject**. A rejection or override required a justification.
+4. Approved entries moved to **Exported** as they were sent to your ERP.
+5. **Bulk approval** cleared batches of low-risk entries at once.
 
-When the module is live, the intended flow will be:
-
-1. Open the **Accounting** blotter and filter to entries **Pending Approval**.
-2. Select an entry to see its debit/credit breakdown, the accounts it maps to, its source
-   transaction, and — where the AI agent was involved — its **confidence score and reasoning**.
-3. Choose **Approve** or **Reject**. A rejection or override will require a justification.
-4. Approved entries move to **Exported** as they are sent to your ERP.
-5. Use **bulk approval** to clear batches of low-risk entries at once.
-
-### The AI agent as a delegated approver (planned)
-The accounting agent can act as a **first level of approval**, within limits you set:
-
-| Behaviour | What it means |
-|---|---|
-| **Confidence scoring** | Each entry gets a 0–100% score from rule match, historical consistency, and data completeness. |
-| **Auto-approval** | If the score is above your threshold and the entry meets your policies, it can be approved automatically. |
-| **Escalation** | If the score is below the threshold, or an anomaly is detected, the entry is escalated to a human approver with full context. |
-| **Explainability** | Every decision records the reasoning — why it approved or why it escalated. |
-
-You stay in control: **you define the thresholds and policies, and you can revoke any approval the
-agent makes.**
-
-## Configuration (planned — In Preview 👁️)
-Approval workflows are intended to be configured through natural-language prompts (for example
-requiring dual approval above a set amount, restricting FX entries to the treasury team, or
-auto-approving small fee entries above a confidence threshold). Configurable dimensions will include:
+## Configuration
+Because no entry is generated or approved, approval configuration changes nothing today. For
+reference, and for the rebuild, approval workflows were described through natural-language prompts
+(for example requiring dual approval above a set amount, restricting FX entries to the treasury
+team, or routing small fee entries to a single approver). The dimensions were:
 
 - **Approval levels** — single, dual, or n-level.
 - **Roles / users** per level.
@@ -103,24 +85,15 @@ auto-approving small fee entries above a confidence threshold). Configurable dim
   pending-entry dashboard showing aging and priority.
 
 ## Tips & good practices
-- Until the module is live, use the [G/L Postings](gl-postings.md) grid to see the entries your
-  transactions generate.
-- Plan your approval thresholds and segregation-of-duties rules with your auditors before enabling
-  auto-approval, so the AI agent operates inside your control framework from day one.
-- Keep your [posting rules](coa-rules-engine.md) accurate — entry generation is only as good as the
-  rules behind it.
+- See [G/L Postings](gl-postings.md) for what your existing entries contain and how to read them.
+- An entry left at **Pending Approval** or **Approved** will stay there; it is not waiting on anyone.
+- Make the accounting entry for new treasury activity in your accounting system until G/L posting
+  is rebuilt.
+- Keep the record of your approval thresholds and segregation-of-duties rules with your auditors —
+  they describe the control framework the existing entries went through.
 
 ## Related
-- [G/L Postings](gl-postings.md) — view generated postings today.
-- [Chart of Accounts & Rules Engine](coa-rules-engine.md) — the rules that build each entry.
-- [Posting to your ERP](erp-integration.md) — exporting and matching approved entries.
+- [G/L Postings](gl-postings.md) — the postings that were generated, and what is kept of them.
+- [Chart of Accounts & Rules Engine](coa-rules-engine.md) — the rules that built each entry.
 - [End-to-end audit trail](audit-trail.md) — the immutable record behind every entry and approval.
-- [Workflows](../07-workflows/overview.md) — how approvals are modeled across the platform.
-
-## In Preview
-- 👁️ **Automatic journal-entry generation** — balanced entries created from every module (Payments,
-  FX, Loans, Investments, Reconciliation).
-- 👁️ **Configurable approval workflow** — multi-level approvals with thresholds, SoD, SLAs, and
-  bulk approval.
-- 👁️ **AI accounting agent as delegated approver** — confidence-based auto-approval with escalation
-  and full explainability, always human-in-the-loop.
+- [Reconciliation Workflows](../04-reconciliation/workflows.md) — how approvals are modeled.

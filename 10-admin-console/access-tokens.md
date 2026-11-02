@@ -1,6 +1,5 @@
 # Access Tokens
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Admin Console › Access Tokens
 > **Who uses it:** administrators setting up integrations and data exports.
 > **Permissions required:** `AdminAndSettings.UserManagement` · Admin
@@ -50,10 +49,6 @@ APIs), scoped to your tenant.
 - The grid shows each token with a **status** badge (active / revoked) and its details.
 - Use **Export** to download the list to Excel/CSV for security reviews.
 
-> ⚠️ **To be confirmed by Treasury Hub:** the exact fields on access tokens (scopes, expiry, naming)
-> are still being finalized — confirm the current form with the Treasury Hub team before rolling out to
-> integrators.
-
 ## Configuration
 - **One token per integration.** Issuing a distinct token per system means you can revoke one without
   breaking the others.
@@ -69,4 +64,4 @@ APIs), scoped to your tenant.
 - [Inbound APIs](../02-integrations/inbound-apis.md) — the H2H ingestion API these tokens authenticate.
 - [Data Exports](../03-data/data-exports.md) — the outbound API these tokens authenticate.
 - [Integrations](../02-integrations/overview.md) — connections that may use tokens.
-- [User & Agent Management](user-and-agent-management.md) — human access (as opposed to programmatic).
+- [Users & Roles](users-and-roles.md) — human access (as opposed to programmatic).

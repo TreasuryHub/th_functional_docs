@@ -1,126 +1,164 @@
-# AI Agents — Overview
+# AI Assistance — Overview
 
-> **Availability:** `In Preview` 👁️ (no agents are live yet, including the in-app Assistant)
-> **Where to find it:** Agents (sidebar) · **Open Assistant** (top bar)
-> **Who uses it:** everyone — treasurers, finance teams, analysts, auditors, administrators.
-> **Permissions required:** using the Assistant needs no special permission (it acts within your own access). Managing agents needs `AdminAndSettings.UserManagement` · Admin (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
+> **Where to find it:** Reconciliation › Workflows (Workflow Studio) · Admin Console › AI usage
+> **Who uses it:** Treasurers, finance teams, operations staff, and administrators
+> **Permissions required:** None of its own — the agent works with the permissions you already
+> have. The **AI usage** screen is administrator-only. See
+> [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-AI agents are Treasury Hub's assistants that help you **operate the whole platform in plain
-language** — instead of learning every screen, you tell an agent what you need and it guides you,
-answers questions, or does the work for you (always within your permissions). Agents are not a
-single chatbot bolted on the side; they are a **transversal layer** that reaches across every
-module — integrations, reconciliation, payments, reporting, data, and workflows.
+Treasury Hub gives **each module its own agent**, and you work with it on that module's screens.
+An agent knows the records its module holds, the operations it allows, and the rules a change to
+it must satisfy — so what it prepares is already shaped to that module's own rules.
 
-The AI agents are **not live yet** — including the in-app Assistant (the **Open Assistant** button is
-present in the top bar, but the assistant behind it is still in development). The **named, specialized
-agents** listed in the catalogue below (16 agents, each an expert in one domain) are in preview —
-this page explains where they fit so you understand the direction of the product. You will switch
-between them from the **Switch Agent** panel, with **Alex** (Customer Success) as the default
-orchestrator.
+You describe what you want in plain language; that module's agent works out which record you mean,
+what would have to change, and whether that change is valid — then hands the result back to you as a
+**proposal** to review.
 
-> Note: Sophia's AI-assisted **matching** is a feature of the
-> [Reconciliation](../04-reconciliation/overview.md) module (also In Preview), not one of the
-> standalone conversational agents described here.
+It does not save anything. Every change an agent prepares is checked against the same validations
+the screens use, shown to you field by field, and only takes effect when **you** submit it. That
+single rule is what makes it safe to let an agent touch treasury data at all.
 
-> The figures and agent names shown in demos (action counts, success rates, hours saved, sample
-> counterparties) are **illustrative examples**, not your organization's data.
+## The promise: the agent proposes, a person submits
+This is the most important thing to know about AI on Treasury Hub, and it holds everywhere the
+agent appears:
+
+- **The agent is never given the ability to save.** The tools it is offered are read-only ones
+  and a check-this-for-me one. The tools that write are not withheld from it by instruction — they
+  are never put in front of it in the first place.
+- **The platform refuses an AI-originated save independently.** Even if something went wrong inside
+  the agent and a save were attempted, the request is rejected before it reaches the module that
+  would store it. The two controls are separate on purpose, so neither has to be trusted alone.
+- **Confirming is a deliberate act.** You read the summary, you read the changed fields, and you
+  press the button. Nothing happens on your behalf while you are not looking.
+
+The practical consequence, and the one your auditors will ask about: **the AI layer cannot move
+money and cannot change a live configuration.**
 
 ## Key concepts
-- **Agent** — a specialized AI assistant with a defined role, a scope of data it can see, and a set
-  of actions it can take. Some agents are conversational helpers; others run in the background.
-- **Orchestrator / enabler** — an agent doesn't replace the platform's modules; it *coordinates*
-  them. It can read your data, invoke a [workflow](../07-workflows/overview.md), draft a report, or
-  hand off to another, more specialized agent.
-- **Tenant context** — every agent is scoped to your [organization (tenant)](../00-getting-started/03-core-concepts.md#organizations--tenants).
-  It answers with your real data and never sees another organization's data.
-- **Human-in-the-loop** — agents propose and prepare; **people approve**. Anything that changes
-  data or money routes through the platform's normal [approvals](../07-workflows/overview.md).
-- **RAG (retrieval-augmented generation)** — how an agent grounds its answers in *your* data and the
-  platform's knowledge base, rather than giving generic responses.
+- **Agent** — the single conversational helper. It interprets what you ask and produces a change
+  that is valid against the platform's existing rules; it does not have a personality, a queue of
+  its own, or work it performs unattended.
+- **Proposal** — a prepared change the agent hands back for you to review: a plain-language
+  summary, the records it matched, the fields that would change, and the validation result.
+- **Resolution trace** — the part of a proposal that shows how a name in your sentence became a real
+  record: what it searched for, and which record it matched, shown by that record's name rather than
+  by its internal identifier.
+- **Conversation** — a thread of messages about one piece of work. The agent remembers what has
+  been agreed so far within it, so a follow-up can be a fragment ("make it 0.50 instead").
+- **Token budget** — the ceiling on how much AI work can be done, counted per conversation, per
+  person per day, and per organization per month. See
+  [Token budgets](#token-budgets-are-a-hard-stop).
 
-## How agents fit the platform
-AI is a layer that sits across the [5-layer stack](../00-getting-started/03-core-concepts.md#data-flows-in-one-direction-source--insight),
-not a module in isolation. In practice an agent can:
+## What the agent can reach
+The agent does not have general access to the platform. It can only work on the areas that have
+**published what they can do and how a change to them must be validated**. Three areas have done so
+today:
 
-- **Understand your tenant context** — who you are, your role, your permissions, your entities and
-  accounts, and which screen you're on.
-- **Invoke workflows** — kick off or advance a [workflow](../07-workflows/overview.md) (a
-  reconciliation run, a payment, a report) on your behalf.
-- **Read and write with your permissions** — an agent can only see and do what *you* are allowed to;
-  it inherits your [role-based access](../00-getting-started/04-roles-and-permissions.md).
-- **Answer from your data (RAG)** — "What's my cash position today?" returns real figures with links
-  to the relevant screen or report.
-- **Track outcomes** — every agent action is recorded (what it did, when, the result) so you get a
-  full audit trail and can measure the time it saves.
+| Area | What the agent can prepare there |
+|---|---|
+| **Reconciliation workflows** | A complete reconciliation workflow — its entry conditions, chains, rules, filters and matching criteria — built by conversation in the Workflow Studio. |
+| **Ingestion formats** | A proposed mapping template for a file that arrived in a format nobody has set up yet. |
+| **Administration** | Organizations, people, roles and permissions — the records behind [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md). |
 
-## The agent catalogue
-Treasury Hub's vision is a **team of specialized agents**, each an expert in one domain, coordinated
-by **Alex** (Customer Success) who routes each request to the right expert. You pick an agent from
-the **Switch Agent** panel. Only the in-app Assistant is live today; the specialized agents below
-are largely **In Preview** 👁️.
+The list is deliberately short and grows one area at a time. Capability is added by an area of the
+platform **exposing its own operations and its own validations** to the agent — never by
+creating another agent. That is why the agent behaves the same way in every area, and why a new
+area arrives with the same guardrails as the first one rather than its own interpretation of them.
 
-| Agent | Specialty | What it does / will do | Status |
-|---|---|---|---|
-| **Alex** | Customer Success | The orchestrator — guides tenant setup and daily operations, routes questions to domain agents, escalates to a human when needed. | 👁️ In Preview |
-| **Sophia** | Reconciliation | Suggests matches, scores confidence, explains its reasoning, and flags anomalies. | 👁️ In Preview |
-| **Mateo** | Confirmation Matcher | Matches and confirms deal/settlement confirmations against your records. | 👁️ In Preview |
-| **Lucas** | Journal Entry Generator | Generates journal entries from reconciled activity for review and posting. | 👁️ In Preview |
-| **Olivia** | Market Data & Reporting | Pulls market data and prepares reporting, including mark-to-market inputs. | 👁️ In Preview |
-| **Nadia** | FX Risk & Hedging | Monitors FX exposure and recommends hedging actions. | 👁️ In Preview |
-| **Isabella** | Credit Risk Monitor | Monitors counterparty credit exposure, limits, and watch-list names. | 👁️ In Preview |
-| **Noah** | Cash Management | Assists with cash position, liquidity, and forecasting. | 👁️ In Preview |
-| **Carter** | Workflow Designer | Helps design and configure workflows in the Workflow Builder. | 👁️ In Preview |
-| **Elena** | Reporting Agent | Builds reports and models what-if scenarios in plain language. | 👁️ In Preview |
-| **Ethan** | Payment Processor | Assists with creating, batching, and routing payments. | 👁️ In Preview |
-| **Ava** | AML & Compliance | Screens payments and counterparties for sanctions/AML and compliance. | 👁️ In Preview |
-| **Liam** | Interest Rate Risk | Analyzes repricing gap, duration, and IRRBB scenarios. | 👁️ In Preview |
-| **Mia** | ALM & Liquidity | Supports asset-&-liability management, liquidity gap, LCR/NSFR. | 👁️ In Preview |
-| **Ona** | Admin & Personal Coach | Admin assistance plus a personal copilot with role-based coaching. | 👁️ In Preview |
-| **Oliver** | Data Governance & Lineage | Watches data quality and traces lineage from source to report. | 👁️ In Preview |
-| **Custom agents** | Anything you need | Agents you build by describing them in plain language in the [Agent Builder](agent-builder.md). | 👁️ In Preview |
+## Where you meet it today
+- **Workflow Studio** — a chat beside a reconciliation workflow. You describe the workflow you want
+  and refine it turn by turn; the diagram and the underlying document update as you go, and saving
+  is yours. Reached from **Reconciliation › Workflows**, on **New** or **Edit**. See
+  [Reconciliation workflows](../04-reconciliation/workflows.md).
+- **Ingestion format proposals** — when a file arrives in a format the platform does not recognise,
+  the agent proposes a mapping template for it, which someone then reviews and accepts. The file
+  may have arrived with nobody present — by email or SFTP — so the proposal waits for a person
+  rather than applying itself. See [File Import](../02-integrations/file-import.md).
+- **AI usage (Admin Console)** — where an administrator follows how much of the month's allowance
+  the organization has used, how much is left, when it resets, and which areas and people the usage
+  came from.
 
-> **Sophia:** Sophia's AI-assisted matching — suggested matches, confidence scores, and anomaly flags —
-> is part of the [Reconciliation](../04-reconciliation/overview.md) module (In Preview), separate from
-> the standalone conversational agent.
+Each of those is covered in depth on its own page; the descriptions here are deliberately short.
 
-## What's in the Agents area
-The **Agents** menu will bring these agents together in one place:
+## Guardrails
+- **It cannot invent an identifier.** When your sentence names a counterparty, a person or an
+  account, the agent has to find that record first. The values it is allowed to put into a change
+  are narrowed to the ones those searches actually returned, so a plausible-looking identifier that
+  nobody looked up cannot be produced.
+- **It is never offered the tools that write.** It reads, and it asks the owning area to check a
+  draft without storing it. There is no path from the agent to a save.
+- **A request beyond your own permissions is refused, not proposed.** If what you asked for would
+  grant you or someone else more than you are entitled to grant, you get a refusal and no proposal at
+  all. A proposal is something a person is asked to confirm, and a request that looks reasonable on
+  screen tends to get confirmed — so it is never shown.
+- **It declines rather than returning the closest match.** If nothing in the area you are working in
+  does what you asked, it says so and returns nothing. It does not substitute a related operation or
+  a similar value.
+- **It never marks an unverified change as valid.** If a change still fails validation after the
+  agent has tried to correct it, you get the change with the errors attached, plainly labelled as
+  not valid — never presented as ready.
+- **If the model provider is unavailable, every manual flow keeps working.** AI assistance switches
+  off and the screens behave exactly as they did before. No business process on Treasury Hub depends
+  on the model being reachable.
 
-| Screen | What it's for | Status |
-|---|---|---|
-| [Assistant](assistant.md) | The in-app Assistant for onboarding, setup, and help (button present in the top bar; assistant in development). | 👁️ In Preview |
-| [Agent Dashboard](agent-dashboard.md) | See every agent, what each one is doing, and the outcomes and time it saves. | 👁️ In Preview |
-| [Agent Builder & Execution Log](agent-builder.md) | Build and configure agents by conversation, and review a log of everything agents have done, with approvals. | 👁️ In Preview |
+## Token budgets are a hard stop
+AI work is metered in **tokens**, and the ceilings are enforced as a stop rather than a slowdown:
 
-## Before you start
-- The in-app Assistant is available to everyone from the **Open Assistant** button in the top bar —
-  see [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md#the-top-bar).
-- Named agents inherit your [permissions](../00-getting-started/04-roles-and-permissions.md), so
-  clean [master data](../00-getting-started/03-core-concepts.md#master-data) and correct role
-  assignments will make them more useful when they arrive.
+- **per conversation** — a single thread cannot run away;
+- **per person per day** — one person cannot consume the organization's allowance;
+- **per organization per month** — the overall ceiling, which resets at the start of each month.
+
+When a ceiling is reached the turn stops. You are told, nothing is saved, and the work in progress is
+not lost — you pick it up again once the ceiling resets or an administrator raises it. The three
+ceilings are counted independently, so exhausting one does not consume the others.
+
+Administrators follow consumption against the monthly ceiling on the **AI usage** screen in the
+[Admin Console](../10-admin-console/overview.md), which also shows usage per area and per person.
+
+## Language
+Replies come back in **the language of the screen you are on**. The agent does not try to guess
+your language from what you type — short follow-ups like "ok" or "that one" are far too ambiguous for
+that, and a reply that changes language mid-conversation is worse than one that is consistently in
+the language you chose. If you switch the platform's language, the next message is answered in the
+new one.
+
+Your own words are never translated inside a change: text you dictate into a field is carried through
+exactly as you wrote it.
+
+## Audit and data handling
+- **Every AI-originated call is stamped** with the fact that it came from the agent, which person
+  it acted for, which conversation it belonged to, and which tool it used. So the question an auditor
+  asks — *was this done by a person, or suggested by the system?* — is answerable from the record
+  rather than reconstructed.
+- **Conversations and their turns are kept for 24 months**, so what the agent proposed remains
+  reviewable long after the change itself was made.
+- **The agent acts with your permissions, never its own.** It cannot see or do anything you could
+  not see or do yourself, and a permission revoked from you is revoked from it at the same moment.
+- **Reads are narrow by design.** What is sent to the model to ground a change is limited to the
+  fields needed to tell one record from another — a name and a status, not balances, limits or bank
+  details.
+- **No keys, no inbound exposure, no training.** The connection to the model runs outbound only, over
+  a private connection inside Treasury Hub's own cloud tenancy, authenticated without API keys. Your
+  data is not retained by the provider for training, and the agent is the single point through
+  which anything leaves at all.
 
 ## Tips & good practices
-- Think of an agent as a **colleague who knows the platform**, not a search box — describe your goal
-  ("reconcile last week's PSP settlements") rather than hunting for the right screen.
-- Agents act **within your permissions**. If an agent can't do something, it's usually a permissions
-  or data-availability limit, not a failure — check with your administrator.
-- Remember that agents **prepare, people approve**. Review what an agent proposes before it's
-  committed, especially for payments and postings.
+- **Say what you want, not where it lives.** "Reconcile pay-ins against the bank statement" works
+  better than hunting for the screen that does it.
+- **Read the changed-fields list, not just the summary.** The summary is written to be readable; the
+  field list is the change. If the two ever disagree, the field list is what would be saved.
+- **Answer its questions rather than restarting.** When the agent asks for a missing value, the
+  work it has already done is kept — a one-word answer finishes it, whereas a fresh request starts
+  from nothing and costs more of the budget.
+- **Keep your reference data clean.** The agent resolves names to records by searching. Two
+  counterparties with the same display name means it has to stop and ask you every time.
 
 ## Related
-- [Core Concepts — The AI layer & agents](../00-getting-started/03-core-concepts.md#the-ai-layer--agents)
-- [Assistant](assistant.md) — the in-app helper.
-- [Reconciliation](../04-reconciliation/overview.md) — where Sophia's AI matching runs.
-- [Workflows](../07-workflows/overview.md) — what agents orchestrate.
-
-## In Preview
-- 👁️ **Alex — Customer Success agent** — conversational onboarding, daily operations, and Q&A over
-  your real data, orchestrating the specialized agents.
-- 👁️ **The specialized domain agents** — Sophia (Reconciliation), Mateo (Confirmation Matcher),
-  Lucas (Journal Entries), Olivia (Market Data & Reporting), Nadia (FX Risk), Isabella (Credit
-  Risk), Noah (Cash Management), Carter (Workflow Designer), Elena (Reporting), Ethan (Payments),
-  Ava (AML & Compliance), Liam (Interest Rate Risk), Mia (ALM & Liquidity), Ona (Admin & Coach),
-  and Oliver (Data Governance & Lineage).
-- 👁️ **Ona role-based coach variants** — a personal copilot tailored to your job description and goals.
-- 👁️ **[Agent Dashboard](agent-dashboard.md)** and **[Agent Builder & Execution Log](agent-builder.md)**.
+- [The Agent](assistant.md) — how a request turns into a proposal, and what you do with it.
+- [Reconciliation workflows](../04-reconciliation/workflows.md) — the Workflow Studio in depth.
+- [File Import](../02-integrations/file-import.md) — parsing templates and the formats the agent
+  proposes.
+- [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — the permissions the
+  agent inherits from you.
+- [Admin Console](../10-admin-console/overview.md) — where the **AI usage** screen lives.

@@ -1,6 +1,5 @@
 # Core Concepts
 
-> **Availability:** `Available` ✅
 > **Who this is for:** everyone — read this once and the rest of the platform makes sense.
 
 A handful of ideas run through the whole platform. Understanding these will help you use every
@@ -31,11 +30,8 @@ and **tags, custom entities, and matching rules**. Keeping it clean and complete
 accurate reconciliation, reporting, and payments. It's managed in the
 [Admin Console](../10-admin-console/master-data.md).
 
-An **AI Master Data Assistant** (`In Preview` 👁️) can build a whole hierarchy — **groups, companies and
-accounts, and their associations** — from a single plain-language request, ask for what's missing, flag
-validation issues, and create records in bulk from a pasted list or an uploaded file.
-**Counterparties & SSIs** (`In Preview` 👁️) add the *payee* side used by transfers, with maker-checker
-approval on banking changes.
+**Counterparties & SSIs** add the *payee* side used by transfers, with maker-checker approval on
+banking changes.
 
 ## Financial entities
 Treasury Hub isn't limited to bank balances. Its **cash-forecast model** classifies the full range of
@@ -52,8 +48,8 @@ themselves, standalone **operatives**, and **plans** that project future flows:
 
 Every cashflow carries a **tag** — grouped as **financing (`fin_`)**, **investment (`inv_`)**, or
 **operational (`op_`)** — so the same taxonomy classifies both the **forecast** and the **Transactions**
-historicals. Any cashflow can be created manually; a contract is optional. Not every entity has its own
-screen yet, but this is the data model the platform is built around.
+historicals. Any cashflow can be created manually; a contract is optional. This is the data model the
+platform is built around.
 
 ## Data flows from source to insight
 Everything follows the same path:
@@ -71,32 +67,27 @@ Every workflow is:
 - **Auditable** — every step records who did what, when, and the outcome.
 
 Payments, FX deals, reconciliation, cash transfers, loans, investments, risk revaluations, and
-reporting are all modeled this way. See [Workflows](../07-workflows/overview.md).
+reporting are all modeled this way. See [Reconciliation Workflows](../04-reconciliation/workflows.md).
 
-## The AI layer & agents
-AI is not a single feature bolted on — it's a **transversal layer** available across the platform.
-Specialized **agents** can guide setup, answer questions, and act on your behalf (with your permissions).
+## The AI layer
+Each module has its own **agent**, and you work with it on that module's screens. An agent knows
+the records its module holds, the operations it allows, and the rules a change to it has to
+satisfy.
 
-**Assistants & coaches**
-- **Onboarding / in-app Assistant** — guided setup and help (open it from the top bar).
-- **Alex** — Customer Success (in preview).
-- **Ona** — personal coach with role-based variants (in preview).
+You describe what you want in plain language; that module's agent works out which records you mean
+and what would have to change, has the change checked against the platform's own validation rules,
+and hands it back to you as a **proposal**. It never saves anything: you read the summary and the
+changed fields and submit the change yourself, and the platform rejects a save that originates from
+an agent rather than from a person.
 
-**Configuration assistants** (`In Preview` 👁️) — describe what you want in plain language and the assistant
-drafts it for you to confirm. It never creates without confirmation, only produces valid configurations, and
-every result is audited:
-- **Roles** — draft a role from a description ("read-only on transactions and balances"), with
-  segregation-of-duties checks.
-- **Counterparties & SSIs** — set up payees and settlement instructions, with validation and maker-checker.
-- **Email & SFTP ingestion** — build reception/assignment rules (one per provider or file type), test the
-  connection, and flag missing templates.
-- **Reconciliation** — assemble workflows, chains and rules from a description, with topology validation and
-  warnings.
-- **Master data** — build groups, companies and accounts and their links from one prompt.
-- **Forecast & document ingestion** — turn invoices, payments, contracts or statements into the right
-  entities for you to review.
+An agent acts with the permissions you already have. The modules with an agent today:
+- **Reconciliation workflows** — build a workflow, with its chains, rules and matching criteria, by
+  conversation in the Workflow Studio.
+- **Ingestion formats** — when a file arrives in a format nobody has set up yet, the platform
+  proposes a mapping template for a person to review and accept.
+- **Administration** — organizations, people, roles and permissions.
 
-See [Agents](../09-agents/overview.md).
+See [AI assistance](../09-agents/overview.md).
 
 ## Alerts
 Notable events across every module surface as **alerts**, gathered into one
@@ -113,10 +104,8 @@ organized by source:
 | **Prefunding** | An account is projected to run short of the funds a payment run needs. |
 | **Reports** | A scheduled report fails or a monitored metric crosses a limit. |
 | **Workflow** | A workflow step stalls, errors, or waits too long for an approval. |
-| **Agent** | An AI agent needs input, proposes an action, or finishes a run. |
+| **Agent** | AI assistance needs input from you, or has a proposal waiting for your review. |
 | **Admin** | Security/administration events — access changes, expiring consents or tokens, configuration issues. |
-
-The Alerts module — the dashboard and the alert types above — is `In Preview` 👁️.
 
 ## Related
 - [Roles & Permissions](04-roles-and-permissions.md)

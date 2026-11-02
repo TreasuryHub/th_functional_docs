@@ -1,22 +1,17 @@
 # Reconciliation — Overview
 
-> **Availability:** `In Preview` 👁️
 > **Where to find it:** Reconciliation
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
-
-> 👁️ **In Preview.** The Reconciliation module is in testing and available on request — contact Treasury Hub to enable it. This page describes how it works.
-
 ## Overview
 The Reconciliation module automatically matches your financial data across sources — bank
 movements, PSP settlements, ERP/internal records, invoices, and treasury deals — so you can see
-what's settled, what's partial, and what needs attention. It combines **configurable rules** with
-**AI-assisted suggestions** to reconcile most items with no manual effort, and gives you a full
-**audit trail** of every match.
+what's settled, what's partial, and what needs attention. It applies **configurable rules** to
+reconcile most items with no manual effort, and gives you a full **audit trail** of every match.
 
-The goal: turn what used to be a manual, spreadsheet-driven process (often ~45 minutes per item)
-into near-instant, explainable, auditable reconciliation.
+The goal: turn what used to be a manual, spreadsheet-driven process into explainable, auditable
+reconciliation.
 
 ## Key concepts
 - **Movement** — an individual financial item (a bank movement, a payin/payout, a PSP settlement,
@@ -30,10 +25,10 @@ into near-instant, explainable, auditable reconciliation.
 - **Reconciliation rule / criteria** — the conditions that make items match (amount, tolerance,
   reference, date ± N days, partner, currency…).
 - **Rule chain** — an ordered set of rules the engine applies in sequence.
-- **Sophia (AI)** — the reconciliation assistant that suggests matches with a confidence score,
-  explains its reasoning, learns from your manual matches, and flags anomalies.
-- **Mateo (AI)** — the Confirmation Matcher agent (in preview), which matches and confirms deal and
-  settlement confirmations against your records. See [Agents](../09-agents/overview.md).
+- **Workflow Studio** — where a reconciliation workflow is built. You can describe the workflow you
+  want in plain language and the agent prepares it for you to review and save — it never saves
+  anything itself. See [Workflows](workflows.md) and
+  [AI assistance](../09-agents/overview.md).
 
 ## Reconciliation statuses
 A flow is a chain of steps that must each be matched for the transaction to be complete (for example
@@ -54,30 +49,34 @@ bar** showing matched steps ÷ total — and as KPI tiles on the [Dashboard](das
 > duplicates) tend to surface.
 
 ## What's in the module
-The Reconciliation menu contains these screens:
+The Reconciliation menu has two groups: **Administration**, the screens you work the reconciliation
+on, and **Reporting**, the read-only reports. A few related screens are configured under Settings
+instead.
 
-| Screen | What it's for |
-|---|---|
-| [Dashboard](dashboard.md) | KPIs, status breakdown, savings, volume trends. |
-| [Flows (Reconciliation Status)](movements-and-flows.md) | Browse your reconciliation flows; expand a flow to see the movements inside it. |
-| [Matching (1-to-1 & Batch)](matching.md) | Confirm suggested matches, match manually, run batch matching. |
-| [Rules & Criteria](rules-and-criteria.md) | Define and chain the rules that drive auto-matching. |
-| [Approvals](approvals.md) | Review and approve/reject reconciliation requests, individually or in batch. |
-| [Workflows (Settings › Reconciliation Flows)](workflows.md) | Configure the resolution workflows/flows (PSP & Bank, Invoice, Bank-to-Bank, and treasury-specific). Configured under Settings, not the Reconciliation menu. |
-| [ERP Posting](erp-posting.md) | Post reconciled items to your ERP. |
+| Screen | Where to find it | What it's for |
+|---|---|---|
+| [Dashboard](dashboard.md) | Reconciliation › Administration › Dashboard | KPIs, status breakdown, savings, volume trends. |
+| [Flows (Reconciliation Status)](movements-and-flows.md) | Reconciliation › Administration › Reconciliation Status | Browse your reconciliation flows; expand a flow to see the movements inside it. |
+| [Matching (1-to-1 & Batch)](matching.md) | Reconciliation › Administration › Matching 1-to-1 | Match by hand what the rules didn't: every eligible movement per side, with ranked candidates for the one you pick. |
+| [Approvals](approvals.md) | Reconciliation › Administration › Reconciliation Approvals | Review and approve/reject reconciliation requests, individually or in batch. |
+| [Conciliations](conciliations.md) | Reconciliation › Administration › Conciliations | The register of matches that exist — what the rules, approvals and manual matching produced. |
+| [Conciliation Reporting](conciliation-reporting.md) | Reconciliation › Reporting › Conciliation Reporting (also Reporting › Operations) | What was reconciled and what is still open, one week at a time, with the Excel download. |
+| [Fee Report](fee-report.md) | Reconciliation › Reporting › Fee Report (also Reporting › Operations) | What each payment provider should charge per contract each month, and whether its settlements deducted it right. |
+| [Rules & Criteria](rules-and-criteria.md) | Settings › Reconciliation › Reconciliation Flows → open a flow | Define and chain the rules that drive auto-matching. |
+| [ERP Posting](erp-posting.md) | no screen | Reconciliation does not post to an ERP; the page explains what is kept. |
+| [Workflows](workflows.md) | Settings › Reconciliation › Reconciliation Flows | Configure the resolution workflows/flows (PSP & Bank, Invoice, Bank-to-Bank, and treasury-specific). |
 
 ## How reconciliation works, end to end
 1. **Data arrives** through [Integrations](../02-integrations/overview.md) (bank statements, PSP
    feeds, ERP, files, email/SFTP) and becomes normalized **movements**.
 2. **The engine applies your rules** (and rule chains) to propose matches, grouping related items
    into **flows**.
-3. **Sophia (AI) suggests** additional matches with a confidence score and an explanation, and
-   **flags anomalies** (unusual amounts, duplicates, off-hours activity).
-4. **You review** on the [Matching](matching.md) screen — accept suggestions, match manually, or
-   handle exceptions. Batch matching handles high volumes at once.
-5. **Approvals** route requests to the right people (individually or in batch).
-6. **Reconciled items post to your ERP** via [ERP Posting](erp-posting.md), with the full trail
-   preserved.
+3. **You review** on the [Matching](matching.md) screen — accept proposed matches, match manually, or
+   handle exceptions.
+4. **Approvals** route requests to the right people (individually or in batch).
+5. **The confirmed reconciliation is the end of the chain**, with the full trail preserved.
+   Reconciliation does not post to your ERP — see [ERP Posting](erp-posting.md) — and the accounting
+   system.
 
 ## Before you start
 - Make sure your data sources are connected — see [Integrations](../02-integrations/overview.md).
@@ -88,12 +87,15 @@ The Reconciliation menu contains these screens:
 ## Tips & good practices
 - Start with the **built-in workflows** (PSP & Bank, Invoice, Bank-to-Bank), then refine rules as
   you see real exceptions.
-- Let **Sophia's suggestions** train the engine — every manual match improves future auto-matching.
+- When a manual match keeps repeating, turn it into a rule so the engine handles it next time.
 - Use the **Dashboard** period selector to monitor auto-match rate and exception backlog.
-- Handle **anomaly alerts** promptly; they often surface duplicates or data issues upstream.
+- Handle **reconciliation alerts** promptly; they often surface duplicates or data issues upstream.
 
 ## Related
 - [Integrations](../02-integrations/overview.md) — where the data comes from.
-- [ERP Posting](erp-posting.md) and [Accounting / G/L Postings](../11-accounting/gl-postings.md).
+- [Accounting / G/L Postings](../11-accounting/gl-postings.md) — G/L posting is switched off; the
+  page describes the records that are kept.
+- [ERP Posting](erp-posting.md) — what is kept once a reconciliation is confirmed.
 - [Alerts](../08-alerts/alerts.md) — reconciliation exceptions surface here too.
-- [Admin — Matching Rules](../10-admin-console/matching-rules.md).
+- [Admin — Matching Rules](../10-admin-console/matching-rules.md) — the legacy transaction rules,
+  which no longer run. They are unrelated to the reconciliation rules above.

@@ -1,6 +1,5 @@
 # Invoices
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Reporting › Operations › Invoices
 > **Who uses it:** accounts payable, treasury operations, finance team.
 > **Permissions required:** `CashManagement.Invoices` · Read to view, CreateEdit to add/edit. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).

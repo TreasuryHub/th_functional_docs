@@ -1,6 +1,5 @@
 # Open Banking (PSD2)
 
-> **Availability:** `Available` ✅
 > **Where to find it:** click **+ Add Account** on **Home** (top-right) and choose Open Banking. The Bank Accounts grid — where you can also add accounts — lives under **Admin Console › Master Data › Bank Accounts**. There is no separate "Open Banking" item under Integrations.
 > **Who uses it:** treasury operations, finance team, administrators.
 > **Permissions required:** administrator to link accounts (bank-account access); see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).

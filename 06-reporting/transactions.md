@@ -1,6 +1,5 @@
 # Transactions
 
-> **Availability:** `Available` ✅
 > **Where to find it:** Reporting › Operations › Transactions
 > **Who uses it:** treasury operations, finance teams, accountants, auditors.
 > **Permissions required:** `CashManagement.Transactions` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
@@ -9,13 +8,13 @@
 Transactions is the complete record of every bank movement across your accounts — a **flat grid** of
 all movements that you filter, sort, and export. For balances grouped by your company structure
 (Company Group › Company › Account), use the [Home dashboard](../01-home/home-dashboard.md) or the
-[Cash Position](cash-position.md) report, which drill down to these same transactions.
+[Cash Position](../01-home/home-dashboard.md) report, which drill down to these same transactions.
 
 ## Key concepts
 - **Flat grid** — one row per transaction across all accounts, which you filter and sort. Use the
   **Columns** control to show or hide the fields you want.
 - **Tag** — the cash-flow category on a transaction (AR Collection, AP Payment, FX Settlement,
-  Payroll, Tax, etc.) that drives how it appears in [Cash Position](cash-position.md) and reports.
+  Payroll, Tax, etc.) that drives how it appears in [Cash Position](../01-home/home-dashboard.md) and reports.
 - **Value date vs booking date** — when a movement is effective for interest/settlement vs when it
   was booked.
 
@@ -38,13 +37,13 @@ all movements that you filter, sort, and export. For balances grouped by your co
 
 ## Tips & good practices
 - Use **filters** (date range, account, currency, company) to narrow to the movements you're after,
-  then sort by any column. For a view grouped by entity/account, use [Cash Position](cash-position.md)
+  then sort by any column. For a view grouped by entity/account, use [Cash Position](../01-home/home-dashboard.md)
   instead.
 - Accurate **tags** make everything downstream better; a well-tagged transaction slots straight into
-  the right cash-flow line in [Cash Position](cash-position.md) and the forecast.
+  the right cash-flow line in [Cash Position](../01-home/home-dashboard.md) and the forecast.
 
 ## Related
-- [Cash Position](cash-position.md) — transactions consolidated into your position, with drill-down
+- [Cash Position](../01-home/home-dashboard.md) — transactions consolidated into your position, with drill-down
   back to these movements.
 - [Bank Statements](bank-statements.md) — where transactions come from.
 - [Bank Accounts](bank-accounts.md) — the accounts these movements belong to.

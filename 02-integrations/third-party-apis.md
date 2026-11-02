@@ -1,20 +1,16 @@
 # Third-party APIs & the API Agent Integrator
 
-> **Availability:** `In Preview` 👁️
-> **Plan:** Premium (Upgrade) — shown **Upgrade** in the platform.
 > **Where to find it:** Integrations › API Agent Integrator
 > **Who uses it:** finance systems owners, IT, administrators.
 > **Permissions required:** administrator to build and enable connectors; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This module is in testing and available on request — contact Treasury Hub to enable it for your organization. This page describes how it works.
-
 ## Overview
-This add-on will connect Treasury Hub to third-party and vendor systems — ERPs, PSPs, fintechs, banks
+Treasury Hub connects to third-party and vendor systems — ERPs, PSPs, fintechs, banks
 with proprietary APIs, trading platforms — by **pulling** data from their APIs on a schedule. Instead
-of a weeks-long IT project per integration, the **API Agent Integrator** will use AI to help build
+of a weeks-long IT project per integration, the **API Agent Integrator** uses AI to help build
 and maintain each connector, and keep it working when the vendor's API changes.
 
-In this model Treasury Hub will **read from** the vendor (a pull integration). For the reverse — your
+In this model Treasury Hub **reads from** the vendor (a pull integration). For the reverse — your
 systems sending data *into* Treasury Hub — see [Inbound APIs](inbound-apis.md).
 
 ## Key concepts
@@ -31,10 +27,8 @@ systems sending data *into* Treasury Hub — see [Inbound APIs](inbound-apis.md)
 - Have the vendor's **API documentation** and **credentials** (the vendor decides which
   authentication methods it supports).
 - Know which data you need from the vendor and which Treasury Hub entities it maps to.
-- This is an add-on — if it shows **Upgrade**, contact your account manager to enable it.
 
 ## How to use it
-*The steps below describe the intended experience once this module is live.*
 
 ### Build a connector with the API Agent Integrator
 1. Open **Integrations › API Agent Integrator**.

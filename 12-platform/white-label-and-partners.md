@@ -1,7 +1,5 @@
 # White-Label & Partner Branding
 
-> **Availability:** `In Preview` 👁️
-> **Plan:** Premium (Professional Services / Upgrade)
 > **Where to find it:** enabled and configured with the Treasury Hub team · self-service brand
 > management via the **Partner / Brand Kit** portal (where provisioned).
 > **Who uses it:** partners who resell or embed Treasury Hub under their own brand; partner
@@ -9,15 +7,12 @@
 > **Permissions required:** partner administrator access to the brand-kit portal (arranged with
 > Treasury Hub). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
-> 👁️ **In Preview.** This module is in testing and available on request — contact Treasury Hub to enable it for your organization. This page describes how it works.
-
 ## Overview
-White-label will let a **partner** deliver Treasury Hub under **their own brand** — logo, colors,
+White-label lets a **partner** deliver Treasury Hub under **their own brand** — logo, colors,
 typography, and a custom web address — so end users experience the platform as the partner's own
-product. Every visible touchpoint, from the login screen to emails and PDF reports, can reflect the
+product. Every visible touchpoint, from the login screen to emails and PDF reports, reflects the
 partner's brand, while the underlying treasury functionality, data model, and security stay the
-same for everyone. This is an **add-on delivered with Professional Services**; contact your account
-manager to enable it.
+same for everyone.
 
 ## Key concepts
 - **Partner** — an organization that resells or embeds Treasury Hub under its own brand.
@@ -52,9 +47,7 @@ white-labeled:
   [Security & Compliance](security-and-compliance.md)).
 
 ## How partner onboarding works
-*The steps below describe the intended experience once this module is live.*
-
-Bringing a partner live will follow a guided, largely self-service flow:
+Bringing a partner live follows a guided, largely self-service flow:
 
 1. **Initial setup** — Treasury Hub (or the partner, via the admin panel/API) creates the partner's
    tenant, assigns the custom domain (with the required DNS record), and enables the modules covered
@@ -74,8 +67,7 @@ Bringing a partner live will follow a guided, largely self-service flow:
    health checks on the custom domain, including alerts before a certificate is due to expire.
 
 > The demo target of "partner live in under 48 hours" is illustrative — actual timing depends on DNS
-> and certificate provisioning and on the partner's review. Confirm timelines with the Treasury Hub
-> team.
+> and certificate provisioning and on the partner's review.
 
 ## Managing your brand kit
 Partner administrators can manage branding in two ways:
@@ -94,10 +86,6 @@ Practical guardrails to be aware of:
 - **Asset and readability limits** apply (for example, minimum color contrast for accessibility and
   sensible file-size limits) and are enforced by the automatic validation step.
 
-> ⚠️ **Confirm with Treasury Hub.** Whether the self-service portal and Brand Kit API are enabled for
-> your engagement, and the exact limits and endpoints, are set up as part of Professional Services —
-> confirm scope with your account manager.
-
 ## Tips & good practices
 - Prepare a complete brand kit up front (vector logo, favicon, exact color values, chosen font) to
   move through onboarding quickly.
@@ -106,11 +94,11 @@ Practical guardrails to be aware of:
 - Choose color combinations that pass the **contrast check** so screens stay legible for all users.
 - Rely on **versioning**: activate confidently knowing you can roll back instantly if needed.
 
+## Sub-client branding
+- **Sub-client branding** — a further level of brand inheritance so a partner's own clients can be
+  branded beneath the partner.
+
 ## Related
 - [Security & Compliance](security-and-compliance.md) — the uniform security applied to every tenant.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — multi-tenancy and tenant isolation.
 - [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — where your brand appears in the top bar.
-
-## In Preview
-- 👁️ **Sub-client branding** — a further level of brand inheritance so a partner's own clients can be
-  branded beneath the partner. In preview; confirm availability with Treasury Hub.
