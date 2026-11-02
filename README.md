@@ -29,7 +29,7 @@ screen you're on.
 - [SWIFT](02-integrations/swift.md) · [Open Banking](02-integrations/open-banking.md)
 - [File Import (CSV/Excel/PDF)](02-integrations/file-import.md)
 - [Parse Templates](02-integrations/parsing-templates.md) · [PDF Statements](02-integrations/pdf-statements.md)
-- [AI Extraction](02-integrations/ai-extraction.md) — load a one-off file without building a template.
+- [AI Extraction](02-integrations/ai-extraction.md) — the fallback when no template reads a file.
 - [Transaction Tagging](02-integrations/transaction-tagging.md) — categories, tags, classification rules and conflicts.
 - [Email Ingestion](02-integrations/email-ingestion.md) · [SFTP Ingestion](02-integrations/sftp-ingestion.md) · [Ingestion Activity](02-integrations/ingestion-activity.md)
 - [Third-party APIs](02-integrations/third-party-apis.md) · [Inbound APIs](02-integrations/inbound-apis.md)

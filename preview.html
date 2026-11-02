@@ -1771,26 +1771,29 @@ can cover different banks and still land in one unified position.</p>
 </ul>
 <h2 id="related">Related</h2>
 <ul>
-<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — load a one-off file without building a template.</li>
+<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — the fallback when a file's format has moved on from its
+  template.</li>
 <li><a href="#00_getting_started_03_core_concepts">Core Concepts</a> — how data flows source → insight.</li>
 <li><a href="#04_reconciliation_overview">Reconciliation</a> — the main consumer of ingested data.</li>
 <li><a href="#03_data_data_exports">Data Exports &amp; APIs</a> — the outbound side.</li>
 </ul></article>
 <article class="page" id="02_integrations_ai_extraction" data-title="AI Extraction"><div class="crumb">2 · Integrations</div><h1 id="ai-extraction">AI Extraction</h1>
 <blockquote>
-<p><strong>Where to find it:</strong> Integrations › Ingestion — on a file waiting for a template
+<p><strong>Where to find it:</strong> Integrations › Ingestion — on a file no template could read; also on a failed AI draft
 <strong>Who uses it:</strong> treasury operations, finance systems owners.
 <strong>Permissions required:</strong> create/edit on the data being loaded; see <a href="#00_getting_started_04_roles_and_permissions">Roles &amp; Permissions</a>.</p>
 </blockquote>
 <h2 id="overview">Overview</h2>
-<p>Sometimes you have one statement to load and no intention of ever seeing its format again — a bank
-you used once, a one-off report, a PDF that arrived outside your normal channels. Building a
-<a href="#02_integrations_parsing_templates">parse template</a> for it is work you will never reuse.</p>
-<p><strong>AI extraction reads that one file directly.</strong> The AI pulls the movements out of it, checks them
-against the balances the statement itself prints, and shows you the result beside the original page
-before anything is loaded. No template is created and no existing template changes.</p>
-<p>It is the other half of the choice a waiting file gives you: a template, which is reusable and
-free to run again, or an extraction, which is immediate and costs AI budget each time.</p>
+<p>Templates are how files normally load, and they work until the day they do not. A bank redesigns
+its statement, adds a column, moves the balance; the template that read it yesterday now matches
+only in part, so nothing recognises the file and it stops at the door. Meanwhile the statement is
+still due, and the month still has to close.</p>
+<p><strong>AI extraction is the way through.</strong> The AI reads that one file directly, pulls out its
+movements, checks them against the balances the statement itself prints, and shows you the result
+beside the original page before anything is loaded.</p>
+<p>It is a fallback, not a replacement. No template is created and no existing template changes, so
+the format still needs fixing — see <a href="#afterwards-fix-the-format">Afterwards, fix the format</a>.
+What extraction buys you is that today's file gets in while you do.</p>
 <h2 id="key-concepts">Key concepts</h2>
 <ul>
 <li><strong>Extraction</strong> — one AI read of one file. It produces movements, not a template.</li>
@@ -1811,17 +1814,28 @@ free to run again, or an extraction, which is immediate and costs AI budget each
 <li>The file must be waiting on <strong>Integrations › Ingestion</strong> with <strong>Needs template</strong>.</li>
 <li>Your organisation needs AI budget left for the month. A long PDF can exceed the per-file ceiling
   on its own, and the screen says so rather than starting.</li>
+<li>It is offered where the template route has stopped: on a file <strong>no template could read</strong>, and on
+  an <strong>AI draft that failed</strong>. A file already loading under a template is not extracted.</li>
 <li>A statement that prints no balances can still be extracted, but the check will only be partial —
   read <a href="#when-the-balance-cannot-be-proven">When the balance cannot be proven</a> first.</li>
 </ul>
 <h2 id="how-to-use-it">How to use it</h2>
 <h3 id="start-an-extraction">Start an extraction</h3>
+<p>Extraction is offered at the two points where the template route has run out:</p>
+<ul>
+<li><strong>On a file nothing could read.</strong> Expand the waiting row on <strong>Integrations › Ingestion</strong>. The row
+  says why it was not recognised — no template matches, or <em>some templates match only in part and
+  none recognises the file completely</em>, which is what a changed statement looks like. Beside the
+  template picker you are offered <strong>Extract the movements with AI</strong>.</li>
+<li><strong>On a failed draft.</strong> When the AI could not propose a template either, the draft's banner offers
+  <strong>Or extract the movements with AI</strong> alongside retrying, completing the draft by hand and
+  choosing an existing template. The draft stays as it is; extracting does not discard it.</li>
+</ul>
+<p>Then, from either place:</p>
 <ol>
-<li>On <strong>Integrations › Ingestion</strong>, expand the waiting file. Beside the template choice you are
-   offered <strong>Extract the movements with AI</strong>.</li>
-<li>Choose <strong>Extract with AI…</strong>. The dialog states the <strong>pages</strong>, the <strong>estimated usage</strong> in AI
-   tokens — with the higher figure if parts have to be re-read — and roughly <strong>how long</strong> it will
-   take.</li>
+<li>Choose <strong>Extract with AI…</strong>.</li>
+<li>The dialog states the <strong>pages</strong>, the <strong>estimated usage</strong> in AI tokens — with the higher figure if
+   parts have to be re-read — and roughly <strong>how long</strong> it will take.</li>
 <li>If a template proposal is already running for this format, the dialog says so: extracting spends
    tokens separately from proposing.</li>
 <li>Choose <strong>Extract movements</strong>. The row changes to <strong>Extracting with AI</strong> and counts its parts. You
@@ -1864,6 +1878,19 @@ confirmation that names what was not proven.</p>
 <p>Where the statement does print balances that the AI misread, <strong>Correct balances</strong> lets you enter the
 figures the PDF shows and run the check again. It asks for a reason, and the extraction is marked as
 having been corrected by a person rather than by the AI.</p>
+<h3 id="afterwards-fix-the-format">Afterwards, fix the format</h3>
+<p>An extraction loads one file. The next statement from the same bank arrives in the same shape and
+stops in the same place, so the format still has to be dealt with:</p>
+<ul>
+<li><strong>Ask the AI for a template</strong> for the new shape, from the row's actions. This is usually the
+  right answer after a bank has changed its layout — you get a template that reads the new format
+  from then on, with no AI spent per file.</li>
+<li><strong>Edit the existing template</strong> where the change is small and you know what moved. A template
+  that is nearly right is often a column reference away from being right again.</li>
+<li><strong>Create a new template by hand</strong> where you would rather keep the old one for historical files.</li>
+</ul>
+<p>Until one of those is done, every file of that format needs its own extraction and its own AI
+budget.</p>
 <h3 id="discard-an-extraction">Discard an extraction</h3>
 <p><strong>Discard extraction</strong> returns the file to <strong>Needs template</strong>, where you can choose a template,
 ask for a proposal, or extract again. The tokens already spent are not recovered.</p>
@@ -1878,16 +1905,18 @@ ask for a proposal, or extract again. The tokens already spent are not recovered
 </ul>
 <h2 id="tips-good-practices">Tips &amp; good practices</h2>
 <ul>
-<li><strong>Extract once, template twice.</strong> If the same format turns up a second time, stop extracting and
-  ask for a <a href="#02_integrations_parsing_templates">template</a>: it costs nothing to run and it will keep working.</li>
+<li><strong>Extracting is not fixing.</strong> It gets this file in; the next one from the same bank will stop at
+  the same place until the template is updated or replaced.</li>
 <li><strong>Read the incidents, not the row count.</strong> A clean count with three flagged signs is worth more
   attention than a count that is three short and says so.</li>
 <li><strong>Use the Original file tab on anything you confirm.</strong> The whole point of the side-by-side is that
   you can check a questionable amount against the page in one click.</li>
 <li><strong>Treat a partial balance check as a partial answer.</strong> Without both balances, nothing proves a
   movement was not dropped — so either correct the balances or expect to spot-check.</li>
-<li><strong>Do not extract a format you already have a proposal for.</strong> Both spend budget; the proposal is
-  the one that lasts.</li>
+<li><strong>Do not extract a format you already have a proposal for.</strong> Both spend budget, and the proposal
+  is the one that lasts. The dialog warns you when a proposal is already running.</li>
+<li><strong>Reach for it when the close is waiting.</strong> That is what it is for — a deadline that will not
+  move while a format is sorted out.</li>
 </ul>
 <h2 id="related">Related</h2>
 <ul>
@@ -2470,8 +2499,9 @@ could not be matched to a template waits here until you choose one for it.</p>
 <p>You can also have the template drafted for you: choose <strong>Create template with AI</strong> in the row's
 <strong>Actions</strong> menu, review the draft that comes back, and save it. See
 <a href="#02_integrations_parsing_templates">Parse Templates</a>.</p>
-<p>For a file whose format you will never see again, the same row offers <strong>Extract the movements
-with AI</strong> instead — it reads that one file and loads it without building a template. See
+<p>When neither route gets the file in — a bank has changed its statement and nothing recognises it,
+or the AI could not propose a template either — the same row offers <strong>Extract the movements with
+AI</strong>, which reads that one file so it can be loaded while the format is sorted out. See
 <a href="#02_integrations_ai_extraction">AI Extraction</a>.</p>
 <h3 id="resolve-a-failed-file">Resolve a failed file</h3>
 <p>A <strong>Failed</strong> file inserted nothing, so there is nothing to undo.
@@ -2516,7 +2546,7 @@ waiting on a dialog.</p>
 <ul>
 <li><a href="#02_integrations_overview">Integrations Overview</a> — all ingestion channels.</li>
 <li><a href="#02_integrations_file_import">File Import</a> — the templates and formats behind these rows.</li>
-<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — load a one-off file without building a template for it.</li>
+<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — the fallback when no template reads a file.</li>
 <li><a href="#02_integrations_parsing_templates">Parse Templates</a> — have the template a parked file waits for drafted with the
   AI assistant, then review it, publish it and activate it.</li>
 <li><a href="#02_integrations_pdf_statements">PDF Statements</a> — why a PDF was refused, and the load refusals explained in plain
@@ -3484,7 +3514,8 @@ whoever reviews the proposal, who must supply one before the files can load.</p>
 </ul>
 <h2 id="related">Related</h2>
 <ul>
-<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — the alternative for a format you will only meet once.</li>
+<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — how to load a file when no template reads it and no
+  proposal succeeds.</li>
 <li><a href="#02_integrations_file_import">File Import (CSV / Excel / PDF)</a> — uploading a file and what happens to it.</li>
 <li><a href="#02_integrations_pdf_statements">PDF Statements</a> — how a PDF is read, the balance check, and why a PDF is refused.</li>
 <li><a href="#02_integrations_ingestion_activity">Ingestion Activity</a> — where files wait for a template, where proposals are
@@ -3848,7 +3879,7 @@ words.</p>
 </ul>
 <h2 id="related">Related</h2>
 <ul>
-<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — reading a one-off PDF without a template.</li>
+<li><a href="#02_integrations_ai_extraction">AI Extraction</a> — reading a PDF directly when its template no longer fits.</li>
 <li><a href="#02_integrations_parsing_templates">Parse Templates</a> — the AI assistant that drafts a template, the editor and
   the template lifecycle.</li>
 <li><a href="#02_integrations_file_import">File Import (CSV / Excel / PDF)</a> — uploading files and the outcomes they end in.</li>

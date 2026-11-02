@@ -98,8 +98,9 @@ You can also have the template drafted for you: choose **Create template with AI
 **Actions** menu, review the draft that comes back, and save it. See
 [Parse Templates](parsing-templates.md).
 
-For a file whose format you will never see again, the same row offers **Extract the movements
-with AI** instead — it reads that one file and loads it without building a template. See
+When neither route gets the file in — a bank has changed its statement and nothing recognises it,
+or the AI could not propose a template either — the same row offers **Extract the movements with
+AI**, which reads that one file so it can be loaded while the format is sorted out. See
 [AI Extraction](ai-extraction.md).
 
 ### Resolve a failed file
@@ -144,7 +145,7 @@ waiting on a dialog.
 ## Related
 - [Integrations Overview](overview.md) — all ingestion channels.
 - [File Import](file-import.md) — the templates and formats behind these rows.
-- [AI Extraction](ai-extraction.md) — load a one-off file without building a template for it.
+- [AI Extraction](ai-extraction.md) — the fallback when no template reads a file.
 - [Parse Templates](parsing-templates.md) — have the template a parked file waits for drafted with the
   AI assistant, then review it, publish it and activate it.
 - [PDF Statements](pdf-statements.md) — why a PDF was refused, and the load refusals explained in plain
