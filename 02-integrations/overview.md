@@ -84,7 +84,8 @@ can cover different banks and still land in one unified position.
 - Where a bank offers both SWIFT and Open Banking, you can use both for resilience.
 
 ## Related
-- [AI Extraction](ai-extraction.md) — load a one-off file without building a template.
+- [AI Extraction](ai-extraction.md) — the fallback when a file's format has moved on from its
+  template.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — how data flows source → insight.
 - [Reconciliation](../04-reconciliation/overview.md) — the main consumer of ingested data.
 - [Data Exports & APIs](../03-data/data-exports.md) — the outbound side.

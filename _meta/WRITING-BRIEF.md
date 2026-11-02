@@ -38,6 +38,14 @@ platform.
     label, and never describe switching between agents. Where a page does not need to name the
     agent at all, prefer "the agent".
 11. **Do not edit files outside your assigned output folder.** Only create the files you're told to.
+12. **A new page has to be placed in the reading order.** The docs are meant to be readable
+    front to back, so nothing should rely on a concept the reader has not met yet. The order
+    is `PAGE_ORDER` in `_meta/build_preview.py`, one list of file names per directory, and it
+    drives both the preview's navigation and the order to use in `README.md`. **A page that is
+    not listed falls to the end of its section**, which is almost never where it belongs, so
+    add it in the right place and mirror it in the README.
+    Where a page genuinely has to use a term that a later page owns, link to that page on the
+    first mention — a forward reference with a link is fine, a bare one is not.
 
 ## Reference examples (read these first)
 - `_meta/TEMPLATE.md` — the required structure.
@@ -45,11 +53,19 @@ platform.
 - `00-getting-started/03-core-concepts.md` — shared concepts to link to, not repeat.
 
 ## Permissions reference (for the header block)
-Permission modules & 5 levels (NoAccess/Read/CreateEdit/Delete/Admin) are documented in
-`00-getting-started/04-roles-and-permissions.md`. Cite the relevant permission module + a sensible
-minimum level. If unknown, write "See Roles & Permissions."
+A role is a matrix: one row per **permission module**, with the action columns **Read, Write,
+Edit, Delete, Approve**. Behind it each module resolves to one of five **levels** — No Access,
+Read, Create/Edit, Delete, Admin — and the level is what the screens are gated on. Both are
+documented in `00-getting-started/04-roles-and-permissions.md`, which also carries the full
+module catalogue.
+
+Cite the relevant permission module and a sensible minimum level, and link to that page. If you
+do not know the module, write "See [Roles & Permissions](...)" rather than guessing one.
 
 ## When you finish
-Return a short summary: the files you created (paths), any screenshots you flagged, and any place
-where the source material was ambiguous or where live-vs-roadmap status needs the Treasury Hub
-team to confirm.
+1. Place every new page in `PAGE_ORDER` (`_meta/build_preview.py`) and in `README.md`, in the
+   same order (rule 12).
+2. Rebuild the preview: `python _meta/build_preview.py`. It is a generated file — a change is
+   not visible locally until it is rebuilt, and the rebuilt file is committed with the page.
+3. Return a short summary: the files you created (paths), any screenshots you flagged, and any
+   place where the source material was ambiguous or needs the Treasury Hub team to confirm.

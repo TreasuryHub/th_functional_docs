@@ -293,7 +293,7 @@ words.
   file rather than mis-read it, so you will know — but you will know at load time.
 
 ## Related
-- [AI Extraction](ai-extraction.md) — reading a one-off PDF without a template.
+- [AI Extraction](ai-extraction.md) — reading a PDF directly when its template no longer fits.
 - [Parse Templates](parsing-templates.md) — the AI assistant that drafts a template, the editor and
   the template lifecycle.
 - [File Import (CSV / Excel / PDF)](file-import.md) — uploading files and the outcomes they end in.

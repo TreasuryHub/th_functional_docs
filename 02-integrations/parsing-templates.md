@@ -733,7 +733,8 @@ whoever reviews the proposal, who must supply one before the files can load.
   which figure the template would actually load, which label it came from, and whether it adds up.
 
 ## Related
-- [AI Extraction](ai-extraction.md) — the alternative for a format you will only meet once.
+- [AI Extraction](ai-extraction.md) — how to load a file when no template reads it and no
+  proposal succeeds.
 - [File Import (CSV / Excel / PDF)](file-import.md) — uploading a file and what happens to it.
 - [PDF Statements](pdf-statements.md) — how a PDF is read, the balance check, and why a PDF is refused.
 - [Ingestion Activity](ingestion-activity.md) — where files wait for a template, where proposals are
