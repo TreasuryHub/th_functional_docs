@@ -199,21 +199,12 @@ tenant has data in them.
 | `category-positions-grid.png` | every figure zero, all Unclassified | a nature expanded to tag level with real movement |
 | `template-two-pane-layout.png` | *Attach a file to preview how this template parses it* | a parsed sample beside the configuration |
 
-## D. Safe to delete — unreferenced, and the screen no longer exists
+## D. Deleted
 
-All nine are dead: no visible page references them.
-
-| File | Why |
-|---|---|
-| `admin-users-grid.png` | Showed the demo console; its page is deleted. Superseded by `users-roles-user-management.png`. |
-| `admin-role-permission-matrix.png` | Showed the demo console's 27-role catalogue; superseded by `users-roles-permission-matrix.png`. |
-| `admin-matching-rules.png` | Matching rules were switched off; the menu entry is gone. |
-| `gl-postings-grid.png` | G/L posting was switched off; the menu entry is gone. |
-| `reconciliation-erp-posting.png` | Reconciliation never had ERP posting, and the G/L side it relied on is off. |
-| `sidebar-main-menu.png` | There is no left sidebar; superseded by `services-panel-overlay.png`. |
-| `cash-position-drilldown.png` | The Reporting › Cash Position screen is gone; the position lives on Home. |
-| `reporting-gallery.png` | There is no reports gallery; each report is its own menu entry. |
-| `payment-approvals.png` | Showed the demo Payment Approvals workspace; approving happens on the blotter. |
+The nine images whose screens no longer exist were removed on 2026-11-03: the two that showed the
+static demo admin console, superseded by the Users & Roles captures, plus `admin-matching-rules`,
+`gl-postings-grid`, `reconciliation-erp-posting`, `sidebar-main-menu`, `cash-position-drilldown`,
+`reporting-gallery` and `payment-approvals`. Each was verified unreferenced before removal.
 
 ## E. Leave as they are
 
