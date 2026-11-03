@@ -90,6 +90,8 @@ complaining.
 3. If no monthly ceiling is configured, the panel says so and simply reports the tokens used this
    month.
 
+![The monthly token quota: used, remaining, the per-conversation ceiling and the headline tiles](../assets/screenshots/ai-usage-quota.png)
+
 ### Check your own consumption today
 1. On the same quota panel, look at the line below the bar.
 2. It shows **your own** tokens used today against the per-person daily limit — your figure, not
@@ -131,6 +133,8 @@ complaining.
 2. Pick a month. Every panel, chart and table reloads for that month.
 3. A closed month shows no personal "today" figure — there is no today in a month that has ended —
    and its quota panel says the month is closed rather than giving a reset date.
+
+![Tokens per day beside the by-module table, and the by-module-by-user breakdown beneath](../assets/screenshots/ai-usage-breakdowns.png)
 
 ## Configuration
 Nothing is configured on this screen; it reports, it does not set. The three ceilings — per

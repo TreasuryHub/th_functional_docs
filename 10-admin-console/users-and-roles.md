@@ -57,6 +57,8 @@ access** — decides which companies and accounts a person's data is narrowed to
 Pending invitations are rows in the same grid, with the status **Invited** or **Invitation
 expired**. They offer invitation actions only.
 
+![The user grid: role, account access, approval level, status and last active, with the search and filter toolbar](../assets/screenshots/users-roles-user-management.png)
+
 ### Invite someone
 1. On **User Management**, click **Invite user**.
 2. Fill in **First name**, **Last name** and **Email**. Only the email is required.
@@ -131,6 +133,8 @@ can change their own roles or access.
    action does not apply to that module.
 5. Use **Search modules...** to jump to a row by its name or key.
 
+![Roles & Permissions: the preset and custom role lists beside the Module x Read/Write/Edit/Delete/Approve matrix, with a segregation-of-duties block blocking the save](../assets/screenshots/users-roles-permission-matrix.png)
+
 ### Create or change a custom role
 1. On **Roles & Permissions**, click **+ Add role** for an empty matrix, or pick an existing custom
    role.
@@ -173,6 +177,8 @@ Events recorded here include **Created**, **Updated**, **Deleted**, **Invited**,
 resent**, **Invitation revoked**, **Invitation accepted**, **Invitation refused**, **Roles
 changed**, **Access changed**, **Status changed**, **Approval level changed**, **Signed in**,
 **Tenant switched**, and **Super Admin change refused**.
+
+![The audit trail: time, actor, event and detail, with a row expanded to its Before and After](../assets/screenshots/users-roles-audit.png)
 
 ## Configuration
 ### Preset roles

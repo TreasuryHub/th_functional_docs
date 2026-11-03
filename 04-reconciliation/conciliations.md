@@ -60,6 +60,8 @@ results.
 5. Sort by clicking a column header. The list opens on **Date**, newest first, and can also be
    sorted by **Id**, **Type**, **Status**, **Total** and **Created**.
 
+![The Conciliations register: the workflow, chain and rule filters above the grid of matched movements](../assets/screenshots/reconciliation-conciliations.png)
+
 ### Read a row
 Each row carries the conciliation's **Id** and **Date**, its **Type** and **Status**, the
 **Workflow** it belongs to, the **Conciliation Type**, the movement type and item count on each side

@@ -59,6 +59,8 @@ The report reads your reconciled data; it does not create movements or change an
    **Basis**, **Tier applied**, **Tier reached this month**, **Payments**, **Base amount** and
    **Fee**. This is where you see why a contract cost what it cost.
 
+![Fees by contract: the per-currency totals banner above each contract's payments, base amount, fee and tax](../assets/screenshots/reconciliation-fee-report.png)
+
 ### Check what a provider actually deducted
 1. Open the **Settlement checks** tab. It lists the month's settlements, 50 at a time, for the
    contracts whose fee is deducted from the settlement.

@@ -67,6 +67,8 @@ This pane is Treasury Hub's own roadmap, so it is identical for every customer, 
 features already delivered as well as those still planned. Nothing in it is specific to your
 account.
 
+![The status board: planned platform features beside your delivery workstreams and their milestones](../assets/screenshots/status-board-roadmap.png)
+
 ### Read your delivery roadmap
 1. Look at the centre pane, **Roadmap**. The number beside the title is how many workstreams you
    have, and the legend on the right gives the colour of each milestone status.

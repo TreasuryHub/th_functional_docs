@@ -126,6 +126,8 @@ the row rather than hidden, because anyone reading a total needs to know what is
 Changing any control reloads the grid. The previous result stays on screen, dimmed, while the new one
 loads, so the page never goes blank underneath you.
 
+![Balance Differential: both dates and the conversion controls above the original-currency and converted column groups](../assets/screenshots/balance-differential-grid.png)
+
 ### Narrow the report to part of the group
 1. Use the **Countries** selector to keep only accounts whose company is registered in those
    countries. It matches **Company country**, never **Account country**, so an account held abroad
