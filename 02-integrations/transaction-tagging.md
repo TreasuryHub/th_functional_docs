@@ -74,6 +74,8 @@ If the category usually goes the other way — an inflow filed under *Net payrol
 line points it out. It is a warning, never a block: a salary refund really is an inflow under
 payroll.
 
+![A classification rule: its conditions, the tags it applies and the transactions it would match](../assets/screenshots/tagging-rule-editor.png)
+
 ### Classify many transactions at once
 1. In **Transactions**, tick the checkbox at the start of each row you want, or tick **Select page**
    in the bar above the grid to take every row on the current page.
@@ -96,6 +98,8 @@ no longer see.
 2. Choose **To review** to list the transactions that have no category yet, or pick one or more
    categories to see what has been filed where.
 3. The **Tags** column next to it shows the tags each transaction carries.
+
+![The classification conflicts inbox](../assets/screenshots/tagging-conflicts-inbox.png)
 
 ### Create and manage tags
 1. Go to **Settings › Ingestion › Transaction Tagging › Tags**. Each tag is listed with its colour,

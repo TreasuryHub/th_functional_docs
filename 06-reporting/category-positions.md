@@ -62,6 +62,8 @@ so every period still adds up to the whole movement of your accounts.
    as on [Balance Differential](balance-differential.md) — the company list follows the countries
    and groups you picked.
 
+![Category Positions: the period and conversion controls above the per-category daily movement grid](../assets/screenshots/category-positions-grid.png)
+
 ### Read the grid
 1. The grid opens with the natures collapsed. The left-hand column is headed **Category** followed
    by the currency everything is converted to.

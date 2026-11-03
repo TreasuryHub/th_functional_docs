@@ -82,6 +82,8 @@ Two consequences follow:
    failed read look alike here and mean opposite things**, so reload before concluding anything
    about what is configured.
 
+![The rule list with the signing-levels strip and a rule's scope chips](../assets/screenshots/payment-approval-rules-list.png)
+
 ### Create a rule
 1. Click **New Rule**.
 2. Enter a **Description**. It is required, and it is what identifies the rule in the list and in a
@@ -102,6 +104,8 @@ Two consequences follow:
 5. Choose the number of **Approvals**.
 6. Optionally set **Valid from** and **Valid to**.
 7. Click **Create rule**. The rule applies to payments created from that moment on.
+
+![The rule dialog: description, scope cascade of company group, company, institution and account](../assets/screenshots/payment-approval-rule-dialog.png)
 
 ### Change or withdraw a rule
 1. Use the **pencil** on the row to edit a rule. Everything can be changed, including the scope and

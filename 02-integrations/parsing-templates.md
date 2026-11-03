@@ -99,6 +99,8 @@ their own.
 
 ## How to use it
 
+![The Parse Templates list: name, file type, tenant, status and last change, with the All and AI drafts tabs](../assets/screenshots/parse-templates-list.png)
+
 ### Follow what happens when a file arrives
 1. The file is matched against your Active templates — see
    [How a file finds its template](#how-a-file-finds-its-template).
@@ -170,6 +172,8 @@ the **AI drafts** tab of **Settings › Ingestion › Parse Templates**.
 7. Click **Save draft** whenever you have changed several things. **A draft saves even with errors in
    it** — saving is how the draft is re-checked against the real file, and it is what refreshes the
    counters, the preview and the balance check.
+
+![The template editor beside the preview pane, with the section rail on the left](../assets/screenshots/template-two-pane-layout.png)
 
 ### What each section of the editor holds
 The sections always run in this order; which of them appear depends on the file type, and the

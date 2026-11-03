@@ -143,6 +143,8 @@ balance means "not known", never "zero".
 4. Page through results and adjust the page size as needed. Previous rows stay visible while a new
    page loads.
 
+![A financial event's detail panel: its identifiers, multi-currency amounts and the amount breakdown](../assets/screenshots/financial-events-breakdown.png)
+
 ### Inspect a single event
 1. Click a row to open the **detail panel**.
 2. Review the full record: the common fields (including **Movement date**), related IDs, related

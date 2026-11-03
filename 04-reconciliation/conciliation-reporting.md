@@ -46,6 +46,8 @@ waiting for the email or opening a spreadsheet.
    ID and Conciliation Amount on Conciliated; Workflow ID, Workflow Name, Movement Created On and
    Movement ID on Not Conciliated. Without a sort, rows come in the workbook's order.
 
+![Conciliation Reporting: the per-movement rows with their workflow, status and identifiers](../assets/screenshots/reconciliation-conciliation-reporting.png)
+
 ### Move between weeks
 1. Click **Previous week** or **Next week** to shift the window by seven days. The range in the
    middle shows the exact days covered.

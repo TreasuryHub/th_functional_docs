@@ -31,7 +31,7 @@ with `python _meta/build_preview.py` and commit the rebuilt `preview.html` with 
 
 | Capture | From | What to show |
 |---|---|---|
-| `services-panel-overlay.png` | Any screen → **Services** | The Services menu overlay with a section selected, showing both columns. The page that needs it is live with a broken image right now, so this is the single most worthwhile capture on the list. |
+| DONE `services-panel-overlay.png` | Any screen → **Services** | The Services menu overlay with a section selected, showing both columns. The page that needs it is live with a broken image right now, so this is the single most worthwhile capture on the list. |
 
 ## B. Users & Roles — the shipped module has no images
 
@@ -41,24 +41,24 @@ Both pages that used them are deleted, so the images are dead (see D) and
 
 | Capture | From | What to show |
 |---|---|---|
-| `users-roles-user-management.png` | **Admin Console › Users & Roles › User Management** | The user grid with User / Role(s) / Account access / Approval level / Status / Last active, the search and filter toolbar, an invitation row, and a row's actions menu open. |
-| `users-roles-permission-matrix.png` | **Admin Console › Users & Roles › Roles & Permissions** | The role list beside the Module × Read/Write/Edit/Delete/Approve matrix, including a dash cell, a changed cell, and the violations block showing a segregation-of-duties message. |
-| `users-roles-audit.png` | **Users & Roles › Audit Trail** | Time / Actor / Event / Detail, with one row expanded to its Before and After. |
+| DONE `users-roles-user-management.png` | **Admin Console › Users & Roles › User Management** | The user grid with User / Role(s) / Account access / Approval level / Status / Last active, the search and filter toolbar, an invitation row, and a row's actions menu open. |
+| DONE `users-roles-permission-matrix.png` | **Admin Console › Users & Roles › Roles & Permissions** | The role list beside the Module × Read/Write/Edit/Delete/Approve matrix, including a dash cell, a changed cell, and the violations block showing a segregation-of-duties message. |
+| DONE `users-roles-audit.png` | **Users & Roles › Audit Trail** | Time / Actor / Event / Detail, with one row expanded to its Before and After. |
 
 ## C. Recapture — the screen is real but has changed since the image was taken
 
 | File | Screen | What changed |
 |---|---|---|
-| `top-bar.png` | Any screen | The tenant's own logo now renders in the top bar. |
-| `create-payment-form.png` | Payments › New payment | The single-payment form became a multi-line batch composer with an ordering-account picker and payable-instruction list. |
-| `payment-blotter.png` | Payments › Payment Blotter | New status tabs, an Import payment files button, and rows that expand into a traceability panel. |
-| `ingestion-activity-monitor.png` | Integrations › Ingestion | New tabs (All / Pending review / Worker activity) and the Balance mismatch state — ideally a mismatch row expanded with its ledger and the Actions menu open on the five exits. |
-| `reconciliation-matching.png` | Reconciliation › Administration › Matching 1-to-1 | Redesigned: a flow and rule picked, a movement selected on the left, the right pane on "Candidates for …" with score bars and signal chips. |
-| `reconciliation-dashboard.png` | Reconciliation › Administration › Dashboard | Single-date dashboard with auto / fully / partially / unreconciled and the volume chart. No savings band. |
-| `reconciliation-approvals.png` | Reconciliation › Administration › Reconciliation Approvals | All / Pending / Approved / Rejected / Annulled tabs with selection-based batch approve. No confidence tiles. |
-| `reconciliation-movements-flows.png` | Reconciliation › Administration › Reconciliation Status | Chain instances with faceted counts and an expanded chain. |
-| `reconciliation-rules-criteria.png` | Settings › Reconciliation › Reconciliation Flows → a flow → Rules | A rule's match criteria with the real operator list. |
-| `reconciliation-workflows.png` | Settings › Reconciliation › Reconciliation Flows | The flow list, plus the **Workflow Studio** that New workflow and Edit now open — ideally one capture of the list and one of the Studio's graph view with the agent chat beside it. |
+| DONE `top-bar.png` | Any screen | The tenant's own logo now renders in the top bar. |
+| DONE `create-payment-form.png` | Payments › New payment | The single-payment form became a multi-line batch composer with an ordering-account picker and payable-instruction list. |
+| DONE `payment-blotter.png` | Payments › Payment Blotter | New status tabs, an Import payment files button, and rows that expand into a traceability panel. |
+| DONE `ingestion-activity-monitor.png` | Integrations › Ingestion | New tabs (All / Pending review / Worker activity) and the Balance mismatch state — ideally a mismatch row expanded with its ledger and the Actions menu open on the five exits. |
+| DONE `reconciliation-matching.png` | Reconciliation › Administration › Matching 1-to-1 | Redesigned: a flow and rule picked, a movement selected on the left, the right pane on "Candidates for …" with score bars and signal chips. |
+| DONE `reconciliation-dashboard.png` | Reconciliation › Administration › Dashboard | Single-date dashboard with auto / fully / partially / unreconciled and the volume chart. No savings band. |
+| DONE `reconciliation-approvals.png` | Reconciliation › Administration › Reconciliation Approvals | All / Pending / Approved / Rejected / Annulled tabs with selection-based batch approve. No confidence tiles. |
+| DONE `reconciliation-movements-flows.png` | Reconciliation › Administration › Reconciliation Status | Chain instances with faceted counts and an expanded chain. |
+| DONE `reconciliation-rules-criteria.png` | Settings › Reconciliation › Reconciliation Flows → a flow → Rules | A rule's match criteria with the real operator list. |
+| DONE `reconciliation-workflows.png` | Settings › Reconciliation › Reconciliation Flows | The flow list, plus the **Workflow Studio** that New workflow and Edit now open — ideally one capture of the list and one of the Studio's graph view with the agent chat beside it. |
 
 ---
 
@@ -69,7 +69,7 @@ Both pages that used them are deleted, so the images are dead (see D) and
 |---|---|---|
 | `ingestion-upload-panel.png` | Integrations › Ingestion › **Upload file** | Three files queued, each row expanded: one with an existing template chosen, one marked **New template** with its Event type, one showing *No template recognises this file*. The capacity meter and **Apply to similar files** visible. |
 | `template-workbook-sheets.png` | Settings › Parse Templates | The Workbook sheets table for a workbook of three or more sheets — two switched on, one "Not in the file", a per-sheet layout block expanded. |
-| `template-two-pane-layout.png` | Settings › Parse Templates | The preview full width with the configuration panel over it, showing Swap the panes. |
+| DONE `template-two-pane-layout.png` | Settings › Parse Templates | The preview full width with the configuration panel over it, showing Swap the panes. |
 | `template-account-balance-card.png` | Settings › Parse Templates | The Account balance card in a preview: per-field Source and Value in the sample, with a doesn't-add-up badge and Go to row. |
 | `template-sibling-format.png` | Integrations › Ingestion | The sibling-template card on a parked .xls file — "Same sheet layout as this file" with Use this template. |
 | `balance-adjust-dialog.png` | Integrations › Ingestion | The Adjust balance manually dialog: editable grid, a field marked Adjusted, the live "it adds up" line and the Reason field. |
@@ -92,17 +92,17 @@ Its two entry points matter more than the review itself: the page's whole point 
 ### Transaction tagging
 | Capture | From | What to show |
 |---|---|---|
-| `tagging-rule-editor.png` | Settings › Ingestion › Transaction Tagging › Classification rules | The conditions tree, the selected-transactions panel, and the live preview. |
-| `tagging-conflicts-inbox.png` | Settings › Ingestion › Transaction Tagging › Classification conflicts | One conflict card expanded with its sample transactions and decision buttons. |
+| DONE `tagging-rule-editor.png` | Settings › Ingestion › Transaction Tagging › Classification rules | The conditions tree, the selected-transactions panel, and the live preview. |
+| DONE `tagging-conflicts-inbox.png` | Settings › Ingestion › Transaction Tagging › Classification conflicts | One conflict card expanded with its sample transactions and decision buttons. |
 | `tagging-transaction-panel.png` | Reporting › Transactions | The side panel with the Classification section filled in and the "apply to similar?" prompt. |
 
 ### Admin Console
 | Capture | From | What to show |
 |---|---|---|
-| `ai-usage-quota.png` | Admin Console › AI usage | The monthly token quota panel: bar, remaining, reset date, "You today". |
-| `ai-usage-breakdowns.png` | Admin Console › AI usage | The KPI tiles with tokens-per-day and by-module side by side. |
-| `payment-approval-rules-list.png` | Admin Console › Master Data › Payment Approval Rules | The rule list with the signing-levels strip, scope chips and an exemption badge. |
-| `payment-approval-rule-dialog.png` | Admin Console › Master Data › Payment Approval Rules | The new-rule dialog: the scope cascade with lower levels locked, and the exemption note. |
+| DONE `ai-usage-quota.png` | Admin Console › AI usage | The monthly token quota panel: bar, remaining, reset date, "You today". |
+| DONE `ai-usage-breakdowns.png` | Admin Console › AI usage | The KPI tiles with tokens-per-day and by-module side by side. |
+| DONE `payment-approval-rules-list.png` | Admin Console › Master Data › Payment Approval Rules | The rule list with the signing-levels strip, scope chips and an exemption badge. |
+| DONE `payment-approval-rule-dialog.png` | Admin Console › Master Data › Payment Approval Rules | The new-rule dialog: the scope cascade with lower levels locked, and the exemption note. |
 
 ### Payments
 | Capture | From | What to show |
@@ -113,24 +113,24 @@ Its two entry points matter more than the review itself: the page's whole point 
 ### Reconciliation
 | Capture | From | What to show |
 |---|---|---|
-| `reconciliation-conciliations.png` | Reconciliation › Administration › Conciliations | The workflow / chain / rule cascade, field filters and the Difference column. |
-| `reconciliation-conciliation-reporting.png` | Reconciliation › Reporting › Conciliation Reporting | The Conciliated tab with the week navigator, filter bar and Export week. |
-| `reconciliation-fee-report.png` | Reconciliation › Reporting › Fee Report | Fees by contract with the per-currency totals banner and one row expanded to its per-concept detail. |
+| DONE `reconciliation-conciliations.png` | Reconciliation › Administration › Conciliations | The workflow / chain / rule cascade, field filters and the Difference column. |
+| DONE `reconciliation-conciliation-reporting.png` | Reconciliation › Reporting › Conciliation Reporting | The Conciliated tab with the week navigator, filter bar and Export week. |
+| DONE `reconciliation-fee-report.png` | Reconciliation › Reporting › Fee Report | Fees by contract with the per-currency totals banner and one row expanded to its per-concept detail. |
 
 ### Reporting
 | Capture | From | What to show |
 |---|---|---|
-| `balance-differential-grid.png` | Reporting › Cash & Liquidity › Balance Differential | The toolbar (both dates, Convert To, the exchange-rate pair, the three multi-selects, Export), the three header groups, a sticky Total row and an N/A row. |
-| `category-positions-grid.png` | Reporting › Cash & Liquidity › Category Positions | One nature expanded to tag level with the refresh note visible. |
+| DONE `balance-differential-grid.png` | Reporting › Cash & Liquidity › Balance Differential | The toolbar (both dates, Convert To, the exchange-rate pair, the three multi-selects, Export), the three header groups, a sticky Total row and an N/A row. |
+| DONE `category-positions-grid.png` | Reporting › Cash & Liquidity › Category Positions | One nature expanded to tag level with the refresh note visible. |
 | `datalake-cash-position.png` | Reporting › Datalake › Cash position | The per-currency cards, the company/currency chart and the account table, ideally including a "No currency" card. |
 | `datalake-account-statement.png` | Reporting › Datalake › Account statement | The summary bar (opening balance and its date, credits, debits, closing) with the paging counter. |
 
 ### Home and Data
 | Capture | From | What to show |
 |---|---|---|
-| `status-board-roadmap.png` | Status board | The three panes with one workstream expanded to its milestone rows. |
+| DONE `status-board-roadmap.png` | Status board | The three panes with one workstream expanded to its milestone rows. |
 | `status-board-tickets.png` | Status board | The Open tickets pane with one overdue counter. |
-| `financial-events-breakdown.png` | Data › Financial Events | A PSP_SETTLEMENT event's detail panel with its amount breakdown table and movement date. |
+| DONE `financial-events-breakdown.png` | Data › Financial Events | A PSP_SETTLEMENT event's detail panel with its amount breakdown table and movement date. |
 
 ---
 
@@ -155,6 +155,49 @@ Nothing here is wrong without an image — these pages simply describe a real sc
 | `workflow-studio-chat.png` | Settings › Reconciliation › Reconciliation Flows → New workflow | The Studio with the agent chat beside the graph, mid-conversation — the clearest single image of how the AI layer is actually used. |
 
 ---
+
+## G. The stand-in names used in the screenshots
+
+Eight captures were taken on a tenant holding live data, so the identifying fields were rewritten
+in place on 2026-11-03. **Reuse these names in any future edit or recapture**, or the docs end up
+showing two different fictional worlds.
+
+- **Entities:** Astra, Nordia (and *Nordia do Brasil*)
+- **Partners / providers:** Veritas, Lumen Pay (lPAY / LPAY), Corriente, Brightwell,
+  Mercado Uno (Mercado / mercadouno), Correo Pay (correopay)
+- **Contract codes:** `VERITAS-ASTRA`, `CORRIENTE-NORDIA`, `LPAY-NORDIA`, `MUNO-ASTRA-A`,
+  `CORREO-NORDIA`, and the same pattern for the rest
+- **External-id prefix:** `CPAY-`, kept to four characters so the line wraps where it did before
+- **People:** `p.navarro@astra.example`, `e.varga@nordia.example`, `a.ruiz@nordia.example`,
+  `l.herrera@nordia.example`, `t.okafor@astra.example`, `demo-user@astra.example`, with display
+  names Luis Herrera, Elena Varga and Astra Demo
+
+Edited: `reconciliation-fee-report`, `users-roles-user-management`, `users-roles-audit`,
+`ingestion-activity-monitor`, `financial-events-breakdown`, `status-board-roadmap`,
+`ai-usage-breakdowns`, and `services-panel-overlay` (its three plan badges painted out).
+
+Amounts were left alone. The names were the disclosure risk; the figures mean nothing once
+detached from them, and rewriting them would mean rebuilding the totals banners to stay
+consistent.
+
+The editing tool is not in this repo. It matches the UI font and the mono columns, renders with
+subpixel anti-aliasing so a patch does not read as greyscale beside untouched text, and aligns on
+the ink top rather than a guessed baseline. Ask for it again if more captures need it.
+
+## H. Captured, but showing an empty screen
+
+These are in the docs and fine to keep. They were taken where the screen had nothing in it, so
+they show the empty state rather than what the page describes. Worth retaking once the demo
+tenant has data in them.
+
+| File | Shows | Should show |
+|---|---|---|
+| `reconciliation-matching.png` | *Select a flow and a rule to load movements* | a movement picked, with ranked candidates, score bars and signal chips |
+| `reconciliation-approvals.png` | an empty grid | pending requests across the status tabs |
+| `tagging-conflicts-inbox.png` | *No conflicts. Every rule agrees with the others* | a conflict expanded to its sample transactions |
+| `create-payment-form.png` | *No account can order a payment yet* | the batch composer with an ordering account and payable lines |
+| `category-positions-grid.png` | every figure zero, all Unclassified | a nature expanded to tag level with real movement |
+| `template-two-pane-layout.png` | *Attach a file to preview how this template parses it* | a parsed sample beside the configuration |
 
 ## D. Safe to delete — unreferenced, and the screen no longer exists
 
