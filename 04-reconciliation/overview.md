@@ -1,13 +1,23 @@
-# Reconciliation — Overview
+# Reconciliations — Overview
+
+> **Reconcile most items automatically, and focus only on real exceptions**
+>
+> **Why it matters**
+> - **Days back each month**: configurable rules match the bulk with no manual effort.
+> - **Across every source**: bank movements, PSP settlements, ERP and internal records, invoices and treasury deals.
+> - **Explainable every time**: a full audit trail of every match, so a result can always be defended.
+>
+> *For the CFO: the close stops depending on how many people are available to reconcile, and every matched item carries its evidence.*
 
 > **Where to find it:** Reconciliation
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-The Reconciliation module automatically matches your financial data across sources — bank
-movements, PSP settlements, ERP/internal records, invoices, and treasury deals — so you can see
-what's settled, what's partial, and what needs attention. It applies **configurable rules** to
+Get most of the month's matching done before anyone opens a spreadsheet: the Reconciliation module
+matches your financial data automatically across sources — bank movements, PSP settlements,
+ERP/internal records, invoices, and treasury deals — so you see what's settled, what's partial, and
+what needs attention. It applies **configurable rules** to
 reconcile most items with no manual effort, and gives you a full **audit trail** of every match.
 
 The goal: turn what used to be a manual, spreadsheet-driven process into explainable, auditable
@@ -84,18 +94,20 @@ instead.
   workflows).
 - Confirm your team's [permissions and approval routing](../00-getting-started/04-roles-and-permissions.md).
 
-## Tips & good practices
+## Tips to get more value
 - Start with the **built-in workflows** (PSP & Bank, Invoice, Bank-to-Bank), then refine rules as
   you see real exceptions.
 - When a manual match keeps repeating, turn it into a rule so the engine handles it next time.
 - Use the **Dashboard** period selector to monitor auto-match rate and exception backlog.
 - Handle **reconciliation alerts** promptly; they often surface duplicates or data issues upstream.
 
-## Related
-- [Integrations](../02-integrations/overview.md) — where the data comes from.
-- [Accounting / G/L Postings](../11-accounting/gl-postings.md) — G/L posting is switched off; the
-  page describes the records that are kept.
-- [ERP Posting](erp-posting.md) — what is kept once a reconciliation is confirmed.
-- [Alerts](../08-alerts/alerts.md) — reconciliation exceptions surface here too.
-- [Admin — Matching Rules](../10-admin-console/matching-rules.md) — the legacy transaction rules,
-  which no longer run. They are unrelated to the reconciliation rules above.
+## Where to go next
+- [Integrations](../02-integrations/overview.md) — connect any source once, and the data this
+  module matches arrives on its own from then on.
+- [Accounting / G/L Postings](../11-accounting/gl-postings.md) — turn reconciled activity into
+  journals with evidence, posted to your ERP after approval.
+- [ERP Posting](erp-posting.md) — reconciled items become accounting entries with no re-keying.
+- [Alerts](../08-alerts/alerts.md) — know the moment a break needs attention, without watching
+  the dashboard.
+- [Admin — Matching Rules](../10-admin-console/matching-rules.md) — tag and post transactions
+  automatically across the whole organization. These are separate from the reconciliation rules above.

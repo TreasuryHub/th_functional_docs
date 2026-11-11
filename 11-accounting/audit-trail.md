@@ -1,11 +1,21 @@
 # End-to-End Audit Trail
 
+> **Follow any transaction end to end, with an immutable record ready for audit**
+>
+> **Why it matters**
+> - **From arrival to ERP, and back**: every step, every change, who or what did it, and when.
+> - **Built in, not bolted on**: the workflow model records the trail as a by-product of doing the work.
+> - **Nothing to reconstruct**: what the auditor asks for is already there.
+>
+> *For the CFO: audit preparation becomes a query rather than a project, and the control framework is evidenced continuously.*
+
 > **Where to find it:** Reporting › Overview › Audit Trail (a filterable audit log).
 > **Who uses it:** auditors, financial controllers, compliance, treasury operations.
 > **Permissions required:** Read on the relevant module; auditors will typically have read access across modules plus the audit trail. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The **audit trail** is the immutable record of everything that happened to a transaction — every
+Follow any transaction end to end, with a record an auditor can rely on: the **audit trail** is the
+immutable history of everything that happened to it — every
 step, every change, who or what did it, and when. It lets you follow a single item from the moment
 it arrived in the platform all the way to its record in your ERP, and back again, which is exactly
 what auditors and compliance teams need.
@@ -40,7 +50,7 @@ Transaction → Reconciliation → Journal Entry → Approval → ERP Export →
 ```
 
 The chain stops at reconciliation for anything recent: the journal entry, approval and ERP export
-stages exist only on records created before G/L posting was switched off. Where those stages are
+stages exist only on records that reached the posting stage. Where those stages are
 present, they are linked, so you can navigate in both directions:
 
 - **Drill down (backwards):** from an entry recorded in the ERP → back to its journal entry → back
@@ -95,7 +105,7 @@ Every event captures a consistent set of fields:
 3. Hand the exported record to your auditors, or feed it into your GRC (governance, risk, and
    compliance) tooling.
 
-## Tips & good practices
+## Tips to get more value
 - Because the trail is **append-only**, treat it as your single source of truth for "who changed
   what" — there is no hidden edit history to chase.
 - When reviewing an **AI agent's** decision, check the recorded **reasoning and confidence score** to
@@ -110,7 +120,7 @@ Every event captures a consistent set of fields:
   with phase and actor filters in one place.
 - **Compliance query API** — programmatic access to the audit trail for external GRC tools.
 
-## Related
+## Where to go next
 - [G/L Postings](gl-postings.md) — the postings whose history the trail records.
 - [Journal Entries](journal-entries.md) — the entry generation and approvals recorded in the trail,
   which no longer run.

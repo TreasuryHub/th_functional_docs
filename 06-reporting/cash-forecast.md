@@ -1,12 +1,21 @@
 # Cash Forecast
 
+> **Spot funding gaps weeks before they happen**
+>
+> **Why it matters**
+> - **Everything you already know about the future**: scheduled and contractual flows, your own entries, and feeds from other systems.
+> - **From tomorrow to next year**: the same hierarchy and drill-down you use for actuals.
+> - **Plan, do not react**: surplus cash and shortfalls are visible while there is still time to act.
+>
+> *For the CFO: funding and investment decisions get made on a forward view rather than on last month's closing balance.*
+
 > **Where to find it:** Reporting › Cash & Liquidity › Cash Forecast
 > **Who uses it:** treasurers, cash managers, FP&A, finance teams.
 > **Permissions required:** `CashManagement.CashPosition` · Read (and `…ExportData` · Read to export). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Cash Forecast projects your liquidity forward using the same hierarchy and drill-down as your
-actuals. It brings together scheduled and contractual cash flows already in the system, cash
+Spot a funding gap weeks before it arrives: Cash Forecast projects your liquidity forward using the
+same hierarchy and drill-down as your actuals. It brings together scheduled and contractual cash flows already in the system, cash
 flows you add manually, and cash flows fed from other systems, so you can see your expected position
 from tomorrow's settlements out to next year's budget.
 
@@ -59,7 +68,7 @@ of your choice.
 1. Click **Export** to download the forecast as **PDF**, **Excel**, or **CSV**.
 2. Click **Schedule** to deliver it automatically on a cadence to chosen recipients.
 
-## Tips & good practices
+## Tips to get more value
 - Use **Expected** items to capture what only you know (a delayed collection, a one-off outflow) —
   they immediately reshape the projected closing balance.
 - Watch the near-term daily columns for the days a balance dips toward its operating minimum, and
@@ -77,7 +86,9 @@ of your choice.
   (including your own prompt-defined categories) so actuals line up with the forecast by category.
 - **Liquidity alerts** — proactive warnings when a projected balance breaches a threshold.
 
-## Related
+## Where to go next
+💡 Get more from this: combine the cash forecast with [Actual vs Forecast](actual-vs-forecast.md) to measure how good your projections are and tighten them every cycle.
+
 - [Cash Position](../01-home/home-dashboard.md) — the actuals this forecast projects forward from.
 - [Actual vs Forecast](actual-vs-forecast.md) — measure forecast accuracy and variance.
 - [Scenarios (What-If)](scenarios-what-if.md) — stress the forecast under different assumptions.

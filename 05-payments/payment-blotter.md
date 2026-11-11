@@ -1,12 +1,25 @@
 # Payment Blotter
 
+> **Every outbound payment, across the group, on one screen**
+>
+> **Why it matters**
+> - **The whole daily outflow**: supplier runs, intercompany, FX settlements, loan disbursements, payroll and taxes together.
+> - **Status without asking anyone**: account, company, institution, amount, item count, origin and approval progress per row.
+> - **Line by line when you need it**: expand any row to see exactly what happened to each item.
+
 > **Where to find it:** Payments › Payment Blotter
 > **Who uses it:** treasury operations, accounts payable, finance managers, approvers.
 > **Permissions required:** `CashManagement.Payments` · Read to view, CreateEdit to act. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Find and filter payments](#find-and-filter-payments) to the ones you are responsible for.
+> 2. [Track what happened to a payment](#track-what-happened-to-a-payment) by expanding its row.
+> 3. [Create a new payment](#create-a-new-payment), or [import payment files](#import-payment-files).
+> 4. [Approve or reject a payment](#approve-or-reject-a-payment) from the Awaiting approval tab.
+
 ## Overview
-The Payment Blotter is the main screen of the Payments module: a single list of every outbound
-payment batch across your group. From here you see each payment's account, company, institution,
+See the whole group's outgoing money on one screen: the Payment Blotter is a single list of every
+outbound payment batch across your organization. From here you see each payment's account, company, institution,
 amount, count of items, origin, approval progress, and status — and you can expand any row to see
 exactly what happened to it, line by line. It's where your team tracks the daily outflow: supplier
 payments, intercompany transfers, FX settlements, loan disbursements, payroll, and taxes.
@@ -18,9 +31,9 @@ payments, intercompany transfers, FX settlements, loan disbursements, payroll, a
   lifecycle (see below).
 - **Batch reference** — the reference that identifies a payment (or payment batch) on the grid.
 - **Origin** — where the payment came from (for example an ERP feed such as **NetSuite**, an
-  imported file, or created manually in Treasury Hub).
+  imported file, or created manually in TreasuryHub).
 - **Approval progress** — how many of the required approvals a payment has (for example, 1 of 2).
-- **Traceability** — the three separate answers to "did this payment happen?": what Treasury Hub did
+- **Traceability** — the three separate answers to "did this payment happen?": what TreasuryHub did
   with the order, what the payment provider says, and whether the bank statement backs it up.
 
 ## The status tabs
@@ -92,7 +105,7 @@ Each row also has a **⋯** menu with **View Details**, **Approve** / **Reject**
      splits visually, so you can see exactly where the batch divided.
 3. On the right, each **payment line** is shown with its beneficiary, reference, bank, amount and its
    own status. Under each line, three cards keep three different questions apart on purpose:
-   - **The order — us** — what Treasury Hub did: whether it was ever attempted, and when it last was.
+   - **The order — us** — what TreasuryHub did: whether it was ever attempted, and when it last was.
    - **The provider** — the provider's own verdict and its tracking key for the transfer.
    - **The statement** — whether the bank statement backs it up.
    They are separate because they can disagree, and the disagreement is the information.
@@ -139,7 +152,7 @@ You can approve or reject straight from a row's **⋯** menu when you have the r
 workspace for reviewing is the **Payment Approvals** screen — see
 [Payment Approvals](approvals.md) for how the approval workflow works.
 
-## Tips & good practices
+## Tips to get more value
 - Work the tabs in order of urgency — clear **Needs attention** and **Awaiting approval** first.
 - Don't read **On its way** as "paid". A payment is only confirmed once the provider says so, which
   is what **Confirmed** means and what the traceability panel's provider card shows per line.
@@ -149,7 +162,7 @@ workspace for reviewing is the **Payment Approvals** screen — see
 - After importing files, go straight to **Ingestion Activity**: nothing about the parse is reported
   on the blotter.
 
-## Related
+## Where to go next
 - [Creating a payment](creating-a-payment.md) — compose a payment batch by hand.
 - [Payment Approvals](approvals.md) — the dedicated approvals workspace.
 - [Payments — Overview](overview.md) — how the module fits together.

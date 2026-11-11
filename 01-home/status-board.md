@@ -1,18 +1,31 @@
 # Status board
 
+> **Track your implementation in real time, with no status meetings**
+>
+> **Why it matters**
+> - **Zero admin**: TreasuryHub keeps this board current for you, so there is nothing to fill in or chase.
+> - **Three answers at once**: what the platform is building, where your delivery stands, and which of your tickets are open.
+> - **One version of the plan**: everyone on both sides reads the same milestones and the same dates.
+
 > **Where to find it:** Status board
 > **Who uses it:** project owners, treasury leadership, administrators — anyone following their own
-> Treasury Hub implementation.
+> TreasuryHub implementation.
 > **Permissions required:** none beyond signing in. Every user of your organization can open the
 > board.
 
+> **In 60 seconds**
+> 1. [Open the board](#open-the-board).
+> 2. [Read your delivery roadmap](#read-your-delivery-roadmap) in the centre pane.
+> 3. [Check what is waiting on you](#check-what-is-waiting-on-you) before your next internal review.
+> 4. [Read your open tickets](#read-your-open-tickets) on the right.
+
 ## Overview
-The Status board is the single page where you read how your Treasury Hub implementation is going. It
+The Status board is the single page where you read how your TreasuryHub implementation is going. It
 answers three questions at once: what the platform has built and is building next, where your own
 delivery roadmap stands, and which support tickets of yours are still open.
 
-Everything on the page is information to read. There is nothing to fill in, approve or save: the
-board's content is maintained by Treasury Hub and refreshed for you. A stamp at the top right says
+Zero admin: TreasuryHub keeps this board current for you, so there is nothing to fill in, approve
+or save. A stamp at the top right says
 when the board was last updated and, when one is scheduled, the time of the next refresh.
 
 The page loads even when part of it is empty. If your roadmap has not been set up yet, or you have
@@ -63,7 +76,7 @@ phase. A question mark beside the Roadmap title explains how progress is built u
 3. Check the estimate line at the foot of the card. A card either carries a date, with the number of
    days until it, or a rough label such as a quarter, marked *date to confirm*.
 
-This pane is Treasury Hub's own roadmap, so it is identical for every customer, and it covers
+This pane is TreasuryHub's own roadmap, so it is identical for every customer, and it covers
 features already delivered as well as those still planned. Nothing in it is specific to your
 account.
 
@@ -94,7 +107,7 @@ account.
 5. Click the row to open its detail: the milestone's description, its phase and its progress. Click
    it again to close it.
 
-Milestones are listed in the order Treasury Hub loaded them into your roadmap, not grouped by phase,
+Milestones are listed in the order TreasuryHub loaded them into your roadmap, not grouped by phase,
 so the sequence you agreed is the sequence you see.
 
 ### Check what is waiting on you
@@ -114,18 +127,18 @@ so the sequence you agreed is the sequence you see.
    means.
 
 A ticket's status is one of **Open**, **In progress**, **Waiting on you** or **Blocked**. *Waiting
-on you* means the Treasury Hub team cannot move it forward until you reply. The days-open counter
+on you* means the TreasuryHub team cannot move it forward until you reply. The days-open counter
 turns red once the ticket passes your overdue threshold.
 
-Tickets on this pane are raised and maintained by the Treasury Hub team, so there is no *new ticket*
+Tickets on this pane are raised and maintained by the TreasuryHub team, so there is no *new ticket*
 button here. Raise a new one with your account team in the usual way, and it appears on this pane.
 
 ## Configuration
 There is nothing to configure on this page, and nothing on it can be edited from your account: the
-platform roadmap, your delivery roadmap and your tickets are all maintained by Treasury Hub, and you
+platform roadmap, your delivery roadmap and your tickets are all maintained by TreasuryHub, and you
 read the result.
 
-One setting behind the board belongs to your account and is set by Treasury Hub:
+One setting behind the board belongs to your account and is set by TreasuryHub:
 
 - **Overdue threshold for tickets** — how many days a ticket may stay open before its age counter
   turns red. The default is **14 days**, and a ticket is only overdue once it is *past* the
@@ -149,7 +162,7 @@ How the roadmap figures are worked out, because they are asked about often:
   unfinished. The end day itself is not overdue.
 - **Waiting on you** counts milestones that are not delivered and whose owner is on your side.
 
-## Tips & good practices
+## Tips to get more value
 - Start with **Waiting on you**. It is the only figure on the page that asks something of you, and
   clearing those milestones is usually what moves the proposed completion date.
 - Read phase and status together. A milestone can be in *Build* and *Blocked* at the same time, and
@@ -157,22 +170,22 @@ How the roadmap figures are worked out, because they are asked about often:
   capitals just above it.
 - Do not read a progress bar as effort spent. It reflects the phase the milestone has reached, so a
   milestone can sit at 50% for weeks and then jump to 75% in a day.
-- Expect the roadmap order to be the load order. Milestones appear in the sequence Treasury Hub
+- Expect the roadmap order to be the load order. Milestones appear in the sequence TreasuryHub
   entered them, so a *Go Live* milestone can appear above a *Design* one in the same workstream.
 - Treat **What's new** as the platform roadmap, not as your plan. Its dates are platform-wide, it
   includes features that have already shipped, and a feature landing there does not mean it is part
   of your implementation. A card for something already delivered keeps its estimate line, so its
   countdown can read a date in the past.
-- Check the last-updated stamp before acting on a figure. The board reflects what Treasury Hub last
+- Check the last-updated stamp before acting on a figure. The board reflects what TreasuryHub last
   recorded, not a live feed from your project team's inbox.
 - The days-open counter on a ticket measures elapsed time, not working days, so weekends count
   towards it.
 
-## Related
+## Where to go next
 - [Home — Cash Position Dashboard](home-dashboard.md) — your landing page once onboarding is done.
 - [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — where the
   Status board sits in the main navigation.
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — how access to the rest
   of the platform is granted.
-- [What is Treasury Hub](../00-getting-started/01-what-is-treasury-hub.md) — the platform the
+- [What is TreasuryHub](../00-getting-started/01-what-is-treasury-hub.md) — the platform the
   **What's new** pane describes.

@@ -1,12 +1,20 @@
 # Reconciliation — Movements & Flows
 
+> **Follow any payment end to end and see exactly where it is stuck**
+>
+> **Why it matters**
+> - **Three angles on the same money**: chain instances, the flat movement list, and the graph from one movement outwards.
+> - **Find the blockage**: each chain instance shows how far it got and what it is waiting on.
+> - **No dead ends**: the graph fans out across every workflow a movement takes part in.
+
 > **Where to find it:** Reconciliation › Administration › **Reconciliation Status** (also reachable
 > under **Reporting › Operations**). Movements and Movement Graph sit in the same group.
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-Three screens let you follow money through reconciliation from three angles.
+Find exactly where a payment is stuck: three screens follow money through reconciliation from three
+angles.
 **Reconciliation Status** lists **chain instances** — each one an attempt at a flow, showing how far
 it got and where it is stuck. **Movements** is the flat list of every individual item the module
 holds. **Movement Graph** starts from one movement and fans out across every workflow to show each
@@ -81,7 +89,7 @@ reconciliation it takes part in.
 > Counterparties, amounts and currencies shown in the platform are your own data; any figures in
 > this help center are illustrative examples.
 
-## Tips & good practices
+## Tips to get more value
 - Work from the **Unreconciled** and **Partial** tabs. The counts on the tabs tell you how big the
   job is before you open anything.
 - Expand the row rather than guessing from the progress figure — the dashed card and the **Pending**
@@ -96,7 +104,7 @@ reconciliation it takes part in.
 - Use **Movement Graph** when the same item appears in several workflows and you need to see the
   whole picture; use **Reconciliation Status** when you care about one flow completing.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — movements, chains, statuses, and how matching works.
 - [Rules & Criteria](rules-and-criteria.md) — where chains and their steps are defined.
 - [Workflows](workflows.md) — which movements get into a workflow in the first place.

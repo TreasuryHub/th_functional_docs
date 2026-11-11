@@ -1,12 +1,21 @@
 # Home — Cash Position Dashboard
 
+> **See all your cash, in every bank and currency, the moment you log in**
+>
+> **Why it matters**
+> - **No morning spreadsheet**: one consolidated position replaces the portal logins and the manual roll-up.
+> - **Day by day**: a column per date over the range you choose, so you read the movement, not only the closing figure.
+> - **Drill all the way down**: from the group total to the company, the account, and the transaction behind it.
+>
+> *For the CFO: the single number the board asks for, current, with every figure traceable to a bank movement.*
+
 > **Where to find it:** Home
 > **Who uses it:** treasurers, cash managers, finance teams, CFOs — anyone who needs to see where the money is.
 > **Permissions required:** `CashManagement.CashPosition` · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-Home is your landing page after signing in. It gives you a **real-time view of your organization's
-cash position** — how much money you hold, in which currencies, at which banks, across which
+See every bank, currency and entity the moment you sign in: Home is your landing page, and it gives
+you a **real-time view of your organization's cash position** — how much money you hold, in which currencies, at which banks, across which
 companies and countries — laid out as a single grouped table with a **column for each date** in the
 range you choose, so you can read balances day by day.
 
@@ -79,13 +88,14 @@ see what moved by category, use [Category Positions](../06-reporting/category-po
 
 ## Configuration
 Home is view-only — you don't set data up here, you set it up upstream:
+
 - **Accounts, companies and company groups** — configured in the [Admin Console](../10-admin-console/overview.md);
   the hierarchy you define there is exactly what the grouping tabs consolidate.
 - **Exchange rates** — required for currency conversion; managed in Master Data.
 - **Your view state** (chosen tab, grouping, date range, display currency) is remembered between
   visits, so Home opens the way you left it.
 
-## Tips & good practices
+## Tips to get more value
 - Set **Convert To** to your reporting currency so the headline total is immediately meaningful to
   management.
 - Keep your **company structure and account list clean** — Home is only as accurate as the master
@@ -98,6 +108,7 @@ Home is view-only — you don't set data up here, you set it up upstream:
 ## Personalized cockpit
 Beyond the cash dashboard, Home is also a **personalized cockpit** organized around your roles,
 across three further tabs:
+
 - **Cockpit tab** — a personalized grid of KPIs, approval queue, featured reports and alerts,
   each tagged with the role that makes it relevant to you.
 - **Performance tab** — a daily briefing, meeting prep, and progress against daily/weekly/
@@ -107,7 +118,7 @@ across three further tabs:
 
 The demo KPI figures and personas you may see are illustrative examples, not your data.
 
-## Related
+## Where to go next
 - [Balance Differential](../06-reporting/balance-differential.md) — the same balances as a flat
   two-date comparison.
 - [Category Positions](../06-reporting/category-positions.md) — what moved, by category.
@@ -115,5 +126,5 @@ The demo KPI figures and personas you may see are illustrative examples, not you
   top bar, and shared grid behaviors.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — company hierarchy and master data
   behind the totals.
-- [Status board](status-board.md) — how your Treasury Hub implementation is progressing: the
+- [Status board](status-board.md) — how your TreasuryHub implementation is progressing: the
   platform roadmap, your onboarding programme, and your open support tickets.

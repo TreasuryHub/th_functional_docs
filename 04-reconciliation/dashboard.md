@@ -1,11 +1,19 @@
 # Reconciliation — Dashboard
 
+> **Know in a minute whether yesterday's money is accounted for**
+>
+> **Why it matters**
+> - **One day, three numbers**: how much reconciled by itself, how much is open, how much is waiting on a person.
+> - **Per workflow**: scope it and you also see where that workflow stands over its lifetime.
+> - **Find the rules that earn their keep**: the criteria actually doing the matching are named.
+
 > **Where to find it:** Reconciliation › Administration › Dashboard
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-The Dashboard is the daily health check of the Reconciliation module. It answers, for one day, how
+Know in under a minute whether yesterday's money is accounted for: the Reconciliation Dashboard is
+your daily health check. It answers, for one day, how
 much reconciled by itself, how much is still open, and how many proposals are waiting for a person.
 Scope it to a single workflow and it adds a lifetime view of where that workflow stands and which
 match criteria are actually doing the work.
@@ -54,6 +62,7 @@ match criteria are actually doing the work.
 
 ### Read the workflow totals
 Select a single **Workflow** and a **Workflow totals** panel appears underneath:
+
 - **Entity type** — for each movement type in the workflow, how many are reconciled and how many are
   not.
 - **Money reconciled** — split into **Net reconciled**, **Gross reconciled**, and **Fees and
@@ -73,7 +82,7 @@ Select a single **Workflow** and a **Workflow totals** panel appears underneath:
 > The numbers, counterparties and currencies shown in the platform are your own live data. Any
 > figures used in this help center are illustrative examples.
 
-## Tips & good practices
+## Tips to get more value
 - Check **Unreconciled** first thing each day, then jump to
   [Reconciliation Status](movements-and-flows.md) filtered to the same day to see which step is
   stuck.
@@ -86,7 +95,7 @@ Select a single **Workflow** and a **Workflow totals** panel appears underneath:
 - Remember the date filter is a **single UTC day**. For a longer view, read the lifetime workflow
   totals rather than stepping through dates.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — how the whole module fits together.
 - [Movements & Flows](movements-and-flows.md) — drill into the chain instances behind the counts.
 - [Matching](matching.md) and [Approvals](approvals.md) — clear what the tiles surface.

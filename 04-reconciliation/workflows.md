@@ -1,11 +1,19 @@
 # Reconciliation — Workflows
 
-> **Where to find it:** Settings › Reconciliation › **Reconciliation Flows (Flujos de Conciliación)** — there is no "Reconciliation › Workflows" menu item. (The flows it produces are viewed under [Flows (Reconciliation Status)](movements-and-flows.md).)
+> **Model any reconciliation process, from simple bank-to-ledger to multi-step payment flows**
+>
+> **Why it matters**
+> - **Your process, not a fixed one**: a workflow holds the rules, the chains and the filter groups you decide on.
+> - **Scoped deliberately**: filter groups decide which movements are allowed in at all.
+> - **Everything hangs off it**: chain instances, approval requests and dashboard counts all belong to a workflow.
+
+> **Where to find it:** Settings › Reconciliation › **Reconciliation Flows**. The flows it produces are viewed under [Flows (Reconciliation Status)](movements-and-flows.md).
 > **Who uses it:** treasury operations lead, reconciliation administrators.
 > **Permissions required:** reconciliation workflows · CreateEdit to create or edit; Read to view (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-A reconciliation **workflow** is the container for one body of matching logic. It holds the
+Model any reconciliation process you actually run, from bank-to-ledger to a multi-step payment
+flow: a reconciliation **workflow** is the container for one body of matching logic. It holds the
 [rules and chains](rules-and-criteria.md) that pair movements, and the **filter groups** that decide
 which movements are allowed in at all. Everything the module does — the chain instances on
 [Reconciliation Status](movements-and-flows.md), the requests in [Approvals](approvals.md), the
@@ -33,6 +41,7 @@ counts on the [Dashboard](dashboard.md) — happens inside a workflow. The scree
 ## Common patterns
 A workflow can describe any end-to-end matching pattern you need. The ones treasury teams build most
 often are:
+
 - **PSP and bank reconciliation** — internal payins and payouts to their PSP records, and on to the
   bank settlement. The richest pattern, usually mixing single and batch hops.
 - **Invoice reconciliation** — a purchase or sales invoice against its bank movement.
@@ -92,7 +101,7 @@ assigned stay where they are until a maintenance run re-evaluates them.
 Changing a workflow only affects what arrives next. Three on-demand bulk processes bring the
 movements that are already inside into line with the current configuration. Each runs over one
 workflow and one date range, in chunks, picking up where the previous run stopped, and each returns
-a per-movement account of what it did or would do. Ask your Treasury Hub administrator to run one.
+a per-movement account of what it did or would do. Ask your TreasuryHub administrator to run one.
 
 - **Re-apply the entry gate** — re-tests the movements already in the workflow against the current
   filter groups and removes the ones that no longer belong, along with any chain instance left with
@@ -111,7 +120,7 @@ a per-movement account of what it did or would do. Ask your Treasury Hub adminis
 > The specific workflows, counts and counterparties shown in the platform are your own
 > configuration; any examples in this help center are illustrative.
 
-## Tips & good practices
+## Tips to get more value
 - Build the **entry gate first**, then the rules. A workflow with no gate takes in every movement
   whose type has an applicable rule, which is rarely what you want once you have more than one
   workflow.
@@ -124,7 +133,7 @@ a per-movement account of what it did or would do. Ask your Treasury Hub adminis
 - **Deactivate** rather than delete when a pattern is no longer needed, so history and linked rules
   stay intact.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — how workflows fit the module.
 - [Rules & Criteria](rules-and-criteria.md) — the rules, chains and filter groups inside each
   workflow.

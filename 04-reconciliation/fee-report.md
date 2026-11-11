@@ -1,14 +1,27 @@
 # Reconciliation — Fee Report
 
+> **Stop overpaying your payment providers: check every fee against your contract**
+>
+> **Why it matters**
+> - **What they should have charged**: the contract worked out month by month and provider by provider.
+> - **What they actually took**: settlement by settlement, against the deposit that reached your bank.
+> - **The difference, named**: a discrepancy becomes a number you can take to the provider.
+
 > **Where to find it:** Reconciliation › Reporting › Fee Report (also listed as **Fee Report** under **Reporting › Operations**)
 > **Who uses it:** treasury operations, finance team, accountants, accounts payable.
 > **Permissions required:** reconciliation access · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
+> **In 60 seconds**
+> 1. [Read a month's expected fees](#read-a-months-expected-fees) per contract.
+> 2. [Check what a provider actually deducted](#check-what-a-provider-actually-deducted) against it.
+> 3. [Find payments no contract covers](#find-payments-no-contract-covers).
+> 4. [Download the workbook](#download-the-workbook) to take the discrepancy to the provider.
+
 ## Overview
-If you collect through payment providers, each one charges you a fee set by your contract with it —
-a fixed amount or a percentage per payment, a monthly charge, a price that drops once your volume
-passes a threshold. The Fee Report works out, month by month and contract by contract, **what each
-provider should charge you**. For the providers that deduct their fee from what they settle, it
+Stop overpaying your payment providers: the Fee Report works out, month by month and contract by
+contract, **what each provider should charge you**. Each provider's fee is set by your contract — a
+fixed amount or a percentage per payment, a monthly charge, a price that drops once your volume
+passes a threshold. For the providers that deduct their fee from what they settle, it
 also checks **what they actually deducted**, settlement by settlement, and against the deposit that
 reached your bank.
 
@@ -38,7 +51,7 @@ The report reads your reconciled data; it does not create movements or change an
   reported more than the contract says.
 
 ## Before you start
-- Your provider contracts must be loaded for your tenant. Treasury Hub does this; the screen reads
+- Your provider contracts must be loaded for your tenant. TreasuryHub does this; the screen reads
   them and does not edit them. A tenant with no contracts sees empty tabs.
 - Payments reach a contract only once the data carries the merchant identifier. Until the
   integration that brings those payments in fills it, they appear on **Without contract** — see
@@ -71,7 +84,7 @@ The report reads your reconciled data; it does not create movements or change an
 3. Read the three difference columns: **Fee + tax difference**, **Net difference** and **Bank
    difference** (the reconciled deposit against the settlement's net). A non-zero difference is
    shown in red.
-4. Pick a **Contract** to look at one provider, and turn on **Only differences** to leave just the
+4. Pick a **Contract** to look at one provider, and turn on **Only differences** to leave only the
    rows that do not agree.
 
 ### Find payments no contract covers
@@ -88,7 +101,7 @@ The report reads your reconciled data; it does not create movements or change an
 2. Click **Recalculate** to recompute the month you are looking at. The button reads
    *Recalculating…* while it runs, then a message summarises what was written and the three tabs
    reload. Use it after a contract has been loaded or a late file has arrived.
-3. Treasury Hub recalculates the current month and the previous one every day, so most of the time
+3. TreasuryHub recalculates the current month and the previous one every day, so most of the time
    you do not need to.
 
 ### Download the workbook
@@ -97,7 +110,7 @@ The report reads your reconciled data; it does not create movements or change an
 3. The download is the whole month: the filters on screen narrow the grid, not the file.
 
 ## Configuration
-Your contracts are set up by Treasury Hub and shape every figure on this screen. Each one carries:
+Your contracts are set up by TreasuryHub and shape every figure on this screen. Each one carries:
 
 - **The provider and merchant values** that decide which payments it counts, and the **legal
   entity** it belongs to.
@@ -116,7 +129,7 @@ the prices in force on each payment's own date: a payment made at the end of a m
 the next one is still charged at the earlier month's price. To change a contract, ask your Treasury
 Hub administrator.
 
-## Tips & good practices
+## Tips to get more value
 - Close **Without contract** first. A single uncovered merchant makes every total on the month look
   too low.
 - Use **Only differences** as your working queue: a short list of settlements to query with the
@@ -130,7 +143,7 @@ Hub administrator.
 - Fees and base amounts are in the contract's currency; read the banner's per-currency totals
   rather than adding rows across currencies.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — how the reports fit the end-to-end flow.
 - [Conciliation Reporting](conciliation-reporting.md) — the other reconciliation report, on what is
   reconciled and what is still open.

@@ -1,14 +1,22 @@
 # Mark-to-Market Valuations
 
+> **Know what every position is worth today**
+>
+> **Why it matters**
+> - **Current value, not book value**: your portfolio at market prices, with unrealized profit or loss per position.
+> - **And why it changed**: the movement is attributed, not only stated.
+> - **Runs in-house**: the platform already holds the positions and market data this needs.
+
 > **Where to find it:** Reporting › Risk Management › Mark-to-Market
 > **Who uses it:** treasurers, portfolio and investment managers, finance and accounting teams.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Mark-to-Market (MtM) values your financial portfolio at current market prices and shows the
-**unrealized profit or loss** on every position — so you always know what your instruments are worth
+Know what every position is worth today, and why that changed: Mark-to-Market (MtM) values your
+financial portfolio at current market prices and shows the **unrealized profit or loss** on every
+position — so you always know what your instruments are worth
 today and why that has changed. Within [Risk Management](overview.md), MtM is the one dimension that
-runs **in-house** in Treasury Hub, because the platform already holds the positions and market data
+runs **in-house** in TreasuryHub, because the platform already holds the positions and market data
 needed. You can complement it with an external partner valuation for complex instruments or
 independent validation.
 
@@ -29,6 +37,7 @@ independent validation.
 
 ## What the engine values
 The valuation engine covers a broad instrument set, including:
+
 - **FX & derivatives** — FX forwards & NDFs (discounted cash flows per currency curve), FX swaps
   (both legs, netted), FX options (option-pricing models using implied vols), interest-rate swaps and
   cross-currency swaps, and IR/equity/commodity options (with greeks and volatility surfaces).
@@ -70,7 +79,7 @@ date. Complex or exotic instruments may route to a specialist partner — see *T
   shown side by side with the in-house value.
 - **Views and periods** — your selected view, period, and currency are remembered between visits.
 
-## Tips & good practices
+## Tips to get more value
 - Use **By Counterparty** or **By Subsidiary** views to localise a large swing before drilling in.
 - Rely on the **Δ vs prior period** column and the **P&L attribution** views to explain results to
   management quickly.
@@ -85,7 +94,7 @@ date. Complex or exotic instruments may route to a specialist partner — see *T
 - **Standard and custom MtM reports** with P&L attribution by asset class, subsidiary, or
   counterparty.
 
-## Related
+## Where to go next
 - [Risk Management — Overview](overview.md) — the hybrid (in-house + partner) model.
 - [FX Risk](fx-risk.md) — MtM fair values feed FX exposure and hedge-effectiveness metrics.
 - [Credit Risk](credit-risk.md) — MtM feeds counterparty exposure calculations.

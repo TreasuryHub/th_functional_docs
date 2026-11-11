@@ -1,13 +1,21 @@
 # Companies & Company Groups
 
+> **Model your group once, and every figure consolidates correctly**
+>
+> **Why it matters**
+> - **The hierarchy everything rolls up through**: Company Group, Company, Account, Transaction.
+> - **Get it right here and it is right everywhere**: dashboards, reconciliation, reporting and payments all read this structure.
+> - **Built for real groups**: regions, divisions and subsidiaries modelled as they actually are.
+
 > **Where to find it:** Admin Console › Master Data › Company Groups (and › Companies)
 > **Who uses it:** administrators and treasury operations.
 > **Permissions required:** `CoreData.CompanyGroups` · Read+ and `CoreData.Companies` · Read+ (Create/Edit to add or change; Delete to remove).
 
 ## Overview
-This is where you model your organization's legal and reporting structure. A **Company** is a legal
+Model your group once, and every figure consolidates correctly from then on: this is where you set
+up your organization's legal and reporting structure. A **Company** is a legal
 entity; a **Company Group** bundles related companies (for example a region or division). This
-hierarchy is what lets Treasury Hub consolidate balances and let you drill down: **Company Group ›
+hierarchy is what lets TreasuryHub consolidate balances and let you drill down: **Company Group ›
 Company › Account › Transaction**. Getting it right here means every other module — dashboards,
 reconciliation, reporting, payments — rolls up correctly.
 
@@ -39,7 +47,7 @@ reconciliation, reporting, payments — rolls up correctly.
    **country**, **description**, **address**, and whether it's the **default company** (see below).
 4. Click **Save**.
 
-> **First company must be the default.** If no default company exists yet, Treasury Hub prompts
+> **First company must be the default.** If no default company exists yet, TreasuryHub prompts
 > *"Please define a default company"* — create one and mark it default before adding others.
 
 ### Set or change the default company
@@ -71,13 +79,13 @@ reconciliation, reporting, payments — rolls up correctly.
 - Company and company-group assignments feed **user access scoping** — the companies you create here
   are what you grant users access to in [Users & Roles](users-and-roles.md#change-what-data-someone-sees).
 
-## Tips & good practices
+## Tips to get more value
 - Mirror your **legal entity structure** exactly — reporting and reconciliation rely on it.
 - Choose the **default company** deliberately; it's the fallback for records that don't specify one.
 - Keep group names stable — they appear throughout dashboards and reports.
 
-## Related
+## Where to go next
 - [Master Data](master-data.md) — the wider reference-data picture and who can see what.
-- [Core Concepts — Company structure](../00-getting-started/03-core-concepts.md#company-structure).
+- [Core Concepts — Company structure](../00-getting-started/03-core-concepts.md#company-structure) — the hierarchy every consolidated figure rolls up through.
 - [Users & Roles](users-and-roles.md) — scope users to these companies.
 - [Bank Accounts](../06-reporting/bank-accounts.md) — accounts belong to companies.

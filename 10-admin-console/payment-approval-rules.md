@@ -1,12 +1,25 @@
 # Payment Approval Rules
 
+> **Your signing policy, enforced automatically on every payment**
+>
+> **Why it matters**
+> - **Policy becomes configuration**: who must sign, by company group, company, bank, account, currency and origin.
+> - **Visible on the payment**: the *1 of 2* on a payment is the rule you wrote here.
+> - **No reliance on memory**: the control applies whether or not anyone remembers it.
+
 > **Where to find it:** Admin Console › Master Data › Payment Approval Rules
 > **Who uses it:** administrators, treasury operations leads.
 > **Permissions required:** administrator access to the tenant — the screen is reserved for administrators (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
+> **In 60 seconds**
+> 1. [Read the list of rules](#read-the-list-of-rules) to see what your policy currently enforces.
+> 2. [Create a rule](#create-a-rule): choose its scope, then the [number of approvals](#number-of-approvals) it requires.
+> 3. Set its [validity period](#validity-period), [currency](#currency) and [origin](#origin) if it is narrower than the default.
+> 4. [Set the pending-approval reminder](#set-the-pending-approval-reminder) so nothing sits unsigned.
+
 ## Overview
-A **payment approval rule** decides how many signatures a payment needs before it can be sent to the
-bank. This screen is where those rules are written: you say which payments a rule covers — by
+Have your signing policy enforced automatically on every payment: a **payment approval rule**
+decides how many signatures a payment needs before it can be sent to the bank. This screen is where those rules are written: you say which payments a rule covers — by
 company group, company, bank, account, currency and where the payment came from — and how many
 approvals they require. It is the configuration behind
 [Payment Approvals](../05-payments/approvals.md): the number of approvals shown as *1 of 2* on a
@@ -47,6 +60,7 @@ adding to it. A company-wide rule of 2 approvals plus an account-level rule of 1
 payments from that account need **one** signature, not three.
 
 Two consequences follow:
+
 - **A scope that skips a level is never applied.** The form keeps a level closed until the one above
   it is set, and clears everything below a level you change, so the scope can never grow a gap.
 - **Two rules that would be collected at the same tier cannot both exist.** The screen refuses to
@@ -139,6 +153,7 @@ Two consequences follow:
   **no approval** badge.
 
 Two things decide what an exemption actually does, and both are worth knowing before you set one:
+
 - Payments created on the [Create Payment](../05-payments/creating-a-payment.md) screen, and
   payments arriving from Data Hub, **always require at least one approval**. When the matching rule
   asks for none — or when no rule matches at all — the platform falls back to a single approver
@@ -158,12 +173,12 @@ A rule's currency is always the **account's own currency**. The dropdown offers 
 rule naming a different one is refused when you save it.
 
 ### Origin
-**NetSuite**, **User** (created in Treasury Hub) and **Data Hub** (raised from an ingested
+**NetSuite**, **User** (created in TreasuryHub) and **Data Hub** (raised from an ingested
 financial event). A rule left on **Any origin**
 matches payments from all of them — which also means it collides with a rule that names one, for the
 purposes of the overlap check above.
 
-## Tips & good practices
+## Tips to get more value
 - **Treat 0 approvals as a control decision, not a convenience.** For the payments it covers it
   removes the only human check between an instruction and the bank. Give the rule a description that
   says why the exemption exists, bound it with **Valid from** / **Valid to**, and review it on a
@@ -171,7 +186,7 @@ purposes of the overlap check above.
 - **Write the broad rule first**, then add the specific exceptions. The specific one wins outright,
   so the list reads as "this is the default, and these are the exceptions".
 - **Watch the Signing levels strip.** A rule demanding a level nobody holds does not fail loudly —
-  the payments simply sit unapproved.
+  the payments sit unapproved.
 - **Give every rule a description you will recognise months later.** It is what a collision message
   quotes back at you.
 - **Set the reminder window shorter than your payment lead time**, so approvers are chased while
@@ -179,7 +194,7 @@ purposes of the overlap check above.
 - **Check the Tier badge while building a scope.** If it does not resolve, a level has been skipped
   and the rule would never be applied.
 
-## Related
+## Where to go next
 - [Payment Approvals](../05-payments/approvals.md) — where approvers act on what these rules demand.
 - [Payment Blotter](../05-payments/payment-blotter.md) — approval progress and status across all
   payments.

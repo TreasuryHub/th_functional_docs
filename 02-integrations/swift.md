@@ -1,13 +1,20 @@
 # SWIFT Connectivity
 
-> **Where to find it:** Integrations › Services → **Settlement networks** category → **SWIFT** connector; setup is assisted by Treasury Hub.
+> **Start every morning with an up-to-date cash position from all your banks**
+>
+> **Why it matters**
+> - **No portal round**: statements and balances arrive over SWIFT and parse themselves.
+> - **Early, not after lunch**: the position is ready when you are, rather than after a morning of downloads.
+> - **Straight into reconciliation**: the same movements feed matching and reporting without a second step.
+
+> **Where to find it:** Integrations › Services → **Settlement networks** category → **SWIFT** connector; setup is assisted by TreasuryHub.
 > **Who uses it:** treasury operations at organizations with SWIFT connectivity, IT.
 > **Permissions required:** administrator to configure; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-SWIFT connectivity brings your **bank statements and balances** into Treasury Hub automatically
-over the SWIFT network — no manual downloads from each bank portal, no re-keying into Excel or your
-ERP. Statements arrive, are parsed into structured [movements and balances](../00-getting-started/03-core-concepts.md#financial-entities-treasury-hub-understands),
+Start the day with an up-to-date position instead of a morning of portal logins: SWIFT connectivity
+brings your **bank statements and balances** into TreasuryHub automatically over the SWIFT network,
+with no downloads and no re-keying. Statements arrive, are parsed into structured [movements and balances](../00-getting-started/03-core-concepts.md#financial-entities-treasury-hub-understands),
 and feed straight into your cash position and [reconciliation](../04-reconciliation/overview.md). The
 goal is an up-to-date cash position early in the day, not after a morning of portal logins.
 
@@ -15,7 +22,7 @@ It is aimed at organizations that already have (or want) institutional bank conn
 entities and banks.
 
 ## Key concepts
-- **Bank statement** — the record of movements and balances a bank sends you. Treasury Hub reads
+- **Bank statement** — the record of movements and balances a bank sends you. TreasuryHub reads
   the common SWIFT formats:
   - **MT940** — end-of-day statement (the global standard).
   - **MT942** — intraday statement (a partial, in-day view).
@@ -41,7 +48,7 @@ entities and banks.
 2. Choose **Connect** to start the guided setup.
 3. Provide your connectivity details and the BIC(s) and accounts to receive statements for.
 4. Confirm the formats your banks send (MT940 / MT942 / camt.053 / camt.054).
-5. Save. Treasury Hub begins polling for incoming statements automatically.
+5. Save. TreasuryHub begins polling for incoming statements automatically.
 
 ### Let statements flow in
 1. Once connected, statements are received automatically — no manual import.
@@ -61,6 +68,7 @@ entities and banks.
 
 ## The AI integration sub-agent
 A specialized AI sub-agent supports SWIFT setup and day-to-day running:
+
 - **Assisted setup** — guides you through connecting and mapping each bank.
 - **Error explanation** — turns a parsing failure into a clear description of what went wrong and
   how to fix it.
@@ -68,11 +76,11 @@ A specialized AI sub-agent supports SWIFT setup and day-to-day running:
   so nothing goes unnoticed.
 
 ## Beyond statements
-SWIFT carries more than statements, and Treasury Hub supports a wider set of message types
+SWIFT carries more than statements, and TreasuryHub supports a wider set of message types
 (payment and interbank confirmations, FX and derivatives, trade finance, and securities messages) as
 part of enterprise connectivity. Bank statements and balances are the primary use case.
 
-## Tips & good practices
+## Tips to get more value
 - Use **intraday (MT942)** alongside **end-of-day (MT940 / camt.053)** where your banks offer it, for
   a fresher in-day position.
 - Treat the AI sub-agent's alerts as an early-warning system — a missing or unparsed statement is
@@ -80,7 +88,7 @@ part of enterprise connectivity. Bank statements and balances are the primary us
 - SWIFT and [Open Banking](open-banking.md) complement each other; use Open Banking for banks where
   SWIFT isn't available or isn't cost-effective.
 
-## Related
+## Where to go next
 - [Integrations Overview](overview.md) — all ingestion channels.
 - [Open Banking](open-banking.md) — the complementary channel for local banks and fintechs.
 - [Reconciliation](../04-reconciliation/overview.md) — where ingested movements are matched.

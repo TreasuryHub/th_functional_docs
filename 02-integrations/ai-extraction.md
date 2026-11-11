@@ -1,15 +1,28 @@
 # AI Extraction
 
+> **When a bank changes its format, the AI keeps your close on schedule**
+>
+> **Why it matters**
+> - **No lost day**: a statement whose template no longer fits is read directly, so the file still lands today.
+> - **You stay in control**: the extraction comes back for review before anything is committed.
+> - **Fix the format afterwards**: the template is updated at your pace, not under close-day pressure.
+
 > **Where to find it:** Integrations › Ingestion — on a file no template could read; also on a failed AI draft
 > **Who uses it:** treasury operations, finance systems owners.
 > **Permissions required:** create/edit on the data being loaded; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Start an extraction](#start-an-extraction) on the file whose template no longer fits.
+> 2. [Review what it read](#review-what-it-read).
+> 3. [Load the movements](#load-the-movements).
+> 4. [Afterwards, fix the format](#afterwards-fix-the-format) so the next file loads normally.
+
 ## Overview
-[Parse templates](parsing-templates.md) are how files normally load, and they work until the day
-they do not. A bank redesigns its statement, adds a column, moves the balance; the template that
-read it yesterday now matches only in part, so nothing recognises the file and it stops at the
-door on [Ingestion](ingestion-activity.md). Meanwhile the statement is still due, and the month
-still has to close.
+When a bank changes its file format, you do not lose a day: AI extraction reads the file anyway, so
+the close stays on schedule. [Parse templates](parsing-templates.md) are how files normally load,
+and a bank that redesigns its statement, adds a column or moves the balance leaves yesterday's
+template matching only in part — so the file stops at the door on
+[Ingestion](ingestion-activity.md) while the statement is still due.
 
 **AI extraction is the way through.** The AI reads that one file directly, pulls out its
 movements, checks them against the balances the statement itself prints, and shows you the result
@@ -131,7 +144,7 @@ ask for a proposal, or extract again. The tokens already spent are not recovered
 - **Which event types** an extraction may produce follows the same tenant configuration as parse
   templates.
 
-## Tips & good practices
+## Tips to get more value
 - **Extracting is not fixing.** It gets this file in; the next one from the same bank will stop at
   the same place until the template is updated or replaced.
 - **Read the incidents, not the row count.** A clean count with three flagged signs is worth more
@@ -145,7 +158,7 @@ ask for a proposal, or extract again. The tokens already spent are not recovered
 - **Reach for it when the close is waiting.** That is what it is for — a deadline that will not
   move while a format is sorted out.
 
-## Related
+## Where to go next
 - [Ingestion](ingestion-activity.md) — where files arrive and wait, and where extraction is offered.
 - [Parse Templates](parsing-templates.md) — the reusable alternative, and how a draft is reviewed.
 - [PDF statements](pdf-statements.md) — how a PDF is read by a template, and the balance rules.

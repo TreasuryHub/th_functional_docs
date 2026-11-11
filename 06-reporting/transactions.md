@@ -1,12 +1,19 @@
 # Transactions
 
+> **Find any bank movement in seconds**
+>
+> **Why it matters**
+> - **Every movement, every account**: one flat grid you filter, sort and export.
+> - **Across banks and entities at once**: no per-portal searching to answer a single question.
+> - **The level everything drills to**: the dashboards and reports above all land here.
+
 > **Where to find it:** Reporting › Operations › Transactions
 > **Who uses it:** treasury operations, finance teams, accountants, auditors.
 > **Permissions required:** `CashManagement.Transactions` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Transactions is the complete record of every bank movement across your accounts — a **flat grid** of
-all movements that you filter, sort, and export. For balances grouped by your company structure
+Find any bank movement, across every bank and entity, in seconds: Transactions is the complete,
+searchable record of all your movements — a **flat grid** you filter, sort and export. For balances grouped by your company structure
 (Company Group › Company › Account), use the [Home dashboard](../01-home/home-dashboard.md) or the
 [Cash Position](../01-home/home-dashboard.md) report, which drill down to these same transactions.
 
@@ -35,14 +42,14 @@ all movements that you filter, sort, and export. For balances grouped by your co
 ### Export
 1. Click **Export** and choose **Excel** or **CSV**; the current, filtered view is downloaded.
 
-## Tips & good practices
+## Tips to get more value
 - Use **filters** (date range, account, currency, company) to narrow to the movements you're after,
   then sort by any column. For a view grouped by entity/account, use [Cash Position](../01-home/home-dashboard.md)
   instead.
 - Accurate **tags** make everything downstream better; a well-tagged transaction slots straight into
   the right cash-flow line in [Cash Position](../01-home/home-dashboard.md) and the forecast.
 
-## Related
+## Where to go next
 - [Cash Position](../01-home/home-dashboard.md) — transactions consolidated into your position, with drill-down
   back to these movements.
 - [Bank Statements](bank-statements.md) — where transactions come from.

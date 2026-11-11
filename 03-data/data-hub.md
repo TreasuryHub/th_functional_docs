@@ -38,7 +38,7 @@ feed, and to look across everything the platform has stored — regardless of ho
 2. Drag one or more files into the **drop-files** zone at the top of the screen, or click
    **Browse files** to pick them from your computer.
 3. Supported formats are **CSV, XLSX, PDF, and TXT**.
-4. Treasury Hub ingests the file and adds it to the matching category in the repository. Once
+4. TreasuryHub ingests the file and adds it to the matching category in the repository. Once
    processing finishes, the file appears in the [Data Repository](data-repository.md).
 
 ### See what data you already have
@@ -53,7 +53,7 @@ feed, and to look across everything the platform has stored — regardless of ho
 
 ![Data Hub with the drop-files upload zone and the Data Repository category cards](../assets/screenshots/data-hub-overview.png)
 
-## Tips & good practices
+## Tips to get more value
 - Reserve **manual upload** for data that doesn't have an automatic feed yet; wherever possible,
   connect the source through [Integrations](../02-integrations/overview.md) so files arrive and stay
   current on their own.
@@ -62,8 +62,8 @@ feed, and to look across everything the platform has stored — regardless of ho
 - When you need a formatted, shareable output, build it in the Reporting module rather than the
   Data Hub.
 
-## Related
+## Where to go next
 - [Data Repository](data-repository.md) — browse, search, and download stored files.
-- [Data Exports](data-exports.md) — send Treasury Hub data out to your own systems via API.
+- [Data Exports](data-exports.md) — send TreasuryHub data out to your own systems via API.
 - [Integrations](../02-integrations/overview.md) — where most of your data comes from automatically.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — normalized data and how it flows.

@@ -1,13 +1,26 @@
 # Creating a Payment
 
+> **Build a full payment batch in one pass, to validated payees only**
+>
+> **Why it matters**
+> - **One dialog, whole batch**: one ordering account, a line per beneficiary, a reference and an execution date.
+> - **No free-typed account numbers**: payees come from your validated counterparties and their settlement instructions.
+> - **Controlled from the start**: the batch is created pending approval and waits to be signed before it leaves.
+
 > **Where to find it:** Payments › Payment Blotter › **+ New Payment**
 > **Who uses it:** treasury operations, accounts payable, anyone who raises payments.
 > **Permissions required:** `CashManagement.Payments` · CreateEdit
 
+> **In 60 seconds**
+> 1. [Choose the account the money leaves from](#choose-the-account-the-money-leaves-from).
+> 2. [Add the payment lines](#add-the-payment-lines), one per beneficiary.
+> 3. [Finish and create the batch](#finish-and-create-the-batch) with a reference and an execution date.
+> 4. The batch waits in the blotter, pending approval, until it is signed.
+
 ## Overview
-You raise a payment from the **New Payment** dialog, opened from the
-[Payment Blotter](payment-blotter.md) with **+ New Payment**. The dialog composes a whole **batch**
-in one pass: you pick the single account the money leaves from, add one line for each beneficiary you
+Build a whole payment batch in one pass, to validated payees only: the **New Payment** dialog,
+opened from the [Payment Blotter](payment-blotter.md) with **+ New Payment**, composes the whole
+**batch** at once: you pick the single account the money leaves from, add one line for each beneficiary you
 are paying, then give the batch a reference and an execution date. On **Create payment** the batch is
 created *Pending approval* and appears in the blotter, waiting to be signed before it leaves.
 
@@ -120,7 +133,7 @@ you typed, marks the offending fields and says *"Nothing was sent: check the fie
 If the platform refuses the batch, the dialog shows exactly what it answered — each reason names the
 instruction or the field to change — and keeps your work so you can correct it and try again.
 
-## Tips & good practices
+## Tips to get more value
 - Pick the **ordering account first**. Its currency and channel are what the beneficiary list
   answers, and changing it later costs you the beneficiaries you already chose.
 - If the beneficiary you want is greyed, read its reason before changing anything: an unapproved
@@ -134,7 +147,7 @@ instruction or the field to change — and keeps your work so you can correct it
 - A **Change pending** badge means the beneficiary's data changed since the provider last agreed to
   it; the payment carries the update, and it will not leave until the counterparty is approved again.
 
-## Related
+## Where to go next
 - [Payment Blotter](payment-blotter.md) — where the new batch lands and how you track it.
 - [Payment Approvals](approvals.md) — the sign-off the batch now needs.
 - [Counterparties & SSIs](../10-admin-console/counterparties-and-ssis.md) — where beneficiaries and

@@ -1,19 +1,34 @@
 # Parse Templates
 
+> **Teach the platform a file format once, and reuse it forever**
+>
+> **Why it matters**
+> - **No more re-keying**: the same monthly export loads itself, however the bank names its columns.
+> - **One answer per source**: a template is the saved meaning of a file, shared by every file that follows it.
+> - **Automatic from then on**: files arriving by email or SFTP match their template and load with nobody present.
+
 > **Where to find it:** Settings › Ingestion › Parse Templates (the list, the drafts and the editor) ·
 > Integrations › Ingestion (where a file waiting for a template is picked up)
 > **Who uses it:** treasury operations, finance systems owners, administrators.
 > **Permissions required:** See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. Upload the file on [Ingestion](ingestion-activity.md) and ask for a draft as you go — see [Ask for a draft as you upload](#ask-for-a-draft-as-you-upload).
+> 2. [Review the draft](#review-the-draft): check the columns it matched and the dates it read.
+> 3. [Read the preview](#read-the-preview) to see the movements the template would produce.
+> 4. Fix anything wrong by describing it — [Correct the draft by describing the change](#correct-the-draft-by-describing-the-change).
+> 5. [Publish the template, or publish it and load the files](#publish-the-template-or-publish-it-and-load-the-files).
+
 ## Overview
-Every bank, payment provider and ERP exports its data in its own shape: one calls a column *Fecha*,
-the next *Value date*, a third splits the amount into separate debit and credit columns. A **parse
-template** is the saved answer to the question "what does this file mean" — it maps the columns of a
-file you receive onto the fields Treasury Hub stores, so the same export can be loaded every month
+Teach the platform a file format once, and every file after that loads itself. Every bank, payment
+provider and ERP exports its data in its own shape — one calls a column *Fecha*, the next *Value
+date*, a third splits the amount into separate debit and credit columns — and a **parse template**
+is the saved answer to "what does this file mean" — it maps the columns of a
+file you receive onto the fields TreasuryHub stores, so the same export can be loaded every month
 without anybody re-keying it.
 
 When a file arrives — uploaded on [Ingestion](ingestion-activity.md), or arriving on its own
-through [Email Ingestion](email-ingestion.md) or [SFTP Ingestion](sftp-ingestion.md) — Treasury Hub
+through [Email Ingestion](email-ingestion.md) or [SFTP Ingestion](sftp-ingestion.md) — TreasuryHub
 works out whether it already recognises the format. If it does, the file is read with the template it
 matched and there is nothing for you to do. If it does not, the file stops on Ingestion as **Needs
 template** and waits: a file no template recognises is never loaded on a guess.
@@ -35,7 +50,7 @@ their own.
 - **Section (stage)** — one part of the template editor (Basics, Settings, Fields, Detection…).
   Reviewing a draft lets you jump between the sections with the preview beside you; building a
   template by hand walks them in order as a wizard.
-- **Destination field** — the Treasury Hub field a column feeds: amount, transaction date, currency,
+- **Destination field** — the TreasuryHub field a column feeds: amount, transaction date, currency,
   reference, counterparty name, external ID, and so on. Each destination field can be mapped only once
   per financial event.
 - **Financial event (financial type)** — the kind of record a row becomes (a bank movement, a payin, a
@@ -53,7 +68,7 @@ their own.
   event a template creates maps one, and a template cannot be saved until each of them does.
 - **Row filter** — a rule that keeps or drops whole rows before anything is mapped (a totals line, a
   legal notice, a block of rows belonging to another section).
-- **Detection** — how Treasury Hub works out, on its own, which template reads an incoming file.
+- **Detection** — how TreasuryHub works out, on its own, which template reads an incoming file.
 - **Format fingerprint** — the shape of a file: its format, its sheet, its header row and the exact
   column labels. A template learns the fingerprint of every file it loads successfully, so the next
   file of the same shape is recognised without anyone declaring a rule for it.
@@ -71,7 +86,7 @@ their own.
   read, a required field with no column). A **note** is something to look at (a balance checked on
   only some pages, a column deliberately left unmapped and why). Errors stop a template from being
   published; notes never stop anything.
-- **A value only you can give** — a field that this kind of record requires and the file simply does
+- **A value only you can give** — a field that this kind of record requires and the file does
   not contain. It is marked rather than invented, and you supply a column or a fixed value.
 - **Sample file** — the file a template is built against. The preview is recalculated against it at
   every change.
@@ -95,7 +110,7 @@ their own.
   (or from the email or SFTP rule that claimed the file), never from the template, so one template
   reads every account of the same bank.
 - Templates are listed per organisation. The list also shows read-only **Global default** templates
-  that Treasury Hub maintains; to change one, duplicate it first.
+  that TreasuryHub maintains; to change one, duplicate it first.
 
 ## How to use it
 
@@ -374,12 +389,12 @@ A proposal still being written cannot be discarded. Wait for it to finish or to 
 
 ### Build a template by hand
 Some files are never proposed for — a fixed-width text file, an XML message, a SWIFT MT message, a
-balances or positions report — and sometimes you would simply rather start from the form.
+balances or positions report — and sometimes you would rather start from the form.
 
 1. Go to **Settings › Ingestion › Parse Templates** and click **New template**.
-2. In **Upload a sample file**, pick a real file from the source. Treasury Hub pre-selects the **File
+2. In **Upload a sample file**, pick a real file from the source. TreasuryHub pre-selects the **File
    type** from the extension.
-3. Fill in **Basics**, then click **Next** through the sections. A section unlocks as soon as the ones
+3. Fill in **Basics**, then click **Next** through the sections. A section opens as soon as the ones
    before it are valid, so the optional ones open on their own once Basics, Settings and Fields are
    complete. Every section holds exactly what it holds in a drafted template — see
    [What each section of the editor holds](#what-each-section-of-the-editor-holds).
@@ -412,7 +427,7 @@ A template learns the **format fingerprint** of every file it loads successfully
 worked once is recognised on its own next time. You can also teach it from a sample — "recognise files
 like this one" — and you can list the formats a template has learned and make it forget one.
 
-If another of your templates already knows that exact shape, Treasury Hub does not refuse: it names
+If another of your templates already knows that exact shape, TreasuryHub does not refuse: it names
 the templates that share it and asks you to confirm. Two banks' exports — or one provider's exports for
 two countries — can legitimately look identical, and the declared rules (a file-name pattern, a
 constant value in the file) are what tell them apart.
@@ -470,7 +485,7 @@ guessed.
 
 **A file with no date at all** is dated by the **Load date** transformation on its Movement date
 field: *Every row takes the day the file arrived, in the time zone you pick (UTC if you pick none).*
-It is the day the file reached Treasury Hub, not the day it was processed, and it is only worth using
+It is the day the file reached TreasuryHub, not the day it was processed, and it is only worth using
 when the file truly carries no date — a file that has one should always be read from it.
 
 ### Read several sheets of one workbook
@@ -612,7 +627,7 @@ completely — a template that matches only some of its rules may read the file 
 ### One sheet design, two Excel formats
 The same sheet design saved as `.xls`, `.xlsx` or `.xlsm` is three formats, and each keeps its own
 template: a template is never stretched to a format it was not built for without you saying so.
-Rather than telling you no template exists, Treasury Hub names the one that already reads that
+Rather than telling you no template exists, TreasuryHub names the one that already reads that
 design.
 
 1. The file waits on [Ingestion Activity](ingestion-activity.md) as **Needs template**. Expand the
@@ -697,7 +712,7 @@ against the templates you already have; if none recognises a file, a proposal is
 waits as **Pending review** on Ingestion. Note that a rule with no account in it leaves that choice to
 whoever reviews the proposal, who must supply one before the files can load.
 
-## Tips & good practices
+## Tips to get more value
 - **Propose against the messiest sample you have**, not the tidiest. Footer totals, a blank sheet in
   the middle, a legal notice at the end: these are exactly what row filters exist for, and you want to
   see them in the preview before the file is real.
@@ -716,7 +731,7 @@ whoever reviews the proposal, who must supply one before the files can load.
   the dates, the amounts and the account before you publish, because the template will keep loading
   files on those terms.
 - **Discarding is cheap.** If a draft is far from right, discard it and start again from a cleaner
-  sample — the files it was holding simply go back to waiting.
+  sample — the files it was holding go back to waiting.
 - **Give the template rules that identify the source, not the customer.** A file-name pattern or a
   title line is a good rule; an account number or a company name is not — it would make the template
   recognise one account's statements and ignore every other. For a format two providers share, add one
@@ -736,7 +751,7 @@ whoever reviews the proposal, who must supply one before the files can load.
 - **Read the Account balance card before you publish, not just the field list.** It is where you see
   which figure the template would actually load, which label it came from, and whether it adds up.
 
-## Related
+## Where to go next
 - [AI Extraction](ai-extraction.md) — how to load a file when no template reads it and no
   proposal succeeds.
 - [File Import (CSV / Excel / PDF)](file-import.md) — uploading a file and what happens to it.

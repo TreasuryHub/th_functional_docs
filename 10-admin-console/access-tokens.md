@@ -1,13 +1,20 @@
 # Access Tokens
 
+> **Connect systems securely, without sharing anyone's login**
+>
+> **Why it matters**
+> - **No personal credentials in integrations**: a token authenticates the system, not a person.
+> - **Scoped to your tenant**: a token reaches your organization's data and nothing else.
+> - **Revocable**: a connection can be cut without changing anybody's password.
+
 > **Where to find it:** Admin Console › Access Tokens
 > **Who uses it:** administrators setting up integrations and data exports.
 > **Permissions required:** `AdminAndSettings.UserManagement` · Admin
 
 ## Overview
-Access Tokens is where administrators create the credentials that let external systems talk to
-Treasury Hub securely — without sharing anyone's personal login. An **access token** authenticates an
-integration or an outbound data feed to Treasury Hub's APIs (for example the H2H
+Connect a system securely without sharing anyone's login: Access Tokens is where administrators
+create the credentials that let external systems talk to TreasuryHub. An **access token** authenticates an
+integration or an outbound data feed to TreasuryHub's APIs (for example the H2H
 [inbound ingestion](../02-integrations/inbound-apis.md) and [data export](../03-data/data-exports.md)
 APIs), scoped to your tenant.
 
@@ -55,12 +62,12 @@ APIs), scoped to your tenant.
 - **Rotate** tokens periodically, and immediately if one may have been exposed — create the
   replacement, switch the integration over, then revoke the old one.
 
-## Tips & good practices
+## Tips to get more value
 - **Never** paste tokens into email, chat, or shared documents — store them in a secrets manager.
 - Keep a record of **which integration uses which token** so revocation is safe and predictable.
 - Review the list during security audits and revoke anything you can't account for.
 
-## Related
+## Where to go next
 - [Inbound APIs](../02-integrations/inbound-apis.md) — the H2H ingestion API these tokens authenticate.
 - [Data Exports](../03-data/data-exports.md) — the outbound API these tokens authenticate.
 - [Integrations](../02-integrations/overview.md) — connections that may use tokens.

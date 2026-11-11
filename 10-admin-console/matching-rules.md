@@ -1,71 +1,84 @@
 # Matching Rules
 
-> **Where to find it:** the **Matching Rules** entry has been removed from the menu. Its old link now
-> opens **Settings › Ingestion › Transaction Tagging › Classification rules**, the screen that replaces it.
-> **Who uses it:** administrators, treasury operations, and bookkeepers looking at how transactions were
-> classified or posted in the past.
+> **Tag and post transactions automatically, by rule**
+>
+> **Why it matters**
+> - **Classification without clicks**: a rule written once labels and books every transaction that matches it, across the whole organization.
+> - **Scoped exactly**: company group, company, institution, account, currency and a validity window decide precisely which transactions a rule covers.
+> - **Predictable order**: rules are evaluated in a sequence you set, so the specific case always beats the general one.
+
+> **Where to find it:** [CONFIRM: menu path — PM to supply]
+> **Who uses it:** administrators, treasury operations, and bookkeepers who decide how transactions are
+> classified and posted.
 > **Permissions required:** `CoreData.MatchingRules` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-A **matching rule** was a tenant-wide rule that, when a transaction met its conditions, either
-assigned a [tag](tags.md) to it or created a G/L posting for it.
+Write the rule once and stop touching the transactions it covers: a **matching rule** is a
+tenant-wide rule that, when a transaction meets its conditions, either assigns a [tag](tags.md) to
+it or creates a G/L posting for it.
 
-**Matching rules are no longer applied to transactions.** The process that evaluated them no longer
-runs, so no rule tags a transaction or produces a posting any more — including a rule you create or
-edit today, which has no effect.
-
-**Nothing has been deleted.** The rule definitions, the tags those rules assigned, and the postings
-they produced are all kept, and the transactions that carry them read exactly as before.
-
-Automatic classification of transactions is now done by the **tagging module**, under **Settings ›
-Ingestion › Transaction Tagging** — **Tags**, **Classification rules**, and **Classification
-conflicts**. G/L posting is being rebuilt from scratch, together with reconciliation, as its own
-project; see [G/L Postings](../11-accounting/gl-postings.md).
+Matching rules work across the whole organization, which makes them the place for policy that
+should hold everywhere — how a fee is labelled, which account a collection books to — rather than
+per-screen handling.
 
 ## Key concepts
-You still meet these terms when you look at historical records:
-
-- **Matching rule** — a scoped definition of what was done with the transactions it covered.
-- **Implementation** — the rule's type, which decided what it produced:
-  - **PostingRule** — created the G/L postings (ledger entries) for matching transactions.
-  - **TagAssignmentRule** — assigned [tags](tags.md) to matching transactions.
-- **Scope** — the filters that decided which transactions a rule covered: **Company Group, Company,
+- **Matching rule** — a scoped definition of what is done with the transactions it covers.
+- **Implementation** — the rule's type, which decides what it produces:
+  - **PostingRule** — creates the G/L postings (ledger entries) for matching transactions.
+  - **TagAssignmentRule** — assigns [tags](tags.md) to matching transactions.
+- **Scope** — the filters that decide which transactions a rule covers: **Company Group, Company,
   Institution, Account, Currency**, and the **From Date / To Date** validity window.
-- **Order** — the sequence number that decided which rule was evaluated first when more than one
+- **Order** — the sequence number that decides which rule is evaluated first when more than one
   could apply.
-- **Active / Inactive** — a flag on the rule. It no longer changes anything: neither state runs.
+- **Active / Inactive** — a flag on the rule, so you can retire a pattern without losing it.
 
-## What this means for you
-- **New transactions are not tagged by these rules.** If you still need a transaction classified
-  automatically, recreate the rule as a **classification rule** in the tagging module.
-- **No new G/L postings are generated.** Postings that already exist stay readable; see [G/L
-  Postings](../11-accounting/gl-postings.md).
-- **Changing a legacy rule changes nothing.** Creating, editing, re-ordering, activating, or
-  deactivating a matching rule has no effect on any transaction.
-- **Your history is intact.** Tags assigned by these rules in the past remain on the transactions,
-  and the Transactions list shows them alongside tags from the tagging module.
+## Before you start
+- Decide the scope first. A rule left at company-group level reaches every account beneath it, which
+  is usually what you want for policy and rarely what you want for an exception.
+- Know your [chart of accounts](../11-accounting/coa-rules-engine.md) if the rule will post, and
+  your [tag](tags.md) list if it will classify.
+- Plan the order. Put the narrow rules above the broad ones, or the broad one will catch the
+  transactions first.
 
-## Where to read the history
+## How to use it
+
+### Write a rule
+1. Choose the **implementation** — **TagAssignmentRule** to classify, **PostingRule** to book.
+2. Set the **scope**: company group, company, institution, account and currency, plus the **From
+   Date / To Date** window the rule is valid for.
+3. Set the **order** relative to the rules that could compete with it.
+4. Name what the rule produces — the tag to assign, or the debit and credit accounts to post to.
+5. Set it **Active**.
+
+### Check what a rule did
 1. Open **Reporting › Operations › Transactions**.
-2. Add the **Tags** column, or open a transaction's detail panel, to see the tags it carries — both
-   the ones assigned by legacy matching rules and the ones assigned by the tagging module.
+2. Add the **Tags** column, or open a transaction's detail panel, to see the tags it carries.
 3. Filter or group by tag as usual, and use **Export** to take the list away for analysis.
 
-The matching-rule definitions themselves are retained, but they no longer have a screen of their
-own.
+Postings produced by a **PostingRule** are read on [G/L
+Postings](../11-accounting/gl-postings.md), where each one names the rule behind it.
 
-## Tips & good practices
-- Go through the matching rules your organization relied on and recreate the ones you still need as
-  classification rules in the tagging module — do not assume an existing rule is still doing its
-  job.
-- Treat the historical tags as reference data: they describe how a transaction *was* classified,
-  which may differ from how the tagging module would classify it today.
-- When an old report or hand-off refers to a rule name, look for the same name among your
-  classification rules rather than assuming it is still running.
+## Configuration
+- **Scope entities** come from [Companies & Company Groups](companies-and-groups.md) and your bank
+  account register.
+- **Tags** are maintained on [Tags](tags.md).
+- **Accounts** for a PostingRule come from your [chart of
+  accounts](../11-accounting/coa-rules-engine.md).
 
-## Related
-- [Tags](tags.md) — the legacy labels these rules applied, and where the tag history is now read.
-- [Reconciliation — Rules & Criteria](../04-reconciliation/rules-and-criteria.md) — the separate
-  reconciliation rules that decide how two movements are matched; these are unaffected.
-- [G/L Postings](../11-accounting/gl-postings.md) — the postings a PostingRule used to create.
-- [Companies & Company Groups](companies-and-groups.md) — the scope entities rules referenced.
+## Tips to get more value
+- Review your rule order whenever you add a narrow rule, so the exception you just wrote actually
+  gets a chance to fire.
+- Deactivate rather than delete a pattern you no longer need, so the history of how transactions
+  were classified stays explainable.
+- Check which transactions carry no tag at all: each group of them is a rule worth writing, and
+  writing it takes that work off someone's desk permanently.
+
+## Where to go next
+- [Tags](tags.md) — the labels these rules apply, and how to maintain them.
+- [Transaction Tagging](../02-integrations/transaction-tagging.md) — classify at ingestion time, so
+  transactions arrive already labelled.
+- [G/L Postings](../11-accounting/gl-postings.md) — see exactly how a PostingRule hit your ledger.
+- [Chart of Accounts & Rules Engine](../11-accounting/coa-rules-engine.md) — map every transaction
+  to the right accounts automatically.
+- [Companies & Company Groups](companies-and-groups.md) — model your group once, and every rule
+  scope resolves correctly.

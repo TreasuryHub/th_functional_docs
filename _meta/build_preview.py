@@ -35,6 +35,10 @@ SECTION_ORDER = [
 # alphabetically. The order is dependency-driven: nothing should rely on a concept a reader
 # has not met yet.
 PAGE_ORDER = {
+    "00-getting-started": [
+        "01-what-is-treasury-hub.md", "05-value-by-role.md", "06-first-30-days.md",
+        "02-navigation-and-workspace.md", "03-core-concepts.md", "04-roles-and-permissions.md",
+    ],
     "02-integrations": [
         "overview.md", "file-import.md", "parsing-templates.md", "pdf-statements.md",
         "ingestion-activity.md", "ai-extraction.md", "email-ingestion.md", "sftp-ingestion.md",
@@ -57,6 +61,10 @@ PAGE_ORDER = {
         "datalake-reports.md", "build-your-own.md", "cash-forecast.md",
         "actual-vs-forecast.md", "scenarios-what-if.md", "operations-blotters.md",
         "gl-postings-report.md", "regulatory-compliance.md",
+    ],
+    "06-reporting/risk-management": [
+        "overview.md", "alm.md", "credit-risk.md", "fx-risk.md", "investment-risk.md",
+        "interest-rate-risk.md", "mark-to-market.md", "risk-cockpit.md",
     ],
     "10-admin-console": [
         "overview.md", "users-and-roles.md", "companies-and-groups.md",
@@ -323,7 +331,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   <main>
     <div class="topbar">
       <button class="btn menu-toggle" id="menu">☰ Menu</button>
-      <div class="meta">__COUNT__ pages · working draft — statuses to be confirmed</div>
+      <div class="meta">TreasuryHub · User documentation · __COUNT__ pages · November 2026</div>
       <div class="btns">
         <button class="btn" id="theme">◐ Theme</button>
       </div>

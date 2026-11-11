@@ -1,11 +1,21 @@
 # Risk Cockpit
 
+> **Your board-level risk view on one screen**
+>
+> **Why it matters**
+> - **Every dimension consolidated**: FX, credit, interest rate, mark-to-market, ALM and investment risk, one card each.
+> - **Summary first, detail on demand**: read the position in a minute, then open any card in full.
+> - **Always current**: it reads the same live data the detailed screens do.
+>
+> *For the CFO: the risk conversation starts from one agreed screen instead of five reconciled spreadsheets.*
+
 > **Where to find it:** Reporting › Risk Management › Risk Cockpit
 > **Who uses it:** treasurers, risk managers, CFOs, and risk committees.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The Risk Cockpit is the executive home screen for the [Risk Management](overview.md) module —
+Put your board-level risk view on one screen: the Risk Cockpit is the executive home screen for the
+[Risk Management](overview.md) module —
 one consolidated dashboard that pulls all five risk dimensions (FX, credit, interest rate,
 mark-to-market, and ALM/liquidity) into a single view, with a card per dimension that you can
 explore in full detail.
@@ -52,7 +62,7 @@ to check against.
 - **Policies** — the thresholds shown on each card come from the active risk policy for that
   dimension; you maintain those on the individual dimension screens.
 
-## Tips & good practices
+## Tips to get more value
 - Use the cockpit as your **first stop each day**; let the KPI tiles and card statuses direct where
   you spend time.
 - When a card shows a warning, **Explore** into that dimension to find the driver behind it.
@@ -63,7 +73,7 @@ to check against.
 - **Risk Cockpit** — consolidated multi-dimension dashboard.
 - **Configurable alert routing** — breach notifications to named roles and committees.
 
-## Related
+## Where to go next
 - [Risk Management — Overview](overview.md) — the module and the hybrid calculation model.
 - [Mark-to-Market](mark-to-market.md) · [FX Risk](fx-risk.md) · [Credit Risk](credit-risk.md) ·
   [Interest Rate Risk](interest-rate-risk.md) · [ALM](alm.md) — the five dimension screens.

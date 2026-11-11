@@ -1,26 +1,34 @@
 # Data Exports
 
+> **Your data, wherever you need it, through a secure API**
+>
+> **Why it matters**
+> - **No lock-in**: your data is yours, and there are no restrictions on exporting it.
+> - **Feeds whatever you run**: BI tools, a data lake, a custom ERP, or a compliance process.
+> - **Governed access**: exports authenticate with an access token scoped to your tenant, not a personal login.
+
 > **Where to find it:** Data › Data Export
 > **Who uses it:** data/IT owners, treasury operations, teams feeding external systems (BI, data lakes, compliance).
 > **Permissions required:** `AdminAndSettings.UserManagement` · Admin (to create and manage access tokens — see [Access Tokens](../10-admin-console/access-tokens.md)).
 > **Full API reference:** <https://docs.treasuryhub.ai/api-reference/>
 
 ## Overview
-Data Exports lets you send your Treasury Hub data out to your own systems through a secure API. It's
+Take your data wherever you need it: Data Exports sends TreasuryHub data out to your own systems
+through a secure API. It's
 for cases where you need treasury data *outside* the platform — feeding a BI tool, a data lake, a
 custom ERP, or a compliance/reporting process.
 
 Your data is yours, so there are no restrictions on exporting it. Keep in mind, though, that
-Treasury Hub's own reporting and insights work on the full, connected dataset — with the context,
+TreasuryHub's own reporting and insights work on the full, connected dataset — with the context,
 correlations, and forecasts that are lost once data leaves the platform. Use Data Exports when
-another system genuinely needs the raw data; use Treasury Hub's [Reporting](../06-reporting/overview.md)
+another system genuinely needs the raw data; use TreasuryHub's [Reporting](../06-reporting/overview.md)
 when you need analysis.
 
 This page explains the capability in functional terms — what you can export, how it's delivered, and
 how access is secured. It is not a developer reference.
 
 ## Key concepts
-- **Export** — a set of data sent from Treasury Hub to a destination you control, either on demand,
+- **Export** — a set of data sent from TreasuryHub to a destination you control, either on demand,
   on a schedule, or automatically when something happens.
 - **Data domain** — a group of data you can export (for example transactions, balances, forecasts).
   Access is granted per domain, so each connection only sees what it needs.
@@ -30,9 +38,9 @@ how access is secured. It is not a developer reference.
   optionally to specific companies/entities (so, for example, a subsidiary's system only sees that
   subsidiary's data).
 - **External ID** — a stable, public identifier for each exported record. Because it never changes,
-  you can safely match Treasury Hub records to records in your own systems, even as the platform
+  you can safely match TreasuryHub records to records in your own systems, even as the platform
   evolves internally.
-- **Internal ID** — Treasury Hub's own identifier for a record, available mainly to help support and
+- **Internal ID** — TreasuryHub's own identifier for a record, available mainly to help support and
   troubleshooting. A mapping between External and Internal IDs is available if you need it.
 - **Rate limit** — the maximum number of requests a connection may make in a given period.
 
@@ -99,7 +107,7 @@ For data domains that aren't exposed as API endpoints, use the in-app **Data ›
 ### Match exported records to your own systems
 - Use the **External ID** on each record as the stable key when loading data into your systems. It
   won't change, so incremental syncs stay consistent over time.
-- If you need to reconcile a record with Treasury Hub support, the **Internal ID** and an
+- If you need to reconcile a record with TreasuryHub support, the **Internal ID** and an
   External ↔ Internal ID mapping are available.
 
 ## Configuration
@@ -107,18 +115,18 @@ For data domains that aren't exposed as API endpoints, use the in-app **Data ›
   managed in [Access Tokens](../10-admin-console/access-tokens.md). All
   API usage is recorded in the audit trail.
 
-## Tips & good practices
+## Tips to get more value
 - Give each connecting system its **own** token with the **narrowest** scope it needs — it's easier
   to rotate or revoke without disrupting everything else.
 - Prefer the **External ID** as your join key so your integrations stay stable over time.
-- Export raw data for other systems, but keep analysis in Treasury Hub's [Reporting](../06-reporting/overview.md)
+- Export raw data for other systems, but keep analysis in TreasuryHub's [Reporting](../06-reporting/overview.md)
   where the full context is preserved.
 
 ## "Create Your Own" export builder
 In **Configuración › Data Exports** you define your own export packages, schedules, and delivery
 destinations (SFTP, cloud storage, email), as well as event **webhooks**.
 
-## Related
+## Where to go next
 - [Access Tokens](../10-admin-console/access-tokens.md) — create the credentials.
-- [Financial Events](financial-events.md)
+- [Financial Events](financial-events.md) — trace any exported number back to the record ingestion created.
 - [Inbound APIs](../02-integrations/inbound-apis.md) — the opposite direction (sending data *in*).

@@ -1,13 +1,22 @@
-# Payments — Overview
+# Payment Hub — Overview
+
+> **Pay from every bank through one governed, auditable workflow**
+>
+> **Why it matters**
+> - **One hub, every bank**: prepare, approve and track every outbound payment without a portal per institution.
+> - **Control built in**: multi-level approval, four-eyes and threshold rules apply to every payment raised.
+> - **Followed to settlement**: a full record of who did what, and when, from creation to the bank's confirmation.
+>
+> *For the CFO: payment risk becomes a configured policy rather than a procedure people are trusted to follow.*
 
 > **Where to find it:** Payments
 > **Who uses it:** treasury operations, accounts payable, finance managers, approvers.
 > **Permissions required:** `CashManagement.Payments` — Read to view, CreateEdit to create and approve. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The Payments module — the **Payment Hub** — is where your organization prepares, approves, and
-tracks every outbound payment from one place, instead of logging into a separate portal for each
-bank. You can raise a single payment or a batch (supplier runs, payroll, intercompany, tax),
+Pay from every bank through one governed workflow, instead of a portal per institution: the
+**Payment Hub** is where your organization prepares, approves and tracks every outbound payment
+from one place. You can raise a single payment or a batch (supplier runs, payroll, intercompany, tax),
 route it for **multi-level approval**, and follow it all the way to settlement — with a full audit
 trail of who did what and when.
 
@@ -25,7 +34,7 @@ governed, auditable workflow that works across all your banks and currencies.
   payments so you don't re-key them.
 - **Payment corridor / rail** — the network a payment travels on to reach the beneficiary's bank,
   such as **SWIFT** (cross-border) or **SEPA** (Eurozone), alongside local instant and batch rails.
-  Treasury Hub records which corridor each payment uses.
+  TreasuryHub records which corridor each payment uses.
 - **Approval level** — the authority a user holds for signing off payments. A payment carries the
   **approval level it requires**, and only users at or above that level can approve it. See
   [Payment Approvals](approvals.md).
@@ -45,7 +54,7 @@ The Payments menu contains these screens:
 > **Reports › Operations › Invoices (Facturas)**, not the Payments menu.
 
 ## How payments flow, end to end
-1. **A payment is created** — either directly in Treasury Hub via the
+1. **A payment is created** — either directly in TreasuryHub via the
    [multi-step form](creating-a-payment.md), or generated from your ERP's accounts-payable data.
 2. **It is validated** — the form checks the essentials (for example, the debtor and creditor
    accounts must differ and the amount must be positive), and enhanced pre-send validation,
@@ -79,7 +88,7 @@ The Payments module covers:
   sufficient **payment approval level** to sign them off.
 - Agree your **approval rules** (how many approvers, at what amounts) with your administrator.
 
-## Tips & good practices
+## Tips to get more value
 - Use **batch payments** for supplier runs and payroll so many lines move through one approval.
 - Keep beneficiary and bank details clean and reusable to avoid rejected payments from bad
   BIC/IBAN data.
@@ -89,7 +98,7 @@ The Payments module covers:
 **Enhanced pre-send validation & tracking** — multi-layer message validation and real-time
 payment status across the network connections your payments travel on.
 
-## Related
+## Where to go next
 - [Payment Blotter](payment-blotter.md) · [Creating a payment](creating-a-payment.md) ·
   [Payment Approvals](approvals.md) · [Invoices](invoices.md)
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — approval levels and access.

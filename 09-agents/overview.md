@@ -1,5 +1,14 @@
 # AI Assistance — Overview
 
+> **Describe the change in plain language; the AI prepares it and you approve it**
+>
+> **Why it matters**
+> - **An agent per module**: each one knows its records, its operations and the rules a change must satisfy.
+> - **Prepared, never submitted**: what comes back is a proposal to review, and the platform refuses a save that did not come from a person.
+> - **Human in the loop: approval on every agent action.**
+>
+> *For the CFO: automation arrives with its control framework attached, rather than as an exception to it.*
+
 > **Where to find it:** Reconciliation › Workflows (Workflow Studio) · Admin Console › AI usage
 > **Who uses it:** Treasurers, finance teams, operations staff, and administrators
 > **Permissions required:** None of its own — the agent works with the permissions you already
@@ -7,7 +16,8 @@
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Treasury Hub gives **each module its own agent**, and you work with it on that module's screens.
+Describe the change in plain language and approve what comes back: TreasuryHub gives **each module
+its own agent**, and you work with it on that module's own screens.
 An agent knows the records its module holds, the operations it allows, and the rules a change to
 it must satisfy — so what it prepares is already shaped to that module's own rules.
 
@@ -20,7 +30,7 @@ the screens use, shown to you field by field, and only takes effect when **you**
 single rule is what makes it safe to let an agent touch treasury data at all.
 
 ## The promise: the agent proposes, a person submits
-This is the most important thing to know about AI on Treasury Hub, and it holds everywhere the
+This is the most important thing to know about AI on TreasuryHub, and it holds everywhere the
 agent appears:
 
 - **The agent is never given the ability to save.** The tools it is offered are read-only ones
@@ -52,8 +62,7 @@ money and cannot change a live configuration.**
 
 ## What the agent can reach
 The agent does not have general access to the platform. It can only work on the areas that have
-**published what they can do and how a change to them must be validated**. Three areas have done so
-today:
+**published what they can do and how a change to them must be validated**. Three areas have done so:
 
 | Area | What the agent can prepare there |
 |---|---|
@@ -66,7 +75,7 @@ platform **exposing its own operations and its own validations** to the agent �
 creating another agent. That is why the agent behaves the same way in every area, and why a new
 area arrives with the same guardrails as the first one rather than its own interpretation of them.
 
-## Where you meet it today
+## Where you meet it
 - **Workflow Studio** — a chat beside a reconciliation workflow. You describe the workflow you want
   and refine it turn by turn; the diagram and the underlying document update as you go, and saving
   is yours. Reached from **Reconciliation › Workflows**, on **New** or **Edit**. See
@@ -99,7 +108,7 @@ Each of those is covered in depth on its own page; the descriptions here are del
   agent has tried to correct it, you get the change with the errors attached, plainly labelled as
   not valid — never presented as ready.
 - **If the model provider is unavailable, every manual flow keeps working.** AI assistance switches
-  off and the screens behave exactly as they did before. No business process on Treasury Hub depends
+  off and the screens behave exactly as they did before. No business process on TreasuryHub depends
   on the model being reachable.
 
 ## Token budgets are a hard stop
@@ -139,11 +148,11 @@ exactly as you wrote it.
   fields needed to tell one record from another — a name and a status, not balances, limits or bank
   details.
 - **No keys, no inbound exposure, no training.** The connection to the model runs outbound only, over
-  a private connection inside Treasury Hub's own cloud tenancy, authenticated without API keys. Your
+  a private connection inside TreasuryHub's own cloud tenancy, authenticated without API keys. Your
   data is not retained by the provider for training, and the agent is the single point through
   which anything leaves at all.
 
-## Tips & good practices
+## Tips to get more value
 - **Say what you want, not where it lives.** "Reconcile pay-ins against the bank statement" works
   better than hunting for the screen that does it.
 - **Read the changed-fields list, not just the summary.** The summary is written to be readable; the
@@ -154,7 +163,7 @@ exactly as you wrote it.
 - **Keep your reference data clean.** The agent resolves names to records by searching. Two
   counterparties with the same display name means it has to stop and ask you every time.
 
-## Related
+## Where to go next
 - [The Agent](assistant.md) — how a request turns into a proposal, and what you do with it.
 - [Reconciliation workflows](../04-reconciliation/workflows.md) — the Workflow Studio in depth.
 - [File Import](../02-integrations/file-import.md) — parsing templates and the formats the agent

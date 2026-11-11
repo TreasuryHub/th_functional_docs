@@ -1,14 +1,27 @@
 # Users & Roles
 
+> **Onboard a new user in minutes, with segregation of duties built in**
+>
+> **Why it matters**
+> - **Roles, never person by person**: build the matrix of modules and actions once, then hand the role out.
+> - **Two independent controls**: what a role grants, and which accounts a person can reach.
+> - **Every change recorded**: the audit trail covers both user management and permission changes.
+
 > **Where to find it:** Admin Console › Users & Roles
 > **Who uses it:** administrators and user managers.
 > **Permissions required:** `AdminAndSettings.UserManagement` · Read to open the screens, Create/Edit
 > to change people and roles, Delete to delete a user or a role, Admin to set a payment approval
 > level.
 
+> **In 60 seconds**
+> 1. [Invite someone](#invite-someone) with their email address and role.
+> 2. [Change what data someone sees](#change-what-data-someone-sees) by setting their account access.
+> 3. [Set a payment approval level](#set-a-payment-approval-level) if they will sign payments.
+> 4. Check the result in the audit trail — every change above is recorded.
+
 ## Overview
-**Users & Roles** is the group in the Admin Console where you decide who belongs to your
-organization and what each of them can do. It holds three screens: **User Management** for the
+Onboard someone in minutes, with segregation of duties built in: **Users & Roles** is where you
+decide who belongs to your organization and what each of them can do. It holds three screens: **User Management** for the
 people and their invitations, **Roles & Permissions** for what a role grants, and **Audit Trail**
 for the record of every change the first two make.
 
@@ -18,7 +31,7 @@ access** — decides which companies and accounts a person's data is narrowed to
 [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) for the model behind both.
 
 ## Key concepts
-- **Role** — a named set of permissions. A **preset** role is maintained by Treasury Hub and cannot
+- **Role** — a named set of permissions. A **preset** role is maintained by TreasuryHub and cannot
   be changed; a **custom** role is yours to build, rename and delete.
 - **Permission matrix** — the table behind a role: one row per module, five columns of actions.
 - **Action** — **Read**, **Write**, **Edit**, **Delete** or **Approve**. Not every action applies to
@@ -40,7 +53,7 @@ access** — decides which companies and accounts a person's data is narrowed to
   things; Delete lets you remove a user or a role; Admin lets you set a payment approval level.
 - Create your companies and bank accounts first — account access is chosen from them. See
   [Companies & Groups](companies-and-groups.md).
-- **Super Admin is not a role.** It is a flag Treasury Hub sets on a person's record, so it never
+- **Super Admin is not a role.** It is a flag TreasuryHub sets on a person's record, so it never
   appears in these lists and cannot be granted from here.
 
 ## How to use it
@@ -222,7 +235,7 @@ Payment Approvals. The **Admin** role is exempt from these rules.
 | Delete a user, delete a role | Delete |
 | Set a payment approval level | Admin |
 
-## Tips & good practices
+## Tips to get more value
 - Build roles around jobs, not people. A role used by one person is a sign the matrix wants
   splitting.
 - Fork a preset rather than starting from an empty matrix: **Save as new role** gives you a working
@@ -238,7 +251,7 @@ Payment Approvals. The **Admin** role is exempt from these rules.
 - Check a person's **Account access** as well as their roles when they report missing rows. The two
   are independent, and a narrow account access hides data a generous role would otherwise show.
 
-## Related
+## Where to go next
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — the permission model,
   the levels and how account access narrows what you see.
 - [Admin Console — Overview](overview.md) — the other admin areas.

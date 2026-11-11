@@ -1,11 +1,19 @@
 # Reconciliation — Conciliations
 
+> **Answer "how was this reconciled?" in one click, for any auditor**
+>
+> **Why it matters**
+> - **The complete register**: every match, automatic, approved or hand-made, written in one place.
+> - **Evidence attached**: the movements linked, the amounts on each side, and the rule that produced it.
+> - **Nothing to reconstruct**: the answer is a row, not an investigation.
+
 > **Where to find it:** Reconciliation › Administration › Conciliations
 > **Who uses it:** treasury operations, finance team, accountants, auditors.
 > **Permissions required:** `Reconciliation.Conciliations` · Read to view (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-**Conciliations** is the register of matches that exist. Every time the engine reconciles items
+Answer "how was this reconciled?" in one click, for any auditor: **Conciliations** is the register
+of every match that exists. Every time the engine reconciles items
 automatically, every time a [reconciliation request](approvals.md) is approved, and every time you
 match two movements by hand on the [Matching](matching.md) screen, a conciliation is written — and
 this is where you find it afterwards, with the movements it links, the amounts on each side and the
@@ -28,7 +36,7 @@ results.
   anchor side and several on the other).
 - **Type** — who originated the match: **Automatic** (a rule did it) or **Manual** (a person did).
 - **Conciliated** — the status of a match that stands.
-- **Annulled** — the status of a match that has been reversed. The record is kept; it simply stops
+- **Annulled** — the status of a match that has been reversed. The record is kept; it stops
   counting.
 
 ## Before you start
@@ -110,7 +118,7 @@ to pick the rule** you are reconciling under: the rule decides which movement ty
 side, and it is what this list later shows in the **Rule** column to explain how the match came
 about. A manual match appears here with **Type: Manual** as soon as it is confirmed.
 
-## Tips & good practices
+## Tips to get more value
 - **Start from the Difference column**, not the top of the list. A conciliation that balances needs
   no attention; one that does not is either a fee, a tolerance you have not configured, or a wrong
   pairing.
@@ -125,7 +133,7 @@ about. A manual match appears here with **Type: Manual** as soon as it is confir
   the detail panel before concluding a conciliation is wrong.
 - The date range defaults to **today**; widen it before deciding something was never reconciled.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — how matching fits the end-to-end flow.
 - [Matching (1-to-1 & Batch)](matching.md) — where manual matches are made, and the rule they are
   made under.

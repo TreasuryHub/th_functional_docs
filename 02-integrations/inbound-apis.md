@@ -1,19 +1,27 @@
 # Inbound APIs (Push)
 
+> **Stream data from your own systems in real time**
+>
+> **Why it matters**
+> - **No files in the middle**: your ERP or platform POSTs a record and gets an immediate accepted or rejected answer.
+> - **Machine to machine**: two header credentials, scoped to your tenant, with no personal login involved.
+> - **Usable the moment it lands**: accepted records become financial events that flow into reconciliation and reporting.
+
 > **Where to find it:** credentials are issued in the **TreasuryHub Portal** (and managed in Admin Console › Access Tokens); the business rules that act on incoming data live in **Admin › Master Data › Matching Rules** and **Settings › Reconciliation**.
 > **Who uses it:** your IT / development teams, finance systems owners, administrators.
 > **Permissions required:** administrator to obtain credentials and manage access tokens; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 > **Full API reference:** <https://docs.treasuryhub.ai/api-reference/>
 
 ## Overview
-Inbound APIs let your own systems **push data into Treasury Hub** in real time — your ERP, PSP, or
-in-house platform sending records directly, with no files, email, or manual upload. It's a
+Get your own systems' data into treasury the moment it happens: Inbound APIs let your ERP, PSP or
+in-house platform **push records into TreasuryHub** in real time, with no files, email or manual
+upload. It's a
 **machine-to-machine (H2H)** REST API: your system authenticates with two header credentials, POSTs
 a JSON record, and gets an immediate accepted/rejected response. Accepted records become normalized
 **financial events** that flow straight into reconciliation, posting, and reporting.
 
 This page covers **inbound** (data coming in). For sending data **out**, see
-[Data Exports](../03-data/data-exports.md). For Treasury Hub *pulling* from a vendor, see
+[Data Exports](../03-data/data-exports.md). For TreasuryHub *pulling* from a vendor, see
 [Third-party APIs](third-party-apis.md).
 
 ## Key concepts
@@ -22,7 +30,7 @@ This page covers **inbound** (data coming in). For sending data **out**, see
 - **Financial event** — the record you push: a pay-in, a pay-out, or a bank movement. This is the
   entity the API ingests.
 - **`externalId`** — your own unique identifier for each record (unique per tenant). It's how
-  Treasury Hub deduplicates and how you match records back to your system.
+  TreasuryHub deduplicates and how you match records back to your system.
 - **Client / Tenant** — the same thing; your `X-Client-Id` identifies your organization.
 - **Business rules** — what happens to a record *after* it's accepted (which G/L posting or tag it
   produces, how it's reconciled). These are configured **in the platform**, not in the API call — see
@@ -61,7 +69,7 @@ Content-Type: application/json
 
 ## Before you start
 1. Get credentials:
-   - **Sandbox** — request manual provisioning and give Treasury Hub a fixed IP to allowlist.
+   - **Sandbox** — request manual provisioning and give TreasuryHub a fixed IP to allowlist.
    - **Production** — in the **TreasuryHub Portal**, create your client (tenant), generate credentials,
      and set token expiration + allowed IP ranges. Tokens are also visible/manageable in
      [Admin Console › Access Tokens](../10-admin-console/access-tokens.md).
@@ -132,6 +140,7 @@ rejects based on the error response.
 
 **2. Business rules (in the platform).** What happens to an accepted event is driven by the platform's
 rules engine, which you configure:
+
 - **[Matching Rules](../10-admin-console/matching-rules.md)** (Admin › Master Data › Matching Rules) —
   scoped by company, account, currency, and date, these decide the **G/L posting** an event produces
   (a *PostingRule*) or the **tags** it gets (a *TagAssignmentRule*).
@@ -141,7 +150,7 @@ rules engine, which you configure:
 **Volume.** The default rate limit is **1,000 requests per minute per tenant** (a `429` is returned
 when exceeded); a higher limit can be requested via the Portal.
 
-## Tips & good practices
+## Tips to get more value
 - Build against **Sandbox** first (tokens don't expire), then switch the base URL and credentials to
   go live.
 - Use a **distinct access token per sending system** so you can monitor and revoke each independently.
@@ -151,7 +160,9 @@ when exceeded); a higher limit can be requested via the Portal.
 - Get your [Matching Rules](../10-admin-console/matching-rules.md) right early so pushed events post
   and tag correctly from day one.
 
-## Related
+## Where to go next
+💡 Get more from this: combine inbound APIs with [Data Exports](../03-data/data-exports.md) to run data both ways over the same governed, token-authenticated channel.
+
 - [API reference (docs.treasuryhub.ai)](https://docs.treasuryhub.ai/api-reference/) — full schema, all endpoints, and examples.
 - [Financial Events](../03-data/financial-events.md) — where pushed records appear in the platform.
 - [Ingestion Activity](ingestion-activity.md) — confirm pushed data and rejections.

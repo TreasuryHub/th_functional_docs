@@ -1,27 +1,34 @@
 # White-Label & Partner Branding
 
-> **Where to find it:** enabled and configured with the Treasury Hub team · self-service brand
+> **Offer TreasuryHub to your clients as your own product**
+>
+> **Why it matters**
+> - **Multi-tenant and white-label from day one**: logo, colours, typography and a custom web address.
+> - **Every touchpoint**: the login screen, emails and PDF reports all carry the partner's brand.
+> - **Same platform underneath**: treasury functionality, data model and security are unchanged for everyone.
+
+> **Where to find it:** enabled and configured with the TreasuryHub team · self-service brand
 > management via the **Partner / Brand Kit** portal (where provisioned).
-> **Who uses it:** partners who resell or embed Treasury Hub under their own brand; partner
+> **Who uses it:** partners who resell or embed TreasuryHub under their own brand; partner
 > administrators who manage the brand kit.
 > **Permissions required:** partner administrator access to the brand-kit portal (arranged with
-> Treasury Hub). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+> TreasuryHub). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-White-label lets a **partner** deliver Treasury Hub under **their own brand** — logo, colors,
-typography, and a custom web address — so end users experience the platform as the partner's own
-product. Every visible touchpoint, from the login screen to emails and PDF reports, reflects the
+Offer TreasuryHub to your clients as your own product: white-label lets a **partner** deliver the
+platform under **their own brand** — logo, colors, typography and a custom web address — so end
+users experience it as the partner's own. Every visible touchpoint, from the login screen to emails and PDF reports, reflects the
 partner's brand, while the underlying treasury functionality, data model, and security stay the
 same for everyone.
 
 ## Key concepts
-- **Partner** — an organization that resells or embeds Treasury Hub under its own brand.
-- **White-label** — presenting the platform under the partner's brand rather than Treasury Hub's.
+- **Partner** — an organization that resells or embeds TreasuryHub under its own brand.
+- **White-label** — presenting the platform under the partner's brand rather than TreasuryHub's.
 - **Brand kit** — the collection of a partner's brand assets and settings: logo, favicon, colors,
   typography, custom text (app name, welcome message, email sender), and custom domain.
 - **Custom domain** — the partner's own web address for the platform (for example
   `treasury.partner.com`), served securely over HTTPS.
-- **Theme inheritance** — the partner's brand kit is applied on top of Treasury Hub's default
+- **Theme inheritance** — the partner's brand kit is applied on top of TreasuryHub's default
   design; anything the partner doesn't override keeps the platform default.
 - **Multi-tenant** — each partner (and each partner's clients) is isolated in its own tenant, so
   branding and data never cross between partners. See [Core Concepts](../00-getting-started/03-core-concepts.md#organizations--tenants).
@@ -49,7 +56,7 @@ white-labeled:
 ## How partner onboarding works
 Bringing a partner live follows a guided, largely self-service flow:
 
-1. **Initial setup** — Treasury Hub (or the partner, via the admin panel/API) creates the partner's
+1. **Initial setup** — TreasuryHub (or the partner, via the admin panel/API) creates the partner's
    tenant, assigns the custom domain (with the required DNS record), and enables the modules covered
    by the partner's license.
 2. **Brand kit upload** — through a self-service portal, the partner uploads its logo (SVG and PNG),
@@ -73,20 +80,21 @@ Bringing a partner live follows a guided, largely self-service flow:
 Partner administrators can manage branding in two ways:
 
 - **Self-service portal** — upload assets, set colors and fonts, preview in the sandbox, and
-  activate — no Treasury Hub intervention needed for routine changes.
+  activate — no TreasuryHub intervention needed for routine changes.
 - **Brand Kit API** — for partners who prefer to manage branding programmatically, a REST API is
   available to read and update the brand kit, upload or remove assets, generate a temporary preview,
   run validations, and **activate** or **roll back** a version. Every change is **versioned**, so
   you can revert to any previous brand kit instantly.
 
 Practical guardrails to be aware of:
+
 - **Versioning & rollback** — each change creates a new version; rollback restores a prior version
   completely.
 - **Preview links** are temporary (they expire after a set period) so you validate before going live.
 - **Asset and readability limits** apply (for example, minimum color contrast for accessibility and
   sensible file-size limits) and are enforced by the automatic validation step.
 
-## Tips & good practices
+## Tips to get more value
 - Prepare a complete brand kit up front (vector logo, favicon, exact color values, chosen font) to
   move through onboarding quickly.
 - Use the **sandbox preview** to check every touchpoint — especially emails and PDFs — before
@@ -98,7 +106,7 @@ Practical guardrails to be aware of:
 - **Sub-client branding** — a further level of brand inheritance so a partner's own clients can be
   branded beneath the partner.
 
-## Related
+## Where to go next
 - [Security & Compliance](security-and-compliance.md) — the uniform security applied to every tenant.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — multi-tenancy and tenant isolation.
 - [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — where your brand appears in the top bar.

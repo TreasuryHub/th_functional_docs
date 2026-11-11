@@ -1,13 +1,20 @@
 # Asset & Liability Management (ALM)
 
+> **Keep your balance sheet liquid and compliant with Basel ratios**
+>
+> **Why it matters**
+> - **The whole structural picture**: liquidity gap by maturity bucket, funding concentration and mismatch in one place.
+> - **The ratios regulators ask for**: LCR, NSFR and HQLA tracking, maintained rather than reconstructed.
+> - **Tested, not assumed**: stress scenarios applied to the balance sheet you actually hold.
+
 > **Where to find it:** Reporting › Risk Management › ALM
 > **Who uses it:** ALM committees, treasurers, and liquidity/regulatory-reporting teams (primarily banks and regulated financial institutions).
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Asset & Liability Management (ALM) gives you an integrated view of the balance sheet —
-**structural liquidity, funding, maturity mismatch, and regulatory compliance** — from a single
-platform. It covers the liquidity **gap by maturity bucket**, the Basel III/IV liquidity ratios
+Keep your balance sheet liquid and your ratios compliant: Asset & Liability Management (ALM) gives
+you an integrated view of **structural liquidity, funding, maturity mismatch and regulatory
+compliance** from one place. It covers the liquidity **gap by maturity bucket**, the Basel III/IV liquidity ratios
 (**LCR** and **NSFR**), **HQLA** tracking, **stress scenarios**, and **funding concentration**.
 
 Within Risk Management, contractual gaps and standard ratio calculations can run in-house, while
@@ -79,7 +86,7 @@ rate curves per currency. Your **ALM policy** defines the limits that monitoring
 - **Stress scenarios** — maintain your scenario library and assumptions.
 - **Alert Settings** — ratio and gap breaches raise [Alerts](../../08-alerts/alerts.md).
 
-## Tips & good practices
+## Tips to get more value
 - Watch the **LCR under stress**, not just the baseline — a comfortable headline ratio can sit close
   to the floor once deposit runoff is applied.
 - Use **behavioral** (not just contractual) gaps for demand deposits; contractual-only views badly
@@ -96,7 +103,10 @@ rate curves per currency. Your **ALM policy** defines the limits that monitoring
 - **Funding concentration** analysis and **behavioral models** (partner-calibrated).
 - **IRRBB regulatory reporting** for the banking book.
 
-## Related
+## Where to go next
+ℹ️ ALM and [Regulatory & Compliance Reports](../regulatory-compliance.md) together make up the
+**ALM & Regulatory** module: the balance sheet and the filings built on it.
+
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
 - [Interest Rate Risk](interest-rate-risk.md) — IRRBB regulatory reporting overlaps with the banking-book view.
 - [Credit Risk](credit-risk.md) — funding partners and settlement exposure.

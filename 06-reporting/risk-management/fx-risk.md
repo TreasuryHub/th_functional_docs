@@ -1,12 +1,19 @@
 # FX Risk
 
+> **Know your currency exposure, and how much of it is hedged**
+>
+> **Why it matters**
+> - **The two questions treasurers ask**: how much am I exposed to each currency, and how much of that is covered.
+> - **Beyond the position**: VaR, stress testing and hedging recommendations on the same screen.
+> - **Test before you commit**: the hedge simulator shows cost against risk reduction before you trade.
+
 > **Where to find it:** Reporting › Risk Management › FX Risk
 > **Who uses it:** treasurers, FX dealers, risk managers.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-FX Risk gives you complete visibility of your currency exposure — from the **net open position**
-in each currency through to **Value at Risk (VaR)**, **stress testing**, and **hedging
+Know your currency exposure and how much of it is hedged: FX Risk covers the **net open position**
+in each currency through to **Value at Risk (VaR)**, **stress testing** and **hedging
 recommendations**. It answers the two questions treasurers ask most: *how much am I exposed to each
 currency, and how much of that is hedged?*
 
@@ -70,7 +77,7 @@ policy** (target ratios, permitted instruments, horizon).
 - **Alert Settings** — thresholds (e.g. VaR limit, minimum hedge ratio) that raise
   [Alerts](../../08-alerts/alerts.md).
 
-## Tips & good practices
+## Tips to get more value
 - Focus first on pairs **below the target hedge ratio** and with the largest unhedged amount at the
   near horizons.
 - Use the **Hedge Simulator** to check cost vs risk reduction before committing to a contract.
@@ -79,7 +86,7 @@ policy** (target ratios, permitted instruments, horizon).
 - FX Risk is the analytical view (VaR, stress, sensitivity); pair it with FX exposure matching to
   manage day-to-day coverage.
 
-## Related
+## Where to go next
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
 - [Mark-to-Market](mark-to-market.md) — fair values feed exposure and hedge-effectiveness metrics.
 - [Risk Cockpit](risk-cockpit.md) — FX exposure summarised alongside the other dimensions.

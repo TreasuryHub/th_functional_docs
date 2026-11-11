@@ -1,12 +1,20 @@
 # Reconciliation — Conciliation Reporting
 
+> **Your reconciliation workbook, live, with no spreadsheet to rebuild**
+>
+> **Why it matters**
+> - **The same file, on demand**: the report TreasuryHub emails you, with filters on top and a download that produces exactly it.
+> - **No waiting for the email**: what was reconciled and what is still open, whenever you ask.
+> - **Hand-off ready**: same two sheets, same columns, same order your team already works with.
+
 > **Where to find it:** Reconciliation › Reporting › Conciliation Reporting (also listed as **Conciliation Reporting** under **Reporting › Operations**)
 > **Who uses it:** treasury operations, finance team, accountants, auditors.
 > **Permissions required:** reconciliation access · Read (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-Conciliation Reporting is the reconciliation workbook as a screen: what was reconciled in a period,
-and what is still open. It is the same report Treasury Hub emails you as an Excel attachment — same
+Get your reconciliation workbook without rebuilding a spreadsheet or waiting for an email:
+Conciliation Reporting is that workbook as a screen — what was reconciled in a period, and what is
+still open. It is the same report TreasuryHub emails you as an Excel attachment — same
 two sheets, same columns, same order — with filters on top and a button that downloads that exact
 file. Use it to answer "what did we reconcile last week, and what is still outstanding?" without
 waiting for the email or opening a spreadsheet.
@@ -76,7 +84,7 @@ the sort, because the two sheets sort on different columns.
 3. The download is the whole week: the filters on screen narrow the grid, not the file.
 
 ## Configuration
-The same workbook is emailed to your team on a schedule. Treasury Hub sets this up for your tenant:
+The same workbook is emailed to your team on a schedule. TreasuryHub sets this up for your tenant:
 
 - **Which report** — the conciliation workbook.
 - **How often** — daily, weekly or monthly.
@@ -90,9 +98,9 @@ The same workbook is emailed to your team on a schedule. Treasury Hub sets this 
 Each email covers the period that ends at its scheduled moment — the previous day, the previous
 seven days or the previous calendar month — so consecutive emails neither overlap nor leave gaps.
 The subject names the report, your tenant, the frequency and the period. To change a schedule, its
-time zone or its recipients, ask your Treasury Hub administrator.
+time zone or its recipients, ask your TreasuryHub administrator.
 
-## Tips & good practices
+## Tips to get more value
 - Work the **Not Conciliated** tab first, reds before yellows: a red row is a movement nothing has
   matched yet, and it is the one most likely to be an exception worth chasing.
 - Filter **Has Difference** on the Conciliated tab to find reconciliations that balanced only
@@ -104,7 +112,7 @@ time zone or its recipients, ask your Treasury Hub administrator.
 - Dates and times in the grid are shown in UTC, as the workbook writes them. Keep that in mind when
   comparing against a local bank cut-off.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — how the reports fit the end-to-end flow.
 - [Conciliations](conciliations.md) — the live register behind the Conciliated sheet, where you can
   open a single reconciliation.

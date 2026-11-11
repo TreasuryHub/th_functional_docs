@@ -1,5 +1,12 @@
 # Transaction Tagging
 
+> **Know exactly what every euro was spent on, automatically**
+>
+> **Why it matters**
+> - **Classification keeps up with volume**: rules set the category and tags as transactions arrive.
+> - **One shared meaning**: the category catalogue is platform-wide, so a classified movement means the same thing everywhere.
+> - **Your own labels too**: tags are whatever your organization needs them to be, alongside the standard categories.
+
 > **Where to find it:** Settings › Ingestion › Transaction Tagging — **Tags**,
 > **Classification rules**, **Classification conflicts**
 > **Who uses it:** cash managers, treasury operations, finance teams, and administrators.
@@ -7,8 +14,15 @@
 > classify transactions, manage tags and rules, and resolve conflicts. See
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Classify one transaction](#classify-one-transaction) to see how a category and tags are set.
+> 2. [Write a rule from transactions you already have](#write-a-rule-from-transactions-you-already-have) so the same work is never repeated.
+> 3. [Read the live preview](#read-the-live-preview) to confirm the rule catches what you meant.
+> 4. [Review and resolve conflicts](#review-and-resolve-conflicts) where two rules claim the same transaction.
+
 ## Overview
-Transaction Tagging is how you say what each bank movement actually **is**. Every transaction
+Know what every euro was actually spent on, without anyone coding it by hand: Transaction Tagging
+is how you say what each bank movement **is**. Every transaction
 carries one **category** from a catalogue the platform maintains, and any number of **tags** — the
 labels your own organization invents. You set both by hand from the Transactions screen, or you
 write **classification rules** that set them automatically as transactions arrive.
@@ -144,7 +158,7 @@ catch.
    and **Cancel** both return you to where you came from, with your filters as they were.
 
 When a rule is applied to a selection, an unclassified match takes the rule's category and tags; one
-already filed in the same category by another rule simply gains the tags; one an older rule put in a
+already filed in the same category by another rule gains the tags; one an older rule put in a
 different category raises a conflict; and anything a person classified by hand is left untouched.
 
 ### Build the conditions
@@ -245,7 +259,7 @@ with the date.
   arrive, and a retroactive run works through history in batches, so the **Status** column on the
   rules list moves while it progresses.
 
-## Tips & good practices
+## Tips to get more value
 - Start from real transactions. Selecting a handful and using **Create rule** gives you conditions
   drafted from what they actually share, and the **Covered** column tells you immediately whether
   the rule does what you think it does.
@@ -266,7 +280,9 @@ with the date.
   [Category Positions](../06-reporting/category-positions.md) rather than waiting for the nightly
   rebuild.
 
-## Related
+## Where to go next
+💡 Get more from this: combine transaction tagging with [Category Positions](../06-reporting/category-positions.md) to turn classified movements into a report of where your cash came from and went.
+
 - [Category Positions](../06-reporting/category-positions.md) — net movement by Nature › Category ›
   Tag, built from these classifications.
 - [Transactions](../06-reporting/transactions.md) — where you classify by hand, and where the

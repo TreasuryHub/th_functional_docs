@@ -1,13 +1,20 @@
 # Credit Risk
 
+> **See counterparty deterioration before it becomes a loss**
+>
+> **Why it matters**
+> - **Early warning, not post-mortem**: credit quality monitored continuously, with a watch list.
+> - **Under IFRS 9**: staging, expected credit loss and limits on the By Stage tab.
+> - **Partner funding too**: prefund balances and credit-line usage monitored in real time on the Funding tab.
+
 > **Where to find it:** Reporting › Risk Management › Credit Risk
 > **Who uses it:** risk managers, treasurers, credit officers; for the Funding tab, partner/settlement operations teams.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Credit Risk continuously monitors the risk that a **counterparty or funding partner** fails to
-meet its obligations — from current exposure through to expected loss — with early warning of
-deterioration. The screen has two tabs:
+See a counterparty deteriorating before it becomes a loss: Credit Risk continuously monitors the
+risk that a **counterparty or funding partner** fails to meet its obligations, from current
+exposure through to expected loss. The screen has two tabs:
 
 - **By Stage** — counterparty credit quality under IFRS 9 (staging, expected credit loss, limits, and
   a watch list).
@@ -100,7 +107,7 @@ that monitoring enforces.
 - **Credit limits** — approved limits per counterparty and instrument type.
 - **Alert Settings** — utilization and breach thresholds that raise [Alerts](../../08-alerts/alerts.md).
 
-## Tips & good practices
+## Tips to get more value
 - Watch **Stage 2** names closely — a PD crossing the Stage 3 trigger forces lifetime-ECL
   provisioning, which can be a large P&L charge.
 - Use the **concentration** view to keep sector/geography exposure within policy before it becomes a
@@ -117,7 +124,7 @@ that monitoring enforces.
   funding policies.
 - **Partner PD/LGD and PFE** via specialist partner integration.
 
-## Related
+## Where to go next
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
 - [Mark-to-Market](mark-to-market.md) — fair values feed current-exposure calculations.
 - [Risk Cockpit](risk-cockpit.md) — credit KPIs (ECL, NPL) summarised alongside other dimensions.

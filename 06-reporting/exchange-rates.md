@@ -1,12 +1,19 @@
 # Exchange Rates
 
+> **Consistent FX rates behind every consolidated figure**
+>
+> **Why it matters**
+> - **One source for every conversion**: the cash position, the reports and the blotter equivalents all read these rates.
+> - **Accuracy where it compounds**: a wrong rate here moves every cross-currency number you publish.
+> - **Maintained on your terms**: the grid is yours to keep current.
+
 > **Where to find it:** Reporting › Operations › Exchange Rates (this is **core / master data** used across the platform; also reachable from the Admin Console).
 > **Who uses it:** treasury operations, finance teams, administrators.
 > **Permissions required:** `CoreData.ExchangeRates` · Read to view; CreateEdit to add/edit; Delete to remove. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Exchange Rates is the grid where you maintain the FX rates the platform uses to convert between
-currencies. Every consolidated figure — your [cash position](../01-home/home-dashboard.md), reports, and USD
+Keep every consolidated figure correct at the source: Exchange Rates is the grid where you maintain
+the FX rates the platform uses to convert between currencies. Every consolidated figure — your [cash position](../01-home/home-dashboard.md), reports, and USD
 equivalents on the blotters — relies on these rates, so keeping them accurate keeps your
 cross-currency numbers correct.
 
@@ -41,14 +48,14 @@ cross-currency numbers correct.
 ### Export
 1. Click **Export** and choose **Excel** or **CSV** for the current grid.
 
-## Tips & good practices
+## Tips to get more value
 - Keep rates current — stale FX rates quietly distort every consolidated figure and USD equivalent.
 - Be consistent about the direction of each pair (from → to) so conversions apply the way you expect.
 - Coordinate rate maintenance with whoever owns [master data](../00-getting-started/03-core-concepts.md#master-data);
   exchange rates are shared reference data, not a per-report setting.
 
-## Related
+## Where to go next
 - [Cash Position](../01-home/home-dashboard.md) — where rates drive the consolidated display currency.
 - [Bank Accounts](bank-accounts.md) — USD-equivalent balances use these rates.
 - [Operations blotters](operations-blotters.md) — FX/investment valuations rely on rates.
-- [Core Concepts — Master data](../00-getting-started/03-core-concepts.md#master-data).
+- [Core Concepts — Master data](../00-getting-started/03-core-concepts.md#master-data) — clean reference data is what keeps every converted figure correct.

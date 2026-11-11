@@ -1,12 +1,26 @@
 # Roles & Permissions
 
+> **Give each person exactly the access their role needs**
+>
+> **Why it matters**
+> - **Segregation of duties by design**: build a role once as a matrix of modules and actions, then hand it to people.
+> - **Access that scales**: a new joiner gets a role, not a list of individually granted screens.
+> - **Audit-ready**: every permission change is recorded, so who could do what, and when, is answerable.
+
 > **Where to find it:** Admin Console › Users & Roles
 > **Who this is for:** administrators; useful background for all users.
 > **Permissions required:** `AdminAndSettings.UserManagement` · Read
 
+> **In 60 seconds**
+> 1. Read what an action means — ["Approve" is an action, and Counterparties also has its own module](#approve-is-an-action-and-counterparties-also-has-its-own-module).
+> 2. Check the controls you must preserve — [Segregation of duties](#segregation-of-duties).
+> 3. Find the module your person needs in the permission tables below.
+> 4. Build the role in [Users & Roles](../10-admin-console/users-and-roles.md) and hand it to them.
+
 ## Overview
-Treasury Hub controls what each person can see and do with **role-based access control (RBAC)**.
-Users are assigned one or more **roles**; each role grants a set of **actions** on each module.
+Give each person exactly the access their job needs, and nothing more: TreasuryHub controls what
+everyone can see and do with **role-based access control (RBAC)**. Users are assigned one or more
+**roles**; each role grants a set of **actions** on each module.
 This is also why two people can see different menus and buttons — the Services menu and the
 on-screen actions adapt to your permissions.
 
@@ -159,7 +173,7 @@ granted on that module.
 
 Reading the [Status board](../01-home/status-board.md) itself needs no permission at all — every
 user can open it. This module covers who may *maintain* its content, and editing it is reserved for
-Treasury Hub.
+TreasuryHub.
 
 Older module names such as `AdminAndSettings.Roles`, `AdminAndSettings.Connectivity`,
 `AdminAndSettings.UserGroups` and the `CashManagement.CashPosition.*` family are still honoured for
@@ -177,10 +191,11 @@ roles that already hold them, but they are not offered in the role editor.
 **Super Admin is a flag on a user record, not a role.** It is deliberately absent from the Roles &
 Permissions screen — which says so in a note — and never appears in the dialog where you assign
 roles to a user, so there is nothing to look for there. Three things follow from that:
+
 - It applies **across every organization** — a person is a Super Admin everywhere or nowhere. There
   is no "Super Admin of one organization".
 - It **bypasses module permission checks**, so a Super Admin can open every module and action.
-- Only Treasury Hub staff can grant or revoke it, from an internal panel. **Nobody inside your
+- Only TreasuryHub staff can grant or revoke it, from an internal panel. **Nobody inside your
   organization can grant it or escalate to it**, including your own administrators. An attempt to
   do so is refused and recorded in the audit trail.
 
@@ -190,6 +205,7 @@ in order to work in it.
 ## Access can be scoped further
 Module permissions decide *what* you can do. A second layer decides *which rows* you see, and its
 rules surprise people, so they are worth knowing:
+
 - A user with the **Admin** role in the organization is **not restricted** — they see every account
   and company.
 - A non-admin is limited to the **accounts and companies linked to them**, and the two combine with
@@ -231,7 +247,7 @@ Manager, View Only, Book Keeper, Payment Preparer and Payment Approver — plus 
 Invoice Admin and Docs Manager as ordinary custom roles. Organizations set up earlier keep the roles
 they already had, so your own list is whatever the Roles & Permissions screen shows.
 
-A preset is maintained by Treasury Hub and cannot be changed, renamed or deleted; you fork one with
+A preset is maintained by TreasuryHub and cannot be changed, renamed or deleted; you fork one with
 **Save as new role** instead. A role's name is only a label — what it actually permits is the
 matrix behind it, which you can open and read on the Roles & Permissions screen.
 
@@ -263,9 +279,9 @@ a before-and-after snapshot, readable on **Admin Console › Users & Roles › A
 corporate directories (Azure AD, Okta, Google Workspace) is supported so access follows your
 identity provider.
 
-## Related
+## Where to go next
 - [Users & Roles](../10-admin-console/users-and-roles.md) — managing people, roles and the audit
   trail.
-- [Payment Approvals](../05-payments/approvals.md)
+- [Payment Approvals](../05-payments/approvals.md) — see the permission model enforcing four-eyes control on real money.
 - [Navigation & Your Workspace](02-navigation-and-workspace.md) — where these screens live.
-- [Core Concepts](03-core-concepts.md)
+- [Core Concepts](03-core-concepts.md) — understand the model once, and every screen makes sense.

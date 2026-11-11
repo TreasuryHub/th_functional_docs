@@ -1,12 +1,24 @@
 # Financial Events
 
+> **Trace every number back to its source**
+>
+> **Why it matters**
+> - **See exactly what ingestion produced**: every event, its status, its details and its change history.
+> - **Answer a query without leaving the platform**: the value date, the booking date and the raw detail are all here.
+> - **A read-only window**: nothing can be altered on this screen, which is what makes it evidence.
+
 > **Where to find it:** Data › Financial Events
 > **Who uses it:** treasury operations, finance teams, data/IT owners, auditors.
 > **Permissions required:** Data access (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
+> **In 60 seconds**
+> 1. [Browse and filter financial events](#browse-and-filter-financial-events) to the period or source you are questioning.
+> 2. [Inspect a single event](#inspect-a-single-event) to see its details and its change history.
+> 3. Follow it onward into the transactions and movements it produced.
+
 ## Overview
-**Financial events** are the normalized records Treasury Hub creates when data is brought in and
-committed — for example when a parsed file (via [file import / parsing templates](../02-integrations/file-import.md))
+Trace any number back to the moment it entered the platform: **financial events** are the
+normalized records TreasuryHub creates when data is brought in and committed — for example when a parsed file (via [file import / parsing templates](../02-integrations/file-import.md))
 is turned into transactions and movements. The Financial Events screen is a **read-only** place to
 see exactly what was created: every event, its status, its details, and its change history. It's your
 audit window onto the raw output of ingestion, before and after it flows into the rest of the
@@ -34,7 +46,7 @@ platform.
   reporting detail only and is never matched on. See
   [How an amount is made up](#how-an-amount-is-made-up).
 - **Movement date** — the day the movement happened according to its source, as opposed to **Created**,
-  the moment Treasury Hub stored it. Every event has one, it is a calendar date with no time attached,
+  the moment TreasuryHub stored it. Every event has one, it is a calendar date with no time attached,
   and it never changes once the event exists. It is the date to filter, compare and report on: a
   statement loaded today with a month of lines gives each line its own movement date rather than
   today's.
@@ -62,7 +74,7 @@ Three things to know about the set:
 
 - **Types are enabled per organization.** You see the ones yours loads, and an event of a type your
   organization has not enabled is refused rather than stored.
-- **An invoice and its lines are separate events.** Treasury Hub never builds a header out of its
+- **An invoice and its lines are separate events.** TreasuryHub never builds a header out of its
   lines or the other way round: each line carries its own invoice number, and the link between them is
   a related event. Both the invoice and each line need an identifier of their own.
 - **A settlement is identified by its own External ID.** There is no separate settlement number: the
@@ -108,6 +120,7 @@ a new set, *Cleared* when it emptied it, and a dash when it left the set alone.
 ## What a bank movement carries
 Beyond the amount, currency and description, a bank movement can carry the detail its source
 provides, so you can trace and reconcile it without going back to the bank:
+
 - the **value date** and the **booking date**, kept apart;
 - the **creditor** and **debtor** names, and their **agents** (the banks on each side), in ISO 20022
   terms;
@@ -116,13 +129,13 @@ provides, so you can trace and reconcile it without going back to the bank:
   end-to-end **transaction reference** that identifies the operation;
 - a link to the **rail's own receipt** where the provider really has one (for SPEI, Banxico's CEP);
 - the **provider's own movement type**, in the provider's words rather than translated into a
-  Treasury Hub category, because it is often what makes the provider's status legible;
+  TreasuryHub category, because it is often what makes the provider's status legible;
 - the **statement balance** — the running balance the statement prints beside that row, the balance
   of the account *after* that movement.
 
 Which of these are filled depends on what the source file or connector supplies.
 
-**The statement balance is only carried when it can be vouched for.** Treasury Hub sends it on with
+**The statement balance is only carried when it can be vouched for.** TreasuryHub sends it on with
 the movement when two things hold: the column really is a running balance of its own movements, and
 the statement was not proved not to add up. A column that merely repeats the amount, or a file whose
 rows stopped reconciling with the balances it prints, would hand downstream reporting a figure nobody
@@ -137,7 +150,7 @@ balance means "not known", never "zero".
 3. Filter using the column headers:
    - **Movement date** — a date filter, for the day the movement happened. This is the one to use
      when you want "everything that happened in September", whenever those files were loaded.
-   - **Created** — a date filter, for the moment Treasury Hub stored the event. Use it to see what a
+   - **Created** — a date filter, for the moment TreasuryHub stored the event. Use it to see what a
      particular load brought in.
    - **Uuid** and **External Id** — exact-match text filters.
 4. Page through results and adjust the page size as needed. Previous rows stay visible while a new
@@ -172,7 +185,7 @@ its issue date, never its due date; for a balance its reference date. An invoice
 its own and takes the one its load gives it. Where a payload date is left empty, the movement date
 fills it, so the two never disagree.
 
-## Tips & good practices
+## Tips to get more value
 - Use Financial Events to **troubleshoot ingestion** — if something looks off downstream (in
   transactions or reconciliation), find the source event here and check its status and version history.
 - Filter by **External ID** to trace a specific record from your source system end to end.
@@ -189,7 +202,7 @@ fills it, so the two never disagree.
 - If a settlement and its pay-ins look unrelated, check the pay-ins' **related IDs**: a settlement is
   identified by its own External ID, and that is the value its pay-ins carry.
 
-## Related
+## Where to go next
 - [File import / parsing templates](../02-integrations/file-import.md) — where many financial events originate.
 - [Ingestion Activity](../02-integrations/ingestion-activity.md) — the file each event came from.
 - [Transactions](../06-reporting/transactions.md) — where booked events appear as transactions.

@@ -1,11 +1,19 @@
 # Bank Statements
 
+> **Validate statements before they reach your books**
+>
+> **Why it matters**
+> - **Problems surface before processing**: the platform validates and analyzes a statement and flags what is wrong.
+> - **Clean data only**: a statement becomes movements once it passes, not before.
+> - **Everything in one place**: upload, check, process, download and delete, plus blank templates for supported formats.
+
 > **Where to find it:** Reporting › Operations › Bank Statements (admin-level statement management; per-account upload also lives on [Bank Accounts](bank-accounts.md)).
 > **Who uses it:** treasury operations, finance teams, administrators.
 > **Permissions required:** `CashManagement.CashPosition.BankStatements` · Read to view and download; CreateEdit to upload and process; Delete to remove statements (and their transactions). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Bank Statements is where statement files become transactions. You upload a statement (choosing the
+Catch a problem before it reaches your books: Bank Statements is where statement files are checked
+and then become transactions. You upload a statement (choosing the
 right format), the platform **validates** and **analyzes** it, flags any problems, and — once it's
 clean — **processes** it into the movements that appear across the rest of the platform. It's the
 admin-level home for statement management: uploading, checking, processing, downloading, and
@@ -60,7 +68,7 @@ Before a statement is processed, common issues are flagged, including:
 ### Export the statement list
 1. Click **Export** and choose **Excel** or **CSV** for the current, filtered list.
 
-## Tips & good practices
+## Tips to get more value
 - Always read the **validation summary** before processing — catching a duplicate or a balance break
   here prevents downstream reconciliation and position errors.
 - If balances don't match, check the **previous** statement's closing balance first; the break is
@@ -69,7 +77,7 @@ Before a statement is processed, common issues are flagged, including:
   account-specific uploads; use this page for bulk and admin-level management.
 - Deleting a statement deletes its transactions — download the original first if you might need it.
 
-## Related
+## Where to go next
 - [Bank Accounts](bank-accounts.md) — where balances land and per-account upload lives.
 - [Transactions](transactions.md) — the movements created from statements.
 - [Reconciliation](../04-reconciliation/overview.md) — matching statement movements to your records.

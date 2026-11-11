@@ -1,11 +1,19 @@
 # Bank Accounts
 
+> **One accurate register of every account, the foundation for every number**
+>
+> **Why it matters**
+> - **The anchor for everything else**: statements, transactions and balances all hang off the account record.
+> - **However they arrive**: accounts link automatically through Open Banking, or you add them by hand.
+> - **Live balances in the register**: bank, currency, type and current balance in one grid.
+
 > **Where to find it:** Admin Console › Master Data › Bank Accounts (the management grid); also shown as a report under Reporting › Operations › Bank Accounts. Add accounts with **+ Add Account** on Home (top-right) or on the Bank Accounts screen. This is **core data** used across the platform.
 > **Who uses it:** treasury operations, cash managers, finance teams, administrators.
 > **Permissions required:** `CoreData.BankAccounts` · Read to view; CreateEdit to add/edit accounts and set balances; Delete to remove. Uploading a statement per account needs `CashManagement.CashPosition.BankStatements` · CreateEdit. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Bank Accounts is where you manage the accounts that hold your cash. It's a full-featured grid of
+Keep one accurate register of every account, because everything else is built on it: Bank Accounts
+is where you manage the accounts that hold your cash. It's a full-featured grid of
 every account — its bank, currency, type, and live balance — that you can view, add, edit, and link
 to your banks. Accounts can be **linked automatically** through Open Banking or **created manually**,
 and each account is the anchor for its statements, transactions, and balances everywhere else in the
@@ -106,7 +114,7 @@ connection.*
 ### Export
 1. Click **Export** and choose **Excel** or **CSV** for the current, filtered grid.
 
-## Tips & good practices
+## Tips to get more value
 - Check the **Exceptions** and **Disconnected** tabs regularly — an expired consent silently stops data
   flowing until you reconnect.
 - Use **force balance** only to correct or seed a balance; routine balances should come from
@@ -117,7 +125,7 @@ connection.*
 - Keep account **type** and **company** accurate — they drive how balances consolidate in
   [Cash Position](../01-home/home-dashboard.md).
 
-## Related
+## Where to go next
 - [Bank Statements](bank-statements.md) — the statement pipeline that feeds account balances.
 - [Transactions](transactions.md) — the movements on each account.
 - [Cash Position](../01-home/home-dashboard.md) — accounts consolidated into your position.

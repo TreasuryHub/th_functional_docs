@@ -1,11 +1,19 @@
 # Invoices
 
+> **See the invoice behind every payment you approve**
+>
+> **Why it matters**
+> - **Context at the moment of decision**: approvers see what the payment is actually for.
+> - **What is outstanding and due**: number, payee, status, amount and key dates in one blotter.
+> - **Audit-friendly**: the supporting document sits beside the treasury record, not in another system.
+
 > **Where to find it:** Reporting › Operations › Invoices
 > **Who uses it:** accounts payable, treasury operations, finance team.
 > **Permissions required:** `CashManagement.Invoices` · Read to view, CreateEdit to add/edit. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The Invoices screen is a blotter of the invoices that back your payables. It lists each invoice with
+See the invoice behind every payment you approve: the Invoices screen is a blotter of the invoices
+that back your payables. It lists each invoice with
 its number, payee, status, amount, and key dates, so your team can see what's outstanding and due.
 Keeping invoices alongside your treasury data gives approvers and auditors the context behind each
 [payment](overview.md).
@@ -17,7 +25,7 @@ Keeping invoices alongside your treasury data gives approvers and auditors the c
 - **Payee** — the party the invoice is payable to.
 - **Status** — where the invoice stands (for example **DUE**).
 - **Amount** — the invoice value.
-- **Uploaded** — the date the invoice was added to Treasury Hub.
+- **Uploaded** — the date the invoice was added to TreasuryHub.
 - **Invoice Date** / **Due Date** — the invoice's issue date and the date payment is due.
 
 ## Before you start
@@ -46,13 +54,13 @@ Keeping invoices alongside your treasury data gives approvers and auditors the c
 ### Print
 - Click **Print** (top right) to print the current view.
 
-## Tips & good practices
+## Tips to get more value
 - Record an invoice **before or alongside** raising its [payment](creating-a-payment.md) so
   [approvers](approvals.md) have the context they need.
 - Use the **Status** and **Due Date** columns to stay ahead of what's coming due.
 - Use column **filters** (Invoice #, Payee) to find a specific invoice quickly in a long list.
 
-## Related
+## Where to go next
 - [Payments — Overview](overview.md) — how invoices relate to the payment process.
 - [Creating a payment](creating-a-payment.md) — raise the payment an invoice backs.
 - [Operations Blotters](../06-reporting/operations-blotters.md) — the other Reporting › Operations grids.

@@ -1,12 +1,21 @@
 # Scenarios (What-If)
 
+> **Stress-test your liquidity before the market does**
+>
+> **Why it matters**
+> - **Three futures side by side**: adverse, expected and favorable, compared directly.
+> - **Shocks that matter**: FX moves, deposit runoff, collection delays and rate changes, adjusted live.
+> - **Saved for later**: each scenario is kept for comparison and contingency planning.
+>
+> *For the CFO: the funding headroom question is answered before a board asks it, with the assumptions written down.*
+
 > **Where to find it:** Reporting › Cash & Liquidity › Scenarios (What-If)
 > **Who uses it:** treasurers, risk managers, FP&A, CFOs.
-> **Permissions required:** to be confirmed — expected to align with Cash & Liquidity reporting (`CashManagement.CashPosition`). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+> **Permissions required:** `CashManagement.CashPosition` · Read, in line with the rest of Cash & Liquidity reporting. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Scenarios (What-If) lets you model how your liquidity behaves under different assumptions —
-adverse, expected, and favorable — side by side. You adjust a handful of shocks (FX moves, deposit
+Stress-test your liquidity before the market does it for you: Scenarios (What-If) models how your
+liquidity behaves under different assumptions — adverse, expected and favorable — side by side. You adjust a handful of shocks (FX moves, deposit
 runoff, collection delays, rate changes), watch the projected closing balance redraw as you go, and
 save each scenario for later comparison and contingency planning.
 
@@ -44,7 +53,7 @@ stay safe across that range of outcomes.
 3. Adjust each shock on the canvas, watch the **live preview** chart and KPIs (closing balance,
    delta vs base, lowest point, whether a funding plan is triggered), and **Save** when ready.
 
-## Tips & good practices
+## Tips to get more value
 - Keep a stable **Base** case tied to your approved budget so every scenario has a consistent
   reference.
 - Use the **stress-to-upside spread** to size your contingency funding — plan to the range, not a
@@ -52,6 +61,6 @@ stay safe across that range of outcomes.
 - Save the scenarios you revisit (quarter-end stress, FX crisis) so you can re-run them against
   fresh data rather than rebuilding each time.
 
-## Related
+## Where to go next
 - [Cash Forecast](cash-forecast.md) — the base projection scenarios are built on.
 - [Actual vs Forecast](actual-vs-forecast.md) — see how earlier assumptions played out.

@@ -1,11 +1,25 @@
 # Ingestion Activity
 
+> **Know your data is complete before you rely on it**
+>
+> **Why it matters**
+> - **Confidence before the close**: processed, duplicates, failed and rows-with-errors on one strip of tiles.
+> - **Every file accounted for**: source, rule, template, row count and outcome, per file.
+> - **Finish the job here**: a file with no template waits on this screen until you pick one for it.
+
 > **Where to find it:** Integrations › Ingestion
 > **Who uses it:** treasury operations, finance systems owners, administrators.
 > **Permissions required:** read access to the data being ingested; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Check that data has arrived](#check-that-data-has-arrived) before you rely on a figure.
+> 2. [Give a parked file its template](#give-a-parked-file-its-template) so it can finish loading.
+> 3. [Resolve a failed file](#resolve-a-failed-file).
+> 4. [Watch a batch as it lands](#watch-a-batch-as-it-lands) when timing matters.
+
 ## Overview
-Ingestion Activity is the monitor for everything coming into Treasury Hub. Across the top, **Last 30
+Know your data is complete before you rely on it: Ingestion Activity is the monitor for everything
+coming into TreasuryHub. Across the top, **Last 30
 days** tiles summarize activity — **Processed**, **Duplicates**, **Failed**, and **Rows with errors**
 — and below them a grid lists each file that has come in, from which source, which rule and template
 processed it, how many rows it held, whether it succeeded, and when. It's the screen to check when you
@@ -132,7 +146,7 @@ stored, so each file appears in the grid — initially as **Queued** — from th
 and the rows change status as the workers get to them. You can watch the batch progress instead of
 waiting on a dialog.
 
-## Tips & good practices
+## Tips to get more value
 - Make Ingestion Activity part of your **morning routine** — a quick scan of the tiles, plus a filter
   to **Needs template** and **Failed**, catches gaps before they affect your position.
 - **Needs template** is a backlog, not an alarm: it is work waiting for a person, and the file is
@@ -142,7 +156,7 @@ waiting on a dialog.
 - Related failures also surface in [Alerts](../08-alerts/alerts.md), so you don't have to watch this
   screen constantly.
 
-## Related
+## Where to go next
 - [Integrations Overview](overview.md) — all ingestion channels.
 - [File Import](file-import.md) — the templates and formats behind these rows.
 - [AI Extraction](ai-extraction.md) — the fallback when no template reads a file.

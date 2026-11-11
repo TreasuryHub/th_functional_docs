@@ -1,12 +1,22 @@
 # Risk Management — Overview
 
+> **All your treasury risks in one real-time view**
+>
+> **Why it matters**
+> - **Five dimensions, one place**: FX, counterparty credit, interest rate, mark-to-market and ALM, plus investment risk.
+> - **Limits watched continuously**: policies are monitored as positions change, and breaches raise alerts.
+> - **Hybrid model**: fast in-house analytics, with specialist partners for advanced models.
+>
+> *For the CFO: risk reporting stops being a quarterly assembly exercise and becomes a standing view the board can be shown.*
+
 > **Where to find it:** Reporting › Risk Management
 > **Who uses it:** treasurers, risk managers, CFOs, and (in financial institutions) ALM and regulatory-reporting teams.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md). Exact permission modules will be confirmed at release.
 
 ## Overview
-Risk Management is the part of [Reporting](../overview.md) that gives you a single, real-time
-view of the treasury risks that matter — **currency (FX), counterparty credit, interest rate,
+See all your treasury risks in one real-time view, instead of pulling them from separate
+spreadsheets and provider portals: Risk Management is the part of [Reporting](../overview.md) that
+consolidates the risks that matter — **currency (FX), counterparty credit, interest rate,
 mark-to-market valuation, and asset & liability (liquidity) risk** — instead of pulling them from
 separate spreadsheets and provider portals.
 
@@ -35,11 +45,11 @@ the moment something breaches.
 - **In-house vs partner calculation** — see *The hybrid model* below.
 
 ## The hybrid model: in-house engine + specialist partners
-Treasury Hub does not try to replicate what specialist risk vendors do. Instead it positions itself
+TreasuryHub does not try to replicate what specialist risk vendors do. Instead it positions itself
 as the **orchestrator** that connects your data to the best calculation engine and presents
 everything in one place:
 
-- **In-house** — **Mark-to-Market valuations** run inside Treasury Hub, because the platform
+- **In-house** — **Mark-to-Market valuations** run inside TreasuryHub, because the platform
   already holds the positions and market data needed. Simpler aggregations (net exposures, limit
   utilization, contractual gaps) can also be computed in-house.
 - **With specialist partners** — the more model-intensive calculations (advanced VaR, PFE with Monte
@@ -51,7 +61,7 @@ everything in one place:
   for audit and independent validation.
 
 ## How the partner integration works (5 steps)
-For the partner-calculated dimensions, Treasury Hub runs an automated, monitored, auditable
+For the partner-calculated dimensions, TreasuryHub runs an automated, monitored, auditable
 pipeline — not a "export a CSV and wait for an email" process:
 
 1. **Data capture** — open positions, contracts, market data (rate curves, FX rates, volatilities,
@@ -63,7 +73,7 @@ pipeline — not a "export a CSV and wait for an email" process:
    (timestamp, model version, parameters).
 4. **API import** — results (risk metrics, reports, alerts) are received back, validated, and
    versioned so you can compare runs over time.
-5. **Visualization** — results appear in the Treasury Hub UI with drill-down by area, instrument,
+5. **Visualization** — results appear in the TreasuryHub UI with drill-down by area, instrument,
    and counterparty, and execution logs show exactly what was sent and received.
 
 Adding a new risk partner is **configuration, not code** — flexible field mapping, robust
@@ -82,6 +92,7 @@ of every value sent and received.
 
 ## Before you start
 Getting reliable risk output depends on the same foundations as the rest of the platform:
+
 - **Connected data sources** — positions, contracts, and market data flow in through
   [Integrations](../../02-integrations/overview.md).
 - **Clean master data** — counterparties, currencies, and the company hierarchy must be complete.
@@ -89,7 +100,7 @@ Getting reliable risk output depends on the same foundations as the rest of the 
 - **Risk policies defined** — your limits and thresholds per dimension, so monitoring and alerts have
   something to check against.
 
-## Tips & good practices
+## Tips to get more value
 - Start from the **[Risk Cockpit](risk-cockpit.md)** for the daily overview, then use **Explore** on
   any card to drill into that dimension.
 - Keep your **risk policies current**; the quality of the alerts depends on the limits you set.
@@ -100,7 +111,7 @@ Getting reliable risk output depends on the same foundations as the rest of the 
 - **Specialist partner integrations** — config-driven connections to external risk-calculation
   engines with side-by-side comparison.
 
-## Related
+## Where to go next
 - [Reporting — Overview](../overview.md) — the parent section.
 - [Integrations](../../02-integrations/overview.md) — where positions and market data come from.
 - [Alerts](../../08-alerts/alerts.md) — where limit breaches and anomalies surface.

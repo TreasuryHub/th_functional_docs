@@ -1,13 +1,21 @@
 # Preferences — Theme & Language
 
+> **Work in your language, your way**
+>
+> **Why it matters**
+> - **Light or dark, English or Spanish**: set to suit you and your environment.
+> - **Personal, not organizational**: your choices change your view and nobody else's.
+> - **Remembered**: settings persist between visits on the same device.
+
 > **Where to find it:** the **top bar** (theme toggle and language selector), also on the **Login** page.
 > **Who uses it:** everyone.
 > **Permissions required:** none — available to all users.
 
 ## Overview
-You can personalize how Treasury Hub looks and reads. Switch between a **light and dark theme** to
+Work in your language and the theme that suits your environment: you can personalize how
+TreasuryHub looks and reads. Switch between a **light and dark theme** to
 suit your environment, and change the **interface language**. These are personal preferences: they
-affect only your view, not other users or your organization's data, and Treasury Hub remembers them
+affect only your view, not other users or your organization's data, and TreasuryHub remembers them
 between visits on the same device.
 
 ## Key concepts
@@ -24,7 +32,7 @@ between visits on the same device.
 1. In the **top bar**, click the **theme toggle** (the sun / moon icon).
 2. The interface immediately switches between light and dark mode; every screen re-renders in the
    new theme.
-3. Your choice is remembered and reapplied the next time you open Treasury Hub on this device.
+3. Your choice is remembered and reapplied the next time you open TreasuryHub on this device.
 
 You can also set the theme from the **Login** page before you sign in, using the same toggle.
 
@@ -47,13 +55,13 @@ language.
   visits, so your grids and dashboards come back the way you left them. See
   [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md#working-with-data-grids).
 
-## Tips & good practices
+## Tips to get more value
 - Missing translations fall back to English, so you'll never see an untranslated blank — you may
   occasionally see an English label within another language while translations are completed.
 - Preferences are per device: set them once on each computer you regularly use.
 - Theme and language are purely visual — switching them never changes your data, permissions, or the
   numbers you see.
 
-## Related
+## Where to go next
 - [Navigation & Your Workspace](../00-getting-started/02-navigation-and-workspace.md) — the top bar and remembered view state.
 - [Security & Compliance](security-and-compliance.md) — signing in and out.

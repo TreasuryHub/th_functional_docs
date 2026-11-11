@@ -1,36 +1,45 @@
 # G/L Postings
 
-> **Where to find it:** the **G/L Posting** entry has been removed from Reporting › Operations, and its old
-> link now opens **Reporting › Operations › Transactions**. Your posting history is kept and stays readable
-> through the read-only transaction-postings endpoint of the Treasury Hub API.
+> **Journals with evidence, posted to your ERP after approval**
+>
+> **Why it matters**
+> - **Less re-keying**: every treasury transaction arrives in your ledger as a debit and a credit, built by rule rather than typed by hand.
+> - **Evidence on every entry**: each posting stays linked to the transaction that produced it and the rule that mapped it, so a question about any line is answered in one click.
+> - **A continuous close**: entries are drafted as the activity happens, not gathered in the last week of the month.
+>
+> *For the CFO: the ledger and the treasury system agree by construction, and every number in the close carries its own trail back to a bank movement.*
+
+> **Where to find it:** [CONFIRM: menu path — PM to supply]
 > **Who uses it:** accountants, finance team, treasury operations, auditors.
 > **Permissions required:** `CashManagement.TransactionsPosting` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-A **G/L posting** is the accounting record a treasury transaction produced — the debit and credit
-lines meant for your general ledger.
+Hand your accountants a ledger that is already written: a **G/L posting** is the accounting record a
+treasury transaction produces — the debit and credit lines meant for your general ledger, with the
+transaction and the rule behind them attached.
 
-**Treasury Hub no longer generates G/L postings, and no longer sends them to an ERP.** The processes
-that created postings, dispatched them, and tracked their status have all been switched off.
-Postings can also no longer be approved or deleted; those actions answer an error.
-
-**Nothing has been deleted.** Every posting ever created, its status history, and its link to the
-underlying transactions are kept and remain readable.
-
-G/L posting is being rebuilt from scratch, together with reconciliation, as its own project. This
-page describes what your existing posting records mean, so you can read the history and hand it
-over with confidence.
+Postings are generated from your [posting rules](coa-rules-engine.md), approved, dispatched to your
+ERP, and followed until the ERP confirms them. Every action governed, every number traced.
 
 ## Key concepts
 - **Posting** — the accounting entry created for a transaction, expressed as a **debit and credit
   account** for the amount.
-- **PostingRule** — the rule that generated a posting and decided which accounts it was booked to.
-  Posting rules are frozen: they no longer run. See [Chart of Accounts & Rules
-  Engine](coa-rules-engine.md) and [Matching Rules](../10-admin-console/matching-rules.md).
-- **Debit Acct / Credit Acct** — the general-ledger accounts a posting was booked to.
-- **Posting status** — where a posting stood when generation stopped.
+- **PostingRule** — the rule that generates a posting and decides which accounts it is booked to.
+  See [Chart of Accounts & Rules Engine](coa-rules-engine.md) and
+  [Matching Rules](../10-admin-console/matching-rules.md).
+- **Debit Acct / Credit Acct** — the general-ledger accounts a posting is booked to.
+- **Posting status** — where a posting stands in its lifecycle, from generated to confirmed.
 
-## What your posting records contain
+## Before you start
+- You need `CashManagement.TransactionsPosting` · Read to view postings.
+- Your [chart of accounts and posting rules](coa-rules-engine.md) decide which accounts each
+  transaction maps to. A transaction with no matching rule produces no posting.
+- Your ERP connection carries the approved entries onward — see
+  [NetSuite (ERP Integration)](../02-integrations/netsuite-erp.md).
+
+## How to use it
+
+### Read a posting
 Each posting record carries:
 
 | Field | Shows |
@@ -43,42 +52,41 @@ Each posting record carries:
 | **Amount** | The posting amount. |
 | **Matching Rule** | The **PostingRule** that generated the posting. |
 | **Remittance Info** | The remittance message carried by the transaction. |
-| **Status** | Where the posting stood in its lifecycle. |
+| **Status** | Where the posting stands in its lifecycle. |
 
-## Posting statuses
-Statuses are frozen as they were when posting stopped — none of them will change on their own any
-more.
+### Follow a posting to your ledger
+Statuses tell you how far an entry has travelled:
 
 | Status | Meaning |
 |---|---|
-| **Generated / Pending** | The posting was created but never confirmed in the ledger or ERP. |
-| **Posted** | The posting was recorded and confirmed in the ERP. |
-| **Mismatch / Exception** | The posting could not be matched or was rejected downstream. |
+| **Generated / Pending** | The posting is created and waiting to be confirmed in the ledger or ERP. |
+| **Posted** | The posting is recorded and confirmed in the ERP. |
+| **Mismatch / Exception** | The posting could not be matched or was rejected downstream. Work these first. |
 
 > Any figures, account codes, or counterparties you see in demo screens are illustrative. Your
 > records hold your own transactions and your own chart of accounts.
 
-## What this means for you
-- **New treasury activity produces no accounting entries in Treasury Hub.** Book it in your ERP as
-  you did before Treasury Hub posted for you.
-- **A posting left in Generated / Pending will stay there.** It was never confirmed downstream;
-  treat it as an entry that did not reach your ledger.
-- **Changing a posting rule has no effect**, because nothing runs the rules.
-- **Reconciliation itself is unaffected.** Matching, approvals, and conciliations continue as
-  before; only the accounting entries that used to follow them have stopped — see [Reconciliation —
-  ERP Posting](../04-reconciliation/erp-posting.md).
+## Configuration
+- Posting rules are maintained in [Chart of Accounts & Rules Engine](coa-rules-engine.md); changing
+  a rule changes how later transactions map.
+- Approval and dispatch behaviour is covered in [Journal Entries](journal-entries.md).
 
-## Tips & good practices
-- Take an extract of your posting history and keep it with your period-close file, so the record is
-  where your auditors expect it.
-- Reconcile your ledger against the last **Posted** entries once, so you know exactly where Treasury
-  Hub's contribution to the ledger ends.
-- Tell your accounting team the cut-off date, so nobody waits for entries that are not coming.
+## Tips to get more value
+- Work the **Mismatch / Exception** status first thing in the close, so a rejected entry is fixed
+  while the underlying transaction is still fresh.
+- Take an extract of your posting history into your period-close file, so the evidence sits where
+  your auditors expect to find it.
+- Review which transactions produce no posting at all: each one is a rule you have not written yet,
+  and writing it removes that line from next month's manual work.
 
-## Related
-- [Chart of Accounts & Rules Engine](coa-rules-engine.md) — how postings were mapped to accounts.
-- [Journal Entries](journal-entries.md) — how full entries are generated and approved.
-- [End-to-end audit trail](audit-trail.md) — the immutable history behind every posting.
-- [Reconciliation — ERP Posting](../04-reconciliation/erp-posting.md) — the reconciliation side of
-  posting.
-- [Matching Rules](../10-admin-console/matching-rules.md) — the rules that produced postings.
+## Where to go next
+- [Chart of Accounts & Rules Engine](coa-rules-engine.md) — map every transaction to the right
+  accounts automatically, so postings need no manual coding.
+- [Journal Entries](journal-entries.md) — route entries through approval and out to your ERP with
+  segregation of duties enforced.
+- [End-to-end audit trail](audit-trail.md) — answer any auditor's question about a posting with an
+  immutable record.
+- [Reconciliation — ERP Posting](../04-reconciliation/erp-posting.md) — turn reconciled items into
+  accounting entries with no re-keying.
+- [Matching Rules](../10-admin-console/matching-rules.md) — the tenant-wide rules that tag and post
+  transactions by rule.

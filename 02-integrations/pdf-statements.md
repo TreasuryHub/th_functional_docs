@@ -1,18 +1,32 @@
 # PDF Statements
 
+> **Turn PDF bank statements into clean data, with no re-keying**
+>
+> **Why it matters**
+> - **The banks that still send PDFs stop being a problem**: movements are read straight out of the document.
+> - **Reading, not guessing**: the text layer and the page geometry decide where the table is and what each column means.
+> - **Same output as a CSV**: what you get is movements, handled exactly like any other feed.
+
 > **Where to find it:** **Settings › Ingestion › Parse Templates** (the PDF stages of the template editor); PDFs come in through **Integrations › Ingestion** or **Upload Statement**, where their outcome is also shown.
 > **Who uses it:** treasury operations, finance team, finance systems owners.
 > **Permissions required:** See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Build a template for a PDF statement](#build-a-template-for-a-pdf-statement) from a representative file.
+> 2. [Read the balance check](#read-the-balance-check) to confirm the movements add up to the statement.
+> 3. Check [what blocks, and what only warns](#what-blocks-and-what-only-warns) before you publish.
+> 4. Publish, and every later statement from that bank loads on its own.
+
 ## Overview
-Many banks still send a statement as a PDF. Treasury Hub reads those statements directly: it pulls the
+Turn a PDF statement into clean data with nobody re-keying it: many banks still send statements as
+PDFs, and TreasuryHub reads them directly — it pulls the
 **text layer** out of the document, works out from the **geometry of the page** where the table is,
 which column is which, where each movement starts and where the statement ends, and turns the result
 into movements — the same movements a CSV would have produced.
 
 Two things follow from reading a PDF rather than looking at it. First, **this is not OCR**: a PDF whose
 pages are photographs of a statement carries no text, so there is nothing to read. Second, because a
-statement prints its own balances, Treasury Hub can check its work: the movements it extracted are
+statement prints its own balances, TreasuryHub can check its work: the movements it extracted are
 reconciled against the opening, closing and running balances the bank printed. What happens when they
 do not reconcile is yours to decide — a template can be published with the mismatch accepted, and a
 load that does not add up stops and offers you five ways forward rather than quietly storing figures
@@ -38,7 +52,7 @@ nobody can stand behind.
 
 ## Before you start
 - **Ask your bank for a PDF with selectable text.** If you can select and copy the figures in the
-  document, Treasury Hub can read it. If the page is an image, it cannot, and no template will change
+  document, TreasuryHub can read it. If the page is an image, it cannot, and no template will change
   that.
 - Have one statement per file, for one account. A PDF that holds several accounts' statements one after
   the other has to be split first.
@@ -78,7 +92,7 @@ nobody can stand behind.
    See [Parse Templates](parsing-templates.md).
 
 ### Read the balance check
-A statement prints its own balances, so Treasury Hub can prove what it read. After the rows are
+A statement prints its own balances, so TreasuryHub can prove what it read. After the rows are
 extracted they are reconciled, to the cent, in one of two ways:
 
 - **Running balance** — the balance printed on each row must equal the previous one plus that row's
@@ -130,7 +144,7 @@ anywhere else.
 ### Decide what to do when a load does not add up
 A file whose rows do not reconcile with the balances it prints is neither loaded nor thrown away. It
 stops on [Ingestion Activity](ingestion-activity.md) as **Balance mismatch** with nothing inserted.
-Expand the row and you get what Treasury Hub found — **Opening balance**, **Movements read**,
+Expand the row and you get what TreasuryHub found — **Opening balance**, **Movements read**,
 **Calculated closing balance**, **Printed closing balance** and the **Difference** — above the line
 *Nothing was loaded. The balance the file prints does not match the sum of its movements. Choose what
 to do in the row's «Actions» menu.*
@@ -177,7 +191,7 @@ out — see [Parse Templates](parsing-templates.md). What is particular to a PDF
 figures are found on the page.
 
 ### Dates that print no year
-Many statements print `15/03` and leave the year to the letterhead. Treasury Hub never fills that in
+Many statements print `15/03` and leave the year to the letterhead. TreasuryHub never fills that in
 from the clock: **the year always comes from the file itself**, either from the statement period you
 captured as an extra field or from the period the document prints under its own labels. A period that
 crosses New Year is handled correctly — in a statement covering 15 December to 14 January, the December
@@ -271,7 +285,7 @@ words.
   load reads every page.
 - **Editor:** the page viewer fetches up to 10 pages per request as you move through the document.
 
-## Tips & good practices
+## Tips to get more value
 - **Check in the editor that the page overlay highlights every movement**, on page 1, on a middle page
   and on the last page. A region drawn on page 1 alone is the usual cause of a later refusal for rows
   left outside it.
@@ -292,7 +306,7 @@ words.
 - **Re-check a template after a bank redesigns its statement.** The column-label check will refuse the
   file rather than mis-read it, so you will know — but you will know at load time.
 
-## Related
+## Where to go next
 - [AI Extraction](ai-extraction.md) — reading a PDF directly when its template no longer fits.
 - [Parse Templates](parsing-templates.md) — the AI assistant that drafts a template, the editor and
   the template lifecycle.
