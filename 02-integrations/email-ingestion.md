@@ -1,18 +1,25 @@
 # Email Ingestion
 
+> **Turn bank emails into structured data automatically**
+>
+> **Why it matters**
+> - **Nobody downloads attachments any more**: a monitored mailbox turns incoming files into data on arrival.
+> - **Rules per sender**: you decide what happens to each kind of message before it reaches anyone.
+> - **Covers the sources that will not change**: partners who only ever send email still feed the platform.
+
 > **Where to find it:** Integrations › Email Ingestion
 > **Who uses it:** treasury operations, finance team, administrators.
 > **Permissions required:** administrator to configure; create/edit on the data being ingested. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Email Ingestion lets Treasury Hub read data straight from incoming emails and their attachments, so
-files your banks, PSPs, or partners send by email become structured data without anyone downloading
-and uploading them by hand. You point a monitored mailbox at Treasury Hub, set rules for what to do
+Stop downloading attachments: Email Ingestion reads data straight from incoming emails and their
+attachments, so files your banks, PSPs, or partners send by email become structured data on
+arrival. You point a monitored mailbox at TreasuryHub, set rules for what to do
 with each message, and matching emails are processed automatically.
 
 ## Key concepts
-- **Monitored mailbox** — the email address Treasury Hub watches for incoming messages.
-- **Attachment** — a file on an email (e.g. a statement or report) that Treasury Hub extracts and
+- **Monitored mailbox** — the email address TreasuryHub watches for incoming messages.
+- **Attachment** — a file on an email (e.g. a statement or report) that TreasuryHub extracts and
   processes, typically using a [file-import template](file-import.md).
 - **Reception rule** — how a matching email is handled: the **account** movements land in, the **country**,
   an optional **parsing template** applied to the attachment, an optional **fallback currency**, the
@@ -24,12 +31,12 @@ with each message, and matching emails are processed automatically.
   wait for a template for its format). Set per mailbox.
 - **Omitted attachment** — an attachment whose file type is outside the supported list. It is marked
   **Omitted**: it neither fails nor blocks the rest of the message.
-- **Automated sending** — Treasury Hub can also send emails automatically as part of a flow (for
+- **Automated sending** — TreasuryHub can also send emails automatically as part of a flow (for
   example, notifications or outputs), not only read them.
 
 ## Before you start
 - Decide which mailbox will receive the source emails and confirm you can configure it to forward or
-  grant access to Treasury Hub.
+  grant access to TreasuryHub.
 - Have a [file-import template](file-import.md) ready for the attachment format, if you want the
   rule to name one.
 - Confirm you have administrator rights to set up ingestion — see
@@ -67,7 +74,7 @@ reprocessed); any rule can be enabled or disabled later. Run **one rule per prov
 to the right template.
 
 ### Review what was ingested
-1. Incoming emails that match your rules are processed and their data is created in Treasury Hub.
+1. Incoming emails that match your rules are processed and their data is created in TreasuryHub.
 2. Check [Ingestion Activity](ingestion-activity.md) to see each processed file, its status, and any
    errors.
 
@@ -97,7 +104,7 @@ failure — the rest of the message is processed normally.
 - **Automated sending** — configure outbound emails where a flow needs to notify or deliver output
   by email.
 
-## Tips & good practices
+## Tips to get more value
 - Use a **dedicated mailbox** for ingestion so it's easy to see what's coming in and to keep rules
   simple.
 - Make rules specific (by sender and subject) to avoid processing unrelated messages.
@@ -107,7 +114,7 @@ failure — the rest of the message is processed normally.
   receives invoices and loose spreadsheets, every stray attachment then becomes a file somebody has
   to answer for.
 
-## Related
+## Where to go next
 - [Integrations Overview](overview.md) — all ingestion channels.
 - [File Import](file-import.md) — the templates applied to attachments.
 - [SFTP Ingestion](sftp-ingestion.md) — an alternative automated file channel.

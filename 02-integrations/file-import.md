@@ -1,14 +1,27 @@
 # File Import (CSV / Excel / PDF)
 
+> **Load any bank or ERP file without IT or custom scripts**
+>
+> **Why it matters**
+> - **Set it up once**: the first file of a new format needs a template; every file after that reuses it.
+> - **The formats you actually get**: CSV, TXT, TSV, Excel and PDF, uploaded straight from your desk.
+> - **Straight into the platform**: rows land as transactions and balances, ready for reconciliation and reporting.
+
 > **Where to upload:** **Integrations › Ingestion** (**Upload file**) for any file; **Upload Statement** for bank statements (on Home, on a [Bank Account](../06-reporting/bank-accounts.md), or the [Bank Statements](../06-reporting/bank-statements.md) screen).
 > **Where templates live:** **Settings › Ingestion › Parse Templates**.
 > **Who uses it:** treasury operations, finance team — no IT required.
 > **Permissions required:** create/edit on the data you're importing; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Upload a file](#upload-a-file), or [upload a bank statement](#upload-a-bank-statement) if that is what you have.
+> 2. [Create or edit a Parsing Template](#create-or-edit-a-parsing-template) the first time you see a format.
+> 3. [Read the outcome of an upload](#read-the-outcome-of-an-upload).
+> 4. Every later file from the same source reuses the template.
+
 ## Overview
-File import lets anyone on your team bring flat files into Treasury Hub without scripts or custom
-spreadsheet mapping. You **upload a file** (on **Integrations › Ingestion**, or via **Upload
-Statement** for bank statements), Treasury Hub reads it using a **Parsing Template** that maps its columns to Treasury
+Load any bank or ERP file without IT: file import lets anyone on your team bring flat files into
+TreasuryHub, with no scripts and no custom spreadsheet mapping. You **upload a file** (on **Integrations › Ingestion**, or via **Upload
+Statement** for bank statements), TreasuryHub reads it using a **Parsing Template** that maps its columns to Treasury
 Hub fields, and the data lands as transactions, balances, or other entities. The first time you import
 a new format you set the template up once; every import after that from the same source reuses it.
 
@@ -24,16 +37,16 @@ Reusable templates are managed as **Parse Templates** under **Settings › Inges
   **Settings › Ingestion › Parse Templates**; if a source changes its format, you edit the template
   instead of starting over. A template declares the **file type** it reads — CSV, Excel, fixed-width
   text, SWIFT MT, PDF or XML — and the file it is given has to be of that type.
-- **Column mapping** — linking each column in your file to a Treasury Hub field (date, amount,
+- **Column mapping** — linking each column in your file to a TreasuryHub field (date, amount,
   reference, counterparty…) and a target entity (movements, balances, payment orders).
-- **Auto-detection** — when a file arrives without a template named for it, Treasury Hub works out
+- **Auto-detection** — when a file arrives without a template named for it, TreasuryHub works out
   **which template** reads it, in three steps: the detection rules a template declares (extension,
   file-name pattern, expected header, a value in a known cell), then the **format fingerprint**
   learned from the last file of that shape that loaded successfully, then a **similar header**. It
   either resolves a template or it does not: when no active template recognises the file completely,
   or when two recognise it equally well, the file is **parked** and waits for a person rather than
   being loaded with a guess.
-- **How PDFs are read** — Treasury Hub reads the **text layer** of the PDF and then analyses the
+- **How PDFs are read** — TreasuryHub reads the **text layer** of the PDF and then analyses the
   **geometry of the page** to find the table, its columns, its header and where each row starts. It
   does not perform OCR. A **scanned, image-only PDF has no text layer and cannot be read** — it is
   parked as incompatible, and the only thing left to do with it is download it again. (A scan that
@@ -82,7 +95,7 @@ Reusable templates are managed as **Parse Templates** under **Settings › Inges
 ### Create or edit a Parsing Template
 1. Go to **Settings › Ingestion › Parse Templates**.
 2. Create a template (or open an existing one), choose the **file type** it reads, and define the
-   **column mapping** — which column maps to which Treasury Hub field and entity.
+   **column mapping** — which column maps to which TreasuryHub field and entity.
 3. Work against a sample file in the template workbench: that is the screen where you adjust the
    mapping, re-read the parsed result, and commit only once it looks right.
 4. Save and activate it. From then on, files from that source are parsed automatically with this
@@ -90,6 +103,7 @@ Reusable templates are managed as **Parse Templates** under **Settings › Inges
 
 ### Read the outcome of an upload
 A file ends in one of these outcomes, shown on [Ingestion Activity](ingestion-activity.md):
+
 - **Completed** — the rows were inserted.
 - **No data** — the file was read and held nothing to ingest (an empty statement, a header with no
   rows). Not an error.
@@ -113,11 +127,11 @@ A file ends in one of these outcomes, shown on [Ingestion Activity](ingestion-ac
   hand: [SFTP Ingestion](sftp-ingestion.md) (files dropped on a server) or
   [Email Ingestion](email-ingestion.md) (attachments read from a mailbox).
 
-## Tips & good practices
+## Tips to get more value
 - Set up a clean **Parsing Template** the first time — every later import from that source reuses it,
   so the effort pays back immediately.
 - **Ask your bank for a machine-readable statement** — CSV, Excel, or a PDF with selectable text. If
-  you can select and copy text in the PDF, Treasury Hub can read it; if the page is a photograph of a
+  you can select and copy text in the PDF, TreasuryHub can read it; if the page is a photograph of a
   statement, it cannot.
 - Always read the **Preview** and its parsing warnings before you upload; it's designed to catch
   silent data errors before they reach your numbers.
@@ -127,7 +141,7 @@ A file ends in one of these outcomes, shown on [Ingestion Activity](ingestion-ac
 - For high-volume, recurring feeds, use [SFTP](sftp-ingestion.md), [Email](email-ingestion.md), or
   [APIs](inbound-apis.md) instead of manual upload.
 
-## Related
+## Where to go next
 - [Parse Templates](parsing-templates.md) — how a file finds its template, and how a template is
   created with the AI assistant.
 - [PDF Statements](pdf-statements.md) — how a PDF is read, the balance check, and why a PDF is refused.

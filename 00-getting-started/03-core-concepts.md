@@ -1,12 +1,19 @@
 # Core Concepts
 
+> **Understand the model once, and every screen makes sense**
+>
+> **Why it matters**
+> - **Learn it once**: tenants, companies, accounts and workflows are the same ideas behind every module.
+> - **Figures that roll up correctly**: get the company structure right here and every consolidated number follows.
+> - **Fewer surprises later**: the terms on this page are the ones every other page assumes you know.
+
 > **Who this is for:** everyone — read this once and the rest of the platform makes sense.
 
 A handful of ideas run through the whole platform. Understanding these will help you use every
 module.
 
 ## Organizations & tenants
-Treasury Hub is **multi-tenant**. Each customer organization is a **tenant**, and all your data is
+TreasuryHub is **multi-tenant**. Each customer organization is a **tenant**, and all your data is
 isolated to your tenant. If your login belongs to more than one organization, you can
 [switch tenants](02-navigation-and-workspace.md#switching-organizations-tenants) from your avatar
 menu. Everything you see — accounts, transactions, reports — is always scoped to the tenant you're
@@ -14,6 +21,7 @@ currently in.
 
 ## Company structure
 Within a tenant, your legal and reporting structure is modeled as a hierarchy:
+
 - **Company Group** — a grouping of companies (e.g. a region or division).
 - **Company** — a legal entity. One company can be marked the **default**; new bank accounts are assigned
   to the default company unless the user assigns them to another company.
@@ -34,7 +42,7 @@ accurate reconciliation, reporting, and payments. It's managed in the
 banking changes.
 
 ## Financial entities
-Treasury Hub isn't limited to bank balances. Its **cash-forecast model** classifies the full range of
+TreasuryHub isn't limited to bank balances. Its **cash-forecast model** classifies the full range of
 financial entities your team handles — organized as **contracts** (which emit cashflows), the **cashflows**
 themselves, standalone **operatives**, and **plans** that project future flows:
 
@@ -56,12 +64,13 @@ Everything follows the same path:
 **Sources → Integrations (ingestion) → Data layer (normalize/unify/enrich) → Workflows → Modules.**
 Raw data from banks, ERPs, files, and email comes in through **Integrations**, becomes clean
 **normalized data**, is processed by **workflows** (reconciliation, payments, posting…), and shows
-up in the **modules** you use. See [What is Treasury Hub](01-what-is-treasury-hub.md#how-the-platform-is-organized-the-5-layer-stack).
+up in the **modules** you use. See [What is TreasuryHub](01-what-is-treasury-hub.md#how-the-platform-is-organized-the-5-layer-stack).
 
 ## Everything is a workflow
-Beyond the data foundation, most things you *do* in Treasury Hub are **workflows** — a sequence of
+Beyond the data foundation, most things you *do* in TreasuryHub are **workflows** — a sequence of
 steps that can include validations, approvals, an optional journal entry, and optional reporting.
 Every workflow is:
+
 - **Orchestrated & configurable** — steps run in order (or in parallel), with rules per step.
 - **Governed** — approvals and validations are assigned to the right roles automatically.
 - **Auditable** — every step records who did what, when, and the outcome.
@@ -81,6 +90,7 @@ changed fields and submit the change yourself, and the platform rejects a save t
 an agent rather than from a person.
 
 An agent acts with the permissions you already have. The modules with an agent today:
+
 - **Reconciliation workflows** — build a workflow, with its chains, rules and matching criteria, by
   conversation in the Workflow Studio.
 - **Ingestion formats** — when a file arrives in a format nobody has set up yet, the platform
@@ -107,5 +117,5 @@ organized by source:
 | **Agent** | AI assistance needs input from you, or has a proposal waiting for your review. |
 | **Admin** | Security/administration events — access changes, expiring consents or tokens, configuration issues. |
 
-## Related
-- [Roles & Permissions](04-roles-and-permissions.md)
+## Where to go next
+- [Roles & Permissions](04-roles-and-permissions.md) — give each person exactly the access their role needs.

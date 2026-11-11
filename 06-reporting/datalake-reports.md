@@ -1,5 +1,12 @@
 # Datalake Reports
 
+> **Fast, plain answers straight from your consolidated data**
+>
+> **Why it matters**
+> - **One question per screen**: how much you hold, how it moved, what happened on an account, where money came from and went.
+> - **No conversion, no drill-down**: every figure stays in its own currency, which makes it quick and unambiguous.
+> - **Filters, totals, chart, table**: the same shape every time, so there is nothing to learn twice.
+
 > **Where to find it:** Reporting › Datalake › Cash position · Opening vs closing balance · Account
 > statement · Cash flow
 > **Who uses it:** treasurers, cash managers, finance teams, group controllers.
@@ -7,9 +14,16 @@
 > organisation to anyone who can open them. See
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [See how much cash you hold on a date](#see-how-much-cash-you-hold-on-a-date).
+> 2. [Compare the start and the end of a period](#compare-the-start-and-the-end-of-a-period).
+> 3. [Read one account's statement](#read-one-accounts-statement) when a figure is queried.
+> 4. [See where the money came from and went](#see-where-the-money-came-from-and-went).
+
 ## Overview
-Four screens read your accounts, balances, statement movements and payment events out of Treasury
-Hub's consolidated reporting store and answer one question each: **how much do we hold**, **how did
+Get a plain answer out of your consolidated data without building anything: four screens read your
+accounts, balances, statement movements and payment events out of TreasuryHub's reporting store and
+answer one question each — **how much do we hold**, **how did
 it move between two dates**, **what happened on this one account**, and **where did the money come
 from and go**.
 
@@ -28,7 +42,7 @@ once a night, so a screen read in the morning covers everything up to the previo
   other than the account's own never stands for the account.
 - **Totals per currency** — amounts in different currencies are never added together. Every total is
   a separate card per currency, with the number of accounts or events behind it.
-- **No currency** — an account with no currency recorded in Treasury Hub is grouped under
+- **No currency** — an account with no currency recorded in TreasuryHub is grouped under
   **No currency**. Its card shows counts only, with a line explaining that those accounts may hold
   different currencies, so their amounts are not added up. The per-account rows still show each
   amount.
@@ -126,7 +140,7 @@ of you, and nothing is kept between visits. What the figures depend on is mainta
 - **Statement movements** — see [Bank Statements](bank-statements.md) and
   [Transactions](transactions.md).
 
-## Tips & good practices
+## Tips to get more value
 - Check the **Balance date** on the cash position before circulating a number. An account whose feed
   has stopped keeps showing its last known balance, and the date is the only thing that gives it
   away.
@@ -139,7 +153,7 @@ of you, and nothing is kept between visits. What the figures depend on is mainta
 - Narrow the period before asking for a long statement. The screen pages through movements rather
   than loading a year at once, and a tight period is quicker to read as well as to load.
 
-## Related
+## Where to go next
 - [Cash Position](../01-home/home-dashboard.md) — the live, converted, drillable position.
 - [Balance Differential](balance-differential.md) — balances at two dates with currency conversion
   and an Excel export.

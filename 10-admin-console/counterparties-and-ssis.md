@@ -1,13 +1,25 @@
 # Counterparties & SSIs
 
+> **Pay only validated payees: no free-typed account numbers**
+>
+> **Why it matters**
+> - **Who and where, held together**: the counterparty and its settlement instructions in one record.
+> - **Fraud surface removed**: payments are raised against known payees rather than typed-in details.
+> - **Your own accounts too**: internal transfers use the same validated records.
+
 > **Where to find it:** Admin Console › Master Data › Counterparties & SSIs
 > **Who uses it:** treasury operations, accounts payable, administrators.
 > **Permissions required:** `CoreData.Counterparties` and `CoreData.SSIs` — Read to view; Create/Edit to add; **Approve** to authorize banking changes (maker-checker). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Add a counterparty](#add-a-counterparty) — who you are paying.
+> 2. [Add a settlement instruction (SSI)](#add-a-settlement-instruction-ssi) — where and how the money settles.
+> 3. [Approve a change (maker-checker)](#approve-a-change-maker-checker) so no single person can redirect money.
+> 4. [Use them in a payment](#use-them-in-a-payment).
+
 ## Overview
-To pay someone by transfer you need two things: **who** you're paying and **where/how** the money
-settles. Counterparties & SSIs manages both, so payments are raised against known, validated payees
-instead of free-typed account numbers.
+Pay only validated payees, never a free-typed account number: Counterparties & SSIs holds both
+halves of what a transfer needs — **who** you're paying and **where and how** the money settles.
 
 - **Counterparty** — the party the money goes to. Usually a third party (supplier, client,
   intragroup entity, bank), but it can also be **your own company**, when the money is moving
@@ -118,7 +130,7 @@ is sent again.
 ### Approve a change (maker-checker)
 1. Open the counterparty (**View**, or the row's actions). A user holding
    `CoreData.Counterparties.Approve` sees an **Approval** panel on the detail; for everyone else the
-   panel is simply absent rather than greyed out.
+   panel is absent rather than greyed out.
 2. Choose **Approve**, **Reject**, **Suspend** or **Reactivate**. A confirmation dialog states
    exactly what the decision does — approving makes the counterparty nameable as a payment
    beneficiary, rejecting leaves it on record but unpayable, suspending blocks payments until
@@ -153,7 +165,7 @@ is.
 
 See [Creating a payment](../05-payments/creating-a-payment.md) for the full flow.
 
-## Tips & good practices
+## Tips to get more value
 - Keep one **default instruction per currency** so payment preparers rarely have to choose.
 - Mark the **dispersion methods first** on a new instruction. Done in that order, the card asks for
   four fields instead of twelve, and every mandatory one says which method is asking.
@@ -166,7 +178,9 @@ See [Creating a payment](../05-payments/creating-a-payment.md) for the full flow
 - If a payment preparer says a beneficiary is missing, open the counterparty and read its banner and
   its registration block before changing any bank details.
 
-## Related
+## Where to go next
+💡 Get more from this: combine validated counterparties with [Creating a Payment](../05-payments/creating-a-payment.md) so every batch is raised against known payees, with no account number typed by hand.
+
 - [Companies & Company Groups](companies-and-groups.md) — the payer side of a transfer.
 - [Bank Accounts](../06-reporting/bank-accounts.md) — your own accounts.
 - [Creating a payment](../05-payments/creating-a-payment.md) — where counterparties and SSIs are

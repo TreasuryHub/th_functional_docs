@@ -1,12 +1,26 @@
 # Build Your Own Report
 
+> **Build the exact report your board asks for, without IT**
+>
+> **Why it matters**
+> - **Described in business terms**: what it draws on, how it is grouped, what it measures, how it is filtered.
+> - **Saved once, run forever**: a template produces a fresh run against current data, on demand or on a schedule.
+> - **Room to go further**: advanced mode opens the same report in the full builder, with joins, formulas and the query.
+
 > **Where to find it:** Reporting › Build your own report
 > **Who uses it:** treasurers, FP&A, finance teams, controllers — anyone who needs a report that is not in the library.
 > **Permissions required:** Read on the data the report draws on; a report only ever shows the companies and accounts you are entitled to see. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Start a report](#start-a-report) and give it a name.
+> 2. [Build it in the editor](#build-it-in-the-editor): choose what it draws on, how it is grouped and what it measures.
+> 3. [Filter](#filter) it down to the scope your reader cares about.
+> 4. Save it as a template, and run it on demand or on a schedule.
+
 ## Overview
-Build Your Own Report is where you define a report yourself: what it draws on, how it is grouped,
-what it measures, how it is filtered, and how it is displayed. You save it as a **template**, and
+Build the exact report your board asks for, without IT: Build Your Own Report is where you define
+it yourself — what it draws on, how it is grouped, what it measures, how it is filtered, and how it
+is displayed. You save it as a **template**, and
 every time it is run — by you or on a schedule — it produces a **run** against current data.
 
 There are two ways in. The **editor** describes a report in business terms and covers most of what
@@ -112,6 +126,7 @@ buttons on it. A measure dropped on Dimensions is redirected to Measures; a dime
 Measures becomes a distinct count. Chips reorder by dragging and move between shelves.
 
 **Click a chip** for that column's options:
+
 - its **label**, which can interpolate a parameter — `Balance at {From}`;
 - its **aggregation** — sum, average, min, max, count, distinct count, or **last by date**;
 - its **date granularity** — exact, day, week, month, quarter or year;
@@ -236,7 +251,7 @@ numbers were reached, and the result exports to CSV.
 - **Relative parameter defaults** are what a scheduled report should use. A fixed date will go stale
   the day after you set it.
 
-## Tips & good practices
+## Tips to get more value
 - **Start in the editor, move up when you need to.** Advanced mode exists for several joins,
   formulas and the field catalog — not for ordinary reports.
 - **Use a quick start as a worked example.** It is faster to adjust a report that already runs than
@@ -252,7 +267,7 @@ numbers were reached, and the result exports to CSV.
 - **Take the red notices seriously.** They mark a number that would be wrong, not a style
   preference.
 
-## Related
+## Where to go next
 - [Reporting — Overview](overview.md) — the reports that already exist, before you build one.
 - [Datalake Reports](datalake-reports.md) — the fixed datalake reports and how their figures differ.
 - [Transactions](transactions.md) · [Balance Differential](balance-differential.md) ·

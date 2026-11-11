@@ -1,57 +1,73 @@
 # Tags
 
-> **Where to find it:** the legacy **Tags** entry has been removed from the menu. Its old link now opens
-> **Settings › Ingestion › Transaction Tagging › Tags**, the screen that replaces it. Tags already on your
-> transactions stay visible on **Reporting › Operations › Transactions**.
-> **Who uses it:** administrators and treasury operations working with historical categorization.
+> **Label every transaction your way, by cost centre, project or purpose**
+>
+> **Why it matters**
+> - **Your categories, not the bank's**: one label set that matches how your business actually reports, applied across every account and entity.
+> - **Applied by rule, not by hand**: [matching rules](matching-rules.md) attach tags as transactions arrive, so categorization keeps up with volume.
+> - **Analysis that holds up**: grouping, filtering and export all work off the same tags, so a figure in a report traces back to the movements behind it.
+
+> **Where to find it:** [CONFIRM: menu path — PM to supply]. Tags on your transactions are visible on
+> **Reporting › Operations › Transactions**.
+> **Who uses it:** administrators and treasury operations who own how transactions are categorized.
 > **Permissions required:** `CoreData.Tags` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-**Tags** are labels attached to transactions to categorize them — by cost centre, project, purpose,
-or counterparty type, for example. This page describes the **legacy tags**: the list that was
-maintained under Admin Console › Master Data and applied by [matching rules](matching-rules.md).
-
-**Legacy tags can no longer be created, edited, uploaded, or deleted.** Those actions answer an
-error, and the rules that used to assign them [no longer run](matching-rules.md).
-
-**Nothing has been deleted.** Every legacy tag and every transaction it was attached to is kept and
-stays readable, so your past categorization and the reports built on it are unchanged.
-
-Tagging is now done by the **tagging module**, under **Settings › Ingestion › Transaction Tagging**
-— **Tags**, **Classification rules**, and **Classification conflicts**. The Transactions list shows
-legacy tags and tags from the tagging module together, so you see a transaction's full history in
-one place.
+Give every movement a label that means something to your business: **tags** are labels attached to
+transactions to categorize them — by cost centre, project, purpose, or counterparty type, for
+example. You maintain the list, and [matching rules](matching-rules.md) apply them automatically to
+the transactions that match.
 
 ## Key concepts
-- **Legacy tag** — a label with a name and an optional description, from the list maintained before
-  the tagging module.
-- **Tag on a transaction** — the link between a transaction and a tag. Those links are kept exactly
-  as they were.
-- **Classification tag** — the equivalent in the tagging module, and what new tagging uses.
+- **Tag** — a label with a name and an optional description.
+- **Tag on a transaction** — the link between a transaction and a tag. One transaction can carry
+  several.
+- **Classification tag** — the equivalent in the [tagging
+  module](../02-integrations/transaction-tagging.md), applied at ingestion time. The Transactions
+  list shows both together, so you see a transaction's full categorization in one place.
+
+## Before you start
+- Agree the label set with whoever reads the reports. A tag that nobody groups by is upkeep without
+  a payoff.
+- Decide how tags will be applied — by [matching rule](matching-rules.md) for anything recurring,
+  by hand only for the exceptions.
+- You need `CoreData.Tags` to work with the list.
 
 ## How to use it
 
+### Maintain the tag list
+1. Create a tag with a name and, where it helps, a description of when it should be used.
+2. Edit a tag's name or description as your reporting structure changes.
+3. Upload a list in bulk when you are setting up, rather than typing them one at a time.
+
+### Apply tags automatically
+1. Open [Matching Rules](matching-rules.md) and create a **TagAssignmentRule**.
+2. Set its scope — company group, company, institution, account, currency and validity window.
+3. Name the tag it assigns, and set its order relative to competing rules.
+
 ### Read the tags on your transactions
 1. Open **Reporting › Operations › Transactions**.
-2. Show the **Tags** column, or select a row to open its detail panel. The tags listed include both
-   legacy tags and tags set by the tagging module.
-3. Sort, group, or filter the grid as usual to see how a period or an account was categorized.
+2. Show the **Tags** column, or select a row to open its detail panel.
+3. Sort, group, or filter the grid to see how a period or an account was categorized.
 4. Use **Export** to take the tagged list into Excel or CSV for analysis or an audit file.
 
-### Set up tagging for new transactions
-1. Open **Settings › Ingestion › Transaction Tagging › Tags** and create the tags you want to use.
-2. Open **Classification rules** to decide which transactions get which tag.
-3. Check **Classification conflicts** for transactions that more than one rule claims.
+## Configuration
+- **Who can change the list** is controlled by `CoreData.Tags` — see
+  [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+- **How tags are assigned** is configured on [Matching Rules](matching-rules.md).
 
-## Tips & good practices
-- Rebuild only the tags you actually use. The move to the tagging module is a good moment to drop
-  labels that no longer earn their place.
-- Keep the legacy names in mind when reading older reports — a figure grouped by a legacy tag will
-  not pick up transactions tagged by the new module unless you use the same name.
-- Do not plan around editing the legacy list: it is read-only.
+## Tips to get more value
+- Keep the list short enough that people remember it. A dozen tags used consistently tell you more
+  than fifty used occasionally.
+- Name tags for what they describe rather than who asked for them, so the label still makes sense
+  after a reorganization.
+- Review untagged transactions once a month: each cluster is a rule you have not written yet, and
+  writing it removes that work for good.
 
-## Related
-- [Matching Rules](matching-rules.md) — the rules that used to apply these tags, and what replaces
-  them.
-- [Master Data](master-data.md) — the wider reference-data picture.
-- [Reconciliation Overview](../04-reconciliation/overview.md) — where tagged data is reconciled.
+## Where to go next
+- [Matching Rules](matching-rules.md) — apply tags automatically across the whole organization.
+- [Transaction Tagging](../02-integrations/transaction-tagging.md) — classify at ingestion time,
+  with AI-drafted rules and a conflicts inbox.
+- [Category Positions](../06-reporting/category-positions.md) — see where your cash came from and
+  where it went, grouped by the tags you set here.
+- [Master Data](master-data.md) — clean reference data behind every figure.

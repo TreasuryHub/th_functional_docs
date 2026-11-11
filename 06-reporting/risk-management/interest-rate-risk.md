@@ -1,12 +1,19 @@
 # Interest Rate Risk
 
+> **See how a rate move hits your earnings and your value**
+>
+> **Why it matters**
+> - **Both halves of the answer**: sensitivity of net interest income and of the economic value of your balance sheet.
+> - **From gap to DV01**: repricing gap, duration and sensitivity in one framework.
+> - **IRRBB for banks**: the standard framework, not an approximation of it.
+
 > **Where to find it:** Reporting › Risk Management › Interest Rate Risk
 > **Who uses it:** treasurers, ALM and risk teams, and (in banks) IRRBB regulatory-reporting teams.
 > **Permissions required:** Reporting / Risk Management access — see [Roles & Permissions](../../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Interest Rate Risk measures and helps you manage how movements in interest rates affect your
-portfolio — from the **repricing gap** through **duration/DV01** to the sensitivity of both your
+See how a rate move hits both your earnings and your value: Interest Rate Risk measures how
+movements in interest rates affect your portfolio — from the **repricing gap** through **duration/DV01** to the sensitivity of both your
 **earnings (net interest income)** and the **economic value of your balance sheet**. For banks it
 covers the standard **IRRBB** (Interest Rate Risk in the Banking Book) framework.
 
@@ -72,7 +79,7 @@ monitoring enforces.
   or partner-calibrated models).
 - **Alert Settings** — limit breaches raise [Alerts](../../08-alerts/alerts.md).
 
-## Tips & good practices
+## Tips to get more value
 - Watch both **earnings (NII)** and **value (EVE)** — a position can look fine on one and stressed on
   the other.
 - Use the **cumulative gap** to spot structural mismatches (e.g. long-dated fixed assets funded by
@@ -86,7 +93,7 @@ monitoring enforces.
 - **NII and EVE sensitivity** under parallel and non-parallel shocks (six IRRBB scenarios).
 - **Scenario Builder** for building and comparing custom rate scenarios.
 
-## Related
+## Where to go next
 - [Risk Management — Overview](overview.md) — hybrid model and partner integration.
 - [ALM](alm.md) — IRRBB regulatory reporting sits alongside structural liquidity there.
 - [Risk Cockpit](risk-cockpit.md) — IRRBB KPIs (DV01, duration gap) summarised with other dimensions.

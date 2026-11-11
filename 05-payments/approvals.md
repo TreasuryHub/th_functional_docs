@@ -1,15 +1,24 @@
 # Payment Approvals
 
+> **Sign off payments with built-in four-eyes control**
+>
+> **Why it matters**
+> - **No extra portal**: approvals live in the Payment Blotter, where the pending payments already are.
+> - **The policy enforces itself**: the creator cannot approve, and larger payments require several signatures in sequence.
+> - **Every decision recorded**: approver, timestamp, and a mandatory reason on any rejection.
+>
+> *For the CFO: the signing policy is enforced by the system on every payment, and the evidence for it is automatic.*
+
 > **Where to find it:** Payments › Payment Blotter › **Awaiting approval**
 > **Who uses it:** approvers — treasurers, finance managers, and anyone with payment approval authority.
 > **Permissions required:** `CashManagement.Payments` · CreateEdit **and** a sufficient payment approval level. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Approving payments is part of the [Payment Blotter](payment-blotter.md), not a separate screen. The
-**Awaiting approval** tab holds every payment that has been created but not yet signed, and you
-approve or reject them from there.
+Sign off payments with full control and no extra portal: approvals live inside the
+[Payment Blotter](payment-blotter.md), where the **Awaiting approval** tab holds every payment that
+has been created but not yet signed.
 
-Treasury Hub enforces governance automatically: the person who creates a payment cannot approve it,
+TreasuryHub enforces governance automatically: the person who creates a payment cannot approve it,
 and larger or riskier payments can require **several signatures** in sequence. Every decision is
 recorded with the approver, the timestamp and — for rejections — a mandatory reason.
 
@@ -31,7 +40,7 @@ recorded with the approver, the timestamp and — for rejections — a mandatory
   payment's requirement.
 - There must be payments in the **Awaiting approval** tab. A payment is born there — creating one
   does not send it.
-- Your browser may ask for your location. Treasury Hub records where an approval was given when the
+- Your browser may ask for your location. TreasuryHub records where an approval was given when the
   browser provides it; approval still works if you decline.
 
 ## How to use it
@@ -67,7 +76,7 @@ approval**.
 - **Each user's approval level** is set on their user record — see
   [Users & Roles](../10-admin-console/users-and-roles.md#set-a-payment-approval-level).
 
-## Tips & good practices
+## Tips to get more value
 - Write **specific rejection reasons**. The creator works from your text alone to correct and
   resubmit.
 - Read the **traceability panel** before signing a payment that already carries signatures — it
@@ -75,7 +84,7 @@ approval**.
 - Keep approval levels aligned to real authority, so payments route to the right people instead of
   stalling in the tab.
 
-## Related
+## Where to go next
 - [Payment Blotter](payment-blotter.md) — the screen this tab belongs to, and the other statuses.
 - [Payment Approval Rules](../10-admin-console/payment-approval-rules.md) — where the number of
   signatures is configured.

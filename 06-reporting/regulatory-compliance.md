@@ -1,13 +1,21 @@
 # Regulatory & Compliance Reports
 
+> **Regulator-ready reports from data you already hold**
+>
+> **Why it matters**
+> - **Nothing assembled by hand**: every action and every ingested item is already tracked and traceable.
+> - **What auditors ask for**: a complete, searchable record of who did what in the platform.
+> - **The prudential views too**: capital, liquidity and credit-quality reporting for a regulated institution.
+
 > **Where to find it:** the **Audit** report sits in the Reporting menu (breadcrumb **Reporting ›
 > Overview › Audit**); the prudential reports (capital, liquidity, credit quality) are listed in the
 > reports library.
 > **Who uses it:** compliance officers, risk teams, controllers, auditors, regulators.
-> **Permissions required:** to be confirmed per report; the Audit Trail will typically be available to Auditor/Admin roles. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
+> **Permissions required:** Reporting access · Read; the Audit Trail is typically granted to Auditor and Admin roles. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The Regulatory & Compliance area brings together the reports auditors and regulators ask for: a
+Answer a regulator from data you already hold: the Regulatory & Compliance area brings together the
+reports auditors and regulators ask for — a
 complete, searchable record of who did what in the platform, plus the prudential views a regulated
 institution needs — capital, liquidity, and credit-quality reporting. Because every action and every
 ingested item is already tracked and traceable to its source, these reports are generated from
@@ -44,13 +52,16 @@ The Capital, Liquidity, and Credit-Quality reports work like the other standard 
 the reporting period and entity scope, review on screen, then export or schedule the output for your
 compliance calendar.
 
-## Tips & good practices
+## Tips to get more value
 - Export the **Audit Trail** for the exact period and scope an auditor requests rather than
   granting them broad platform access.
 - Use audit-trail filters to reconstruct a specific event end to end (from ingestion through
   approval and posting) when investigating a query.
 
-## Related
+## Where to go next
+ℹ️ Regulatory reporting and [ALM](risk-management/alm.md) together make up the **ALM & Regulatory**
+module: the filings and the balance sheet they are built on.
+
 - [Risk Management](risk-management/) — the risk dashboards (Credit Risk, IRRBB, ALM) these
   regulatory views build on.
 - [Operations blotters](operations-blotters.md) — the underlying debt, investment, and reconciliation

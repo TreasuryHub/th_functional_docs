@@ -1,13 +1,20 @@
 # Working with an Agent
 
-> **Where to find it:** Wherever a screen offers it — today, the Workflow Studio under
+> **Turn a sentence into a validated, ready-to-submit change**
+>
+> **Why it matters**
+> - **Not a description, the change itself**: the records found, the fields worked out, the whole thing validated.
+> - **Checked before you see it**: the proposal has already been run against the platform's own validation rules.
+> - **You confirm, always**: reviewing and submitting stays with you, by design.
+
+> **Where to find it:** Wherever a screen offers it — the Workflow Studio under
 > **Reconciliation › Workflows**, and the ingestion format proposals under **Settings › Ingestion**
 > **Who uses it:** Treasurers, finance teams, operations staff, and administrators
 > **Permissions required:** None of its own — it acts with the permissions you already have. See
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-A module's **agent** turns a sentence into a reviewable change. You say what you want; it finds the
+Turn a sentence into a validated, ready-to-submit change: that is what a module's **agent** does. You say what you want; it finds the
 records you named, works out exactly which fields would have to change, has that change checked
 against the platform's own validation rules, and gives it back to you as a **proposal**.
 
@@ -64,7 +71,7 @@ anything the agent does. See
 ### Answer a question it asks you
 1. When something was not in your sentence, the agent stops and asks for it by name — *"a value
    the request did not give is needed: start date of 'Reconciliation workflow setup'"*.
-2. Answer with just that value: *"start on 1 October"*.
+2. Answer with that value: *"start on 1 October"*.
 3. The agent keeps everything that had already resolved and completes the change. You do not
    repeat the original request.
 
@@ -108,7 +115,7 @@ Answering is a normal next message in the same conversation.
 - **Model provider unreachable.** AI assistance switches off; every screen and every manual flow
   continues to work exactly as before.
 
-## Tips & good practices
+## Tips to get more value
 - **One intent per message.** "Add the rule and rename the chain and change the tolerance" is harder
   to review than three turns, and the changed-fields list is longer than it needs to be.
 - **Correct it with a fact, not a question.** *"0.50, not 1"* is applied; *"is 1 too much?"* is
@@ -120,7 +127,7 @@ Answering is a normal next message in the same conversation.
 - **Start a new conversation for unrelated work.** A conversation carries its own context and its own
   ceiling; mixing two pieces of work in one makes both harder to follow.
 
-## Related
+## Where to go next
 - [AI Assistance — Overview](overview.md) — the safety promise, guardrails, budgets and audit.
 - [Reconciliation workflows](../04-reconciliation/workflows.md) — the Workflow Studio, where you use
   the agent most.

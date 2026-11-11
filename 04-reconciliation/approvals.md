@@ -1,12 +1,20 @@
 # Reconciliation — Reconciliation Approvals
 
+> **Keep a human check on borderline matches, without slowing the flow**
+>
+> **Why it matters**
+> - **Only what you asked to see**: a request appears because a rule you configured sent it, not because the engine guessed.
+> - **A decision, not a rebuild**: approve to create the reconciliation, reject to discard the proposal.
+> - **Control where it is worth it**: set match blocks to approve for the cases that warrant a second pair of eyes.
+
 > **Where to find it:** Reconciliation › Administration › Reconciliation Approvals (the screen it
 > opens is titled **Reconciliation Requests**)
 > **Who uses it:** finance team, reconciliation reviewers and approvers.
 > **Permissions required:** reconciliation access · CreateEdit to approve or reject; Read to view (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-**Reconciliation Approvals** is the queue of proposed reconciliations waiting for a human decision.
+Keep a human check on the borderline cases without holding up the rest: **Reconciliation
+Approvals** is the queue of proposed reconciliations waiting for a decision.
 A request lands here whenever a rule's match block is set to **send for approval** instead of
 auto-reconciling, and whenever a match is ambiguous enough that the rule asks for a second pair of
 eyes. You approve a request to create the reconciliation, or reject it to discard the proposal.
@@ -78,7 +86,7 @@ A request you created by hand has to resolve to exactly one flow. If its movemen
 one flow, or belong to none, the request is refused rather than guessed at — pick movements from a
 single flow and try again.
 
-## Tips & good practices
+## Tips to get more value
 - Filter by **rule** before you work a batch. Everything a single rule produced was paired on the
   same criteria, so you can judge the whole group with one decision.
 - Check the **Difference** column first — a non-zero difference on a rule that should balance is the
@@ -90,7 +98,7 @@ single flow and try again.
 - The date range defaults to today. Widen it when you're clearing a backlog, or you'll only see what
   arrived since midnight UTC.
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — where approvals sit in the end-to-end flow.
 - [Rules & Criteria](rules-and-criteria.md) — tune what reaches this queue and what auto-reconciles.
 - [Matching](matching.md) — make hand-picked matches instead of working proposed ones.

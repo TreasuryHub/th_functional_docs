@@ -1,15 +1,24 @@
 # Navigation & Your Workspace
 
+> **Everything you need is two clicks away**
+>
+> **Why it matters**
+> - **Nothing to hunt for**: every screen opens from the top bar and the Services menu, from wherever you are.
+> - **Your view, not everyone's**: the menu shows what your permissions allow, so there is nothing to scroll past.
+> - **One set of habits**: the grids behave the same way everywhere, so learning one screen teaches you the rest.
+
 > **Who this is for:** everyone using the platform.
 
 ## Overview
-Treasury Hub is a single web application. There is no left sidebar: every screen is reached from the
-**top bar** pinned to the top of the window, and from the **Services** menu that opens from it. What
+Reach any screen in two clicks, from wherever you already are: TreasuryHub is a single web
+application with no left sidebar — every screen opens from the **top bar** pinned to the top of the
+window, and from the **Services** menu that opens from it. What
 you see depends on your [permissions](04-roles-and-permissions.md) and on what your organization has
-set up — screens you have no access to are simply not listed.
+set up — screens you have no access to are not listed.
 
 ## The top bar
 From left to right, the top bar gives you:
+
 - **Logo / brand** — returns you to Home. (In white-label deployments this is your brand.)
 - **Services** — opens the Services menu, the overlay that lists every section and screen.
 - **Open Assistant** — opens the agent for the area you are working in, so you can describe a change
@@ -106,7 +115,7 @@ role grants, and the record of every change. See
 
 ### Find a screen faster
 - **Search by what you call it.** The **Search services...** box at the top of the overlay matches
-  synonyms as well as screen names, so you don't have to know Treasury Hub's wording for something.
+  synonyms as well as screen names, so you don't have to know TreasuryHub's wording for something.
   Typing `mt940` or `csv` finds **Parse Templates**; `IBAN` finds **Bank Accounts**. Results are
   grouped by section so you can see where the screen lives.
 - **Star what you use daily.** Click the star on any row to add it to a **Favorites** block at the
@@ -118,6 +127,7 @@ role grants, and the record of every change. See
 
 ## Working with data grids
 Most screens are powerful data grids (blotters). Across the platform you can generally:
+
 - **Add** a record (e.g. **+ Add Account**), **Upload** a file (e.g. **Upload Statement**),
   **Export**, and **Print** from the action bar.
 - **Filter** with tabs (e.g. All / Exceptions / Disconnected).
@@ -130,11 +140,11 @@ Most screens are powerful data grids (blotters). Across the platform you can gen
 ## Switching organizations (tenants)
 If you belong to more than one organization, the tenant name appears in the top bar next to your
 avatar. To switch, open the avatar menu and pick another organization from the list at the top of
-it; Treasury Hub reloads with that organization's data. If you belong to a single organization it is
+it; TreasuryHub reloads with that organization's data. If you belong to a single organization it is
 listed in the menu but can't be selected, and no tenant name is shown in the top bar. You only ever
 see data for your current organization.
 
-## Related
+## Where to go next
 - [Roles & Permissions](04-roles-and-permissions.md) — why some menu items are hidden.
 - [Users & Roles](../10-admin-console/users-and-roles.md) — managing people from the Admin Console.
-- [Home Dashboard](../01-home/home-dashboard.md)
+- [Home Dashboard](../01-home/home-dashboard.md) — the screen you land on, and the fastest way to see all your cash at once.

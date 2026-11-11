@@ -1,5 +1,12 @@
 # Category Positions
 
+> **See where your cash came from and where it went**
+>
+> **Why it matters**
+> - **The other half of the cash question**: not how much you hold, but what it went to.
+> - **Three levels deep**: Nature, then Category, then your own tags, period by period.
+> - **One currency**: net movement converted so the group reads as a single picture.
+
 > **Where to find it:** Reporting › Cash & Liquidity › Category positions
 > **Who uses it:** treasurers, cash managers, finance teams, controllers.
 > **Permissions required:** `CashManagement.CashPosition` · Read. **Refresh now** additionally needs
@@ -7,8 +14,9 @@
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-[Cash Position](../01-home/home-dashboard.md) answers "how much do we have". Category Positions answers the
-other half of the question: **what did the money go to, and where did it come from?** It takes the
+See where your cash came from and where it went: [Cash Position](../01-home/home-dashboard.md)
+answers "how much do we have", and Category Positions answers the other half — **what did the money
+go to, and where did it come from?** It takes the
 classification each transaction carries — its category and its tags — and reports the **net
 movement** behind it, period by period, converted into a single currency.
 
@@ -107,7 +115,7 @@ What *does* shape the report is configured elsewhere — the classification of y
 [Transaction Tagging](../02-integrations/transaction-tagging.md), and the rates it converts with, in
 [Exchange Rates](exchange-rates.md).
 
-## Tips & good practices
+## Tips to get more value
 - Watch the **Unclassified** nature. It is the report's own quality measure: the smaller it is, the
   more the rest of the grid can be trusted. Open [Transactions](transactions.md), filter the
   **Category** column by **To review**, and work it down.
@@ -118,11 +126,11 @@ What *does* shape the report is configured elsewhere — the classification of y
 - Remember these are movements, not balances. A nature with a large negative total spent money in
   the range; it says nothing about what is left. Pair it with [Cash Position](../01-home/home-dashboard.md).
 - Reclassify first, refresh second, read third. Clicking **Refresh now** before you have finished
-  reclassifying just means doing it twice.
+  reclassifying means doing it twice.
 - To work with the underlying movements — or to take figures away as a file — go to
   [Transactions](transactions.md) and filter by the category you are looking at.
 
-## Related
+## Where to go next
 - [Transaction Tagging](../02-integrations/transaction-tagging.md) — categories, tags and the rules that
   produce the classification this report reads.
 - [Transactions](transactions.md) — the movements behind every figure here, with a filter on the

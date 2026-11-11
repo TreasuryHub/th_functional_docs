@@ -1,38 +1,40 @@
 # G/L Postings (Reporting)
 
-> **Where to find it:** the **G/L Posting** entry has been removed from Reporting › Operations, and its
-> old link now opens **Reporting › Operations › Transactions**. The posting records described here are
-> kept and stay readable through the read-only transaction-postings endpoint of the Treasury Hub API.
+> **See exactly how every transaction hit your ledger**
+>
+> **Why it matters**
+> - **One place to answer "where did this book?"**: the debit account, the credit account and the rule behind them, for any transaction, on one row.
+> - **Evidence for the auditor**: each posting stays joined to the movement that produced it, so a sampled entry is explained without a hunt.
+> - **Coverage you can see**: the transactions that produce no posting stand out, which is how you find the mapping you still need.
+
+> **Where to find it:** [CONFIRM: menu path — PM to supply]. The movements behind the postings are on
+> **Reporting › Operations › Transactions**.
 > **Who uses it:** accountants, finance teams, controllers, auditors.
 > **Permissions required:** `CashManagement.TransactionsPosting` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-This page describes the reporting-side view of **G/L postings** — the debit/credit records that
-mapped a transaction to your general ledger, each showing which ledger accounts were debited and
-credited and the rule that produced it.
-
-**Treasury Hub no longer generates G/L postings, and no longer sends them to an ERP.** The processes
-that created postings, dispatched them, and tracked their status have all been switched off, so no
-new posting arrives to be reported on. The report screen itself has been removed from the menu.
-
-**Nothing has been deleted.** Every posting ever created, the accounts it was booked to, its status
-history, and its link to the underlying transactions are kept and remain readable.
-
-G/L posting is being rebuilt from scratch, together with reconciliation, as its own project. Until
-then, treat your postings as a closed set of historical records: this page explains what they
-contain so you can read them and hand them over.
+Read your ledger impact straight from treasury, without exporting anything: this is the
+reporting-side view of **G/L postings** — the debit/credit records that map a transaction to your
+general ledger, each showing which ledger accounts were debited and credited and the rule that
+produced it.
 
 ## Key concepts
 - **Posting** — the debit/credit record created for a transaction, mapping it to ledger accounts.
-- **PostingRule** — the rule that generated the posting and decided which ledger accounts a given
-  transaction was booked to. Each posting names its rule in the **Matching Rule** field. Posting
-  rules are frozen: nothing runs them any more. See
+- **PostingRule** — the rule that generates the posting and decides which ledger accounts a given
+  transaction is booked to. Each posting names its rule in the **Matching Rule** field. See
   [Matching Rules](../10-admin-console/matching-rules.md).
 - **Debit Acct / Credit Acct** — the two accounts of each entry.
-- **Status** — where a posting stood when generation stopped (for example generated, posted to the
-  ERP, pending, or a mismatch). Statuses no longer change, because nothing advances them.
+- **Status** — where a posting stands (for example generated, posted to the ERP, pending, or a
+  mismatch).
 
-## What a posting record contains
+## Before you start
+- You need `CashManagement.TransactionsPosting` · Read.
+- The accounts a posting books to come from your [chart of accounts and posting
+  rules](../11-accounting/coa-rules-engine.md).
+
+## How to use it
+
+### Read a posting record
 Each posting record carries:
 
 | Field | Shows |
@@ -45,31 +47,39 @@ Each posting record carries:
 | **Amount** | The posting amount. |
 | **Matching Rule** | The **PostingRule** that produced the posting. |
 | **Remittance Info** | The remittance message carried by the transaction. |
-| **Status** | Where the posting stood when generation stopped. |
+| **Status** | Where the posting stands. |
 
-## How to use it
+### Trace a posting back to its movement
+1. Note the **Account** and **Booking Date** on the posting row.
+2. Open **Reporting › Operations › Transactions** and filter to that account and date to see the
+   movement the posting was generated from.
+3. The **Matching Rule** field names the rule that decided the accounts — open it on
+   [Matching Rules](../10-admin-console/matching-rules.md) to see the conditions it matched on.
 
-### Read the history
-1. Open **Reporting › Operations › Transactions** — the screen the old G/L Posting link now
-   opens — to work with the movements the postings were generated from.
-2. For the posting records themselves, see [Accounting — G/L Postings](../11-accounting/gl-postings.md),
-   which describes what is kept and how to read it.
-3. If you need a period's postings as a file for your auditors, ask your administrator to pull them
-   from the read-only transaction-postings endpoint of the Treasury Hub API.
+### Take a period away for audit
+Pull a period's postings as a file through the transaction-postings endpoint of the TreasuryHub API,
+or export the matching transactions from the Transactions grid.
 
-## Tips & good practices
-- Read a posting's **Status** as the state it was in when generation stopped, not as something that
-  is still moving — a **Pending** posting will stay pending.
-- Keep an exported copy of the periods your auditors still need, rather than relying on anyone
-  having system access later.
-- A transaction with no posting is not an error to chase: no transaction has been posted since
-  generation was switched off.
+## Configuration
+- **Account mapping** is set in [Chart of Accounts & Rules
+  Engine](../11-accounting/coa-rules-engine.md).
+- **Which entries are dispatched** follows the approval flow on
+  [Journal Entries](../11-accounting/journal-entries.md).
 
-## Related
+## Tips to get more value
+- Filter to **Mismatch / Exception** first each close, so a rejected entry is fixed while the
+  transaction behind it is still fresh.
+- Keep an exported copy of the periods your auditors sample, so the evidence sits in your audit file
+  rather than depending on system access later.
+- Watch for transactions with no posting at all: each cluster is a posting rule worth writing, and
+  writing it takes that coding off someone's desk for good.
+
+## Where to go next
 - [Accounting — G/L Postings](../11-accounting/gl-postings.md) — the accounting side of the same
-  records, and what is kept.
-- [Transactions](transactions.md) — the movements these postings were generated from, and where the
-  old G/L Posting link now takes you.
-- [Operations blotters](operations-blotters.md) — the other operational reporting grids.
-- [Reconciliation — ERP Posting](../04-reconciliation/erp-posting.md) — the reconciliation side,
-  which no longer posts to an ERP either.
+  records, with the full lifecycle.
+- [Transactions](transactions.md) — find any bank movement in seconds, including the ones behind
+  these postings.
+- [Operations blotters](operations-blotters.md) — one source of truth for every FX deal, loan and
+  investment.
+- [Reconciliation — ERP Posting](../04-reconciliation/erp-posting.md) — reconciled items become
+  accounting entries with no re-keying.

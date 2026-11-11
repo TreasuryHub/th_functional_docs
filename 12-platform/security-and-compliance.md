@@ -1,21 +1,30 @@
 # Security & Compliance
 
+> **Bank-grade security: SSO, MFA, encryption and ISO 27001**
+>
+> **Why it matters**
+> - **Only the right people get in**: single sign-on, multi-factor authentication and role-based permissions.
+> - **Your data stays yours**: isolated to your organization, encrypted in transit and at rest.
+> - **Human in the loop: approval on every agent action.**
+>
+> *For the CFO: the security questionnaire is answered from a standing position rather than assembled per deal.*
+
 > **Where to find it:** applies platform-wide · access management in **Admin Console › User & Agent Management**
 > **Who uses it:** everyone signs in; administrators manage access and review the audit trail; security, risk, and compliance teams review the platform's posture.
 > **Permissions required:** signing in requires no permission; managing users, roles, and access requires `AdminAndSettings.UserManagement` · Admin (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
 ## Overview
-Treasury Hub is built so that only the right people can reach your treasury data, and every action
-they take is recorded. Access is controlled by **single sign-on**, **multi-factor authentication**,
+Bank-grade security, so the question stops being whether your treasury data is safe: TreasuryHub is
+built so that only the right people reach it, and every action they take is recorded. Access is controlled by **single sign-on**, **multi-factor authentication**,
 and **role-based permissions**; your data is **isolated to your organization**; and everything is
 **encrypted** in transit and at rest. This page explains, in plain terms, how you sign in and out,
 how access is controlled, and the security and compliance assurances the platform provides.
 
 ## Key concepts
-- **Tenant (organization)** — your company's private space in Treasury Hub. All your data is scoped
+- **Tenant (organization)** — your company's private space in TreasuryHub. All your data is scoped
   to your tenant and never mixed with another customer's. See [Core Concepts](../00-getting-started/03-core-concepts.md#organizations--tenants).
 - **Single sign-on (SSO)** — signing in through your organization's identity provider instead of a
-  separate Treasury Hub password. Treasury Hub uses **Azure AD B2C** and supports corporate
+  separate TreasuryHub password. TreasuryHub uses **Azure AD B2C** and supports corporate
   directories such as **Azure AD, Active Directory / LDAP, Okta, and Google Workspace**.
 - **Multi-factor authentication (MFA)** — a second verification step (e.g. a code or authenticator
   app) on top of your password, so a stolen password alone can't grant access.
@@ -35,12 +44,12 @@ how access is controlled, and the security and compliance assurances the platfor
 ## How to use it
 
 ### Sign in
-1. Open Treasury Hub in your browser. If you're not signed in, you're taken to the **Login** page.
+1. Open TreasuryHub in your browser. If you're not signed in, you're taken to the **Login** page.
 2. The login screen shows your organization's branding, a **Sign in with Azure B2C** button, a
    **language selector**, and a **theme toggle**.
 3. Click **Sign in with Azure B2C**. You're redirected to your organization's secure sign-in flow.
 4. Enter your corporate credentials and complete **MFA** if prompted.
-5. On success you're returned to Treasury Hub — to your **Home / Dashboard**, or to the page you
+5. On success you're returned to TreasuryHub — to your **Home / Dashboard**, or to the page you
    originally requested.
 
 ### Sign out
@@ -49,7 +58,7 @@ how access is controlled, and the security and compliance assurances the platfor
 3. Your session is cleared and you're returned to the **Login** page.
 
 > **Automatic sign-out:** if your session expires or is left idle beyond the configured timeout,
-> Treasury Hub signs you out and returns you to the login page to protect your data. Simply sign in
+> TreasuryHub signs you out and returns you to the login page to protect your data. Sign in
 > again to continue.
 
 ### Understand what you can access
@@ -59,7 +68,7 @@ how access is controlled, and the security and compliance assurances the platfor
   **payment approval level**. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md#access-can-be-scoped-further).
 
 ## Configuration
-These are managed by administrators (and, for SSO/MFA, in coordination with the Treasury Hub team):
+These are managed by administrators (and, for SSO/MFA, in coordination with the TreasuryHub team):
 
 - **Users, roles, and groups** — invite users, assign roles, and set entity/account scope in the
   [Users & Roles](../10-admin-console/users-and-roles.md).
@@ -71,7 +80,7 @@ These are managed by administrators (and, for SSO/MFA, in coordination with the 
   permission changes is preserved for audit.
 
 ## How your data is protected
-Treasury Hub applies enterprise-grade protection across every layer:
+TreasuryHub applies enterprise-grade protection across every layer:
 
 - **Data isolation** — each organization's data is logically isolated to its own tenant; sessions
   are scoped so there is no data leakage between organizations.
@@ -86,29 +95,26 @@ Treasury Hub applies enterprise-grade protection across every layer:
   logged comprehensively.
 
 ## Compliance posture
-Treasury Hub is designed and operated to align with recognized security and data-protection
-standards, including:
+TreasuryHub is operated against recognized security and data-protection standards:
 
-- **ISO/IEC 27001** — information security management.
-- **SOC 2 Type II** — controls for security, availability, and processing integrity.
-- **GDPR (EU 2016/679)** — European data protection, including data-subject rights.
+- **ISO 27001 certified** — information security management.
+- **GDPR program** — European data protection (EU 2016/679), including data-subject rights.
+- **Encrypted in transit and at rest.**
+- **Human in the loop: approval on every agent action.**
 - **Local data-protection regulations** — e.g. Ghana's Data Protection Act (Act 843), for
   deployments where local law applies.
 
-> ⚠️ **To be confirmed by Treasury Hub.** Treat the specific certifications above as the platform's
-> target/assurance posture. Which certifications are formally **certified vs aligned**, and their
-> current validity, should be confirmed with the Treasury Hub team and your contract, as they can
-> vary by deployment and region. Data-residency options are described in
-> [Deployment, Availability & Continuity](deployment-availability-and-continuity.md).
+Data-residency options are described in
+[Deployment, Availability & Continuity](deployment-availability-and-continuity.md).
 
 ## Audit & accountability
-- Most actions in Treasury Hub are modeled as **workflows** that record **who did what, when, and
+- Most actions in TreasuryHub are modeled as **workflows** that record **who did what, when, and
   the outcome** — see [Core Concepts](../00-getting-started/03-core-concepts.md#everything-is-a-workflow).
 - Reconciliation keeps a full **audit trail** of every match; approvals record the approver and
   decision.
 - Administrators can review the history of permission and user-lifecycle changes.
 
-## Tips & good practices
+## Tips to get more value
 - Keep MFA enabled even when it's optional for internal users — it's the single biggest protection
   against account compromise.
 - Sign out when leaving a shared device rather than relying on the idle timeout.
@@ -117,7 +123,7 @@ standards, including:
 - Use **suspend/deactivate** promptly when someone changes role or leaves, so access follows your
   directory.
 
-## Related
+## Where to go next
 - [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md) — the RBAC model and permission levels.
 - [Core Concepts](../00-getting-started/03-core-concepts.md) — tenants, workflows, and auditability.
 - [Users & Roles](../10-admin-console/users-and-roles.md) — where access is managed.

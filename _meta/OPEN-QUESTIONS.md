@@ -79,8 +79,10 @@ Used from the roadmap: **Workflow Builder ~Q2 2026**, **Scenarios/What-If ~Q4 20
 Management ~Q3 2026** (applied to all five risk dimensions — confirm per-dimension dates). (`07-workflows/*`, `06-reporting/scenarios-what-if.md`, `06-reporting/risk-management/*`)
 
 ## 9. Platform / security
-- **Compliance certifications** (ISO 27001, SOC 2 Type II, GDPR, Ghana DPA): which are formally
-  *certified* vs *aligned*, with current validity? (`12-platform/security-and-compliance.md`)
+- **Compliance certifications** — resolved 2026-11-11 on the CEO brief: SOC 2 Type II removed
+  from the docs, ISO 27001 stated as **certified**. The certificate itself has not been seen by
+  whoever wrote the docs; confirm it is held and current before the page is shown to a prospect.
+  (`12-platform/security-and-compliance.md`)
 - **SSO/MFA** (Azure AD / Okta / Google) — stated as supported per the roles source but not in the
   availability matrix. Confirm. (`10-admin-console/users-and-roles.md`, `12-platform/security-and-compliance.md`)
 - **Supported languages** — brief/nav say EN/ES, but webapp UC-028 lists EN/FR/DE/ES. We

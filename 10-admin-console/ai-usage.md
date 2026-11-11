@@ -1,5 +1,12 @@
 # AI usage
 
+> **Full transparency and control over your AI consumption**
+>
+> **Why it matters**
+> - **The questions an administrator actually has**: how much is gone, how much is left, and when it resets.
+> - **Where it went**: usage broken down by module and by user, not as one opaque figure.
+> - **The same window the quota uses**: months run on UTC, so the figure here is the figure enforced.
+
 > **Where to find it:** Admin Console › AI usage
 > **Who uses it:** administrators (and super administrators) accountable for how much AI assistance
 > the organization consumes.
@@ -7,9 +14,16 @@
 > figures that name people are released only after the server has confirmed the reader is one. See
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Check where the organization stands this month](#check-where-the-organization-stands-this-month).
+> 2. [See where the tokens went](#see-where-the-tokens-went), by module.
+> 3. [See who is using the agent](#see-who-is-using-the-agent).
+> 4. [Look at an earlier month](#look-at-an-earlier-month) to compare the trend.
+
 ## Overview
-**AI usage** shows how much [AI assistance](../09-agents/overview.md) your organization is using, one
-calendar month at a time, measured against the quota the platform enforces. It answers the questions
+See exactly what your AI consumption is and where it goes: **AI usage** reports how much
+[AI assistance](../09-agents/overview.md) your organization is using, one calendar month at a time,
+against the quota the platform enforces. It answers the questions
 an administrator actually has: how much of this month's allowance is gone, how much is left, when it
 resets, which parts of the platform the usage came from, and who is using it.
 
@@ -87,7 +101,7 @@ complaining.
 2. Read the **Monthly token quota** panel at the top. It shows the tokens used against the limit, the
    percentage used as a bar, the tokens remaining, and the date the quota resets. The bar changes
    colour as consumption climbs, so a month in trouble is visible at a glance.
-3. If no monthly ceiling is configured, the panel says so and simply reports the tokens used this
+3. If no monthly ceiling is configured, the panel says so and reports the tokens used this
    month.
 
 ![The monthly token quota: used, remaining, the per-conversation ceiling and the headline tiles](../assets/screenshots/ai-usage-quota.png)
@@ -140,9 +154,9 @@ complaining.
 Nothing is configured on this screen; it reports, it does not set. The three ceilings — per
 conversation, per person per day, per organization per month — are part of your organization's
 platform configuration rather than a setting in the Admin Console, so a change to an allowance is a
-conversation with Treasury Hub, not an edit here.
+conversation with TreasuryHub, not an edit here.
 
-## Tips & good practices
+## Tips to get more value
 - Check the quota panel around the middle of the month. Reaching the monthly ceiling stops the
   agent for everybody, and a mid-month look gives you time to act rather than explain.
 - Watch the count of conversations stopped by the quota. It is the earliest honest signal that the
@@ -157,7 +171,7 @@ conversation with Treasury Hub, not an edit here.
 - When you compare this screen with a bank-style month, remember the months here run on UTC — that
   is the window the quota itself uses, so the figures line up with what actually stops the AI.
 
-## Related
+## Where to go next
 - [AI assistance](../09-agents/overview.md) — the agent, what it can reach, and the guardrails
   around it, including the token budgets.
 - [Admin Console — Overview](overview.md) — the rest of the administrator's screens.

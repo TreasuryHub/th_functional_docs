@@ -1,12 +1,19 @@
 # Actual vs Forecast
 
+> **Measure your forecast accuracy and improve it every cycle**
+>
+> **Why it matters**
+> - **Plan beside reality**: what happened next to what you projected, per period, with the deviation named.
+> - **Find out why**: drill into the movements behind a gap instead of guessing at it.
+> - **A better forecast next time**: recalibrate on evidence rather than instinct.
+
 > **Where to find it:** Reporting › Cash & Liquidity › Actual vs Forecast
 > **Who uses it:** treasurers, cash managers, FP&A, finance controllers.
 > **Permissions required:** `CashManagement.CashPosition` · Read (and `…ExportData` · Read to export). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Actual vs Forecast puts what really happened next to what you projected, for each period, and
-shows the deviation between them. It is how you measure the quality of your forecast, spot where
+Make each forecast better than the last: Actual vs Forecast puts what really happened next to what
+you projected, period by period, and shows the deviation between them. It is how you measure the quality of your forecast, spot where
 cash came in ahead of or behind plan, and drill in to understand why — so you can recalibrate the
 next forecast with confidence.
 
@@ -58,7 +65,7 @@ concern:
 1. Click **Export** for **PDF**, **Excel**, or **CSV** of the current comparison.
 2. Click **Schedule** to deliver the variance report automatically (e.g. a weekly recap to treasury).
 
-## Tips & good practices
+## Tips to get more value
 - Review variance on a regular cadence and feed the lessons back into your
   [forecast](cash-forecast.md) — persistent one-directional gaps usually mean an assumption needs
   adjusting.
@@ -70,7 +77,7 @@ concern:
 Automatic monitoring flags when your forecast accuracy is trending down and suggests which
 assumptions to revisit.
 
-## Related
+## Where to go next
 - [Cash Forecast](cash-forecast.md) — where the projected side comes from.
 - [Cash Position](../01-home/home-dashboard.md) — where the actual side comes from.
 - [Scenarios (What-If)](scenarios-what-if.md) — model alternative outcomes before they happen.

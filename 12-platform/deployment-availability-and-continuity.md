@@ -1,43 +1,51 @@
 # Deployment, Availability & Continuity
 
-> **Where to find it:** platform-wide assurances — arranged with the Treasury Hub team and your contract.
-> **Who uses it:** IT, security, risk, and procurement teams evaluating or operating Treasury Hub;
+> **Enterprise availability, your deployment model, a tested recovery plan**
+>
+> **Why it matters**
+> - **The questions IT asks, answered**: how it is delivered, how fast and reliable it is, and how data is recovered.
+> - **Without infrastructure internals**: assurance at the level a risk team needs to sign off.
+> - **Confirmed for you**: the figures here are platform targets; your commitments are set in your contract.
+
+> **Where to find it:** platform-wide assurances — arranged with the TreasuryHub team and your contract.
+> **Who uses it:** IT, security, risk, and procurement teams evaluating or operating TreasuryHub;
 > useful assurance for treasurers and administrators.
 > **Permissions required:** none to read; deployment and continuity arrangements are set with the
-> Treasury Hub team.
+> TreasuryHub team.
 
 ## Overview
-This page explains, at a customer-assurance level, **how Treasury Hub is delivered, how fast and
-reliable it is, how your data quality is protected, and how your data is backed up and recovered**.
+Give IT and risk the answers they need to sign off: this page explains, at a customer-assurance
+level, **how TreasuryHub is delivered, how fast and reliable it is, how your data quality is
+protected, and how your data is backed up and recovered**.
 It answers the questions IT and risk teams ask before and during a rollout — without going into
 infrastructure internals. Specific figures below are **platform targets**; the exact commitments for
 your organization are confirmed in your contract and design workshops.
 
 ## Key concepts
-- **SaaS** — Treasury Hub hosts and manages the platform in the cloud; you just sign in.
-- **On-premises** — Treasury Hub runs inside your own infrastructure, for regulatory or compliance
+- **SaaS** — TreasuryHub hosts and manages the platform in the cloud; you sign in.
+- **On-premises** — TreasuryHub runs inside your own infrastructure, for regulatory or compliance
   requirements.
 - **Data residency** — the region(s) where your data is stored, to meet local requirements.
-- **SLA (Service Level Agreement)** — the performance and availability targets Treasury Hub commits
+- **SLA (Service Level Agreement)** — the performance and availability targets TreasuryHub commits
   to.
 - **RPO / RTO** — **Recovery Point Objective** (how much recent data could be lost in a disaster,
   measured in time) and **Recovery Time Objective** (how quickly service is restored).
 - **DR (Disaster Recovery)** — a standby copy of production that takes over if the primary fails.
 
 ## Deployment models
-Treasury Hub offers the same functionality and quality across delivery models — you choose the one
+TreasuryHub offers the same functionality and quality across delivery models — you choose the one
 that fits your infrastructure and regulatory needs.
 
 | Model | Summary | Managed by |
 |---|---|---|
-| **SaaS (default)** | Multi-tenant cloud with logical isolation per organization; updates, patching, monitoring, and backups handled for you; onboarding in minutes. Multi-region for data residency. | Treasury Hub |
-| **On-premises** | Runs inside your infrastructure and network. There are no public-facing interfaces; vendor support is via secure VPN; external data access flows through your API gateway. Treasury Hub ships signed release packages that you deploy. | You (Treasury Hub provides releases, runbooks, and support) |
+| **SaaS (default)** | Multi-tenant cloud with logical isolation per organization; updates, patching, monitoring, and backups handled for you; onboarding in minutes. Multi-region for data residency. | TreasuryHub |
+| **On-premises** | Runs inside your infrastructure and network. There are no public-facing interfaces; vendor support is via secure VPN; external data access flows through your API gateway. TreasuryHub ships signed release packages that you deploy. | You (TreasuryHub provides releases, runbooks, and support) |
 | **Hybrid** | Sensitive data kept on-premises while selected AI/analytics services run in a secured cloud, with only authorized data replicated. | Shared |
 
 ### Environments
 A typical delivery uses separate environments so changes are validated before reaching production:
-**Development** and **Testing** (Treasury Hub), **UAT** for your functional sign-off (shared), and
-**Production** plus **Disaster Recovery** (managed by Treasury Hub for SaaS, or by you for
+**Development** and **Testing** (TreasuryHub), **UAT** for your functional sign-off (shared), and
+**Production** plus **Disaster Recovery** (managed by TreasuryHub for SaaS, or by you for
 on-premises).
 
 ### Release management (on-premises)
@@ -48,7 +56,7 @@ on-premises).
 - **Cadence** — typically one planned release per month, aligned to your maintenance windows.
 
 ## Performance & availability
-Treasury Hub is designed for high transaction volumes with responsive screens. Illustrative platform
+TreasuryHub is designed for high transaction volumes with responsive screens. Illustrative platform
 targets:
 
 | Area | Target |
@@ -62,6 +70,7 @@ targets:
 | Uptime target | 99.9% (≤ ~8.76 hours unplanned downtime/year) |
 
 How this is achieved (functionally, not the internals):
+
 - **Scales out** by adding capacity rather than relying on ever-larger servers, so performance holds
   as your volumes grow.
 - **Heavy operations run in the background** — bulk imports, report generation, and risk
@@ -70,11 +79,11 @@ How this is achieved (functionally, not the internals):
 - **Continuous health checks and proactive alerting** let issues be caught early.
 - **Planned maintenance windows** are scheduled and communicated in advance.
 
-> ⚠️ **To be confirmed by Treasury Hub.** The figures above are platform targets. Your committed SLAs
+> ⚠️ **To be confirmed by TreasuryHub.** The figures above are platform targets. Your committed SLAs
 > (uptime, response times, throughput) and any credits are defined in your contract.
 
 ## Data quality & governance
-Reliable treasury decisions depend on clean data, so Treasury Hub validates, cleanses, and enriches
+Reliable treasury decisions depend on clean data, so TreasuryHub validates, cleanses, and enriches
 data at every step from ingestion to reporting.
 
 - **Processing modes** — **real-time** for critical items (bank statements, payments, alerts),
@@ -105,7 +114,7 @@ Your data is protected by automated backups, tested recovery, and disaster-recov
 - **Automated backups** — on a configurable schedule (continuous transaction logs, daily full
   snapshots, weekly full + archival), using incremental backups between full snapshots.
 - **Encrypted backups** — all backups are encrypted at rest (AES-256); keys are held by you
-  (on-premises) or by Treasury Hub (SaaS).
+  (on-premises) or by TreasuryHub (SaaS).
 - **Geographic redundancy** — copies are held in a secondary location to protect against local
   disasters.
 - **Recovery objectives** — typically **RPO ≤ 1 hour** and **RTO ≤ 4 hours** for production
@@ -124,12 +133,12 @@ Older data moves through a lifecycle — **Active → Warm archive → Cold arch
 legal retention) — to control cost while keeping archived data accessible for queries and audits
 (with higher latency). Archival always respects minimum-retention regulations.
 
-> ⚠️ **To be confirmed by Treasury Hub.** RPO/RTO, backup schedules, retention periods, DR drill
+> ⚠️ **To be confirmed by TreasuryHub.** RPO/RTO, backup schedules, retention periods, DR drill
 > frequency, and who provisions/operates DR depend on your deployment model and are finalized in your
 > contract and design workshops. In on-premises deployments, some responsibilities (e.g. provisioning
-> and running the DR environment) sit with you, with Treasury Hub providing runbooks and support.
+> and running the DR environment) sit with you, with TreasuryHub providing runbooks and support.
 
-## Tips & good practices
+## Tips to get more value
 - Decide **data-residency** and **deployment model** requirements early — they shape onboarding and
   your contract.
 - Agree **RPO/RTO** targets with your risk team up front so backup and DR are sized to your tolerance.
@@ -141,7 +150,7 @@ legal retention) — to control cost while keeping archived data accessible for 
 - **Hybrid deployment** — sensitive data on-premises with selected AI/analytics services in a
   secured cloud.
 
-## Related
+## Where to go next
 - [Security & Compliance](security-and-compliance.md) — encryption, access control, and compliance posture.
 - [Integrations](../02-integrations/overview.md) — where data enters the platform.
 - [Reconciliation](../04-reconciliation/overview.md) — where much data validation and matching happens.

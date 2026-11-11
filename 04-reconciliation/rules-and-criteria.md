@@ -1,9 +1,22 @@
 # Reconciliation — Rules & Criteria
 
+> **Write the rule once, and let the engine do the matching every day**
+>
+> **Why it matters**
+> - **The exceptions are all that reach a person**: good rules reconcile the bulk automatically.
+> - **Matched on what matters**: amount, tolerance, reference, date, partner and currency, in combination.
+> - **End to end**: chains trace a transaction through every step of its journey.
+
 > **Where to find it:** a flow's rules, chains and filter groups under **Settings › Reconciliation ›
 > Reconciliation Flows** → open a flow.
 > **Who uses it:** treasury operations lead, reconciliation administrators.
 > **Permissions required:** reconciliation matching rules · CreateEdit to create or edit; Read to view (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
+
+> **In 60 seconds**
+> 1. [Create a rule](#create-a-rule) with the criteria a match must meet.
+> 2. Set the [tolerance](#tolerance) so near-identical amounts still match.
+> 3. [Organise rules into chains](#organise-rules-into-chains) to trace a transaction end to end.
+> 4. Choose the [rule outcomes](#rule-outcomes): auto-reconcile, or send for approval.
 
 > **Two related but distinct things — mind the difference:**
 > - **Classification rules** — rules that give a transaction its category and tags. They are managed
@@ -15,7 +28,8 @@
 >   **Rules**, **Chains** and **Workflow filters**.
 
 ## Overview
-Reconciliation rules are the conditions that make items match automatically. In the rule builder you
+Write the rule once and let the engine do the matching every day after: reconciliation rules are
+the conditions that make items match automatically. In the rule builder you
 define the criteria a match must meet — amount, tolerance, reference, date, partner, currency — and
 group rules into **chains** that trace a transaction end to end. Good rules mean most items reconcile
 with no manual effort, leaving only genuine exceptions for the [Approvals](approvals.md) queue and
@@ -23,6 +37,7 @@ the [Matching](matching.md) screen.
 
 ## How workflows, chains & rules fit together
 Three levels, from the outside in:
+
 - **Workflow** (shown as a **Reconciliation Flow**) — a named container for a body of reconciliation
   logic, for example "HG.Cash Operative Balances". It holds the chains, the rules, the workflow
   filter groups, and the run **instances** those rules produce.
@@ -35,7 +50,7 @@ Three levels, from the outside in:
   operator) that pair the two sides.
 
 A **single chain can capture an entire flow** across several movement types — you don't need one
-chain per hop. A chain with one rule is just the simplest case.
+chain per hop. A chain with one rule is the simplest case.
 
 ## Key concepts
 - **Match criterion** — a condition comparing the *same field on the two movements*, such as *amount
@@ -80,7 +95,7 @@ chain per hop. A chain with one rule is just the simplest case.
 ### Edit, move or deactivate a rule
 1. Select a rule to open its detail, then choose **Edit** to change its criteria, filters or actions.
 2. To stop a rule matching new items without removing it, choose **Deactivate**. Existing
-   reconciliations and alerts are kept; the rule simply stops running.
+   reconciliations and alerts are kept; the rule stops running.
 3. The chain is read-only on the rule form. To put a rule in a different chain of the same workflow,
    open the **chain page** and use **Move rule**. The chain's topology is re-validated on the move,
    and a move that would break it is rejected with the offending rules highlighted.
@@ -131,6 +146,7 @@ Seven operators are available:
 ### Tolerance
 **Tolerance is an absolute amount, never a percentage.** `Range` matches when the difference between
 the two values is within the tolerance:
+
 - on a **Decimal** field, the tolerance is an amount — `0.5` means the two sides may differ by up to
   half a unit of currency;
 - on a **Date** field, the tolerance is a whole number of **calendar days** — `2` means up to two
@@ -157,13 +173,14 @@ Five fields in the catalog are **collections** rather than single values, and th
 | **personalName** | any payer or beneficiary name on one side equals one on the other |
 
 **All five support only `Equals`.** Configure one of them with any other operator and the criterion
-simply never matches — nothing warns you, so check the operator when a set-based rule produces
+never matches — nothing warns you, so check the operator when a set-based rule produces
 nothing. `personalName` compares case-insensitively and trims surrounding spaces, but it does **not**
 normalise accents and does **not** do fuzzy matching: *JOSE PEREZ* and *jose perez* match, *José
 Pérez* does not.
 
 ### Rule outcomes
 A match block decides what happens for each outcome:
+
 - **Auto-reconcile** — create the reconciliation immediately.
 - **Send for approval** — create a reconciliation request for a person to approve, which is what
   populates the [Approvals](approvals.md) screen.
@@ -196,7 +213,7 @@ connected with a single entry point before you save. You confirm every change.
 > Deactivate buttons never do. A delete is refused when execution data — a conciliation, a movement
 > tag, a trace row — still references the node, because that history is never deleted.
 
-## Tips & good practices
+## Tips to get more value
 - Give each match block a clear name; it is what the [Approvals](approvals.md) screen and the
   [Dashboard](dashboard.md) use to explain *why* two items were paired.
 - Put the **strictest, most specific** block first in a rule and looser tolerance blocks after
@@ -208,7 +225,9 @@ connected with a single entry point before you save. You confirm every change.
 - Prefer **Deactivate** over deleting on the rule, chain and filter-group screens — it preserves the
   audit trail.
 
-## Related
+## Where to go next
+💡 Get more from this: combine your reconciliation rules with [Working with an Agent](../09-agents/assistant.md) to describe a new rule in plain language and get it back prepared for review.
+
 - [Reconciliation Overview](overview.md) — rules, chains, and the matching engine.
 - [Workflows](workflows.md) — rules, chains and filter groups live inside workflows.
 - [Approvals](approvals.md) — the queue that "send for approval" fills.

@@ -1,12 +1,19 @@
 # Operations Blotters
 
+> **One source of truth for every FX deal, loan and investment**
+>
+> **Why it matters**
+> - **Every operational record, searchable**: movements, accounts, FX contracts, loans, investments and reconciliation status.
+> - **Provenance on every row**: where a record came from, and what state it is in now.
+> - **Learn one, know them all**: the blotters share the same behaviour, filters and export.
+
 > **Where to find it:** Reporting › Operations
 > **Who uses it:** treasury operations, finance teams, accountants, risk and credit teams.
 > **Permissions required:** each blotter respects its own data permissions (e.g. `CashManagement.Transactions` for Transactions, `CoreData.BankAccounts` for Bank Accounts). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The Operations area is a set of **blotters** — searchable, filterable grids of your operational
-records. Each blotter lists one kind of item (bank movements, accounts, FX contracts, loans,
+Keep one source of truth for every FX deal, loan and investment: the Operations area is a set of
+**blotters** — searchable, filterable grids of your operational records. Each blotter lists one kind of item (bank movements, accounts, FX contracts, loans,
 investments, reconciliation status, and more), lets you open any row for full detail, and exports the
 current view. They all share the same behavior, so once you know one, you know them all.
 
@@ -83,7 +90,7 @@ Every blotter works the same way:
   interest due.
 - **Customer Aging** — how much your customers owe and how overdue it is.
 
-## Tips & good practices
+## Tips to get more value
 - Use the **source** pill to verify where a figure originated before you rely on it — a venue or API
   source is straight-through; a PDF/manual source may warrant a second look.
 - Export a filtered blotter (rather than the whole grid) to hand a colleague exactly the slice they
@@ -97,8 +104,8 @@ Every blotter works the same way:
 - **Position reporting** — a consolidated, deduplicated, lifecycle-tracked view of open positions
   across instruments (reconciled from multiple sources).
 
-## Related
-- [Transactions](transactions.md) · [Bank Accounts](bank-accounts.md) · [Bank Statements](bank-statements.md).
+## Where to go next
+- [Transactions](transactions.md) · [Bank Accounts](bank-accounts.md) · [Bank Statements](bank-statements.md) — the records behind the blotters, each on its own screen.
 - [G/L Postings](gl-postings-report.md) — the accounting posting records kept as history.
 - [Reconciliation](../04-reconciliation/overview.md) — how items are matched.
 - [Risk Management](risk-management/) — the risk dashboards built on this data.

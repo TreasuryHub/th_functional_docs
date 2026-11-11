@@ -1,13 +1,25 @@
 # Balance Differential
 
+> **See how much every account moved, in one currency, in one view**
+>
+> **Why it matters**
+> - **One question, whole estate**: every account's balance on two dates and the difference between them.
+> - **Readable as one number**: original currency first, then converted into the single currency you choose.
+> - **Built for export**: a flat grid with a total line and an Excel file that looks like it.
+
 > **Where to find it:** Reporting › Cash & Liquidity › Balance Differential
 > **Who uses it:** treasurers, cash managers, finance teams, controllers.
 > **Permissions required:** `CashManagement.CashPosition` · Read. See
 > [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
+> **In 60 seconds**
+> 1. [Compare every account's balance between two dates](#compare-every-accounts-balance-between-two-dates).
+> 2. [Narrow the report to part of the group](#narrow-the-report-to-part-of-the-group).
+> 3. [Export the report to Excel](#export-the-report-to-excel) for whoever asked for it.
+
 ## Overview
-Balance Differential answers one question across your whole account estate: **how much did each
-account move between two dates?** It lists every account once, with its balance on the first date,
+See how much every account moved, in one currency, in one view: Balance Differential answers one
+question across your whole account estate — **how much did each account move between two dates?** It lists every account once, with its balance on the first date,
 its balance on the second date, and the difference — first in the account's own currency, then
 converted into a single currency you choose so the group can be read as one number.
 
@@ -165,7 +177,7 @@ you, and nothing is saved between visits. What the numbers depend on is maintain
 - **Exchange rates** — see [Exchange Rates](exchange-rates.md). Their coverage is what decides
   whether a row converts or shows **N/A**.
 
-## Tips & good practices
+## Tips to get more value
 - For a month-end pack, leave the dates on their defaults: they already frame the previous month.
 - Run the same period on both exchange rate bases. **Latest rate** shows you what moved; **Rate on
   each date** shows you what it is worth. The gap between the two totals is the currency effect, and
@@ -183,7 +195,7 @@ you, and nothing is saved between visits. What the numbers depend on is maintain
   [Cash Position](../01-home/home-dashboard.md), so a figure here and a figure there should agree. If they do
   not, check the exchange rate basis first — it is the usual explanation.
 
-## Related
+## Where to go next
 - [Cash Position](../01-home/home-dashboard.md) — the same balance and exchange-rate rules, presented as a
   drillable hierarchy rather than a flat comparison.
 - [Exchange Rates](exchange-rates.md) — the rates this report converts with.

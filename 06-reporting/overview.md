@@ -1,4 +1,11 @@
-# Reporting — Overview
+# Analytics & Reporting — Overview
+
+> **Live reports on reconciled data, so you stop rebuilding spreadsheets every morning**
+>
+> **Why it matters**
+> - **Already ingested, normalized and reconciled**: a report is a view of your position, not an assembly job.
+> - **Each one purpose-built**: open the report you need, set its dates and filters, read it, export it.
+> - **Consistent figures**: every report reads the same underlying data, so two reports never disagree.
 
 > **Where to find it:** Reporting
 > **Who uses it:** treasurers, finance teams, FP&A, controllers, auditors, executives.
@@ -6,7 +13,8 @@
 > reports need `CashManagement.CashPosition` · Read. See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Reporting is where you read the numbers that run treasury. The data is already ingested,
+Read a live view of your position instead of rebuilding a spreadsheet each morning: Reporting is
+where you read the numbers that run treasury. The data is already ingested,
 normalized and reconciled, so a report is a live view of your position rather than a spreadsheet
 you rebuild each morning.
 
@@ -52,7 +60,7 @@ The Reporting menu has an **Overview** column, which carries the **Cash & Liquid
 2. The **current, filtered view** is what gets exported — set your filters before exporting, not
    after.
 
-## Tips & good practices
+## Tips to get more value
 - Set the **display currency** once so every figure converts consistently; it is what makes a group
   total meaningful to management.
 - Reconcile first. A report is only as good as the data behind it, so clear reconciliation
@@ -61,7 +69,7 @@ The Reporting menu has an **Overview** column, which carries the **Cash & Liquid
   **Datalake** reports are refreshed nightly and never converted. They will not agree, and both are
   right — see [Datalake Reports](datalake-reports.md).
 
-## Related
+## Where to go next
 - [Home](../01-home/home-dashboard.md) — your consolidated cash position, day by day.
 - [Balance Differential](balance-differential.md) · [Category Positions](category-positions.md) —
   the live cash reports.

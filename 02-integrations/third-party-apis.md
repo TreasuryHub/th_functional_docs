@@ -1,24 +1,32 @@
 # Third-party APIs & the API Agent Integrator
 
+> **New integrations in days, not months, kept working by AI**
+>
+> **Why it matters**
+> - **No IT project per vendor**: the API Agent Integrator builds the connector with you.
+> - **It stays built**: when the vendor changes its API, the agent helps keep the connection working.
+> - **Any kind of source**: ERPs, PSPs, trading platforms and banks with proprietary APIs, pulled on a schedule.
+
 > **Where to find it:** Integrations › API Agent Integrator
 > **Who uses it:** finance systems owners, IT, administrators.
 > **Permissions required:** administrator to build and enable connectors; see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-Treasury Hub connects to third-party and vendor systems — ERPs, PSPs, fintechs, banks
-with proprietary APIs, trading platforms — by **pulling** data from their APIs on a schedule. Instead
+Add a new integration in days rather than months: TreasuryHub connects to third-party and vendor
+systems — ERPs, PSPs, fintechs, banks with proprietary APIs, trading platforms — by **pulling**
+data from their APIs on a schedule. Instead
 of a weeks-long IT project per integration, the **API Agent Integrator** uses AI to help build
 and maintain each connector, and keep it working when the vendor's API changes.
 
-In this model Treasury Hub **reads from** the vendor (a pull integration). For the reverse — your
-systems sending data *into* Treasury Hub — see [Inbound APIs](inbound-apis.md).
+In this model TreasuryHub **reads from** the vendor (a pull integration). For the reverse — your
+systems sending data *into* TreasuryHub — see [Inbound APIs](inbound-apis.md).
 
 ## Key concepts
-- **Pull integration** — Treasury Hub calls the vendor's API on a schedule and brings the data in
+- **Pull integration** — TreasuryHub calls the vendor's API on a schedule and brings the data in
   (as opposed to the vendor pushing to you).
 - **Connector** — one configured integration to one vendor API, including how to authenticate, which
   data to fetch, how to map fields, and how often.
-- **Field mapping** — linking the vendor's data to Treasury Hub entities (movements, balances,
+- **Field mapping** — linking the vendor's data to TreasuryHub entities (movements, balances,
   invoices, and so on) so it's normalized like every other source.
 - **API Agent Integrator** — an AI assistant that helps create a connector from a description or from
   the vendor's API documentation, tests it, and proposes fixes when the API changes.
@@ -26,7 +34,7 @@ systems sending data *into* Treasury Hub — see [Inbound APIs](inbound-apis.md)
 ## Before you start
 - Have the vendor's **API documentation** and **credentials** (the vendor decides which
   authentication methods it supports).
-- Know which data you need from the vendor and which Treasury Hub entities it maps to.
+- Know which data you need from the vendor and which TreasuryHub entities it maps to.
 
 ## How to use it
 
@@ -52,13 +60,13 @@ systems sending data *into* Treasury Hub — see [Inbound APIs](inbound-apis.md)
 - **Resilience** — connectors retry automatically on transient failures and raise an alert if a
   source stays down, without blocking your other data.
 
-## Tips & good practices
+## Tips to get more value
 - Start from the vendor's official API documentation so the agent's proposed mapping is accurate.
 - Review generated connector logic before enabling it — the transparency is there to be used.
 - Watch the [Status](webhooks-and-status.md) board after the first runs to confirm the connector is
   healthy before you depend on it.
 
-## Related
+## Where to go next
 - [Inbound APIs](inbound-apis.md) — the push direction (your systems send data in).
 - [Integrations Overview](overview.md) — all ingestion channels.
 - [Webhooks & Integration Status](webhooks-and-status.md) — real-time events and connector health.

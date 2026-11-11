@@ -1,11 +1,25 @@
 # Reconciliation — Matching (1-to-1 & Batch)
 
+> **Clear exceptions fast, with the best matches ranked for you**
+>
+> **Why it matters**
+> - **The shortlist is done for you**: pick one movement and the other side ranks its likely counterparts, best first.
+> - **You see why**: each candidate shows the scoring behind it, so a decision takes seconds.
+> - **Counts the same as automatic**: a hand-made match is recorded against the rule exactly as the engine's would be.
+
 > **Where to find it:** Reconciliation › Administration › Matching 1-to-1
 > **Who uses it:** treasury operations, finance team, accountants.
 > **Permissions required:** reconciliation access · CreateEdit to confirm matches; Read to review (see [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md)).
 
+> **In 60 seconds**
+> 1. [Choose what you are reconciling](#choose-what-you-are-reconciling) — pick the rule deliberately.
+> 2. [Match a movement against its best candidate](#match-a-movement-against-its-best-candidate) from the ranked list.
+> 3. [Narrow a side](#narrow-a-side) when the list is long.
+> 4. [Work through a backlog](#work-through-a-backlog) to clear the rest in one sitting.
+
 ## Overview
-Matching is where you pair up, by hand, the items your rules didn't reconcile automatically. You
+Clear an exception in seconds rather than minutes: Matching is where you pair up the items your
+rules did not reconcile automatically, with the best candidates ranked for you. You
 pick the rule you are reconciling under, and each side then lists **every movement that rule's
 manual reconciliation accepts** — the same set the engine itself would consider, not only the items
 it already processed. Pick a movement on the left and the right side **ranks its likely
@@ -104,7 +118,7 @@ Each side has its own filter box, and **the two sides are independent and never 
    screen.
 5. Click the **ID**, **Amount** or **Date** column header to sort that side; click again to flip the
    direction.
-6. Turn on **Only what passes the rule's filters** to leave just the movements the rule is allowed
+6. Turn on **Only what passes the rule's filters** to leave only the movements the rule is allowed
    to work on. Partner and account conditions are applied exactly; with other kinds of condition the
    total is shown as an approximation (`~N`).
 7. Use **Clone filters →** to copy the left side's field filters, dates and amount band onto the
@@ -150,7 +164,7 @@ There is no **Undo** on this screen and no list of pairs you matched here. A rec
 error is reversed by **annulling** it: the record is kept and carries the **Annulled** status, and
 both sides' movements are released so they can be reconciled correctly. Annulled reconciliations are
 visible on the [Conciliations](conciliations.md) screen through the **Status** filter. Annulling
-requires a reason and can only be done once — ask your Treasury Hub administrator to annul a
+requires a reason and can only be done once — ask your TreasuryHub administrator to annul a
 reconciliation for you.
 
 ### Match in batch
@@ -159,6 +173,7 @@ declared anchor side**: when you create a Batch rule you say which side has exac
 the bank settlement, the invoice header — and the other side is implicitly the many.
 
 What that means in practice:
+
 - Items **join the anchor one at a time, as they arrive**. The anchor is never "used up": the first
   item to match creates the reconciliation, and every later item is appended to the same one.
 - The **totals and the difference recalculate** over the whole set each time an item joins, so the
@@ -182,11 +197,11 @@ What that means in practice:
   not your tenant's settings.
 - **Excluded related-ID values.** A value that appears on nearly every movement (a constant
   reference an upstream system sends) makes "shares an ID" meaningless and slows matching down.
-  Treasury Hub can exclude such a value for your tenant: it stops counting as a shared ID both for
+  TreasuryHub can exclude such a value for your tenant: it stops counting as a shared ID both for
   the engine and for the ranked candidates on this screen, and the movements keep it. Ask your
-  Treasury Hub administrator if a value needs excluding; a change takes effect within a minute.
+  TreasuryHub administrator if a value needs excluding; a change takes effect within a minute.
 
-## Tips & good practices
+## Tips to get more value
 - Pick the **rule** deliberately, not just the one that loads the movements you can see. It is
   recorded on the reconciliation and drives the "how these reconciliations happened" breakdown on
   the [Dashboard](dashboard.md).
@@ -205,7 +220,7 @@ What that means in practice:
 - If you find yourself matching the same shape of exception every day, that's a rule to write — see
   [Rules & Criteria](rules-and-criteria.md).
 
-## Related
+## Where to go next
 - [Reconciliation Overview](overview.md) — how matching fits the end-to-end flow.
 - [Approvals](approvals.md) — review and approve the reconciliations your rules propose.
 - [Rules & Criteria](rules-and-criteria.md) — reduce what reaches this screen by tuning your rules.

@@ -1,19 +1,19 @@
-# Treasury Hub — User Documentation
+# TreasuryHub — User Documentation
 
-> **New here? Start with [What is Treasury Hub?](00-getting-started/01-what-is-treasury-hub.md)**
+> **New here? Start with [What is TreasuryHub?](00-getting-started/01-what-is-treasury-hub.md)**
 
-Welcome to the Treasury Hub help center. These guides explain **what each part of the platform
-does, how to use it, and how to configure it**, written for the people who use Treasury Hub every
+Welcome to the TreasuryHub help center. These guides explain **what each part of the platform
+does, how to use it, and how to configure it**, written for the people who use TreasuryHub every
 day — treasurers, finance teams, and administrators.
 
-> **New here? Start with [What is Treasury Hub?](00-getting-started/01-what-is-treasury-hub.md)**
+> **New here? Start with [What is TreasuryHub?](00-getting-started/01-what-is-treasury-hub.md)**
 
 ## How this documentation is organized
 The sections below mirror the platform's own navigation menu, so you can find the help for whatever
 screen you're on.
 
 ## Getting started
-- [What is Treasury Hub?](00-getting-started/01-what-is-treasury-hub.md)
+- [What is TreasuryHub?](00-getting-started/01-what-is-treasury-hub.md)
 - [Navigation & Your Workspace](00-getting-started/02-navigation-and-workspace.md)
 - [Core Concepts](00-getting-started/03-core-concepts.md)
 - [Roles & Permissions](00-getting-started/04-roles-and-permissions.md)

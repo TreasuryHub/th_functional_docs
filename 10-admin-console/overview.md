@@ -1,12 +1,19 @@
 # Admin Console — Overview
 
+> **Govern your whole organisation from one console**
+>
+> **Why it matters**
+> - **Everything that shapes what others see**: logins, permissions, legal structure and the reference data every module reads.
+> - **Scoped to your tenant**: the console governs one organization at a time, with no bleed between them.
+> - **Where governance is demonstrated**: the settings here are what you show an auditor.
+
 > **Where to find it:** Admin Console
 > **Who uses it:** administrators, user managers, and treasury operations leads.
 > **Permissions required:** `AdminAndSettings.UserManagement` · Admin (people & access); `CoreData.*` · Read+ (master data). See [Roles & Permissions](../00-getting-started/04-roles-and-permissions.md).
 
 ## Overview
-The **Admin Console** is the central place where administrators govern your organization's Treasury
-Hub tenant: who can log in, what each person can do, how your legal structure is modeled, and the
+Govern your whole organisation from one console: the **Admin Console** is where administrators set
+up your TreasuryHub tenant — who can log in, what each person can do, how your legal structure is modeled, and the
 reference data every other module depends on. It's where you demonstrate governance, compliance, and
 control — the settings here shape what every other user sees and can do.
 
@@ -48,7 +55,7 @@ If you don't see the Admin Console, you don't have an admin permission — ask a
 administrator to grant it.
 
 ## Setting up a new tenant (onboarding)
-When your organization joins Treasury Hub, your tenant is provisioned for you. An administrator then
+When your organization joins TreasuryHub, your tenant is provisioned for you. An administrator then
 completes setup by working through the Admin Console, typically in this order:
 
 1. **Model your structure** — create your [Company Groups and Companies](companies-and-groups.md) and
@@ -69,7 +76,7 @@ completes setup by working through the Admin Console, typically in this order:
 > through organization, processes, workflows, users, and source systems, suggesting roles and
 > settings as you go. You can also complete the steps above manually.
 
-## Tips & good practices
+## Tips to get more value
 - Set up **master data first**, then people — roles and account access reference the companies and
   accounts you've created.
 - Grant the **least privilege** that lets each person do their job; add access rather than removing it
@@ -81,7 +88,7 @@ completes setup by working through the Admin Console, typically in this order:
   workflows, users, systems).
 - **Static Data (Datos Estáticos)** — standing reference lists under Master Data.
 
-## Related
+## Where to go next
 - [Users & Roles](users-and-roles.md) — users, roles and the audit trail.
 - [Payment Approval Rules](payment-approval-rules.md) — how many signatures a payment needs before
   it is sent.
